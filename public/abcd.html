@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Lead Form</h2>
+        <form id="leadForm" class="space-y-4">
+            <!-- Name -->
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" id="name" name="name" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
+            </div>
+            
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
+            </div>
+            
+            <!-- Phone -->
+            <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
+            </div>
+            
+            <!-- Number of People -->
+            <div>
+                <label for="numPeople" class="block text-sm font-medium text-gray-700">Number of People</label>
+                <input type="number" id="numPeople" name="numPeople" min="1" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
+            </div>
+            
+            <!-- Travel Date -->
+            <div>
+                <label for="travelDate" class="block text-sm font-medium text-gray-700">Travel Date</label>
+                <input type="date" id="travelDate" name="travelDate" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
+            </div>
+            
+            <!-- Trek Location -->
+            <div>
+                <label for="trekLocation" class="block text-sm font-medium text-gray-700">Trek Location</label>
+                <select id="trekLocation" name="trekLocation" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
+                    <option value="" disabled selected>Select Location</option>
+                    <option value="Himalayas">Himalayas</option>
+                    <option value="Alps">Alps</option>
+                    <option value="Andes">Andes</option>
+                </select>
+            </div>
+            
+            <!-- Message -->
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700">Message (Optional)</label>
+                <textarea id="message" name="message" rows="3" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"></textarea>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">
+                Submit
+            </button>
+        </form>
+        <p id="statusMessage" class="mt-4 text-center text-sm text-gray-600"></p>
+    </div>
+    
+    <script>
+        // Handle form submission
+        const form = document.getElementById('leadForm');
+        const statusMessage = document.getElementById('statusMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Gather form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Google Sheets endpoint (replace this with your actual Google Apps Script endpoint)
+            const scriptURL = "https://script.google.com/macros/s/AKfycbz4aMvEviGkOOVfZNYfqv_iFY67TIGx774KVxYph97gikGTUU7vExhe7GdncHJYH9Yc/exec";
+
+            try {
+                statusMessage.textContent = "Submitting...";
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                if (response.ok) {
+                    statusMessage.textContent = "Form submitted successfully!";
+                    form.reset();
+                } else {
+                    throw new Error("Submission failed");
+                }
+            } catch (error) {
+                console.error(error);
+                statusMessage.textContent = "There was an error submitting the form. Please try again.";
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

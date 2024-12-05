@@ -1,0 +1,52 @@
+<!-- for large screen header -->
+    <header id="header"
+        class="absolute top-0 duration-500 flex justify-between p-4 hidden lg:flex transition-transform w-full">
+        <div class="h-full ">
+            <a href="/" class="custom-logo-link transparent-custom-logo bg-black-less-opacity" rel="home" itemprop="url"
+                aria-label="safarwallah.com">
+                <img width="150" height="150" src="/src/images/logo/logo.png" class="custom-logo" alt="">
+            </a>
+        </div>
+        <div class="flex gap-6 items-center justify-center text-white">
+            <a href="/"
+                class="hover:bg-orange hover:scale-110 transform transition-all duration-300 p-2 rounded-md">Home</a>
+            <a href="/about-us"
+                class="hover:bg-orange hover:scale-110 transform transition-all duration-300 p-2 rounded-md">About-Us</a>
+            <a href="/all-treaks"
+                class="hover:bg-orange hover:scale-110 transform transition-all duration-300 p-2 rounded-md">Treks</a>
+            <a href="/public/all-treks.html"
+                class="hover:bg-orange hover:scale-110 transform transition-all duration-300 p-2 rounded-md">Careers</a>
+            <a href="/public/blogs.html"
+                class="hover:bg-orange hover:scale-110 transform transition-all duration-300 p-2 rounded-md">Blogs</a>
+            <a href="/public/contact.html"
+                class="bg-orange hover:scale-110 border border-none font-bold p-2.5 rounded-lg  transform transition-all duration-300">Contact-US</a>
+        </div>
+    </header>
+    <!-- for mobile screen header  -->
+
+
+    <header id="header"
+        class="absolute top-0 duration-500 flex justify-between p-4 lg:hidden transition-transform w-full">
+        <div class="h-full lg:hidden ">
+            <a href="/" class="custom-logo-link transparent-custom-logo" rel="home" itemprop="url"
+                aria-label="safarwallah.com">
+                <img width="150" height="150" src="/src/images/logo/logo.png" class="custom-logo" alt="">
+            </a>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="flex items-center justify-center" style="z-index: 100;">
+            <button id="menu-toggle" class="relative focus:outline-none">
+                <!-- SVG for Hamburger Icon -->
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="#FF931F"
+                    style="width: 30px; height: 30px; fill: #FF931F; stroke: #FF931F;"
+                    class="transition-transform duration-300">
+                    <!-- Top Bar -->
+                    <path id="bar1" stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5"></path>
+                    <!-- Bottom Bar -->
+                    <path id="bar3" stroke-linecap="round" stroke-linejoin="round" d="M3.75 15h16.5"></path>
+                </svg>
+            </button>
+        </div>
+    </header>

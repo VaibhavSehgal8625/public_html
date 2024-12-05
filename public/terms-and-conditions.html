@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Standard favicon -->
+    <link rel="icon" href="/src/images/favicons/favicon1.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MZ3R7PFM');</script>
+</head>
+<body class="overflow-x-hidden"> 
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZ3R7PFM"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+<!-- large screen navbar -->
+<style>
+*{
+      font-family: 'normalfont', sans-serif; /* Fallback to a similar font if needed */
+
+    }
+    @media (max-width:1024px){
+  .responsivegradiantbottom{
+  bottom: -60px !important;
+  }
+}
+</style>
+
+  <header class="flex justify-center items-center hidden lg:flex absolute z-10 w-full">
+
+    <div class="bg-transparent px-20 flex justify-between w-full py-6">
+        
+      <div> 
+      <a href="/index.html"><img src="/src/images/logo/white-logo.png" style="width: 101px;" alt=""></a>
+        
+      </div>
+      <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
+        <div class=" bg-white  cursor-pointer flex flex-row items-start justify-between  px-4 py-2 responsivesearchanimation rounded-full"
+      style="min-width: 260px; height: 40px;" onclick="toggleSearchPopup()">
+ 
+   <p class="text-md custom-font-heading text-black my-auto text-gray-500">
+     Search Trek By
+     <span id="rotatingText" class="text-black custom-font-heading sliding-text">Difficulty</span>
+   </p>
+ 
+   <p class="flex h-full items-center justify-center my-auto">
+     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="size-6" style="width: 15px; stroke:#FF931F;">
+       <path stroke-linecap="round" stroke-linejoin="round"
+             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+     </svg>
+   </p>
+ </div>
+        <a class="text-white navcomponents  custom-font-normal" href="/index.html">Home</a>
+        <a class="text-white navcomponents  custom-font-normal" href="/public/about.html">About</a>
+        <a class="text-white navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
+        <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
+        <a class="text-white navcomponents custom-font-normal" href="/public/blogs.html">Blogs</a>
+        <a class="text-white navcomponents custom-font-normal" href="/public/contact.html">Contact</a>
+        <!-- <a class="relative text-white bg-orange py-1.5 px-3 rounded-2xl hover:bg-white hovertextorange transition duration-300 ease-in-out"
+          href="/login">Sign Up</a> -->
+
+      </div>
+
+    </div>
+  </header>
+
+ <!-- Popup Container -->
+ <div id="searchPopup" class="fixed inset-0 bg-black bg-opacity-50 fade-inw-full flex items-center justify-center z-50"
+ style="display: none; transition: opacity 0.3s ease-in-out;">
+ 
+ <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive" style="width: 80%;">
+ <!-- Close Button -->
+ <button class="absolute top-2 right-2 text-gray-500" onclick="toggleSearchPopup1()">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+       class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+ </button>
+ 
+ <!-- Popup Content -->
+ <h2 class="text-2xl font-bold mb-4">Search Trek Here</h2>
+ <div class="search-container">
+ <p class="flex flex-row gap-2">
+ <input id="searchInput" autocomplete="off" type="text" placeholder="Search by Trek, Blog, Duration, Distance, etc." class="border w-full rounded-full p-2">
+ <span>
+  <button id="searchBtn" class="bg-orange text-white p-2 rounded-full justify-center items-center flex w-full hover:bg-white hover:text-orange transition duration-300 ease-in-out hovertextorange" style="border: 1px solid #FF931F;">
+    Search
+  </button>
+ </span>
+ </p>
+ 
+ <!-- Loader -->
+ <div id="loader" class="hidden flex justify-center items-center py-2">
+ <div class="loader"></div>
+ </div>
+ 
+ <!-- Search Results Container -->
+ <div id="resultContainer" class="results"></div>
+ </div>
+ 
+ <style>
+ /* Loader styling */
+ .loader {
+ border: 6px solid #f3f3f3;
+ border-radius: 50%;
+ border-top: 6px solid #FF931F;
+ width: 40px;
+ height: 40px;
+ animation: spin 1s linear infinite;
+ }
+ 
+ @keyframes spin {
+ 0% { transform: rotate(0deg); }
+ 100% { transform: rotate(360deg); }
+ }
+ </style>
+ 
+ <script>
+  const treks = [
+    {
+      name: "kedarkantha",
+      duration: "4D/5N",
+      distance: "20/40km",
+      altitude: "12,500ft / 3800m",
+      time: "November to April",
+      difficulty: "moderate",
+      location: "Uttarakhand",
+      budget: "6k to 9k",
+      href:"/public/kedarkantha.html"
+    },
+    {
+      name: "Brahmatal",
+      duration: "5D/6N",
+      distance: "15/30km",
+      altitude: "10,250ft / 3735m",
+      time: "November to February",
+      difficulty: "moderate",
+      location: "Uttarakhand",
+      budget: "6k to 9k",
+      href:"/public/brahmatal.html"
+    },
+    {
+      name: "Dayara Buggal",
+      duration: "3D/4N",
+      distance: "10/20km",
+      altitude: "11,810ft / 3600m",
+      time: "December to March",
+      difficulty: "easy",
+      location: "Uttarakhand",
+      budget: "5500 to 9000",
+      href:"/public/dyara-bugyal.html"
+    },
+    {
+      name: "Chandrashila",
+      duration: "3D/4N",
+      distance: "10/20km",
+      altitude: "11,810ft / 3600m",
+      time: "December to March",
+      difficulty: "easy",
+      location: "Uttarakhand",
+      budget: "5500 to 9000",
+      href:"/public/tungnath.html"
+    }
+  ];
+  
+  const blogs = [
+    {
+      author: "Vaibhav",
+      date: "2024-11-13",
+      contentSnippet: "A memorable advanture with safarwallah",
+      location: "Uttarakhand",
+      href:"/public/blogs/a-memorable-advanture-with-safarwallah.html"
+    },
+    {
+      author: "Sameekshya",
+      date: "2024-11-06",
+      contentSnippet: "Escaping the city with safarwallah",
+      location: "Uttarakhand",
+      href:"/public/blogs/Escaping-the-City-with-Safarwallah.html"
+    },
+    {
+      author: "Gaurav",
+      date: "2024-09-21",
+      contentSnippet: "The Ultimate Guide to Treeking in winter",
+      location: "Uttarakhand",
+      href:"/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
+    },
+    {
+      author: "Abhishek",
+      date: "2024-10-30",
+      contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
+      location: "Uttarakhand",
+      href:"public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
+    }
+  ];
+  
+  /// Function to filter treks and blogs
+function searchTreksAndBlogs(query) {
+  query = query.toLowerCase();
+
+  const filteredTreks = treks.filter(trek => {
+    return (
+      trek.name.toLowerCase().includes(query) ||
+      trek.duration.toLowerCase().includes(query) ||
+      trek.distance.toLowerCase().includes(query) ||
+      trek.altitude.toLowerCase().includes(query) ||
+      trek.time.toLowerCase().includes(query) ||
+      trek.difficulty.toLowerCase().includes(query) ||
+      trek.location.toLowerCase().includes(query) ||
+      trek.budget.toLowerCase().includes(query)
+    );
+  });
+
+  const filteredBlogs = blogs.filter(blog => {
+    return (
+      blog.author.toLowerCase().includes(query) ||
+      blog.date.toLowerCase().includes(query) ||
+      blog.contentSnippet.toLowerCase().includes(query)
+    );
+  });
+
+  return { filteredTreks, filteredBlogs };
+}
+
+// Display filtered results
+function displayResults(results) {
+  const resultContainer = document.getElementById('resultContainer');
+  resultContainer.innerHTML = ''; // Clear previous results
+
+  const { filteredTreks, filteredBlogs } = results;
+
+  if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
+    resultContainer.innerHTML = '<p>No results found</p>';
+  } else {
+    // Display Treks
+    filteredTreks.forEach(trek => {
+      resultContainer.innerHTML += `
+      <a href="${trek.href}">
+        <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+          <div class="flex gap-4">
+            <h4>${trek.name}</h4>
+            <p>${trek.location}</p>
+          </div>
+        </div>
+      </a>`;
+    });
+
+    // Display Blogs
+    filteredBlogs.forEach(blog => {
+      resultContainer.innerHTML += `
+      <a href="${blog.href}">
+        <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+          <div class="flex gap-4">
+            <h4>${blog.author}</h4>
+            <p>${blog.contentSnippet}</p>
+          </div>
+        </div>
+      </a>`;
+    });
+  }
+}
+
+// Handle input and loader visibility
+document.getElementById('searchInput').addEventListener('input', function () {
+  const query = this.value;
+  const loader = document.getElementById('loader');
+  const resultContainer = document.getElementById('resultContainer');
+
+  // Show loader
+  loader.style.display = 'flex';
+
+  // Simulate a slight delay to mimic async processing
+  setTimeout(() => {
+    const results = searchTreksAndBlogs(query);
+    displayResults(results);
+
+    // Hide loader
+    loader.style.display = 'none';
+  }, 500); // Adjust delay as necessary
+});
+  </script>
+ 
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ 
+ <script>
+     function toggleSearchPopup() {
+       const popup = document.getElementById('searchPopup');
+       if (popup.style.display === "none" || popup.style.display === "") {
+         popup.style.display = "flex";
+         setTimeout(() => {
+           popup.style.opacity = "1";  // Smooth transition effect
+         }, 10);
+       } else {
+         popup.style.opacity = "0";
+         setTimeout(() => {
+           popup.style.display = "none";
+         }, 300);  // Wait for the opacity transition to finish
+       }
+     }
+     function toggleSearchPopup1() {
+       const popup = document.getElementById('searchPopup');
+       if (popup.style.display === "none" || popup.style.display === "") {
+         popup.style.display = "flex";
+         setTimeout(() => {
+           popup.style.opacity = "1";  // Smooth transition effect
+         }, 10);
+       } else {
+         popup.style.opacity = "0";
+         setTimeout(() => {
+           popup.style.display = "none";
+         }, 300);  // Wait for the opacity transition to finish
+       }
+     }
+   </script>
+
+  <!-- mobile screen navbar -->
+
+  <header class="flex justify-center lg:hidden items-center absolute z-50 w-full">
+
+    <div class="bg-transparent px-6 flex justify-between w-full items-center py-2">
+      <div style="z-index: 200;">
+        <a href="/index.html">
+
+          <img src="/src/images/logo/white-logo.png" style="width: 101px;z-index: 200 !important;"  alt="">
+        </a>
+      </div>
+      <div class="flex gap-5 items-center">
+
+          <div class="" onclick="toggleSearchPopup1()">
+            <p class="p-2  flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                    style="width: 15px;" stroke="white" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
+                </svg>
+            </p>
+        </div>
+          <div id="svgContainer" onclick="togglePopup()" style="cursor: pointer;z-index: 200;">
+            <!-- Initial Hamburger Icon -->
+            <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px; height:20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          
+            <!-- X Icon (hidden initially) -->
+            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="display: none; width: 20px; height:20px">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+      </div>
+    </div>
+    <div id="popup" style="opacity: 0; position: absolute; transition: opacity 0.3s ease-in-out; inset: 0px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; display: none;">
+      <div style="position: relative; height: 100vh; width: 100vw;">
+        <img src="/src/images/navbar/navmobile.jpeg" class="h-screen object-cover w-screen " alt="">
+        
+        <!-- Add the text over the image -->
+        <div class="bg-black-less-opacity flex h-full h-screen items-center justify-center left-1/2 top-1/2 w-full w-screen" style="position: absolute;/* top: 50%; *//* left: 50%; */transform: translate(-50%, -50%);color: white;">
+          <div class="absolute h-screen inset-0 ml-10 flex flex-col gap-6 mt-40 ">
+            <a href="/index.html" class="text-white "><span class="navcomponents">Home</span></a>
+            <a class="text-white  " href="/public/about.html"><span class="navcomponents">About</span></a>
+        <a class="text-white  " href="/public/all-treks.html"><span class="navcomponents">Treks</span></a>
+        <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
+        <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
+        <a class="text-white  " href="/public/contact.html"><span class="navcomponents">Contact</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <script>
+      function togglePopup() {
+        const popup = document.getElementById("popup");
+        const hamburgerIcon = document.getElementById("hamburgerIcon");
+        const closeIcon = document.getElementById("closeIcon");
+    
+        // Check if the popup is currently displayed
+        if (popup.style.display === "none" || popup.style.display === "") {
+          // Show the popup
+          popup.style.display = "block";
+          setTimeout(() => {
+            popup.style.opacity = "1"; // Smooth transition effect
+          }, 10);
+    
+          // Disable scrolling
+          document.body.classList.add('no-scroll');
+    
+          // Toggle to X icon
+          hamburgerIcon.style.display = "none";
+          closeIcon.style.display = "inline";
+        } else {
+          // Hide the popup
+          popup.style.opacity = "0";
+          setTimeout(() => {
+            popup.style.display = "none"; // After the transition
+          }, 300);
+    
+          // Enable scrolling
+          document.body.classList.remove('no-scroll');
+    
+          // Toggle back to Hamburger icon
+          closeIcon.style.display = "none";
+          hamburgerIcon.style.display = "inline";
+        }
+      }
+    </script>
+    
+  </header>
+
+
+ <!-- banner images and banner of home page  -->
+
+ <div class=" flex  flex-col justify-center items-center overflow-hidden">
+    <img id="bannerImage" src="/src/images/terms-and-conditions/banner-image.jpg"
+      class="w-screen h-screen object-cover opacity-100 transition-opacity duration-500" alt="banner image ">
+
+
+    <div class="absolute bg-black-less-opacity flex  h-screen items-center justify-center w-full fade-in">
+      <div class="absolute flex flex-col items-center justify-center left-0 l px-10 top-1/2 right-0 ">
+
+
+        <p id="bannerText" class="custom-font-heading font-bold lg:-bottom-0 lg:-bottom-0.5 lg:table lg:text-6xl md:-bottom-0 md:-bottom-0.5 md:text-5xl slide-up sm:table sm:text-5xl text-5xl text-white">Terms And Conditions</p>
+    
+    
+    
+      </div>
+      
+
+ 
+
+    </div>
+  </div>
+  <div class="absolute bg-gradient-to-t bottom-0 from-white h-60 overflow-x-hidden lg:h-32 md:h-44 responsivegradiantbottom sm:h-52 to-transparent w-full"></div>
+
+
+
+
+
+  <div class=" pb-20 pt-40 flex flex-col overflow-x-hidden justify-center items-center " >
+    <div class="flex flex-col gap-6 text-gray-500 responsivewidthoftext" style="width: 60%;">
+        <p class="text-5xl custom-font-heading fade-scroll" data-animation="fade-scroll-down" style="color: #FF931F;">Safarwallah Terms And Conditions</p>
+        <p>Welcome to Safarwallah! By booking a trek, expedition, or any service with us, you acknowledge and agree to the following terms and conditions, which are designed to protect both parties and ensure a smooth and enjoyable experience. Please read them carefully.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">1. Definitions</h3>
+    <ul class="fade-scroll" data-animation="fade-scroll-down">
+        <li><strong>Safarwallah</strong>: Refers to the company organizing the trek/expedition.</li>
+        <li><strong>Customer/Participant</strong>: Refers to any individual or group who has signed up for a trek or related services offered by Safarwallah.</li>
+        <li><strong>Vendor</strong>: Refers to any third-party supplier contracted by Safarwallah to provide services such as transport, accommodation, food, equipment, etc.</li>
+    </ul>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">2. Booking and Payment</h3>
+    <ul class="fade-scroll" data-animation="fade-scroll-down">
+        <li>All bookings must be made through Safarwallah’s official website, email, or authorized representatives.</li>
+        <li>Full payment for treks, expeditions, and services is required as per the payment schedule communicated at the time of booking.</li>
+        <li>Safarwallah reserves the right to cancel any booking that remains unpaid after the due date.</li>
+    </ul>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">3. <a class="text-blue-500" href="/public/cancelattion.html">Cancellation Policy</a></h3>
+    <!-- <ul>
+        <li>Any cancellations must be made in writing by email to Safarwallah.</li>
+        <li>Cancellation fees will apply based on the timing of the cancellation:</li>
+        <ul>
+            <li><em>60 days or more prior to trek</em>: 90% refund</li>
+            <li><em>30-59 days prior</em>: 70% refund</li>
+            <li><em>15-29 days prior</em>: 50% refund</li>
+            <li><em>Less than 15 days prior</em>: No refund</li>
+        </ul>
+        <li>For full details on cancellations, please refer to our <a href="cancellation-policy.html">Cancellation Policy</a> page.</li>
+        <li>In case of cancellation due to force majeure (natural disasters, pandemics, government regulations), Safarwallah will provide a voucher valid for a future trek but is under no obligation to refund any amounts paid.</li>
+    </ul> -->
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">4. Changes to Itinerary</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Safarwallah reserves the right to make changes to the itinerary due to unforeseen circumstances, including but not limited to weather conditions, government regulations, road closures, or health emergencies. No refunds will be provided for these changes, and Safarwallah will not be liable for any costs incurred by the participant due to itinerary changes.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">5. Medical Fitness</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Participants must declare their fitness and disclose any pre-existing medical conditions. Participation is subject to medical clearance.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">6. Participant Responsibilities</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Participants must follow instructions given by trek leaders and staff during the trek. Non-compliance may result in termination of participation, with no refund or compensation.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">7. Vendor Responsibilities and Liabilities</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Safarwallah works with third-party vendors (transport, accommodation, etc.) to provide services during treks. Safarwallah is not liable for any disputes or shortcomings on part of these vendors, though all efforts will be made to resolve issues.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">8. Risk Acknowledgment</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Trekking and adventure activities carry inherent risks, including but not limited to injuries, altitude sickness, unpredictable weather, or wildlife encounters. By signing up, participants acknowledge these risks and agree to indemnify Safarwallah from any liability for injury, death, or damages sustained during the trek.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">9. Force Majeure</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Safarwallah shall not be liable for any delay or failure to perform its obligations under this agreement if such delay or failure is due to circumstances beyond reasonable control, including natural disasters, pandemics, war, strikes, or government restrictions.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">10. Privacy and Data Protection</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down"> Safarwallah collects personal information necessary for processing bookings and communication. This data is handled with confidentiality and is never shared with third parties unless required by law.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">11. Dispute Resolution</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Any disputes arising from bookings, participation, or services will be resolved through mutual discussion between Safarwallah and the concerned party.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">12. Governing Law</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">These terms and conditions are governed by the laws of India. Any legal action or proceedings related to or arising out of these terms shall be conducted in Ludhiana, Punjab.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">13. Disclaimer of Warranties</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Safarwallah provides services “as is” and does not guarantee any specific outcomes or results from participation in treks or expeditions.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">14. Limitation of Liability</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">To the fullest extent permitted by law, Safarwallah's liability for any damages, losses, or injuries, whether contractual, tortious, or otherwise, shall not exceed the total amount paid by the participant for the trek.</p>
+
+    <h3 class="fade-scroll" data-animation="fade-scroll-down">15. Modification of Terms</h3>
+    <p class="fade-scroll" data-animation="fade-scroll-down">Safarwallah reserves the right to modify or update these terms and conditions at any time. Changes will be communicated through official channels, and continued use of Safarwallah’s services implies acceptance of these changes.</p>
+
+
+  
+
+         
+      
+    </div>
+    
+      
+  </div>
+  <div class="py-10 lg:px-44 md:px-20 sm:px-10 px-6">
+    <div class="relative rounded-2xl">
+        <img src="/src/images/footer/certified-section-image.png" style="height: 300px;" class="object-cover w-screen rounded-2xl" alt="">
+        <div class="absolute inset-0 rounded-2xl flex flex-col py-10 gap-6 px-10 bg-black-less-opacity justify-center">
+  
+            <p class="text-white text-center" ><span class=" py-1" style="border-bottom: 4px solid #FF931F;width: fit-content;">Certified by</span></p>
+            <div class="flex flex-col gap-6 items-center justify-center lg:flex-row md:flex-row sm:flex-col w-full">
+                <p class="flex justify-center items-center"><img src="/src/images/footer/msme 1 white.png" style="width: 50%;" alt=""></p>
+                <p class="flex justify-center items-center"><img src="/src/images/footer/startup logo white.png" style="width: 80%" alt=""></p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- footer home page  -->
+<footer class="relative overflow-x-hidden">
+  <div class="relative w-full h-auto">
+      <img src="/src/images/footer/footer.png"
+          class="w-full h-auto hidden lg:flex"
+          alt="Footer Background">
+      <svg xmlns="http://www.w3.org/2000/svg"
+          class="w-full h-full flex lg:hidden"
+          width="408"
+          height="772"
+          viewBox="0 0 408 772"
+          fill="none">
+          <g clip-path="url(#clip0_137_5968)">
+              <rect y="302"
+                  width="408"
+                  height="470"
+                  fill="#A83E1D" />
+              <g clip-path="url(#clip1_137_5968)">
+                  <path
+                      d="M-114.979 70.6071L-105.207 82.5753C-95.4717 94.397 -75.8176 118.553 -56.4197 133.376C-36.9119 148.199 -17.2578 154.421 2.14017 145.344C21.6479 136.487 41.302 112.331 60.7 118.443C80.2077 124.409 99.8619 160.277 119.26 169.244C138.768 178.211 158.422 160.277 177.82 160.277C197.327 160.277 163.18 178.211 182.578 160.277C202.085 142.343 285.423 40.3023 304.821 19.3672C324.329 -1.42158 349.29 44.5478 368.688 59.6269C388.196 74.5597 392.661 106.475 412.059 112.441C431.567 118.553 451.221 112.331 470.619 97.508C490.127 82.6851 509.781 58.5291 529.179 67.6059C548.686 76.4631 568.341 118.553 587.738 121.408C607.246 124.409 626.9 88.5411 646.298 91.5423C665.806 94.397 685.46 136.487 704.858 139.342C724.366 142.343 744.02 106.475 763.418 82.5753C782.926 58.5291 802.58 46.8172 821.978 43.7062C841.485 40.5952 861.14 46.8172 880.538 67.6059C900.045 88.5411 919.699 124.409 939.097 139.342C958.605 154.421 978.259 148.199 997.657 130.375C1017.17 112.331 1036.82 82.6851 1056.22 67.6059C1075.72 52.6732 1095.38 52.6732 1114.78 64.6413C1134.28 76.4631 1153.94 100.619 1173.34 97.508C1192.84 94.397 1212.5 64.7511 1231.9 55.6743C1251.4 46.8172 1271.06 58.5291 1280.57 64.6413L1290.46 70.6071V214.079H1280.68C1270.95 214.079 1251.29 214.079 1231.9 214.079C1212.39 214.079 1192.73 214.079 1173.34 214.079C1153.83 214.079 1134.17 214.079 1114.78 214.079C1095.27 214.079 1075.61 214.079 1056.22 214.079C1036.71 214.079 1017.06 214.079 997.657 214.079C978.15 214.079 958.495 214.079 939.097 214.079C919.59 214.079 899.936 214.079 880.538 214.079C861.03 214.079 841.376 214.079 821.978 214.079C802.47 214.079 782.816 214.079 763.418 214.079C743.91 214.079 724.256 214.079 704.858 214.079C685.35 214.079 665.696 214.079 646.298 214.079C626.791 214.079 607.136 214.079 587.738 214.079C568.231 214.079 548.577 214.079 529.179 214.079C509.671 214.079 490.017 214.079 470.619 214.079C451.111 214.079 431.457 214.079 412.059 214.079C392.551 214.079 372.897 214.079 353.499 214.079C333.991 214.079 314.337 214.079 294.939 214.079C275.432 214.079 255.777 214.079 236.379 214.079C216.872 214.079 197.218 214.079 177.82 214.079C158.312 214.079 138.658 214.079 119.26 214.079C99.7521 214.079 80.0979 214.079 60.7 214.079C41.1922 214.079 21.5381 214.079 2.14017 214.079C-17.3676 214.079 -37.0217 214.079 -56.4197 214.079C-75.9274 214.079 -95.5815 214.079 -105.098 214.079H-114.979V70.6071Z"
+                      fill="#FFA94E" />
+                  <path
+                      d="M-106.745 134.288C-106.745 134.288 -78.9292 115.988 -60.9953 99.7007C-43.0613 83.4138 -6.27843 46.814 13.1195 28.7703C32.6272 10.9461 52.2814 22.6581 71.6793 31.7349C91.1871 40.592 110.841 46.814 130.239 64.6382C149.747 82.6819 169.401 112.328 188.799 112.438C208.307 112.328 227.961 82.6819 247.359 76.5697C266.867 70.604 286.521 88.5379 305.919 82.5721C325.426 76.4599 345.08 46.814 364.478 37.7372C383.986 28.8801 403.64 40.592 423.038 64.6382C442.546 88.5379 462.2 124.406 481.598 121.405C501.106 118.55 520.76 76.4599 540.158 61.637C559.666 46.814 579.32 58.526 598.718 52.67C618.225 46.814 637.88 22.6581 657.278 22.7679C676.785 22.6581 696.439 46.814 715.837 46.7042C735.345 46.814 754.999 22.6581 774.397 28.7703C793.905 34.7361 813.559 70.604 832.957 82.5721C852.465 94.3939 872.119 82.6819 891.517 67.6028C911.025 52.67 930.679 34.7361 950.077 31.7349C969.584 28.8801 989.239 40.592 1008.64 37.7372C1028.14 34.7361 1047.8 16.8021 1067.2 22.7679C1086.7 28.8801 1106.36 58.526 1125.76 85.5367C1145.26 112.328 1164.92 136.484 1184.32 145.341C1203.82 154.418 1223.48 148.196 1242.88 139.339C1262.38 130.262 1282.04 118.55 1301.44 115.439C1320.94 112.328 1340.6 118.55 1350.11 121.405L1360 124.406V178.208H1350.22C1340.49 178.208 1320.83 178.208 1301.44 178.208C1281.93 178.208 1262.27 178.208 1242.88 178.208C1223.37 178.208 1203.71 178.208 1184.32 178.208C1164.81 178.208 1145.15 178.208 1125.76 178.208C1106.25 178.208 1086.59 178.208 1067.2 178.208C1047.69 178.208 1028.03 178.208 1008.64 178.208C989.129 178.208 969.474 178.208 950.077 178.208C930.569 178.208 910.915 178.208 891.517 178.208C872.009 178.208 852.355 178.208 832.957 178.208C813.449 178.208 793.795 178.208 774.397 178.208C754.889 178.208 735.235 178.208 715.837 178.208C696.33 178.208 676.675 178.208 657.278 178.208C637.77 178.208 618.116 178.208 598.718 178.208C579.21 178.208 559.556 178.208 540.158 178.208C520.65 178.208 500.996 178.208 481.598 178.208C462.09 178.208 442.436 178.208 423.038 178.208C403.53 178.208 383.876 178.208 364.478 178.208C344.971 178.208 325.317 178.208 305.919 178.208C286.411 178.208 266.757 178.208 247.359 178.208C227.851 178.208 208.197 178.208 188.799 178.208C169.291 178.208 149.637 178.208 130.239 178.208C110.731 178.208 91.0773 178.208 71.6793 178.208C52.1716 178.208 32.5175 178.208 13.1195 178.208C-6.38823 178.208 -26.0424 178.208 -35.5583 178.208L-106.745 181.318V134.288Z"
+                      fill="#FF931F" />
+                  <path
+                      d="M-484.64 100.62L-471.081 129.673C-457.573 158.523 -430.303 216.933 -403.388 241.669C-376.321 266.709 -349.051 258.074 -322.136 245.783C-295.069 233.186 -267.799 216.933 -240.884 208.451C-213.817 200.172 -186.547 200.172 -159.633 191.893C-132.566 183.411 -144.457 114.27 -117.543 122.397C-90.4757 130.524 -55.5196 146.434 -28.605 129.673C-1.53799 112.912 49.8881 102.192 76.8027 85.4311C103.87 68.6699 138.46 117.381 165.374 129.673C192.441 142.269 219.712 133.635 246.626 150.396C273.693 167.157 281.748 101.471 308.663 122.397C335.73 143.12 352.752 151.45 379.667 122.397C406.734 93.5473 463.467 126.359 490.381 97.5091C517.448 68.4562 544.719 75.7322 571.633 75.7322C598.7 75.7322 625.97 75.7322 652.885 100.62C679.952 125.508 707.222 175.284 734.137 187.728C761.204 200.172 788.474 175.284 815.389 158.675C842.456 142.269 869.726 133.635 896.64 125.508C923.707 117.381 950.978 108.747 977.892 117.229C1004.96 125.508 1032.23 150.396 1059.14 162.84C1086.21 175.284 1113.48 175.284 1140.4 154.561C1167.46 133.635 1194.73 92.4934 1221.65 108.899C1248.71 125.508 1275.98 200.172 1302.9 208.451C1329.97 216.933 1357.24 158.523 1384.15 158.675C1411.22 158.523 1438.49 216.933 1451.69 245.783L1465.4 274.836V299.724H1451.84C1438.34 299.724 1411.07 299.724 1384.15 299.724C1357.08 299.724 1329.81 299.724 1302.9 299.724C1275.83 299.724 1248.56 299.724 1221.65 299.724C1194.58 299.724 1167.31 299.724 1140.4 299.724C1113.33 299.724 1086.06 299.724 1059.14 299.724C1032.08 299.724 1004.81 299.724 977.892 299.724C950.825 299.724 923.555 299.724 896.64 299.724C869.573 299.724 842.303 299.724 815.389 299.724C788.322 299.724 761.051 299.724 734.137 299.724C707.07 299.724 679.8 299.724 652.885 299.724C625.818 299.724 598.548 299.724 571.633 299.724C544.566 299.724 517.296 299.724 490.381 299.724C463.315 299.724 482.892 321.317 455.978 321.317C428.911 321.317 441.534 350.963 414.62 350.963C387.553 350.963 317.644 384.452 290.729 384.452C263.662 384.452 240.601 363.407 213.686 363.407C186.619 363.407 192.289 350.963 165.374 350.963C138.307 350.963 42.4125 313.997 15.4979 313.997C-11.5691 313.997 -52.3812 308.873 -79.2958 308.873C-106.363 308.873 -132.718 299.724 -159.633 299.724C-186.7 299.724 -213.97 299.724 -240.884 299.724C-267.951 299.724 -295.221 299.724 -322.136 299.724C-349.203 299.724 -376.473 299.724 -403.388 299.724C-430.455 299.724 -457.725 299.724 -470.928 299.724H-484.64V100.62Z"
+                      fill="#A83E1D" />
+                  <path
+                      d="M205.885 138.379C205.954 138.203 206.043 138.029 206.185 137.905C206.453 137.671 206.843 137.668 207.197 137.678C207.467 137.685 207.738 137.673 208.022 137.684C208.036 137.685 208.05 137.684 208.064 137.684C208.064 137.684 208.209 137.695 208.387 137.665L210.546 124.062L210.409 124.043C210.265 124.023 210.165 123.888 210.185 123.742C210.205 123.597 210.339 123.495 210.483 123.515L210.625 123.535L211.945 114.705C211.916 114.714 211.886 114.723 211.857 114.728C211.529 114.789 211.299 114.558 211.26 114.375C211.26 114.375 210.922 114.349 210.82 114.206C210.718 114.063 210.678 113.79 210.678 113.79C210.678 113.79 210.431 113.821 210.292 113.623C210.152 113.425 210.296 113.083 210.296 113.083C210.296 113.083 209.925 112.96 210.127 112.574C210.33 112.189 210.531 112.023 210.969 111.871C211.407 111.72 212.355 111.82 212.726 111.922C212.942 111.982 213.478 112.097 213.886 112.18C214.513 111.355 214.929 111.947 215.331 111.63C215.366 111.602 215.399 111.57 215.422 111.532C215.453 111.483 215.464 111.425 215.481 111.369C215.645 110.831 216.31 110.629 216.621 110.093L216.757 108.212C216.772 108 216.788 107.785 216.854 107.584C216.916 107.393 217.02 107.221 217.105 107.04C217.346 106.528 217.431 105.942 217.364 105.35C217.262 105.226 217.176 105.089 217.113 104.909C216.921 105.398 216.662 105.86 216.347 106.279C216.347 106.279 215.89 105.9 215.892 105.871C216.202 105.431 216.453 104.948 216.636 104.441C216.636 104.441 216.287 104.811 216.217 104.766C216.142 104.722 216.082 104.654 216.055 104.521C216.212 104.371 216.34 104.189 216.431 103.991C216.431 103.991 216.133 104.007 216.106 103.96C216.07 103.904 216.069 103.827 216.103 103.77C216.125 103.734 216.159 103.707 216.193 103.681C216.381 103.534 216.575 103.392 216.767 103.226C216.816 102.804 216.995 102.406 217.228 102.052C217.46 101.698 217.745 101.383 218.033 100.983C218.049 100.642 218.08 100.301 218.126 99.9626C218.158 99.7199 218.213 99.453 218.412 99.2611C218.331 99.2244 218.311 99.1092 218.347 99.0268C218.384 98.9444 218.461 98.8882 218.535 98.8376C218.892 98.5945 219.278 98.3937 219.625 98.223C219.477 97.8836 219.178 97.6156 218.827 97.509C218.624 97.4474 218.407 97.4369 218.212 97.3534C218.017 97.2699 217.841 97.0774 217.874 96.8655C217.897 96.7198 218.013 96.5783 217.96 96.4412C217.945 96.4009 217.915 96.3675 217.896 96.3292C217.837 96.2177 217.869 96.066 217.975 95.948C217.831 95.8734 217.807 95.6595 217.889 95.5176C217.908 95.4843 217.932 95.4522 217.938 95.4141C217.946 95.3585 217.912 95.3037 217.866 95.2713C217.821 95.2388 217.766 95.2237 217.713 95.2063C217.577 95.1622 217.432 95.0861 217.389 94.9479C217.349 94.817 217.415 94.6773 217.493 94.565C217.666 94.317 217.913 94.1146 217.973 93.8584C217.327 93.7624 216.676 93.5383 216.304 92.9012C216.211 92.7421 216.178 92.5571 216.178 92.3721C216.178 92.3258 216.185 92.2782 216.216 92.2448C216.249 92.2093 216.299 92.1993 216.346 92.1912C216.977 92.0845 217.613 92.0166 218.271 91.9917C218.603 91.5279 218.939 91.0593 219.368 90.6858C219.797 90.3122 220.334 90.037 220.899 90.032C221.391 90.0275 221.86 90.2246 222.297 90.4475C222.394 90.4182 222.502 90.4252 222.589 90.4764C222.676 90.5276 222.736 90.6252 222.748 90.7268C223.398 91.1284 223.897 91.7721 224.129 92.5064C224.36 93.2407 224.321 94.0596 223.992 94.7448C223.844 94.8964 223.697 95.0701 223.674 95.2813C223.646 95.5353 223.806 95.7707 223.986 95.9497C224.166 96.1286 224.377 96.2843 224.499 96.5073C224.55 96.5985 224.583 96.698 224.631 96.7906C224.692 96.9091 224.777 97.0146 224.835 97.1343C224.894 97.254 224.927 97.3976 224.877 97.5217C224.826 97.6458 224.671 97.7298 224.554 97.6662C224.554 97.6662 224.392 97.9249 224.396 97.9473C225.094 98.0603 225.76 98.3622 226.283 98.8029C226.639 98.2276 227.197 97.783 227.832 97.5681C228.005 97.5096 228.191 97.4674 228.369 97.5054C228.465 97.5256 228.556 97.5689 228.654 97.5784C228.796 97.5924 228.934 97.5347 229.071 97.4945C229.456 97.3812 229.866 97.4027 230.267 97.4249C230.603 97.4438 230.957 97.4681 231.237 97.6565C231.495 97.83 231.652 98.1161 231.829 98.3729C232.03 98.6642 232.27 98.9294 232.447 99.2361C232.625 99.543 232.738 99.9089 232.692 100.267C232.764 100.267 232.817 100.34 232.832 100.411C232.846 100.483 232.837 100.558 232.851 100.63C232.881 100.781 233.007 100.889 233.119 100.993C233.59 101.433 233.924 102.021 234.1 102.691C234.284 102.629 234.483 102.617 234.673 102.654C234.673 102.654 234.74 102.456 234.745 102.408C234.636 102.331 234.546 102.228 234.484 102.109C234.457 102.057 234.436 101.999 234.446 101.942C234.458 101.872 234.515 101.819 234.576 101.785C234.705 101.712 234.86 101.7 235.008 101.699C235.419 101.698 235.851 101.778 236.163 102.047C236.229 102.104 236.29 102.17 236.322 102.252C236.354 102.333 236.353 102.432 236.302 102.503C236.225 102.609 236.076 102.618 235.947 102.617C235.947 102.617 235.818 102.847 235.88 102.88C236.295 103.164 236.484 103.698 236.491 104.206C236.497 104.713 236.35 105.208 236.218 105.698C236.03 106.402 235.874 107.115 235.751 107.834C235.751 107.834 235.479 107.578 235.461 107.502C235.782 106.39 235.96 105.237 235.99 104.08C235.994 103.934 235.981 103.76 235.857 103.686C235.755 103.624 235.617 103.664 235.532 103.747C235.446 103.831 235.403 103.948 235.367 104.062C235.296 104.291 235.246 104.527 235.232 104.766C235.211 105.106 235.261 105.445 235.274 105.786C235.305 106.63 235.101 107.483 234.687 108.214C234.902 108.598 235.069 109.009 235.184 109.435C235.267 109.741 235.328 110.066 235.517 110.319C235.6 110.43 235.705 110.525 235.765 110.649C235.824 110.774 235.819 110.947 235.732 111.086C235.997 111.748 236.26 112.411 236.519 113.075C236.565 113.191 236.611 113.312 236.607 113.437C236.603 113.563 236.536 113.695 236.418 113.735C236.482 113.854 236.545 114.008 236.463 114.115C236.389 114.214 236.231 114.205 236.134 114.13C236.037 114.055 235.987 113.936 235.94 113.822C235.781 113.435 235.623 113.047 235.464 112.66C235.231 112.092 234.996 111.512 234.95 110.899C234.935 110.698 234.94 110.492 234.887 110.297C234.834 110.103 234.707 109.914 234.505 109.821C234.189 110.993 234.002 112.2 233.949 113.412C233.916 114.19 233.937 114.968 233.915 115.746C233.882 116.902 233.752 118.056 233.524 119.178C233.332 119.341 233.11 119.469 232.882 119.505C233.088 117.915 233.096 116.306 233.227 114.708C233.234 114.625 233.24 114.535 233.196 114.465C233.152 114.395 233.037 114.368 232.989 114.436C232.989 114.436 231.39 120.723 231.405 120.735C231.52 120.773 231.642 120.814 231.724 120.905C231.805 120.996 231.828 121.154 231.738 121.238C231.7 121.274 231.648 121.29 231.596 121.301C231.479 121.323 231.357 121.317 231.244 121.282L229.206 129.041C229.163 129.205 228.987 129.293 228.833 129.227C228.707 129.174 228.639 129.035 228.674 128.901C229.015 127.594 230.677 121.236 230.702 121.161C230.581 121.153 230.473 121.084 230.379 121.008C230.339 120.975 230.299 120.939 230.278 120.89C230.23 120.777 230.316 120.641 230.43 120.595C230.544 120.549 230.672 120.57 230.791 120.599L232.205 114.861C232.205 114.861 231.896 115.072 231.857 115.074C231.871 115.415 231.819 115.758 231.705 116.079C231.617 116.085 231.565 115.975 231.571 115.885C231.577 115.796 231.614 115.706 231.593 115.62C231.593 115.62 231.181 115.968 231.169 115.962C230.659 117.031 230.268 118.158 230.007 119.315C229.864 119.316 229.722 119.318 229.579 119.32C230.136 118.215 230.59 117.057 230.903 115.884C230.515 116.172 230.084 116.4 229.63 116.56C229.604 116.569 229.572 116.587 229.552 116.614C229.569 117.421 229.434 118.223 229.299 119.02C229.189 119.67 229.078 120.322 228.898 120.957C228.706 121.629 228.435 122.286 228.375 122.983C228.375 122.983 227.741 122.93 227.735 122.84C227.908 121.864 228.315 120.947 228.568 119.989C228.845 118.942 228.935 117.856 229.051 116.817C228.631 116.988 228.284 117.348 227.836 117.408C227.616 117.438 227.395 117.391 227.179 117.345C226.695 117.241 226.212 117.137 225.736 117.024C225.782 117.581 225.691 118.15 225.474 118.666C225.308 119.057 225.07 119.422 224.977 119.837C224.855 120.387 224.992 121.007 224.723 121.638C224.915 122.565 224.927 123.53 224.76 124.463C224.659 125.026 224.493 125.582 224.49 126.153C224.487 126.921 224.779 127.653 225.088 128.389C225.193 128.333 225.328 128.39 225.4 128.484C225.473 128.578 225.498 128.7 225.521 128.818C225.585 129.143 225.649 129.467 225.713 129.793C225.771 130.09 225.83 130.387 225.876 130.687C225.946 131.146 225.988 131.617 225.899 132.072C225.811 132.528 225.579 132.972 225.209 133.197C225.196 133.446 225.174 133.694 225.176 133.949C225.427 133.948 225.73 133.976 225.842 134.203C225.969 134.462 225.743 134.764 225.772 135.052C225.8 135.33 226.063 135.558 226.034 135.837C226.008 136.088 225.753 136.26 225.7 136.507C225.66 136.695 225.744 136.883 225.791 137.069C225.831 137.227 225.83 137.422 225.729 137.539C225.627 137.914 225.71 138.359 225.782 138.737C226.395 139.542 226.323 140.676 226.266 141.677C226.259 141.806 226.232 141.934 226.171 142.047C225.926 142.502 225.417 142.368 225.001 142.27C224.533 142.16 224.048 142.124 223.569 142.162C223.404 142.176 223.234 142.198 223.074 142.154C222.916 142.111 222.78 142.007 222.624 141.953C222.523 141.918 222.416 141.905 222.31 141.894C220.938 141.751 219.539 141.911 218.181 141.669C218.041 141.644 217.862 141.554 217.883 141.41C217.744 141.346 217.593 141.268 217.541 141.123C217.504 141.021 217.526 140.907 217.553 140.802C217.6 140.619 217.666 140.435 217.791 140.294C218.028 140.027 218.415 139.975 218.768 139.939C219.037 139.912 219.304 139.865 219.587 139.84C219.935 139.81 220.268 139.683 220.55 139.474C220.839 139.259 221.097 138.999 221.413 138.814C221.277 138.892 221.117 138.93 220.961 138.921C220.916 138.919 220.867 138.91 220.837 138.876C220.815 138.851 220.807 138.815 220.81 138.781C220.82 138.677 220.912 138.604 220.997 138.546C221.207 138.406 221.431 138.282 221.673 138.217C221.784 138.188 221.9 138.171 222.002 138.12C222.105 138.068 222.195 137.972 222.184 137.811C222.073 137.809 221.989 137.7 221.967 137.589C221.946 137.479 221.97 137.365 221.979 137.253C221.984 137.186 221.984 137.116 222.012 137.055C222.04 136.994 222.175 136.972 222.264 136.975C222.35 136.252 222.323 135.516 222.186 134.802C222.157 134.654 222.124 134.5 222.165 134.355C222.206 134.21 222.351 134.083 222.495 134.12C222.49 134.083 222.457 133.579 222.457 133.579C222.243 133.56 222.027 133.539 221.824 133.47C221.62 133.4 221.428 133.276 221.318 133.089C221.205 132.897 221.19 132.662 221.192 132.437C221.195 131.984 221.251 131.531 221.359 131.091C221.372 131.039 221.385 130.985 221.372 130.933C221.342 130.819 221.206 130.78 221.107 130.717C220.94 130.612 220.856 130.389 220.911 130.198C220.022 129.685 219.494 128.723 219.209 127.742C218.925 126.761 218.843 125.733 218.627 124.734C218.263 125.002 217.915 125.262 217.568 125.521C217.229 125.774 216.884 126.033 216.632 126.374C216.38 126.716 216.228 127.158 216.327 127.572C216.431 128.01 216.797 128.356 216.866 128.802C216.897 129.007 216.862 129.217 216.827 129.422C216.725 130.021 216.622 130.62 216.52 131.219C216.483 131.432 216.441 131.658 216.297 131.818C216.156 131.976 215.935 132.043 215.725 132.043C215.514 132.043 215.309 131.983 215.107 131.924C215.106 132.174 215.076 132.358 215.029 132.537C215.251 132.617 215.432 132.793 215.508 133.011C215.525 133.062 215.537 133.12 215.515 133.17C215.494 133.214 215.451 133.242 215.419 133.279C215.371 133.335 215.352 133.412 215.336 133.485C215.171 134.244 215.093 135.049 214.68 135.705C214.572 135.878 214.441 136.038 214.364 136.227C214.215 136.587 214.278 136.995 214.303 137.38C214.81 138.256 214.598 139.373 214.417 140.359C214.393 140.486 214.351 140.61 214.276 140.714C213.977 141.135 213.488 140.937 213.088 140.786C212.638 140.617 212.162 140.519 211.682 140.497C211.516 140.489 211.345 140.489 211.192 140.425C211.04 140.362 210.918 140.242 210.771 140.169C210.675 140.121 210.57 140.094 210.466 140.07C209.124 139.753 207.716 139.733 206.4 139.32C206.264 139.277 206.098 139.164 206.136 139.025C206.007 138.943 205.867 138.846 205.833 138.696C205.809 138.59 205.844 138.48 205.885 138.379ZM218.115 101.461C217.564 101.815 217.157 102.39 217.009 102.997C217.558 102.661 217.973 102.106 218.115 101.461ZM217.638 103.967C217.492 103.964 217.355 104.064 217.292 104.197C217.229 104.33 217.233 104.489 217.281 104.628C217.33 104.767 217.419 104.888 217.503 104.947C217.562 104.62 217.606 104.29 217.638 103.967ZM209.582 136.58C209.807 136.468 210.044 136.372 210.293 136.34C210.407 136.325 210.523 136.322 210.631 136.285C210.739 136.247 210.841 136.162 210.85 136.001C210.74 135.985 210.67 135.866 210.663 135.753C210.655 135.641 210.693 135.531 210.716 135.421C210.729 135.355 210.738 135.286 210.774 135.229C210.809 135.172 210.881 135.13 210.969 135.145C211.006 134.567 211.152 133.997 211.398 133.474C211.436 133.394 211.477 133.309 211.468 133.221C211.461 133.16 211.432 133.105 211.415 133.046C211.359 132.839 211.484 132.616 211.659 132.494C211.833 132.371 212.049 132.326 212.229 132.306C212.251 131.968 212.272 131.631 212.319 131.318C211.972 131.07 211.459 131.069 211.203 130.726C211.095 130.581 211.052 130.397 211.027 130.219C210.992 129.974 210.986 129.725 211.007 129.478C211.116 128.2 211.582 126.989 211.779 125.726C211.859 125.215 211.895 124.693 212.043 124.197C212.297 123.349 212.86 122.636 213.403 121.894C213.796 120.842 214.498 119.945 215.122 119.015C215.268 118.798 215.411 118.577 215.515 118.337C215.694 117.923 215.753 117.468 215.811 116.999C215.7 116.974 215.59 116.945 215.46 116.911C215.447 117.067 215.41 117.22 215.353 117.366C215.324 117.439 215.284 117.517 215.211 117.545C215.196 117.551 215.18 117.554 215.165 117.552C215.13 117.548 215.103 117.517 215.089 117.484C215.051 117.392 215.089 117.289 215.124 117.196C215.164 117.091 215.201 116.986 215.234 116.879C215.234 116.879 215.099 116.841 215.097 116.78C215.294 116.186 215.372 115.95 215.569 115.355C215.709 114.934 215.78 114.492 216.114 114.203C216.114 114.203 215.72 114.432 215.453 114.539C215.275 114.61 214.421 114.784 213.827 114.044C213.563 114.036 213.343 113.98 213.343 113.98C213.343 113.98 213.169 114.28 212.844 114.334C212.788 114.344 212.732 114.361 212.675 114.382L211.19 123.614L211.326 123.634C211.47 123.654 211.57 123.788 211.55 123.934C211.529 124.08 211.396 124.182 211.252 124.161L211.106 124.141L209.025 137.441C209.338 137.265 209.626 137.041 209.961 136.898C209.816 136.958 209.653 136.976 209.499 136.947C209.454 136.939 209.407 136.924 209.381 136.886C209.363 136.858 209.36 136.821 209.367 136.788C209.389 136.687 209.489 136.626 209.582 136.58Z"
+                      fill="black" />
+              </g>
+              <path
+                  d="M173.635 115.95C173.729 115.801 173.907 115.755 174.07 115.74C174.267 115.72 174.466 115.717 174.663 115.707C174.871 115.696 175.079 115.684 175.287 115.676C175.464 115.67 175.646 115.673 175.819 115.628C175.997 115.581 176.133 115.476 176.224 115.313C176.311 115.16 176.394 115.021 176.528 114.905C176.653 114.796 176.796 114.711 176.948 114.646C177.294 114.498 177.669 114.477 178.038 114.455C178.038 114.399 178.051 114.341 178.06 114.287C178.071 114.221 178.081 114.156 178.091 114.09C178.112 113.959 178.135 113.831 178.178 113.704C178.243 113.511 178.336 113.326 178.464 113.167C178.517 113.101 178.592 113.009 178.672 112.977C178.741 112.949 178.809 112.974 178.828 113.049C178.84 113.099 178.835 113.155 178.841 113.206C178.848 113.266 178.859 113.324 178.865 113.384C178.878 113.503 178.887 113.621 178.897 113.74C178.907 113.863 178.917 113.986 178.925 114.109C178.929 114.169 178.933 114.228 178.937 114.288C178.938 114.301 178.938 114.314 178.938 114.327C178.981 114.253 179.031 114.182 179.08 114.114C179.168 113.995 179.267 113.883 179.375 113.781C179.467 113.694 179.565 113.612 179.669 113.539C179.764 113.473 179.877 113.385 179.998 113.391C180.104 113.396 180.163 113.48 180.183 113.578C180.21 113.709 180.203 113.85 180.213 113.983C180.235 114.289 180.276 114.594 180.317 114.898C180.338 115.045 180.356 115.193 180.377 115.341C180.395 115.467 180.426 115.602 180.414 115.732C180.418 115.742 180.421 115.752 180.424 115.762C180.427 115.773 180.429 115.783 180.432 115.794C180.434 115.805 180.436 115.816 180.438 115.827C180.438 115.83 180.437 115.833 180.437 115.835C180.438 115.836 180.439 115.836 180.439 115.836C180.464 115.857 180.492 115.871 180.515 115.894C180.538 115.918 180.559 115.942 180.578 115.968C180.616 116.02 180.642 116.076 180.662 116.137C180.681 116.199 180.694 116.264 180.697 116.329C180.698 116.36 180.701 116.397 180.693 116.428C180.686 116.453 180.678 116.485 180.658 116.504C180.688 116.62 180.737 116.735 180.79 116.838C180.85 116.957 180.919 117.076 180.999 117.182C181.15 117.381 181.298 117.575 181.421 117.794C181.545 118.013 181.65 118.244 181.736 118.481C181.874 118.858 181.977 119.267 182.003 119.674C182.073 119.76 182.137 119.85 182.187 119.95C182.222 120.023 182.255 120.097 182.282 120.173C182.305 120.236 182.343 120.324 182.324 120.394C182.552 120.44 182.766 120.546 182.958 120.679C183.059 120.749 183.156 120.826 183.246 120.911C183.317 120.977 183.417 121.058 183.446 121.156C183.845 121.257 184.238 121.381 184.638 121.481C185.051 121.585 185.468 121.673 185.886 121.754C186.634 121.899 187.389 122.007 188.139 122.143C188.853 122.271 189.566 122.44 190.227 122.748C190.816 123.023 191.36 123.41 191.758 123.934C192.107 124.393 192.374 124.99 192.343 125.582C192.343 125.591 192.34 125.599 192.337 125.605C192.338 125.62 192.34 125.634 192.341 125.648C192.347 125.745 192.352 125.842 192.357 125.939C192.365 126.134 192.374 126.328 192.382 126.522C192.411 127.225 192.446 127.929 192.511 128.63C192.573 129.3 192.666 129.966 192.757 130.632C192.816 130.766 192.874 130.901 192.923 131.04C192.987 131.224 193.04 131.41 193.082 131.6C193.217 132.216 193.186 132.862 192.988 133.462C192.89 133.758 192.758 134.041 192.586 134.301C192.503 134.426 192.411 134.545 192.312 134.658C192.257 134.72 192.199 134.779 192.139 134.836C192.089 134.884 192.044 134.934 191.977 134.953C191.965 134.957 191.957 134.951 191.952 134.943C191.948 134.939 191.945 134.933 191.947 134.925C191.983 134.792 192.023 134.659 192.042 134.522C192.042 134.519 192.042 134.516 192.042 134.513C191.999 134.637 191.942 134.754 191.868 134.86C191.847 134.89 191.786 134.877 191.801 134.835C191.853 134.689 191.848 134.554 191.811 134.406C191.777 134.273 191.735 134.142 191.698 134.01C191.666 133.898 191.638 133.784 191.625 133.668C191.624 133.689 191.624 133.711 191.624 133.732C191.625 133.816 191.648 133.894 191.657 133.977C191.659 133.997 191.63 134.01 191.616 133.995C191.579 133.955 191.539 133.926 191.508 133.879C191.479 133.836 191.457 133.789 191.439 133.741C191.402 133.644 191.383 133.538 191.38 133.434C191.377 133.307 191.396 133.178 191.423 133.054C191.425 133.047 191.427 133.04 191.429 133.032C191.39 133.088 191.348 133.14 191.296 133.18C191.274 133.197 191.241 133.165 191.256 133.142C191.302 133.076 191.308 132.975 191.318 132.896C191.328 132.818 191.328 132.738 191.329 132.659C191.33 132.512 191.326 132.365 191.312 132.218C191.304 132.138 191.294 132.058 191.281 131.979C191.278 132.058 191.274 132.136 191.267 132.216C191.25 132.39 191.23 132.564 191.206 132.737C191.121 133.368 190.981 133.991 190.804 134.602C190.717 134.904 190.619 135.203 190.507 135.496C190.449 135.647 190.385 135.795 190.32 135.944C190.266 136.065 190.22 136.197 190.146 136.309C190.15 136.317 190.151 136.325 190.149 136.335C190.086 136.582 189.949 136.889 189.673 136.947C189.637 136.954 189.602 136.956 189.568 136.971C189.541 136.983 189.513 136.995 189.486 137.008C189.426 137.035 189.368 137.071 189.306 137.094C189.188 137.138 189.055 137.161 188.93 137.167C188.721 137.177 188.426 137.151 188.282 136.976C188.212 136.89 188.202 136.778 188.245 136.675C188.292 136.564 188.389 136.49 188.492 136.434C188.6 136.376 188.709 136.325 188.811 136.254C188.891 136.198 188.978 136.116 189.042 136.033C189.039 136.028 189.036 136.022 189.036 136.015C189.041 135.882 189.076 135.756 189.105 135.627C189.135 135.497 189.165 135.369 189.192 135.239C189.29 134.773 189.366 134.303 189.421 133.83C189.427 133.78 189.431 133.729 189.436 133.679C189.258 134.123 189.048 134.552 188.8 134.96C188.736 135.066 188.657 135.161 188.59 135.265C188.528 135.363 188.462 135.462 188.391 135.554C188.32 135.646 188.225 135.708 188.128 135.766C188.076 135.797 188.023 135.826 187.969 135.853C187.934 135.87 187.898 135.884 187.862 135.898C187.756 136.134 187.506 136.242 187.259 136.236C187.188 136.234 187.121 136.217 187.052 136.203C186.984 136.19 186.916 136.178 186.848 136.162C186.758 136.139 186.668 136.107 186.614 136.029C186.482 136.068 186.363 135.94 186.355 135.812C186.345 135.647 186.47 135.513 186.6 135.433C186.754 135.339 186.926 135.27 187.086 135.188C187.237 135.112 187.39 135.035 187.536 134.95C187.535 134.946 187.532 134.943 187.532 134.938C187.55 134.71 187.635 134.485 187.687 134.261C187.875 133.46 187.964 132.641 187.976 131.819C187.972 131.815 187.968 131.81 187.965 131.804C187.959 131.79 187.954 131.778 187.951 131.764C187.947 131.75 187.945 131.736 187.942 131.722C187.937 131.696 187.932 131.669 187.927 131.643L187.898 131.488C187.733 131.38 187.61 131.198 187.489 131.046C187.259 130.754 187.049 130.446 186.866 130.123C186.775 129.963 186.69 129.8 186.615 129.633C186.569 129.53 186.53 129.427 186.493 129.322C186.489 129.32 186.485 129.317 186.482 129.312C186.41 129.171 186.392 128.996 186.364 128.841C186.334 128.684 186.309 128.526 186.288 128.368C186.25 128.08 186.231 127.791 186.225 127.502C186.189 127.508 186.153 127.514 186.117 127.52C185.896 127.555 185.674 127.575 185.451 127.583C185.228 127.59 185.005 127.586 184.783 127.567C184.678 127.558 184.574 127.546 184.47 127.528C184.369 127.511 184.266 127.499 184.17 127.461C184.14 127.496 184.116 127.523 184.065 127.539C184.017 127.554 183.964 127.557 183.914 127.55C183.845 127.54 183.781 127.506 183.734 127.456C183.735 127.487 183.747 127.518 183.767 127.543C183.774 127.544 183.781 127.545 183.788 127.547C183.825 127.557 183.835 127.62 183.791 127.63C183.653 127.66 183.493 127.614 183.362 127.567C183.278 127.537 183.202 127.496 183.129 127.448C183.147 127.473 183.164 127.499 183.185 127.522C183.192 127.529 183.194 127.538 183.193 127.546C183.225 127.548 183.256 127.551 183.285 127.562C183.323 127.575 183.332 127.631 183.288 127.646C183.215 127.67 183.129 127.658 183.054 127.648C182.985 127.638 182.917 127.619 182.855 127.586C182.843 127.579 182.831 127.571 182.819 127.563C182.83 127.585 182.843 127.605 182.856 127.626C182.873 127.63 182.89 127.632 182.906 127.638C182.936 127.648 182.947 127.699 182.909 127.708C182.787 127.735 182.663 127.736 182.54 127.757C182.5 127.764 182.461 127.775 182.421 127.785C182.4 127.913 182.352 128.039 182.297 128.153C182.224 128.304 182.13 128.443 182.02 128.57C182.003 128.59 181.979 128.594 181.958 128.588C181.923 128.62 181.888 128.651 181.853 128.683C181.844 128.759 181.824 128.832 181.806 128.906C181.783 128.999 181.759 129.091 181.732 129.183C181.681 129.358 181.624 129.532 181.566 129.706C181.359 130.327 181.127 130.941 180.871 131.543C180.613 132.147 180.33 132.742 179.998 133.306C179.99 133.319 179.979 133.32 179.969 133.318C179.934 133.416 179.881 133.509 179.829 133.596C179.755 133.72 179.666 133.839 179.56 133.937C179.455 134.034 179.335 134.104 179.2 134.15C179.095 134.186 178.987 134.219 178.894 134.279C178.868 134.349 178.816 134.408 178.752 134.447C178.653 134.508 178.532 134.507 178.421 134.495C178.301 134.481 178.181 134.457 178.061 134.441C177.942 134.425 177.822 134.416 177.703 134.399C177.609 134.387 177.517 134.356 177.461 134.273C177.414 134.204 177.407 134.116 177.42 134.034C177.473 133.694 177.847 133.437 178.176 133.466C178.204 133.393 178.255 133.336 178.302 133.275C178.35 133.214 178.395 133.15 178.438 133.084C178.482 133.016 178.523 132.947 178.562 132.875C178.595 132.814 178.635 132.757 178.669 132.696C178.66 132.687 178.654 132.677 178.656 132.663C178.715 132.263 178.843 131.872 178.943 131.479C179.121 130.779 179.291 130.076 179.44 129.368C179.513 129.021 179.583 128.673 179.648 128.325C179.678 128.165 179.706 128.004 179.717 127.842C179.721 127.786 179.726 127.731 179.729 127.676C179.68 127.677 179.626 127.664 179.589 127.657C179.507 127.641 179.424 127.617 179.346 127.586C179.308 127.572 179.272 127.555 179.236 127.536C179.228 127.545 179.221 127.554 179.214 127.564C179.185 127.606 179.152 127.644 179.12 127.683C179.087 127.722 179.064 127.773 179.042 127.819C179.026 127.85 178.978 127.845 178.968 127.812C178.967 127.807 178.965 127.803 178.964 127.798C178.953 127.838 178.942 127.877 178.928 127.915C178.907 127.97 178.883 128.057 178.829 128.089C178.8 128.108 178.773 128.1 178.754 128.081C178.738 128.151 178.719 128.22 178.7 128.289C178.656 128.441 178.612 128.594 178.565 128.745C178.401 129.278 178.218 129.804 178.016 130.323C177.915 130.584 177.808 130.842 177.695 131.098C177.639 131.224 177.583 131.35 177.523 131.474C177.478 131.566 177.432 131.665 177.374 131.752C177.368 131.774 177.361 131.796 177.354 131.814C177.334 131.87 177.307 131.926 177.273 131.975C177.218 132.054 177.154 132.126 177.086 132.195C177.092 132.204 177.095 132.214 177.089 132.227C176.986 132.442 176.808 132.629 176.652 132.807C176.494 132.987 176.332 133.177 176.149 133.332C176.152 133.336 176.153 133.341 176.152 133.345C176.125 133.427 176.038 133.499 175.968 133.543C175.887 133.593 175.793 133.619 175.7 133.632C175.49 133.663 175.275 133.618 175.075 133.556C174.9 133.502 174.703 133.425 174.645 133.231C174.592 133.056 174.706 132.917 174.857 132.848C174.94 132.81 175.03 132.788 175.119 132.766C175.209 132.743 175.299 132.722 175.39 132.708L175.39 132.708C175.386 132.694 175.386 132.677 175.389 132.662C175.397 132.635 175.414 132.608 175.427 132.583C175.452 132.536 175.478 132.489 175.508 132.445C175.564 132.363 175.633 132.293 175.705 132.226C175.719 132.155 175.749 132.084 175.778 132.02C175.815 131.935 175.85 131.85 175.885 131.765C175.949 131.609 176.009 131.452 176.065 131.294C176.06 131.287 176.057 131.279 176.058 131.269C176.092 130.908 176.138 130.551 176.193 130.193C176.292 129.556 176.386 128.919 176.49 128.283C176.543 127.966 176.594 127.648 176.648 127.331C176.674 127.174 176.701 127.018 176.728 126.862C176.752 126.724 176.774 126.582 176.81 126.446C176.766 126.208 176.736 125.967 176.698 125.727C176.658 125.483 176.612 125.239 176.58 124.994C176.52 124.538 176.499 124.017 176.719 123.598C176.718 123.597 176.717 123.597 176.717 123.596C176.718 123.597 176.718 123.597 176.719 123.597C176.719 123.597 176.719 123.597 176.719 123.597C176.695 123.58 176.686 123.547 176.679 123.519C176.673 123.491 176.668 123.461 176.667 123.432C176.666 123.38 176.674 123.326 176.698 123.279C176.68 123.251 176.675 123.221 176.669 123.187C176.661 123.148 176.655 123.11 176.649 123.071C176.637 122.996 176.632 122.921 176.629 122.845C176.627 122.783 176.626 122.722 176.626 122.661C176.62 122.679 176.613 122.696 176.606 122.714C176.598 122.733 176.572 122.72 176.575 122.702C176.59 122.619 176.596 122.532 176.599 122.447C176.538 122.381 176.508 122.279 176.48 122.198C176.444 122.092 176.417 121.983 176.4 121.872C176.369 121.666 176.365 121.429 176.431 121.226C176.379 121.149 176.365 121.054 176.353 120.963C176.34 120.87 176.336 120.776 176.339 120.682C176.342 120.591 176.356 120.502 176.371 120.412C176.38 120.358 176.392 120.304 176.403 120.249C176.383 120.277 176.364 120.306 176.348 120.338C176.336 120.363 176.325 120.39 176.315 120.417C176.313 120.45 176.311 120.483 176.312 120.516C176.312 120.56 176.325 120.603 176.323 120.647C176.323 120.662 176.307 120.669 176.295 120.66C176.234 120.613 176.216 120.508 176.216 120.434C176.216 120.336 176.242 120.237 176.271 120.144C176.321 119.984 176.389 119.811 176.364 119.642C176.362 119.641 176.36 119.641 176.359 119.639C176.328 119.606 176.316 119.553 176.305 119.51C176.293 119.464 176.282 119.417 176.267 119.371C176.235 119.28 176.199 119.199 176.123 119.137C176.034 119.067 175.92 119.044 175.822 118.994C175.751 118.959 175.693 118.908 175.652 118.842C175.646 118.845 175.642 118.849 175.634 118.849C175.432 118.856 175.224 118.806 175.026 118.776C174.824 118.746 174.622 118.717 174.42 118.686C174.257 118.662 174.059 118.64 173.948 118.502C173.882 118.42 173.831 118.327 173.824 118.226C173.822 118.224 173.819 118.224 173.816 118.222C173.759 118.17 173.773 118.073 173.821 118.02C173.846 117.993 173.88 117.975 173.916 117.971C173.905 117.948 173.901 117.92 173.904 117.892C173.91 117.834 173.943 117.786 173.99 117.752C174.086 117.681 174.224 117.659 174.34 117.646C174.54 117.623 174.746 117.626 174.939 117.568C174.885 117.551 174.831 117.534 174.777 117.517C174.675 117.485 174.573 117.453 174.471 117.42C174.294 117.364 174.109 117.311 173.958 117.196C173.702 117.001 173.656 116.635 173.703 116.33C173.696 116.331 173.689 116.33 173.681 116.326C173.546 116.253 173.56 116.067 173.635 115.95Z"
+                  fill="black" />
+              <rect x="-31"
+                  y="746"
+                  width="475"
+                  height="26"
+                  fill="black" />
+              <path
+                  d="M240.853 683.269C237.756 680.409 234.954 677.245 232.491 673.823C234.513 674.612 236.605 675.211 238.739 675.611C240.649 675.955 242.585 676.14 244.527 676.165C244.579 676.165 244.63 676.149 244.671 676.117C244.713 676.086 244.743 676.042 244.757 675.991C244.771 675.941 244.767 675.888 244.747 675.839C244.727 675.791 244.692 675.751 244.646 675.725C241.168 673.727 238.072 671.128 235.501 668.048C233.086 665.158 231.164 661.89 229.814 658.374C232.536 659.899 235.577 660.766 238.695 660.907C238.747 660.91 238.798 660.895 238.841 660.866C238.884 660.837 238.916 660.794 238.933 660.745C238.949 660.696 238.949 660.642 238.932 660.593C238.915 660.544 238.883 660.501 238.839 660.472C235.961 658.463 233.44 655.986 231.379 653.144C229.448 650.504 227.94 647.58 226.911 644.475C228.831 645.716 230.99 646.539 233.249 646.891C233.304 646.9 233.361 646.889 233.41 646.86C233.458 646.831 233.495 646.786 233.513 646.733C233.531 646.679 233.53 646.621 233.51 646.569C233.49 646.516 233.452 646.472 233.403 646.445C230.552 644.827 228.164 642.504 226.469 639.699C225.487 638.041 224.807 636.221 224.463 634.325C224.453 634.271 224.425 634.222 224.383 634.187C224.341 634.152 224.288 634.133 224.234 634.133C224.179 634.133 224.126 634.152 224.084 634.187C224.042 634.222 224.014 634.271 224.004 634.325C223.661 636.221 222.982 638.041 221.998 639.699C220.303 642.504 217.915 644.827 215.064 646.443C215.014 646.47 214.975 646.514 214.954 646.567C214.934 646.62 214.932 646.679 214.951 646.733C214.97 646.787 215.007 646.832 215.056 646.861C215.105 646.89 215.162 646.901 215.219 646.891C217.477 646.539 219.637 645.716 221.556 644.475C220.527 647.58 219.019 650.504 217.089 653.144C215.028 655.986 212.506 658.463 209.628 660.472C209.584 660.501 209.552 660.544 209.535 660.593C209.518 660.642 209.518 660.696 209.534 660.745C209.551 660.794 209.583 660.837 209.626 660.866C209.669 660.895 209.721 660.91 209.773 660.907C212.89 660.766 215.931 659.899 218.653 658.374C217.303 661.89 215.381 665.158 212.966 668.048C210.397 671.128 207.301 673.727 203.823 675.725C203.778 675.751 203.742 675.791 203.722 675.839C203.702 675.888 203.699 675.941 203.713 675.991C203.726 676.042 203.757 676.086 203.798 676.117C203.84 676.149 203.891 676.165 203.943 676.165C205.884 676.14 207.819 675.955 209.729 675.611C211.862 675.211 213.954 674.612 215.976 673.823C213.514 677.245 210.712 680.41 207.614 683.269C204.199 686.441 200.444 689.226 196.418 691.574C196.372 691.6 196.335 691.641 196.315 691.69C196.295 691.738 196.291 691.793 196.306 691.844C196.32 691.895 196.351 691.94 196.394 691.971C196.438 692.002 196.49 692.017 196.543 692.015C200.965 691.784 205.369 691.278 209.729 690.5C213.729 689.78 217.679 688.806 221.556 687.586V697.55C221.556 697.644 221.594 697.735 221.661 697.802C221.727 697.868 221.818 697.906 221.912 697.906H226.555C226.649 697.906 226.74 697.868 226.807 697.802C226.873 697.735 226.911 697.644 226.911 697.55V687.586C230.788 688.806 234.738 689.78 238.739 690.5C243.098 691.278 247.502 691.784 251.924 692.015C251.977 692.017 252.03 692.002 252.073 691.971C252.116 691.94 252.147 691.895 252.161 691.844C252.176 691.793 252.173 691.738 252.152 691.69C252.132 691.641 252.095 691.6 252.049 691.574C248.023 689.226 244.269 686.441 240.853 683.269Z"
+                  fill="black" />
+              <path
+                  d="M311.693 698.731C310.751 697.862 309.899 696.899 309.151 695.859C309.765 696.099 310.401 696.281 311.05 696.403C311.631 696.507 312.22 696.564 312.81 696.571C312.826 696.571 312.841 696.566 312.854 696.557C312.867 696.547 312.876 696.534 312.88 696.518C312.884 696.503 312.883 696.487 312.877 696.472C312.871 696.457 312.86 696.445 312.846 696.437C311.789 695.83 310.847 695.039 310.066 694.103C309.331 693.225 308.747 692.231 308.336 691.162C309.164 691.625 310.089 691.889 311.037 691.932C311.053 691.933 311.068 691.928 311.081 691.919C311.094 691.91 311.104 691.898 311.109 691.883C311.114 691.868 311.114 691.851 311.109 691.836C311.104 691.821 311.094 691.808 311.081 691.8C310.206 691.189 309.439 690.436 308.812 689.572C308.225 688.769 307.767 687.88 307.454 686.936C308.038 687.313 308.694 687.563 309.381 687.67C309.398 687.673 309.415 687.67 309.43 687.661C309.444 687.652 309.456 687.638 309.461 687.622C309.467 687.606 309.467 687.588 309.46 687.572C309.454 687.556 309.443 687.543 309.428 687.534C308.561 687.043 307.835 686.336 307.32 685.483C307.021 684.979 306.814 684.426 306.709 683.849C306.707 683.833 306.698 683.818 306.685 683.808C306.673 683.797 306.656 683.791 306.64 683.791C306.623 683.791 306.607 683.797 306.594 683.808C306.582 683.818 306.573 683.833 306.57 683.849C306.466 684.426 306.259 684.979 305.96 685.483C305.445 686.336 304.719 687.043 303.852 687.534C303.837 687.542 303.825 687.556 303.818 687.572C303.812 687.588 303.812 687.606 303.817 687.622C303.823 687.639 303.834 687.652 303.849 687.661C303.864 687.67 303.882 687.673 303.899 687.67C304.585 687.563 305.242 687.313 305.826 686.936C305.513 687.88 305.054 688.769 304.467 689.572C303.841 690.436 303.074 691.189 302.199 691.8C302.186 691.808 302.176 691.821 302.171 691.836C302.165 691.851 302.165 691.868 302.17 691.883C302.175 691.898 302.185 691.91 302.198 691.919C302.211 691.928 302.227 691.933 302.243 691.932C303.191 691.889 304.115 691.625 304.943 691.162C304.532 692.231 303.948 693.225 303.214 694.103C302.433 695.04 301.491 695.83 300.434 696.437C300.42 696.445 300.409 696.457 300.403 696.472C300.397 696.487 300.396 696.503 300.4 696.518C300.405 696.534 300.414 696.547 300.426 696.557C300.439 696.566 300.454 696.571 300.47 696.571C301.06 696.563 301.649 696.507 302.229 696.403C302.878 696.281 303.514 696.099 304.129 695.859C303.38 696.9 302.529 697.862 301.587 698.731C300.548 699.695 299.406 700.542 298.182 701.256C298.168 701.264 298.157 701.276 298.151 701.291C298.145 701.306 298.144 701.323 298.148 701.338C298.153 701.354 298.162 701.367 298.175 701.377C298.188 701.386 298.204 701.391 298.22 701.39C299.565 701.32 300.904 701.166 302.229 700.93C303.446 700.711 304.647 700.415 305.826 700.044V703.073C305.826 703.102 305.837 703.129 305.857 703.15C305.878 703.17 305.905 703.182 305.934 703.182H307.346C307.374 703.182 307.402 703.17 307.422 703.15C307.442 703.129 307.454 703.102 307.454 703.073V700.044C308.633 700.415 309.834 700.711 311.05 700.93C312.376 701.166 313.715 701.32 315.059 701.39C315.075 701.391 315.091 701.386 315.104 701.377C315.117 701.367 315.127 701.354 315.131 701.338C315.136 701.323 315.135 701.306 315.129 701.291C315.122 701.276 315.111 701.264 315.097 701.256C313.873 700.542 312.732 699.695 311.693 698.731Z"
+                  fill="black" />
+              <path
+                  d="M409.254 703.021C407.496 701.398 405.906 699.602 404.508 697.66C405.656 698.108 406.843 698.447 408.054 698.675C409.139 698.87 410.238 698.975 411.339 698.989C411.369 698.989 411.398 698.98 411.422 698.962C411.445 698.944 411.462 698.919 411.47 698.89C411.478 698.862 411.476 698.832 411.465 698.804C411.453 698.777 411.433 698.754 411.407 698.739C409.433 697.605 407.676 696.13 406.217 694.382C404.846 692.742 403.756 690.887 402.989 688.892C404.534 689.757 406.26 690.249 408.029 690.329C408.059 690.331 408.088 690.322 408.113 690.306C408.137 690.289 408.155 690.265 408.165 690.237C408.174 690.209 408.174 690.179 408.164 690.151C408.155 690.123 408.136 690.099 408.112 690.082C406.478 688.942 405.047 687.536 403.877 685.923C402.781 684.425 401.926 682.765 401.341 681.003C402.431 681.707 403.656 682.174 404.938 682.374C404.97 682.379 405.002 682.373 405.03 682.356C405.057 682.34 405.078 682.314 405.088 682.284C405.099 682.254 405.098 682.221 405.087 682.191C405.076 682.161 405.054 682.136 405.026 682.121C403.408 681.203 402.053 679.884 401.091 678.292C400.533 677.351 400.147 676.318 399.952 675.242C399.946 675.211 399.93 675.184 399.907 675.164C399.883 675.144 399.853 675.133 399.822 675.133C399.791 675.133 399.761 675.144 399.737 675.164C399.713 675.184 399.697 675.211 399.692 675.242C399.497 676.318 399.111 677.351 398.553 678.292C397.591 679.884 396.236 681.202 394.618 682.12C394.589 682.135 394.567 682.16 394.555 682.19C394.543 682.22 394.543 682.254 394.553 682.284C394.564 682.315 394.585 682.341 394.613 682.357C394.641 682.374 394.673 682.38 394.705 682.374C395.987 682.174 397.213 681.707 398.302 681.003C397.718 682.765 396.862 684.425 395.767 685.923C394.597 687.536 393.166 688.942 391.532 690.082C391.507 690.099 391.489 690.123 391.479 690.151C391.47 690.179 391.47 690.209 391.479 690.237C391.488 690.265 391.507 690.289 391.531 690.306C391.555 690.322 391.585 690.331 391.614 690.329C393.383 690.249 395.109 689.757 396.655 688.892C395.888 690.887 394.797 692.742 393.427 694.382C391.968 696.13 390.211 697.605 388.237 698.739C388.212 698.754 388.192 698.777 388.18 698.804C388.169 698.832 388.167 698.862 388.175 698.89C388.183 698.919 388.2 698.944 388.223 698.962C388.247 698.98 388.276 698.989 388.306 698.989C389.407 698.975 390.505 698.87 391.589 698.675C392.8 698.447 393.987 698.108 395.135 697.66C393.738 699.602 392.148 701.398 390.389 703.021C388.451 704.821 386.32 706.402 384.035 707.735C384.008 707.749 383.988 707.772 383.976 707.8C383.965 707.828 383.963 707.859 383.971 707.888C383.979 707.917 383.997 707.942 384.021 707.96C384.046 707.977 384.075 707.986 384.105 707.985C386.615 707.854 389.115 707.567 391.589 707.125C393.86 706.716 396.102 706.164 398.302 705.471V711.126C398.302 711.18 398.324 711.231 398.361 711.269C398.399 711.307 398.451 711.328 398.504 711.328H401.139C401.193 711.328 401.244 711.307 401.282 711.269C401.32 711.231 401.341 711.18 401.341 711.126V705.471C403.542 706.164 405.784 706.716 408.054 707.125C410.529 707.567 413.028 707.854 415.538 707.985C415.568 707.986 415.598 707.977 415.622 707.96C415.647 707.942 415.665 707.917 415.673 707.888C415.681 707.859 415.679 707.828 415.668 707.8C415.656 707.772 415.635 707.749 415.609 707.735C413.324 706.402 411.193 704.821 409.254 703.021Z"
+                  fill="black" />
+              <path
+                  d="M88.8814 707.914C85.7839 705.054 82.9824 701.889 80.5194 698.468C82.5418 699.257 84.6333 699.855 86.7669 700.256C88.6776 700.6 90.6136 700.785 92.5548 700.809C92.607 700.81 92.6579 700.793 92.6996 700.762C92.7413 700.731 92.7714 700.686 92.7851 700.636C92.7989 700.586 92.7955 700.532 92.7755 700.484C92.7555 700.436 92.7201 700.396 92.6748 700.37C89.1967 698.371 86.1002 695.772 83.5292 692.693C81.1143 689.803 79.1928 686.534 77.8421 683.019C80.5646 684.544 83.6058 685.411 86.7229 685.551C86.7749 685.554 86.8264 685.54 86.8694 685.511C86.9124 685.481 86.9447 685.439 86.9611 685.389C86.9776 685.34 86.9774 685.287 86.9605 685.237C86.9436 685.188 86.9111 685.146 86.8678 685.117C83.9897 683.107 81.468 680.63 79.4069 677.789C77.4761 675.149 75.9687 672.224 74.9392 669.12C76.8589 670.361 79.0182 671.184 81.2769 671.536C81.3326 671.544 81.3896 671.533 81.4379 671.504C81.4863 671.476 81.5229 671.43 81.5413 671.377C81.5597 671.324 81.5588 671.266 81.5387 671.213C81.5185 671.161 81.4805 671.117 81.4312 671.089C78.58 669.472 76.1924 667.149 74.4975 664.343C73.515 662.685 72.8355 660.866 72.491 658.969C72.4815 658.916 72.4533 658.867 72.4114 658.832C72.3695 658.797 72.3166 658.777 72.2619 658.777C72.2072 658.777 72.1543 658.797 72.1124 658.832C72.0705 658.867 72.0423 658.916 72.0328 658.969C71.6894 660.866 71.0099 662.686 70.0263 664.343C68.3313 667.148 65.9437 669.471 63.0926 671.088C63.0424 671.115 63.0035 671.159 62.9827 671.212C62.962 671.265 62.9608 671.324 62.9793 671.377C62.9979 671.431 63.035 671.477 63.084 671.506C63.1331 671.535 63.1908 671.545 63.2469 671.536C65.5056 671.184 67.6649 670.361 69.5846 669.12C68.5551 672.224 67.0478 675.149 65.1169 677.789C63.0563 680.631 60.5345 683.108 57.656 685.117C57.6127 685.146 57.5802 685.188 57.5633 685.237C57.5464 685.287 57.5462 685.34 57.5627 685.389C57.5791 685.439 57.6114 685.481 57.6544 685.511C57.6974 685.54 57.7489 685.554 57.8009 685.551C60.918 685.411 63.9592 684.544 66.6817 683.019C65.331 686.534 63.4095 689.803 60.9946 692.693C58.4249 695.772 55.3292 698.372 51.8514 700.37C51.8061 700.396 51.7707 700.436 51.7507 700.484C51.7307 700.532 51.7273 700.586 51.741 700.636C51.7548 700.686 51.7849 700.731 51.8266 700.762C51.8682 700.793 51.9192 700.81 51.9713 700.809C53.9118 700.785 55.847 700.599 57.7569 700.256C59.8905 699.855 61.9821 699.257 64.0044 698.468C61.5422 701.89 58.7406 705.055 55.6424 707.914C52.2269 711.085 48.4722 713.87 44.4464 716.219C44.4 716.244 44.3636 716.285 44.3433 716.334C44.3229 716.383 44.3196 716.437 44.3341 716.488C44.3485 716.539 44.3798 716.584 44.4228 716.615C44.4658 716.646 44.5181 716.662 44.571 716.659C48.9935 716.429 53.3974 715.923 57.7569 715.144C61.7571 714.424 65.7076 713.451 69.5846 712.231V722.194C69.5846 722.289 69.6221 722.379 69.6889 722.446C69.7557 722.513 69.8463 722.551 69.9408 722.551H74.583C74.6775 722.551 74.7681 722.513 74.8349 722.446C74.9017 722.379 74.9392 722.289 74.9392 722.194V712.231C78.8162 713.451 82.7667 714.424 86.7669 715.144C91.1264 715.923 95.5303 716.429 99.9528 716.659C100.006 716.662 100.058 716.646 100.101 716.615C100.144 716.584 100.175 716.539 100.19 716.488C100.204 716.437 100.201 716.383 100.181 716.334C100.16 716.285 100.124 716.244 100.077 716.219C96.0516 713.87 92.297 711.085 88.8814 707.914Z"
+                  fill="black" />
+              <path
+                  d="M144.75 703.389C143.201 701.959 141.8 700.376 140.569 698.666C141.58 699.06 142.626 699.359 143.693 699.56C144.648 699.731 145.616 699.824 146.587 699.836C146.613 699.837 146.638 699.828 146.659 699.813C146.68 699.797 146.695 699.775 146.702 699.75C146.709 699.724 146.707 699.698 146.697 699.674C146.687 699.65 146.669 699.629 146.646 699.617C144.907 698.617 143.359 697.318 142.074 695.778C140.866 694.333 139.905 692.699 139.23 690.941C140.591 691.703 142.112 692.137 143.671 692.207C143.697 692.209 143.722 692.202 143.744 692.187C143.765 692.172 143.781 692.151 143.79 692.126C143.798 692.102 143.798 692.075 143.789 692.05C143.781 692.026 143.765 692.005 143.743 691.99C142.304 690.985 141.043 689.747 140.013 688.326C139.047 687.006 138.293 685.544 137.779 683.991C138.739 684.612 139.818 685.024 140.948 685.199C140.975 685.204 141.004 685.198 141.028 685.184C141.052 685.169 141.071 685.147 141.08 685.12C141.089 685.094 141.088 685.065 141.078 685.038C141.068 685.012 141.049 684.99 141.025 684.976C139.599 684.168 138.405 683.006 137.558 681.603C137.067 680.774 136.727 679.864 136.555 678.916C136.55 678.889 136.536 678.865 136.515 678.848C136.494 678.83 136.467 678.82 136.44 678.82C136.413 678.82 136.386 678.83 136.365 678.848C136.344 678.865 136.33 678.889 136.325 678.916C136.154 679.865 135.814 680.775 135.322 681.603C134.475 683.006 133.281 684.167 131.855 684.976C131.83 684.989 131.811 685.011 131.8 685.038C131.79 685.064 131.789 685.093 131.799 685.12C131.808 685.147 131.827 685.17 131.851 685.185C131.876 685.199 131.904 685.204 131.933 685.199C133.062 685.024 134.142 684.612 135.101 683.991C134.587 685.544 133.833 687.006 132.868 688.326C131.837 689.747 130.576 690.985 129.137 691.99C129.115 692.005 129.099 692.026 129.091 692.05C129.082 692.075 129.082 692.102 129.09 692.126C129.099 692.151 129.115 692.172 129.136 692.187C129.158 692.202 129.184 692.209 129.21 692.207C130.768 692.137 132.289 691.703 133.65 690.941C132.975 692.699 132.014 694.333 130.806 695.778C129.522 697.318 127.974 698.617 126.235 699.617C126.212 699.629 126.194 699.65 126.184 699.674C126.174 699.698 126.173 699.724 126.18 699.75C126.186 699.775 126.202 699.797 126.222 699.813C126.243 699.828 126.269 699.837 126.295 699.836C127.265 699.824 128.233 699.731 129.188 699.56C130.254 699.359 131.3 699.06 132.311 698.666C131.08 700.377 129.679 701.959 128.13 703.389C126.423 704.974 124.545 706.367 122.532 707.541C122.509 707.554 122.491 707.574 122.481 707.599C122.471 707.623 122.469 707.65 122.476 707.676C122.483 707.701 122.499 707.724 122.52 707.739C122.542 707.755 122.568 707.762 122.595 707.761C124.806 707.646 127.008 707.393 129.188 707.004C131.188 706.644 133.163 706.157 135.101 705.547V710.529C135.101 710.576 135.12 710.621 135.154 710.655C135.187 710.688 135.232 710.707 135.279 710.707H137.601C137.648 710.707 137.693 710.688 137.727 710.655C137.76 710.621 137.779 710.576 137.779 710.529V705.547C139.717 706.157 141.692 706.644 143.693 707.004C145.872 707.393 148.074 707.646 150.285 707.761C150.312 707.762 150.338 707.755 150.36 707.739C150.381 707.724 150.397 707.701 150.404 707.676C150.411 707.65 150.41 707.623 150.399 707.599C150.389 707.574 150.371 707.554 150.348 707.541C148.335 706.367 146.458 704.974 144.75 703.389Z"
+                  fill="black" />
+              <path
+                  d="M166.907 698.731C165.965 697.862 165.113 696.899 164.364 695.859C164.979 696.099 165.615 696.281 166.264 696.403C166.845 696.507 167.434 696.564 168.024 696.571C168.04 696.571 168.055 696.566 168.068 696.557C168.08 696.547 168.09 696.534 168.094 696.518C168.098 696.503 168.097 696.487 168.091 696.472C168.085 696.457 168.074 696.445 168.06 696.437C167.003 695.83 166.061 695.039 165.28 694.103C164.545 693.225 163.961 692.231 163.55 691.162C164.378 691.625 165.303 691.889 166.251 691.932C166.266 691.933 166.282 691.928 166.295 691.919C166.308 691.91 166.318 691.898 166.323 691.883C166.328 691.868 166.328 691.851 166.323 691.836C166.318 691.821 166.308 691.808 166.295 691.8C165.42 691.189 164.653 690.436 164.026 689.572C163.439 688.769 162.981 687.88 162.668 686.936C163.251 687.313 163.908 687.563 164.595 687.67C164.612 687.673 164.629 687.67 164.644 687.661C164.658 687.652 164.669 687.638 164.675 687.622C164.681 687.606 164.68 687.588 164.674 687.572C164.668 687.556 164.657 687.543 164.642 687.534C163.775 687.043 163.049 686.336 162.533 685.483C162.235 684.979 162.028 684.426 161.923 683.849C161.92 683.833 161.912 683.818 161.899 683.808C161.886 683.797 161.87 683.791 161.854 683.791C161.837 683.791 161.821 683.797 161.808 683.808C161.795 683.818 161.787 683.833 161.784 683.849C161.68 684.426 161.473 684.979 161.174 685.483C160.659 686.336 159.933 687.043 159.066 687.534C159.05 687.542 159.039 687.556 159.032 687.572C159.026 687.588 159.026 687.606 159.031 687.622C159.037 687.639 159.048 687.652 159.063 687.661C159.078 687.67 159.096 687.673 159.113 687.67C159.799 687.563 160.456 687.313 161.04 686.936C160.727 687.88 160.268 688.769 159.681 689.572C159.055 690.436 158.288 691.189 157.413 691.8C157.4 691.808 157.39 691.821 157.384 691.836C157.379 691.851 157.379 691.868 157.384 691.883C157.389 691.898 157.399 691.91 157.412 691.919C157.425 691.928 157.441 691.933 157.457 691.932C158.404 691.889 159.329 691.625 160.157 691.162C159.746 692.231 159.162 693.225 158.428 694.103C157.646 695.04 156.705 695.83 155.648 696.437C155.634 696.445 155.623 696.457 155.617 696.472C155.611 696.487 155.61 696.503 155.614 696.518C155.618 696.534 155.628 696.547 155.64 696.557C155.653 696.566 155.668 696.571 155.684 696.571C156.274 696.563 156.863 696.507 157.443 696.403C158.092 696.281 158.728 696.099 159.343 695.859C158.594 696.9 157.742 697.862 156.8 698.731C155.762 699.695 154.62 700.542 153.396 701.256C153.382 701.264 153.371 701.276 153.365 701.291C153.359 701.306 153.358 701.323 153.362 701.338C153.366 701.354 153.376 701.367 153.389 701.377C153.402 701.386 153.418 701.391 153.434 701.39C154.779 701.32 156.118 701.166 157.443 700.93C158.66 700.711 159.861 700.415 161.04 700.044V703.073C161.04 703.102 161.051 703.129 161.071 703.15C161.092 703.17 161.119 703.182 161.148 703.182H162.559C162.588 703.182 162.616 703.17 162.636 703.15C162.656 703.129 162.668 703.102 162.668 703.073V700.044C163.847 700.415 165.048 700.711 166.264 700.93C167.589 701.166 168.928 701.32 170.273 701.39C170.289 701.391 170.305 701.386 170.318 701.377C170.331 701.367 170.341 701.354 170.345 701.338C170.35 701.323 170.349 701.306 170.342 701.291C170.336 701.276 170.325 701.264 170.311 701.256C169.087 700.542 167.945 699.695 166.907 698.731Z"
+                  fill="black" />
+              <g clip-path="url(#clip2_137_5968)">
+                  <path
+                      d="M-110 690.15L-94.5975 696.979C-79.195 704.012 -18.6118 719.004 -16.5581 719.928C-14.5044 720.853 44.0251 727.373 74.8301 721.725C105.635 716.078 136.44 712.227 167.245 701.086C198.05 690.15 228.855 698.365 259.66 701.086C290.465 704.012 321.27 700.932 352.075 706.58C382.88 712.227 413.685 709.147 444.49 712.073C475.295 714.794 506.1 723.009 536.905 717.515C567.71 712.227 598.515 692.717 629.32 694.258C660.125 695.798 690.931 717.361 721.736 717.515C752.541 717.361 783.346 695.798 814.151 696.979C844.956 698.365 875.761 723.009 906.566 724.395C937.371 725.576 968.176 704.012 998.981 696.979C1029.79 690.15 1060.59 698.365 1091.4 709.301C1122.2 720.442 1153.01 733.791 1183.81 733.945C1214.62 733.791 1245.42 720.442 1276.23 717.515C1307.03 714.794 1337.84 723.009 1368.64 727.116C1399.45 731.224 1430.25 731.224 1461.06 724.395C1491.86 717.361 1522.67 704.012 1553.47 695.644C1584.28 687.583 1615.08 684.503 1645.89 683.322C1676.69 681.936 1707.5 681.936 1738.3 681.936C1769.11 681.936 1799.91 681.936 1830.72 684.657C1861.52 687.583 1892.33 692.717 1923.13 692.871C1953.94 692.717 1984.74 687.583 2015.55 690.15C2046.35 692.717 2077.16 704.012 2092.56 709.301L2107.96 714.794V755.868H2092.56C2077.16 755.868 2046.35 755.868 2015.55 755.868C1984.74 755.868 1953.94 755.868 1923.13 755.868C1892.33 755.868 1861.52 755.868 1830.72 755.868C1799.91 755.868 1769.11 755.868 1738.3 755.868C1707.5 755.868 1676.69 755.868 1645.89 755.868C1615.08 755.868 1584.28 755.868 1553.47 755.868C1522.67 755.868 1491.86 755.868 1461.06 755.868C1430.25 755.868 1399.45 755.868 1368.64 755.868C1337.84 755.868 1307.03 755.868 1276.23 755.868C1245.42 755.868 1214.62 755.868 1183.81 755.868C1153.01 755.868 1122.2 755.868 1091.4 755.868C1060.59 755.868 1029.79 755.868 998.981 755.868C968.176 755.868 937.371 755.868 906.566 755.868C875.761 755.868 844.956 755.868 814.151 755.868C783.346 755.868 752.541 755.868 721.736 755.868C690.931 755.868 660.125 755.868 629.32 755.868C598.515 755.868 567.71 755.868 536.905 755.868C506.1 755.868 475.295 755.868 444.49 755.868C413.685 755.868 382.88 755.868 352.075 755.868C321.27 755.868 290.465 755.868 259.66 755.868C228.855 755.868 198.05 755.868 167.245 755.868C136.44 755.868 105.635 755.868 74.8301 755.868C44.0251 755.868 13.2201 755.868 -17.5849 755.868C-48.39 755.868 -79.195 755.868 -94.5975 755.868H-110V690.15Z"
+                      fill="black" />
+              </g>
+          </g>
+          <defs>
+              <clipPath id="clip0_137_5968">
+                  <rect width="408"
+                      height="772"
+                      fill="white" />
+              </clipPath>
+              <clipPath id="clip1_137_5968">
+                  <rect width="410"
+                      height="304"
+                      fill="white"
+                      transform="translate(-2)" />
+              </clipPath>
+              <clipPath id="clip2_137_5968">
+                  <rect width="739.32"
+                      height="82.1467"
+                      fill="white"
+                      transform="translate(-110 673.713)" />
+              </clipPath>
+          </defs>
+      </svg>
+
+      <!-- large scr -->
+      <div class="absolute inset-0 flex justify-center hidden lg:flex items-center px-20">
+          <div class="absolute flex items-start justify-start left-2 px-20 pt-52 grid grid-cols-1 lg:grid-cols-4">
+              <div class="flex flex-col justify-start items-start pt-4 gap-2">
+                  <img src="/src/images/logo/Mountain_adventure___4_-removebg-preview.png"
+                      alt="Logo"
+                      class=" z-10 "> <!-- Adjust size as needed -->
+
+
+
+                  <p class="flex gap-2 justify-start items-center w-full pl-4 ">
+                      <span class="hover-container-2">
+                          <a href="https://www.facebook.com/hisafarwallah/"
+                              target="_blank">
+                              <span
+                                  class="bg-white flex h-8 items-center justify-center rounded-full w-8 hover-text-2">
+                                  <svg width="6"
+                                      height="10"
+                                      viewBox="0 0 6 10"
+                                      fill="none"
+                                      class="hover-svg-2 w-5 h-5"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M3.8114 9.92233H1.62883V5.27287H0.538086V3.48117H1.62883V2.40637C1.62883 0.945755 2.24462 0.0761719 3.99428 0.0761719H5.45079V1.86787H4.54075C3.85944 1.86787 3.81413 2.11797 3.81413 2.58532L3.8114 3.48117H5.46116L5.26791 5.27287H3.8114V9.92233Z"
+                                          fill="black" />
+                                  </svg>
+
+
+                              </span>
+                          </a>
+
+                      </span>
+                      <span class="hover-container-2">
+                          <a href="https://www.linkedin.com/company/safarwallah/"
+                              target="_blank">
+
+                              <span
+                                  class="bg-white flex h-8 items-center justify-center rounded-full w-8 hover-text-2">
+                                  <svg xmlns="http://www.w3.org/2000/svg"
+                                      x="0px"
+                                      y="0px"
+                                      width="100"
+                                      class=" hover-svg-2 w-5 h-5"
+                                      height="100"
+                                      viewBox="0 0 30 30">
+                                      <path
+                                          d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z">
+                                      </path>
+                                  </svg>
+
+
+                              </span>
+                          </a>
+
+                      </span>
+                      <span class="hover-container-2">
+                          <a href="https://www.youtube.com/@Safarwallah"
+                              target="_blank">
+
+                              <span
+                                  class="bg-white flex h-8 items-center justify-center hover-text-2 rounded-full w-8">
+                                  <svg width="12"
+                                      height="10"
+                                      viewBox="0 0 12 10"
+                                      fill="none"
+                                      class="hover-svg-2 w-5 h-5"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M10.984 1.33951C11.3087 1.71153 11.4233 2.5535 11.4233 2.5535C11.4233 2.5535 11.5379 3.5521 11.5379 4.55069V5.47098C11.5379 6.45 11.4233 7.44861 11.4233 7.44861C11.4233 7.44861 11.3087 8.29057 10.984 8.66259C10.5844 9.10949 10.1331 9.1491 9.90909 9.16876C9.89755 9.16977 9.88662 9.17073 9.87632 9.17169C8.32938 9.30874 5.9994 9.30874 5.9994 9.30874C5.9994 9.30874 3.11557 9.28916 2.23707 9.1913C2.19039 9.18025 2.13291 9.17197 2.06754 9.16256C1.78525 9.12191 1.35595 9.06008 1.01478 8.66261C0.690135 8.2906 0.575536 7.44863 0.575536 7.44863C0.575536 7.44863 0.460938 6.46961 0.460938 5.471V4.55071C0.460938 3.5521 0.575536 2.5535 0.575536 2.5535C0.575536 2.5535 0.67101 1.71155 1.01478 1.33951C1.41436 0.892616 1.86575 0.853002 2.0897 0.833348C2.10124 0.832335 2.11218 0.831375 2.12248 0.830415C3.66942 0.712945 5.9994 0.693359 5.9994 0.693359C5.9994 0.693359 8.32938 0.712945 9.87632 0.830415C9.89227 0.831903 9.90977 0.833277 9.92866 0.834761C10.1586 0.852823 10.5958 0.887169 10.984 1.33951ZM4.66256 7.27224V3.02329L8.2912 5.19673L4.66256 7.27224Z"
+                                          fill="black" />
+                                  </svg>
+
+
+                              </span>
+                          </a>
+                      </span>
+                      <span class="hover-container-2">
+                          <a href="https://www.instagram.com/hisafarwallah/"
+                              target="_blank">
+
+                              <span
+                                  class="bg-white flex h-8 items-center justify-center hover-text-2 rounded-full w-8">
+                                  <svg width="12"
+                                      height="12"
+                                      viewBox="0 0 12 12"
+                                      fill="none"
+                                      class="hover-svg-2 w-5 h-5"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M8.11354 0.769531H3.8851C2.16663 0.769531 0.768555 2.16761 0.768555 3.88608V8.11452C0.768555 9.83299 2.16663 11.2311 3.8851 11.2311H8.11354C9.83202 11.2311 11.2301 9.83299 11.2301 8.11452V3.88608C11.2301 2.16761 9.832 0.769531 8.11354 0.769531ZM10.1775 8.11437C10.1775 9.25435 9.25337 10.1785 8.1134 10.1785H3.88496C2.74499 10.1785 1.82084 9.25435 1.82084 8.11437V3.88593C1.82084 2.74594 2.74499 1.82181 3.88496 1.82181H8.1134C9.25337 1.82181 10.1775 2.74594 10.1775 3.88593V8.11437ZM3.29349 6.00048C3.29349 4.50856 4.50728 3.29477 5.99922 3.29477C7.49116 3.29477 8.70495 4.50854 8.70495 6.00048C8.70495 7.49242 7.49116 8.7062 5.99922 8.7062C4.50728 8.7062 3.29349 7.4924 3.29349 6.00048ZM5.99937 7.65365C5.08628 7.65365 4.34608 6.91345 4.34608 6.00035C4.34608 5.08725 5.0863 4.34706 5.99937 4.34706C6.91247 4.34706 7.65267 5.08725 7.65267 6.00035C7.65267 6.91343 6.91245 7.65365 5.99937 7.65365ZM8.71017 3.96346C9.06824 3.96346 9.35852 3.67319 9.35852 3.31511C9.35852 2.95704 9.06824 2.66677 8.71017 2.66677C8.3521 2.66677 8.06182 2.95704 8.06182 3.31511C8.06182 3.67319 8.3521 3.96346 8.71017 3.96346Z"
+                                          fill="black" />
+                                  </svg>
+
+
+                              </span>
+                          </a>
+
+                      </span>
+                      <span class="hover-container-2">
+                          <a href="https://wa.me/917347004282"
+                              target="_blank">
+
+
+                              <span
+                                  class="bg-white flex h-8 items-center justify-center hover-text-2 rounded-full w-8">
+                                  <svg width="9"
+                                      height="9"
+                                      viewBox="0 0 9 9"
+                                      fill="none"
+                                      class="hover-svg-2 w-5 h-5"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path
+                                          d="M4.5 0C2.02834 0 0 2.02834 0 4.5C0 5.31573 0.219937 6.10984 0.636996 6.80458L0 9L2.19542 8.363C2.89016 8.78006 3.68427 9 4.5 9C6.97166 9 9 6.97166 9 4.5C9 2.02834 6.97166 0 4.5 0ZM7.31347 6.40139L7.10411 6.61075C6.80788 6.90697 6.12666 6.88349 5.68893 6.79895C4.23345 6.51785 2.53654 4.87306 2.20929 3.44867C2.04722 2.74308 2.13669 2.12963 2.37071 1.89555L2.58006 1.6862C2.69564 1.57071 2.88336 1.57083 2.99878 1.6862L3.83637 2.52383C3.89225 2.57973 3.92287 2.65382 3.92287 2.73312C3.92287 2.81241 3.89225 2.88657 3.83636 2.94228L3.62707 3.15185C3.39636 3.3831 3.39636 3.75877 3.62707 3.98948L5.01017 5.35438C5.24157 5.5858 5.61609 5.58606 5.84782 5.35438L6.05718 5.1451C6.16525 5.03641 6.36713 5.03606 6.4761 5.1451L7.31347 5.98247C7.42716 6.09569 7.4315 6.28328 7.31347 6.40139Z"
+                                          fill="black" />
+                                  </svg>
+
+
+                              </span>
+                          </a>
+                      </span>
+                  </p>
+                  
+              </div>
+              <div class="flex flex-col justify-center items-center pt-4 gap-2 text-white">
+                  <p class="text-white pb-4"
+                      style="font-size: 20px; line-height: 22px; font-weight: 700;">Company</p>
+                  <div class="flex flex-col justify-start w-full items-start gap-3 pl-28 text-white">
+                      <a href="/index.html"
+                          class="navcomponents">Home</a>
+                      <a href="/public/about.html"
+                          class="navcomponents">About</a>
+                      <a href="/public/all-treks.html"
+                          class="navcomponents">Treks</a>
+                      <a href="/public/careers.html"
+                          class="navcomponents">Career</a>
+                      <a href="/public/contact.html"
+                          class="navcomponents">Contact</a>
+                      <a href="/public/blogs.html"
+                          class="navcomponents">Blogs</a>
+                  </div>
+              </div>
+              <div class="flex flex-col justify-center items-center pt-4 gap-2 text-white">
+                  <p class="text-white pb-4"
+                      style="font-size: 20px; line-height: 22px; font-weight: 700;">Quick Links</p>
+                  <div class="flex flex-col gap-3 justify-start pl-10 text-white">
+                      <a href="/public/privacy-policy.html"
+                          class="navcomponents">Privacy Policy</a>
+                      <a href="/public/terms-and-conditions.html"
+                          class="navcomponents">Terms & Conditions</a>
+                      <a href="/public/cancelattion.html"
+                          class="navcomponents">Cancellation Policy</a>
+                      <a href="/public/environmental-policy.html"
+                          class="navcomponents">Environmental Policy</a>
+
+                  </div>
+              </div>
+              <div class="flex flex-col justify-center items-center pt-4 gap-2 text-white">
+                  <p class="text-white pb-4"
+                      style="font-size: 20px; line-height: 22px; font-weight: 700;">Contact us</p>
+                  <div class="flex flex-col gap-3 items-baseline justify-start pl-28 text-white">
+                      <p class="flex gap-2 items-center justify-center">
+                          <span>
+                              <svg width="16"
+                                  height="12"
+                                  viewBox="0 0 16 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      d="M10.6092 6.07988L16 9.48911V2.52296L10.6092 6.07988ZM0 2.52296V9.48911L5.39077 6.07988L0 2.52296ZM15.0031 0.492188H0.996923C0.504615 0.492188 0.0984615 0.861418 0.0246154 1.34142L8 6.5968L15.9754 1.34142C15.9015 0.861418 15.4831 0.492188 15.0031 0.492188ZM9.68615 6.68296L8.27077 7.61834C8.18462 7.66757 8.09846 7.7045 8 7.7045C7.90154 7.7045 7.80308 7.67988 7.72923 7.61834L6.31385 6.68296L0.0369231 10.6583C0.110769 11.1383 0.516923 11.4953 1.00923 11.5076H15.0154C15.5077 11.5076 15.9138 11.1507 15.9877 10.6583L9.68615 6.68296Z"
+                                      fill="white" />
+                              </svg>
+
+                          </span>
+                          <span>
+                              hello@safarwallah.com
+                          </span>
+                      </p>
+                      <p class="flex gap-2 items-center justify-center">
+                          <span>
+                              <svg width="16"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      d="M13.0365 10.6689L11.4168 9.53713C11.2822 9.44312 11.1304 9.37656 10.97 9.34124C10.8097 9.30592 10.6439 9.30253 10.4823 9.33127C10.3206 9.36001 10.1662 9.42032 10.0279 9.50874C9.88956 9.59717 9.77 9.71198 9.67604 9.84663L9.30004 10.3856C8.67004 9.96312 7.96679 9.37313 7.29654 8.70263C6.62654 8.03263 6.03654 7.32938 5.61404 6.69938L6.15254 6.32337C6.28768 6.22988 6.40289 6.11046 6.49147 5.97205C6.58005 5.83364 6.64024 5.679 6.66854 5.51712C6.6975 5.3554 6.69416 5.18954 6.65872 5.02911C6.62328 4.86868 6.55643 4.71685 6.46204 4.58238L5.33079 2.96288C5.09404 2.62438 4.71204 2.42188 4.30954 2.42188C4.17063 2.42183 4.03282 2.44646 3.90254 2.49463C3.75526 2.5487 3.61407 2.61808 3.48129 2.70163L3.25754 2.85913C3.20216 2.90272 3.14956 2.94973 3.10004 2.99988C2.82704 3.27238 2.63354 3.61788 2.52429 4.02588C2.05804 5.77338 3.21279 8.41613 5.39804 10.6011C7.23304 12.4361 9.43729 13.5761 11.1508 13.5761C11.4445 13.5761 11.721 13.5421 11.9733 13.4746C12.3815 13.3656 12.7268 13.1721 12.9995 12.8991C13.0493 12.8494 13.0965 12.7974 13.1473 12.7316L13.3048 12.5069C13.385 12.3773 13.4518 12.2399 13.5043 12.0969C13.695 11.5819 13.5025 10.9944 13.0365 10.6686V10.6689Z"
+                                      fill="white" />
+                              </svg>
+
+
+                          </span>
+                          <span>
+                              +91 7347004282
+                          </span>
+                      </p>
+                      <p class="flex gap-2 items-center justify-center">
+                          <span>
+                              <svg width="12"
+                                  height="16"
+                                  viewBox="0 0 12 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      d="M6 0C2.692 0 0 2.71067 0 6.04333C0 10.7787 5.436 15.668 5.66733 15.8733C5.75877 15.9552 5.87715 16.0005 5.99987 16.0006C6.12259 16.0007 6.24106 15.9557 6.33267 15.874C6.564 15.668 12 10.7787 12 6.04333C12 2.71067 9.308 0 6 0ZM6 9.33333C4.162 9.33333 2.66667 7.838 2.66667 6C2.66667 4.162 4.162 2.66667 6 2.66667C7.838 2.66667 9.33333 4.162 9.33333 6C9.33333 7.838 7.838 9.33333 6 9.33333Z"
+                                      fill="white" />
+                              </svg>
+
+
+                          </span>
+                          <span>
+                              Ludhiana, Punjab 141010
+                          </span>
+                      </p>
+                  </div>
+                  <div class="flex  gap-2 items-baseline justify-start pl-28 text-sm py-10 text-white">
+                      <p class="font-bold"> GST No.</p>
+                      <p style="border-bottom: 2px solid #FF931F;">03AAEFW8206C1ZK</p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <!-- mobile scr -->
+      <div class="absolute inset-0 flex justify-center lg:hidden flex items-center px-20">
+          <div
+              class="absolute flex grid grid-cols-1 items-start justify-start left-2 lg:grid-cols-4 md:px-10 pt-20 px-4 w-full">
+              <div class="flex flex-col gap-2 grid grid-cols-1 grid-cols-2 pt-4">
+                  <img src="/src/images/logo/Mountain_adventure___4_-removebg-preview.png"
+                      alt="Logo"
+                      class="md:w-72 sm:w-44 w-40 z-10"> <!-- Adjust size as needed -->
+
+
+
+                  <p class="flex flex-wrap gap-2 items-center justify-center md:pt-4 pl-4 pt-0 sm:pt-2 w-full">
+                      <span class="hover-container-2">
+                          <a href="https://www.facebook.com/hisafarwallah/"
+                              target="_blank">
+                              <span
+                                  class="bg-white flex  hover-text-2 items-center justify-center md:h-10 md:w-10 rounded-full w-10 h-10">
+                                  <svg width="10"
+                                      height="20"
+                                      viewBox="0 0 6 10"
+                                      fill="none"
+                                      class="hover-svg-2 "
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      style="
+">
+                                      <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M3.8114 9.92233H1.62883V5.27287H0.538086V3.48117H1.62883V2.40637C1.62883 0.945755 2.24462 0.0761719 3.99428 0.0761719H5.45079V1.86787H4.54075C3.85944 1.86787 3.81413 2.11797 3.81413 2.58532L3.8114 3.48117H5.46116L5.26791 5.27287H3.8114V9.92233Z"
+                                          fill="black"></path>
+                                  </svg>
+
+
+                              </span>
+                          </a>
+
+                      </span>
+                      <span class=" hover-container-2 ">
+                          <a href="https://www.linkedin.com/company/safarwallah/"
+                              target="_blank">
+
+                              <span
+                                  class="bg-white flex  hover-text-2 items-center justify-center md:h-10 md:w-10 rounded-full w-10 h-10">
+                                  <svg xmlns="http://www.w3.org/2000/svg"
+                                      x="0px"
+                                      y="0px"
+                                      width="70"
+                                      class="hover-svg-2 md:p-2 p-1 sm:p-1"
+                                      height="70"
+                                      viewBox="0 0 30 30">
+                                      <path
+                                          d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z">
+                                      </path>
+                                  </svg>
+
+
+                              </span>
+                          </a>
+
+                      </span>
+                      <span class="hover-container-2 ">
+                          <a href="https://www.youtube.com/@Safarwallah"
+                              target="_blank">
+
+                              <span
+                                  class="bg-white flex  hover-text-2 items-center justify-center md:h-10 md:w-10 rounded-full w-10 h-10">
+                                  <svg width="20"
+                                      height="20"
+                                      viewBox="0 0 12 10"
+                                      fill="none"
+                                      class="hover-svg-2 "
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M10.984 1.33951C11.3087 1.71153 11.4233 2.5535 11.4233 2.5535C11.4233 2.5535 11.5379 3.5521 11.5379 4.55069V5.47098C11.5379 6.45 11.4233 7.44861 11.4233 7.44861C11.4233 7.44861 11.3087 8.29057 10.984 8.66259C10.5844 9.10949 10.1331 9.1491 9.90909 9.16876C9.89755 9.16977 9.88662 9.17073 9.87632 9.17169C8.32938 9.30874 5.9994 9.30874 5.9994 9.30874C5.9994 9.30874 3.11557 9.28916 2.23707 9.1913C2.19039 9.18025 2.13291 9.17197 2.06754 9.16256C1.78525 9.12191 1.35595 9.06008 1.01478 8.66261C0.690135 8.2906 0.575536 7.44863 0.575536 7.44863C0.575536 7.44863 0.460938 6.46961 0.460938 5.471V4.55071C0.460938 3.5521 0.575536 2.5535 0.575536 2.5535C0.575536 2.5535 0.67101 1.71155 1.01478 1.33951C1.41436 0.892616 1.86575 0.853002 2.0897 0.833348C2.10124 0.832335 2.11218 0.831375 2.12248 0.830415C3.66942 0.712945 5.9994 0.693359 5.9994 0.693359C5.9994 0.693359 8.32938 0.712945 9.87632 0.830415C9.89227 0.831903 9.90977 0.833277 9.92866 0.834761C10.1586 0.852823 10.5958 0.887169 10.984 1.33951ZM4.66256 7.27224V3.02329L8.2912 5.19673L4.66256 7.27224Z"
+                                          fill="black"></path>
+                                  </svg>
+
+
+                              </span>
+                          </a>
+                      </span>
+                      <span class="hover-container-2">
+                          <a href="https://www.instagram.com/hisafarwallah/"
+                              target="_blank">
+
+                              <span
+                                  class="bg-white flex  hover-text-2 items-center justify-center md:h-10 md:w-10 rounded-full w-10 h-10">
+                                  <svg width="20"
+                                      height="20"
+                                      viewBox="0 0 12 12"
+                                      fill="none"
+                                      class="hover-svg-2 "
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M8.11354 0.769531H3.8851C2.16663 0.769531 0.768555 2.16761 0.768555 3.88608V8.11452C0.768555 9.83299 2.16663 11.2311 3.8851 11.2311H8.11354C9.83202 11.2311 11.2301 9.83299 11.2301 8.11452V3.88608C11.2301 2.16761 9.832 0.769531 8.11354 0.769531ZM10.1775 8.11437C10.1775 9.25435 9.25337 10.1785 8.1134 10.1785H3.88496C2.74499 10.1785 1.82084 9.25435 1.82084 8.11437V3.88593C1.82084 2.74594 2.74499 1.82181 3.88496 1.82181H8.1134C9.25337 1.82181 10.1775 2.74594 10.1775 3.88593V8.11437ZM3.29349 6.00048C3.29349 4.50856 4.50728 3.29477 5.99922 3.29477C7.49116 3.29477 8.70495 4.50854 8.70495 6.00048C8.70495 7.49242 7.49116 8.7062 5.99922 8.7062C4.50728 8.7062 3.29349 7.4924 3.29349 6.00048ZM5.99937 7.65365C5.08628 7.65365 4.34608 6.91345 4.34608 6.00035C4.34608 5.08725 5.0863 4.34706 5.99937 4.34706C6.91247 4.34706 7.65267 5.08725 7.65267 6.00035C7.65267 6.91343 6.91245 7.65365 5.99937 7.65365ZM8.71017 3.96346C9.06824 3.96346 9.35852 3.67319 9.35852 3.31511C9.35852 2.95704 9.06824 2.66677 8.71017 2.66677C8.3521 2.66677 8.06182 2.95704 8.06182 3.31511C8.06182 3.67319 8.3521 3.96346 8.71017 3.96346Z"
+                                          fill="black"></path>
+                                  </svg>
+
+
+                              </span>
+                          </a>
+
+                      </span>
+                      <span class=" hover-container-2 ">
+                          <a href="https://wa.me/917347004282"
+                              target="_blank">
+
+
+                              <span
+                                  class="bg-white flex  hover-text-2 items-center justify-center md:h-10 md:w-10 rounded-full w-10 h-10">
+                                  <svg width="20"
+                                      height="20"
+                                      viewBox="0 0 9 9"
+                                      fill="none"
+                                      class="hover-svg-2 "
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path
+                                          d="M4.5 0C2.02834 0 0 2.02834 0 4.5C0 5.31573 0.219937 6.10984 0.636996 6.80458L0 9L2.19542 8.363C2.89016 8.78006 3.68427 9 4.5 9C6.97166 9 9 6.97166 9 4.5C9 2.02834 6.97166 0 4.5 0ZM7.31347 6.40139L7.10411 6.61075C6.80788 6.90697 6.12666 6.88349 5.68893 6.79895C4.23345 6.51785 2.53654 4.87306 2.20929 3.44867C2.04722 2.74308 2.13669 2.12963 2.37071 1.89555L2.58006 1.6862C2.69564 1.57071 2.88336 1.57083 2.99878 1.6862L3.83637 2.52383C3.89225 2.57973 3.92287 2.65382 3.92287 2.73312C3.92287 2.81241 3.89225 2.88657 3.83636 2.94228L3.62707 3.15185C3.39636 3.3831 3.39636 3.75877 3.62707 3.98948L5.01017 5.35438C5.24157 5.5858 5.61609 5.58606 5.84782 5.35438L6.05718 5.1451C6.16525 5.03641 6.36713 5.03606 6.4761 5.1451L7.31347 5.98247C7.42716 6.09569 7.4315 6.28328 7.31347 6.40139Z"
+                                          fill="black"></path>
+                                  </svg>
+
+
+                              </span>
+                          </a>
+                      </span>
+                  </p>
+              </div>
+              <div class="flex flex-col gap-2 justify-center md:pt-20 pt-4 text-white">
+                  <p class="text-white pb-4"
+                      style="font-size: 20px; line-height: 22px; font-weight: 700;">Company</p>
+                  <div
+                      class="flex flex-col gap-1 grid grid-cols-2 items-center justify-center md:gap-3 text-white w-full">
+                      <a href="/index.html"> <span class="navcomponents">
+                              Home
+                          </span></a>
+                      <a href="/public/about.html"
+                          class=" text-center"> <span class="navcomponents">About Us</span></a>
+                      <a href="/public/all-treks.html"> <span class="navcomponents">Treks</span></a>
+                      <a href="/public/careers.html"
+                          class=" text-center"><span class="navcomponents"> Career</span></a>
+                      <a href="/public/contact.html"><span class="navcomponents">Contact</span></a>
+                      <a href="/public/blogs.html"
+                          class="text-center"> <span class="navcomponents ">Blogs</span></a>
+                  </div>
+              </div>
+              <div class="flex flex-col gap-2 items-center justify-center md:pt-20 pt-4 text-white">
+                  <p class="pb-4 text-white w-full"
+                      style="font-size: 20px; line-height: 22px; font-weight: 700;">Quick Links</p>
+                  <div class="flex flex-col gap-1 grid grid-cols-2 md:gap-3 text-white w-full">
+                      <a href="/public/privacy-policy.html"> <span class="navcomponents">Privacy Policy</span></a>
+                      <a href="/public/terms-and-conditions.html"
+                          class=" text-center"> <span class="navcomponents">Terms &amp; Conditions</span></a>
+                      <a href="/public/cancelattion.html"><span class="navcomponents">Cancellation Policy</span></a>
+                      <a href="/public/environmental-policy.html"
+                          class=" text-center"><span class="navcomponents">Environmental Policy</span></a>
+
+                  </div>
+              </div>
+              <div class="flex flex-col gap-2 items-center justify-center md:pt-20 pt-4 text-white">
+                  <p class="pb-4 text-white w-full"
+                      style="font-size: 20px; line-height: 22px; font-weight: 700;">Contact us</p>
+                  <div
+                      class="flex flex-col gap-1 grid grid-cols-2 items-baseline justify-start md:gap-3 text-white w-full">
+                      <p class="flex flex-wrap gap-2 items-center">
+                          <span>
+                              <svg width="16"
+                                  height="12"
+                                  viewBox="0 0 16 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      d="M10.6092 6.07988L16 9.48911V2.52296L10.6092 6.07988ZM0 2.52296V9.48911L5.39077 6.07988L0 2.52296ZM15.0031 0.492188H0.996923C0.504615 0.492188 0.0984615 0.861418 0.0246154 1.34142L8 6.5968L15.9754 1.34142C15.9015 0.861418 15.4831 0.492188 15.0031 0.492188ZM9.68615 6.68296L8.27077 7.61834C8.18462 7.66757 8.09846 7.7045 8 7.7045C7.90154 7.7045 7.80308 7.67988 7.72923 7.61834L6.31385 6.68296L0.0369231 10.6583C0.110769 11.1383 0.516923 11.4953 1.00923 11.5076H15.0154C15.5077 11.5076 15.9138 11.1507 15.9877 10.6583L9.68615 6.68296Z"
+                                      fill="white"></path>
+                              </svg>
+
+                          </span>
+                          <span>
+                              hello@safarwallah.com
+                          </span>
+                      </p>
+                      <p class="flex flex-wrap gap-2 items-center justify-center">
+                          <span>
+                              <svg width="16"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      d="M13.0365 10.6689L11.4168 9.53713C11.2822 9.44312 11.1304 9.37656 10.97 9.34124C10.8097 9.30592 10.6439 9.30253 10.4823 9.33127C10.3206 9.36001 10.1662 9.42032 10.0279 9.50874C9.88956 9.59717 9.77 9.71198 9.67604 9.84663L9.30004 10.3856C8.67004 9.96312 7.96679 9.37313 7.29654 8.70263C6.62654 8.03263 6.03654 7.32938 5.61404 6.69938L6.15254 6.32337C6.28768 6.22988 6.40289 6.11046 6.49147 5.97205C6.58005 5.83364 6.64024 5.679 6.66854 5.51712C6.6975 5.3554 6.69416 5.18954 6.65872 5.02911C6.62328 4.86868 6.55643 4.71685 6.46204 4.58238L5.33079 2.96288C5.09404 2.62438 4.71204 2.42188 4.30954 2.42188C4.17063 2.42183 4.03282 2.44646 3.90254 2.49463C3.75526 2.5487 3.61407 2.61808 3.48129 2.70163L3.25754 2.85913C3.20216 2.90272 3.14956 2.94973 3.10004 2.99988C2.82704 3.27238 2.63354 3.61788 2.52429 4.02588C2.05804 5.77338 3.21279 8.41613 5.39804 10.6011C7.23304 12.4361 9.43729 13.5761 11.1508 13.5761C11.4445 13.5761 11.721 13.5421 11.9733 13.4746C12.3815 13.3656 12.7268 13.1721 12.9995 12.8991C13.0493 12.8494 13.0965 12.7974 13.1473 12.7316L13.3048 12.5069C13.385 12.3773 13.4518 12.2399 13.5043 12.0969C13.695 11.5819 13.5025 10.9944 13.0365 10.6686V10.6689Z"
+                                      fill="white"></path>
+                              </svg>
+
+
+                          </span>
+                          <span>
+                              +91 7347004282
+                          </span>
+                      </p>
+                      <p class="flex flex-wrap gap-2 items-center">
+                          <span>
+                              <svg width="12"
+                                  height="16"
+                                  viewBox="0 0 12 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      d="M6 0C2.692 0 0 2.71067 0 6.04333C0 10.7787 5.436 15.668 5.66733 15.8733C5.75877 15.9552 5.87715 16.0005 5.99987 16.0006C6.12259 16.0007 6.24106 15.9557 6.33267 15.874C6.564 15.668 12 10.7787 12 6.04333C12 2.71067 9.308 0 6 0ZM6 9.33333C4.162 9.33333 2.66667 7.838 2.66667 6C2.66667 4.162 4.162 2.66667 6 2.66667C7.838 2.66667 9.33333 4.162 9.33333 6C9.33333 7.838 7.838 9.33333 6 9.33333Z"
+                                      fill="white"></path>
+                              </svg>
+
+
+                          </span>
+                          <span>
+                              Ludhiana, Punjab 141010
+                          </span>
+                      </p>
+                      
+                  </div>
+                  <div class="flex  gap-2 items-start justify-start  text-sm py-10 text-white">
+                      <p class="font-bold"> GST No.</p>
+                      <p style="border-bottom: 2px solid #FF931F;">03AAEFW8206C1ZK</p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+</footer>
+</body>
+</html>
+<script>
+    const texts = ["Difficulty", "State", "Duration", "Month"];
+    let index = 0;
+    const rotatingText = document.getElementById("rotatingText");
+  
+    setInterval(() => {
+      // Fade out and slide up current text
+      rotatingText.classList.add("opacity-0", "-translate-y-4");
+  
+      setTimeout(() => {
+        index = (index + 1) % texts.length; // Update to next text
+        rotatingText.textContent = texts[index]; // Set new text
+  
+        // Fade in and slide down new text
+        rotatingText.classList.remove("opacity-0", "-translate-y-4");
+        rotatingText.classList.add("opacity-100", "translate-y-0");
+      }, 500); // Time delay to match the transition
+    }, 3000); // Change text every 3 seconds
+
+
+
+
+
+    // Create an IntersectionObserver instance
+ const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          const animationClass = entry.target.getAttribute('data-animation');
+          entry.target.classList.add(animationClass); // Add animation class when in view
+          observer.unobserve(entry.target); // Stop observing once the animation is triggered
+      }
+  });
+});
+
+// Observe all elements with the 'fade-scroll' class
+document.querySelectorAll('.fade-scroll').forEach(el => {
+  observer.observe(el);
+});
+
+  </script>
+<style>
+    /* Add smooth transitions for transform and opacity */
+.transition-all {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+.-translate-y-4 {
+  transform: translateY(-1rem); /* Slide up by 1 rem */
+}
+
+/* Ensure the initial state */
+#rotatingText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width:728px) and (max-width:1024px){
+  .responsivewidthoftext{
+    width: 80% !important;
+  }
+}
+@media (max-width:728px){
+  .responsivewidthoftext{
+    width: 90% !important;
+  }
+}
+</style>  
