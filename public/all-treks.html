@@ -436,7 +436,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
  <!-- banner images and banner of home page  -->
 
  <div class=" flex  flex-col justify-center items-center overflow-hidden">
-    <img id="bannerImage" src="/src/images/cancellation/banner-image.jpg"
+    <img id="bannerImage" src="/src/images/cancellation/banner-image.webp"
       class="w-screen h-screen object-cover opacity-100 transition-opacity duration-500" alt="banner image ">
 
 
@@ -767,7 +767,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
 </div>
 <div class="py-10 lg:px-44 md:px-20 sm:px-10 px-6">
   <div class="relative rounded-2xl">
-      <img src="/src/images/footer/certified-section-image.png" style="height: 300px;" class="object-cover w-screen rounded-2xl" alt="">
+      <img src="/src/images/footer/certified-section-image.webp" style="height: 300px;" class="object-cover w-screen rounded-2xl" alt="">
       <div class="absolute inset-0 rounded-2xl flex flex-col py-10 gap-6 px-10 bg-black-less-opacity justify-center">
 
           <p class="text-white text-center" ><span class=" py-1" style="border-bottom: 4px solid #FF931F;width: fit-content;">Certified by</span></p>
@@ -781,7 +781,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
   <!-- footer home page  -->
 <footer class="relative overflow-x-hidden">
   <div class="relative w-full h-auto">
-      <img src="/src/images/footer/footer.png"
+      <img src="/src/images/footer/footer.webp"
           class="w-full h-auto hidden lg:flex"
           alt="Footer Background">
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -865,12 +865,12 @@ document.getElementById('searchInput').addEventListener('input', function () {
       <!-- large scr -->
       <div class="absolute inset-0 flex justify-center hidden lg:flex items-center px-20">
           <div class="absolute flex items-start justify-start left-2 px-20 pt-52 grid grid-cols-1 lg:grid-cols-4">
-              <div class="flex flex-col justify-start items-start pt-4 gap-2">
+              <div class="flex flex-col justify-start items-start pt-4">
                   <img src="/src/images/logo/Mountain_adventure___4_-removebg-preview.png"
                       alt="Logo"
                       class=" z-10 "> <!-- Adjust size as needed -->
 
-
+                  <p class="flex font-thin items-end justify-center pb-4 pl-4 text-white text-xs w-full" > <span class="pb-1" style="border-bottom: 2px solid #FF931F; width: fit-content;">Wayfarerwings Travels LLP</span>                  </p>
 
                   <p class="flex gap-2 justify-start items-center w-full pl-4 ">
                       <span class="hover-container-2">
@@ -1092,7 +1092,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
       <div class="absolute inset-0 flex justify-center lg:hidden flex items-center px-20">
           <div
               class="absolute flex grid grid-cols-1 items-start justify-start left-2 lg:grid-cols-4 md:px-10 pt-20 px-4 w-full">
-              <div class="flex flex-col gap-2 grid grid-cols-1 grid-cols-2 pt-4">
+              <div class="flex flex-col gap-2 grid grid-cols-1 grid-cols-2 items-center justify-center pt-4">
                   <img src="/src/images/logo/Mountain_adventure___4_-removebg-preview.png"
                       alt="Logo"
                       class="md:w-72 sm:w-44 w-40 z-10"> <!-- Adjust size as needed -->
@@ -1215,6 +1215,8 @@ document.getElementById('searchInput').addEventListener('input', function () {
                           </a>
                       </span>
                   </p>
+                  <p class="pl-2 flex font-thin pt-2  text-white text-xs w-full"><span class="pb-1" style="border-bottom: 2px solid #FF931F; width: fit-content;">Wayfarerwings Travels LLP</span></p>
+
               </div>
               <div class="flex flex-col gap-2 justify-center md:pt-20 pt-4 text-white">
                   <p class="text-white pb-4"
@@ -1401,13 +1403,13 @@ document.querySelectorAll('.fade-scroll').forEach(el => {
 </style>  
 <script>
   const trekData = [
-  { name: "Kedarkantha", price: 5999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/kedarkatha.jpg",location:"/public/kedarkantha.html",distance:"15 km" },
-  { name: "Kuari Pass", price: 7999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/kuari.jpg",location:"/public/kuari-pass.html",distance:"22 km" },
-  { name: "Dayara Bugyal", price: 5499, duration: "4D/3N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/dayara bugya.jpg",location:"/public/dyara-bugyal.html",distance:"15 km" },
-  { name: "Brahmatal", price: 5999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/bharamtal.jpg",location:"/public/brahmatal.html",distance:"29 km" },
-  { name: "Chandrashilla", price: 6999, duration: "3D/2N", months: ["January", "February", "March", "April", "May", "June", "October", "November", "December"], state: "Uttarakhand", img: "/src/images/home/treding treks/ChandrasilaPeak.jpg",location:"/public/tungnath.html",distance:"28 km" },
-  { name: "Har ki Dun", price: 9999, duration: "7D/6N", months: ["April", "May", "June", "October", "September"], state: "Uttarakhand", img: "/src/images/home/Har ki dun.png",location:"/public/har-ki-dun.html",distance:"44 km" },
-  { name: "Hampta Pass", price: 6999, duration: "5D/4N", months: ["May", "June", "July", "August", "September", "October"], state: "Himachal", img: "/src/images/home/hampta pass.png",location:"/public/hampta-pass.html",distance:"18 km" }
+  { name: "Kedarkantha", price: 5999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/kedarkatha.webp",location:"/public/kedarkantha.html",distance:"15 km" },
+  { name: "Kuari Pass", price: 7999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/kuari.webp",location:"/public/kuari-pass.html",distance:"22 km" },
+  { name: "Dayara Bugyal", price: 5499, duration: "4D/3N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/dayara bugya.webp",location:"/public/dyara-bugyal.html",distance:"15 km" },
+  { name: "Brahmatal", price: 5999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/home/bharamtal.webp",location:"/public/brahmatal.html",distance:"29 km" },
+  { name: "Chandrashilla", price: 6999, duration: "3D/2N", months: ["January", "February", "March", "April", "May", "June", "October", "November", "December"], state: "Uttarakhand", img: "/src/images/home/treding treks/ChandrasilaPeak.webp",location:"/public/tungnath.html",distance:"28 km" },
+  { name: "Har ki Dun", price: 9999, duration: "7D/6N", months: ["April", "May", "June", "October", "September"], state: "Uttarakhand", img: "/src/images/home/Har ki dun.webp",location:"/public/har-ki-dun.html",distance:"44 km" },
+  { name: "Hampta Pass", price: 6999, duration: "5D/4N", months: ["May", "June", "July", "August", "September", "October"], state: "Himachal", img: "/src/images/home/hampta pass.webp",location:"/public/hampta-pass.html",distance:"18 km" }
 ];
 
 let selectedFilters = { price: '', duration: '', month: '', state: '', sort: '' };
