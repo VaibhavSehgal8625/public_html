@@ -27,10 +27,10 @@ setInterval(() => {
 
 
 const images = [
-  "/src/images/home/banner-image-5.jpg",
-  "/src/images/home/banner-image-1.jpg",
-  "/src/images/home/banner-image-3.jpg",
-  "/src/images/home/banner-image-4.jpg"
+  "/src/images/home/banner-image-5.webp",
+  "/src/images/home/banner-image-1.webp",
+  "/src/images/home/banner-image-3.webp",
+  "/src/images/home/banner-image-4.webp"
 ];
 
 const texts1 = [
