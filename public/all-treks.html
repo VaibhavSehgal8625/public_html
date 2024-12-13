@@ -91,8 +91,8 @@
  </div>
         <a class="text-white navcomponents  custom-font-normal" href="/index.html">Home</a>
         <a class="text-white navcomponents  custom-font-normal" href="/public/about.html">About</a>
-        <a class="text-white navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
-        <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
+<a class="text-white navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
+        <a class="text-white navcomponents custom-font-normal" href="/public/bagpacking-trips.html">Bagpacking-trips</a>        <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
         <a class="text-white navcomponents custom-font-normal" href="/public/blogs.html">Blogs</a>
         <a class="text-white navcomponents custom-font-normal" href="/public/contact.html">Contact</a>
         <!-- <a class="relative text-white bg-orange py-1.5 px-3 rounded-2xl hover:bg-white hovertextorange transition duration-300 ease-in-out"
@@ -401,8 +401,8 @@ document.getElementById('searchInput').addEventListener('input', function () {
           <div class="absolute h-screen inset-0 ml-10 flex flex-col gap-6 mt-40 ">
             <a href="/index.html" class="text-white "><span class="navcomponents">Home</span></a>
             <a class="text-white  " href="/public/about.html"><span class="navcomponents">About</span></a>
-        <a class="text-white  " href="/public/all-treks.html"><span class="navcomponents">Treks</span></a>
-        <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
+<a class="text-white  " href="/public/all-treks.html"><span class="navcomponents">Treks</span></a>
+        <a class="text-white  " href="/public/bagpacking-trips.html"><span class="navcomponents">Bagpacking-trips</span></a>        <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
         <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
         <a class="text-white  " href="/public/contact.html"><span class="navcomponents">Contact</span></a>
           </div>
@@ -557,44 +557,46 @@ document.getElementById('searchInput').addEventListener('input', function () {
           <!-- Price Range Filter Accordion -->
           <style>
             .accordion-content {
-              max-height: 1000px; /* Large value to ensure content is fully displayed */
-              overflow: hidden;
-              transition: max-height 0.3s ease;
-            }
-          
-            .accordion-content.collapsed {
-              max-height: 0;
-            }
-          
-            .accordion-icon {
-              transition: transform 0.3s ease;
-              width: 20px;
-              height: 20px;
-            }
-          
-            .accordion-icon.rotate-45 {
-              transform: rotate(45deg);
-            }
+  max-height: 1000px; /* Large value to ensure content is fully displayed */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content.collapsed {
+  max-height: 0;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+.accordion-icon.rotate-45 {
+  transform: rotate(45deg);
+}
+
           </style>
           
           <script>
             // Function to toggle accordion open/close with SVG rotation
-            function toggleAccordion(id) {
-              const content = document.getElementById(id);
-              const icon = content.previousElementSibling.querySelector('.accordion-icon');
-              
-              content.classList.toggle('collapsed');
-              icon.classList.toggle('rotate-45');
-            }
-          
-            // Function to initially open all accordions
-            document.addEventListener('DOMContentLoaded', () => {
-              document.querySelectorAll('.accordion-content').forEach(content => {
-                content.classList.remove('collapsed'); // Open initially
-                const icon = content.previousElementSibling.querySelector('.accordion-icon');
-                icon.classList.add('rotate-45'); // Rotate icon for initially open state
-              });
-            });
+function toggleAccordion(id) {
+  const content = document.getElementById(id);
+  const icon = content.previousElementSibling.querySelector('.accordion-icon');
+  
+  content.classList.toggle('collapsed');
+  icon.classList.toggle('rotate-45');
+}
+
+// Function to initially open all accordions
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.accordion-content').forEach(content => {
+    content.classList.remove('collapsed'); // Open initially
+    const icon = content.previousElementSibling.querySelector('.accordion-icon');
+    icon.classList.add('rotate-45'); // Rotate icon for initially open state
+  });
+});
+
           </script>
           
           <div>
@@ -660,6 +662,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
             </div>
           </div>
           
+          
         </div>
       </div>
     </div>
@@ -667,56 +670,48 @@ document.getElementById('searchInput').addEventListener('input', function () {
     <div class="space-y-4 mb-8 w-1/4 border  rounded-lg p-4 hidden lg:block md:block" style="height: fit-content;">
       <!-- Price Range Filter Accordion -->
       <style>
-        .accordion-content {
-          max-height: 1000px; /* Large value to ensure content is fully displayed */
-          overflow: hidden;
-          transition: max-height 0.3s ease;
-        }
-      
-        .accordion-content.collapsed {
-          max-height: 0;
-        }
-      
-        .accordion-icon {
-          transition: transform 0.3s ease;
-          width: 20px;
-          height: 20px;
-        }
-      
-        .accordion-icon.rotate-45 {
-          transform: rotate(45deg);
-        }
+        .accordion-content1 {
+  max-height: 1000px; /* Large value to ensure content is fully displayed */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content1.collapsed1 {
+  max-height: 0;
+}
+
+.accordion-icon1 {
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+}
+
+.accordion-icon1.rotate1-45 {
+  transform: rotate(-0deg);
+}
+
       </style>
-      
       <script>
         // Function to toggle accordion open/close with SVG rotation
-        function toggleAccordion(id) {
-          const content = document.getElementById(id);
-          const icon = content.previousElementSibling.querySelector('.accordion-icon');
-          
-          content.classList.toggle('collapsed');
-          icon.classList.toggle('rotate-45');
-        }
-      
-        // Function to initially open all accordions
-        document.addEventListener('DOMContentLoaded', () => {
-          document.querySelectorAll('.accordion-content').forEach(content => {
-            content.classList.remove('collapsed'); // Open initially
-            const icon = content.previousElementSibling.querySelector('.accordion-icon');
-            icon.classList.add('rotate-45'); // Rotate icon for initially open state
-          });
-        });
+function toggleAccordion1(id) {
+  const content1 = document.getElementById(id);
+  const icon1 = content1.previousElementSibling.querySelector('.accordion-icon1');
+  
+  content1.classList.toggle('collapsed1');
+  icon1.classList.toggle('rotate1-45');
+}
+
       </script>
-      
       <div>
         <!-- Price Range Accordion -->
-        <button onclick="toggleAccordion('price-filter')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
+        <button onclick="toggleAccordion1('price-filter1')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
           Price Range
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon1">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
         </button>
-        <div id="price-filter" class="accordion-content flex flex-col gap-2 transition-all duration-300">
+        <div id="price-filter1" class="accordion-content1 flex flex-col gap-2 transition-all duration-300">
           <div class="filter-box" onclick="selectFilterOption('price', '5000-6000')">₹5000 - ₹6000</div>
           <div class="filter-box" onclick="selectFilterOption('price', '6000-7000')">₹6000 - ₹7000</div>
           <div class="filter-box" onclick="selectFilterOption('price', '7000-8000')">₹7000 - ₹8000</div>
@@ -725,13 +720,13 @@ document.getElementById('searchInput').addEventListener('input', function () {
         </div>
       
         <!-- Duration Filter Accordion -->
-        <button onclick="toggleAccordion('duration-filter')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
+        <button onclick="toggleAccordion1('duration-filter1')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
           Duration
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon1">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
         </button>
-        <div id="duration-filter" class="accordion-content flex flex-col gap-2 transition-all duration-300">
+        <div id="duration-filter1" class="accordion-content1 flex flex-col gap-2 transition-all duration-300">
           <div class="filter-box" onclick="selectFilterOption('duration', '4D/3N')">4D/3N</div>
           <div class="filter-box" onclick="selectFilterOption('duration', '5D/4N')">5D/4N</div>
           <div class="filter-box" onclick="selectFilterOption('duration', '6D/5N')">6D/5N</div>
@@ -739,13 +734,13 @@ document.getElementById('searchInput').addEventListener('input', function () {
         </div>
       
         <!-- Month Filter Accordion -->
-        <button onclick="toggleAccordion('month-filter')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
+        <button onclick="toggleAccordion1('month-filter1')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
           Month
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon1">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
         </button>
-        <div id="month-filter" class="accordion-content flex flex-col gap-2 transition-all duration-300">
+        <div id="month-filter1" class="accordion-content1 flex flex-col gap-2 transition-all duration-300">
           <div class="filter-box" onclick="selectFilterOption('month', 'January')">January</div>
           <div class="filter-box" onclick="selectFilterOption('month', 'February')">February</div>
           <div class="filter-box" onclick="selectFilterOption('month', 'March')">March</div>
@@ -759,13 +754,13 @@ document.getElementById('searchInput').addEventListener('input', function () {
         </div>
       
         <!-- State Filter Accordion -->
-        <button onclick="toggleAccordion('state-filter')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
+        <button onclick="toggleAccordion1('state-filter1')" class="w-full text-left font-semibold py-2 flex items-center justify-between">
           State
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 accordion-icon1">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
         </button>
-        <div id="state-filter" class="accordion-content flex flex-col gap-2 transition-all duration-300">
+        <div id="state-filter1" class="accordion-content1 flex flex-col gap-2 transition-all duration-300">
           <div class="filter-box" onclick="selectFilterOption('state', 'Uttarakhand')">Uttarakhand</div>
           <div class="filter-box" onclick="selectFilterOption('state', 'Himachal')">Himachal</div>
         </div>
