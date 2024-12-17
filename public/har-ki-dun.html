@@ -20,6 +20,9 @@
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- razorpay checkout modal -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
     <!-- Include Owl Carousel CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -3195,11 +3198,11 @@ Whether for its scenic beauty, cultural richness, or quiet charm, Kalkattiyadhaa
 
                                 <!-- Popup -->
                                 <div id="date-available-popup" class="date-available-popup hidden" style="z-index: 1000 !important;">
-                                    <!-- <ul class="overflow-auto" style="max-height: 300px;">
+                                    <ul class="overflow-auto" style="max-height: 300px;">
 
-                                        <li class="date-option date-available-item">15 Nov - 19 Nov, 2024 ( <span
+                                        <li class="date-option date-available-item">Available soon ( <span
                                                 class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">22 Nov - 26 Nov, 2024 ( <span
+                                        <!-- <li class="date-option date-available-item">22 Nov - 26 Nov, 2024 ( <span
                                                 class="text-green-500">Available</span> ) </li>
                                         <li class="date-option date-available-item">29 Nov - 03 Dec, 2024 ( <span
                                                 class="text-green-500">Available</span> ) </li>
@@ -3221,9 +3224,9 @@ Whether for its scenic beauty, cultural richness, or quiet charm, Kalkattiyadhaa
                                         <li class="date-option date-available-item">30 Dec - 03 Jan, 2024 ( <span
                                                 class="text-green-500">Available</span> ) - (NY Special) </li>
                                         <li class="date-option date-available-item">03 Jan - 07 Jan, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
+                                                class="text-green-500">Available</span> ) </li> -->
 
-                                    </ul> -->
+                                    </ul>
                                     <p class="text-green-500">Available soon</p>
                                 </div>
 
@@ -3253,6 +3256,13 @@ Whether for its scenic beauty, cultural richness, or quiet charm, Kalkattiyadhaa
                                         <span>Adults: <span id="total-travellers-adult-count">1</span>, Children: <span
                                                 id="total-travellers-child-count">0</span></span>
                                     </div>
+                                </div>
+                                <div class="payment-option mt-3">
+                                    <label class="block text-sm  mb-2">Choose Payment Option:</label>
+                                    <button id="partialPaymentBtn"
+                                        class="payment-btn border rounded-lg p-2 mr-2">Partial Payment</button>
+                                    <button id="fullPaymentBtn" class="payment-btn border rounded-lg p-2">Full
+                                        Payment</button>
                                 </div>
 
                                 <div
@@ -3337,190 +3347,197 @@ Whether for its scenic beauty, cultural richness, or quiet charm, Kalkattiyadhaa
 
                             <script>
                                 document.addEventListener('DOMContentLoaded', () => {
-                                    const totalPriceEl = document.getElementById('total-price');
-                                    const travellersTrigger = document.getElementById('total-travellers-trigger');
-                                    const travellersPopup = document.getElementById('total-travellers-popup');
-                                    const closeTravellersPopup = document.getElementById('total-travellers-close');
+    const totalPriceEl = document.getElementById('total-price');
+    const bookNowBtn = document.getElementById('bookNowBtn');
+    const travellersTrigger = document.getElementById('total-travellers-trigger');
+    const travellersPopup = document.getElementById('total-travellers-popup');
+    const closeTravellersPopup = document.getElementById('total-travellers-close');
+    const adultCountEl = document.getElementById('total-travellers-adult-popup-count');
+    const childCountEl = document.getElementById('total-travellers-child-popup-count');
+    const adultDisplayCountEl = document.getElementById('total-travellers-adult-count');
+    const childDisplayCountEl = document.getElementById('total-travellers-child-count');
+    const dateInput = document.getElementById('selected-date');
+    const partialPaymentBtn = document.getElementById('partialPaymentBtn');
+    const fullPaymentBtn = document.getElementById('fullPaymentBtn');
 
-                                    const adultCountEl = document.getElementById('total-travellers-adult-popup-count');
-                                    const childCountEl = document.getElementById('total-travellers-child-popup-count');
-                                    const adultDisplayCountEl = document.getElementById('total-travellers-adult-count');
-                                    const childDisplayCountEl = document.getElementById('total-travellers-child-count');
+    let selectedPackage = null;
+    let selectedSharing = null;
+    let adultCount = 1;
+    let childCount = 0;
+    let basePrice = 5999;
+    let selectedDate = null;
+    let isPartialPayment = false;
 
-                                    let selectedPackage = null;
-                                    let selectedSharing = null;
+    const packages = {
+        "Delhi to Delhi": { triple: 11999, double: 12999 },
+        "Sankri to Sankri": { triple: 7999, double: 8999 },
+        "Dehradun to Dehradun": { triple: 9999, double: 10999}
+    };
 
-                                    let adultCount = 1; // Starting with 1 adult
-                                    let childCount = 0;
-                                    let basePrice = 5999; // Default price for the first tour package
+    function updateTotalPrice() {
+    const totalBasePrice = (adultCount + childCount) * basePrice;
+    const gst = totalBasePrice * 0.05; // 5% GST
+    let totalPrice = totalBasePrice + gst;
 
-                                    const packages = {
-                                        "Sankri to Sankri": { triple: 5999, double: 6999 },
-                                        "Delhi to Delhi": { triple: 9999, double: 10999 },
-                                        "Dehradun to Dehradun": { triple: 7999, double: 8999 }
-                                    };
+    // Apply partial payment indication if selected
+    if (isPartialPayment) {
+        totalPrice *= 0.2; // 30% for partial payment indication
+    }
 
-                                    // Update total price function
-                                    function updateTotalPrice() {
-                                        const adultPrice = adultCount * basePrice;
-                                        const childPrice = childCount * basePrice; // Child price same as adult
-                                        const totalPrice = adultPrice + childPrice;
-
-                                        // Calculate GST (5%)
-                                        const gst = totalPrice * 0.05;
-                                        const finalTotalPrice = totalPrice + gst;
-
-                                        // Display the total price with GST breakdown
-                                        totalPriceEl.textContent = `₹ ${finalTotalPrice.toLocaleString()} ( ₹  ${totalPrice.toLocaleString()} + ₹ ${gst.toLocaleString()} GST[5%])`;
-                                    }
-
-                                    // Event listeners for clicking on tour packages
-                                    document.querySelectorAll('.tour-package').forEach(packageEl => {
-                                        packageEl.addEventListener('click', function () {
-                                            // Remove the selected class from all packages
-                                            document.querySelectorAll('.tour-package').forEach(p => p.classList.remove('selected'));
-
-                                            // Add the selected class to the clicked package
-                                            this.classList.add('selected');
-
-                                            // Update selected package and base price
-                                            selectedPackage = this.getAttribute('data-package');
-                                            basePrice = parseInt(this.getAttribute('data-price'));
-                                            selectedSharing = null; // Reset sharing selection
-
-                                            // Deselect all sharing options
-                                            document.querySelectorAll('.sharing-option').forEach(s => {
-                                                s.classList.remove('selected');
-                                            });
-
-                                            updateTotalPrice(); // Update total price when package is selected
-                                        });
-                                    });
-
-                                    // Sharing selection
-                                    document.querySelectorAll('.sharing-option').forEach(sharingEl => {
-                                        sharingEl.addEventListener('click', function () {
-                                            if (!selectedPackage) {
-                                                alert("Please select a package first.");
-                                                return;
-                                            }
-                                            document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
-                                            this.classList.add('selected');
-                                            selectedSharing = this.getAttribute('data-sharing');
-                                            basePrice = packages[selectedPackage][selectedSharing];
-                                            updateTotalPrice();
-                                        });
-                                    });
-
-                                    // Date selection popup
-                                    const dateInput = document.getElementById('date-available-input');
-                                    const datePopup = document.getElementById('date-available-popup');
-                                    dateInput.addEventListener('click', () => datePopup.classList.toggle('hidden'));
-
-                                    document.querySelectorAll('.date-option').forEach(dateEl => {
-                                        dateEl.addEventListener('click', function () {
-                                            dateInput.value = this.textContent;
-                                            dateInput.classList.add('selected');
-                                            datePopup.classList.add('hidden');
-                                        });
-                                    });
-
-                                    // Show popup when "Total Travellers" is clicked
-                                    travellersTrigger.addEventListener('click', function () {
-                                        travellersPopup.classList.remove('hidden');
-                                    });
-
-                                    // Close popup when close button is clicked
-                                    closeTravellersPopup.addEventListener('click', function () {
-                                        travellersPopup.classList.add('hidden');
-                                    });
-
-                                    // Event listeners for adult count in popup
-                                    document.getElementById('total-travellers-adult-plus').addEventListener('click', function () {
-                                        adultCount++;
-                                        adultCountEl.textContent = adultCount;
-                                        adultDisplayCountEl.textContent = adultCount;
-                                        updateTotalPrice(); // Update total price when adults count changes
-                                    });
-
-                                    document.getElementById('total-travellers-adult-minus').addEventListener('click', function () {
-                                        if (adultCount > 1) { // Prevent reducing adult count below 1
-                                            adultCount--;
-                                            adultCountEl.textContent = adultCount;
-                                            adultDisplayCountEl.textContent = adultCount;
-                                            updateTotalPrice(); // Update total price when adults count changes
-                                        }
-                                    });
-
-                                    // Event listeners for child count in popup
-                                    document.getElementById('total-travellers-child-plus').addEventListener('click', function () {
-                                        childCount++;
-                                        childCountEl.textContent = childCount;
-                                        childDisplayCountEl.textContent = childCount;
-                                        updateTotalPrice(); // Update total price when children count changes
-                                    });
-
-                                    document.getElementById('total-travellers-child-minus').addEventListener('click', function () {
-                                        if (childCount > 0) { // Prevent reducing child count below 0
-                                            childCount--;
-                                            childCountEl.textContent = childCount;
-                                            childDisplayCountEl.textContent = childCount;
-                                            updateTotalPrice(); // Update total price when children count changes
-                                        }
-                                    });
-
-                                    // Initialize total price on page load
-                                    updateTotalPrice();
-                                });
-
-                                document.addEventListener('DOMContentLoaded', () => {
-
-                                    const dateInput = document.getElementById('date-available-input');
-                                    const datePopup = document.getElementById('date-available-popup');
-                                    const travellersTrigger = document.getElementById('total-travellers-trigger');
-                                    const travellersPopup = document.getElementById('total-travellers-popup');
-                                    const closeTravellersPopup = document.getElementById('total-travellers-close');
-                                    const bookNowClosePopupBtn = document.querySelector('.book-now-close-popup');
+    totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isPartialPayment ? "(20% Partial Payment)" : "(Full Payment)"}`;
+    return totalPrice;
+}
 
 
 
+    // Payment Option Selection
+    partialPaymentBtn.addEventListener('click', () => {
+        isPartialPayment = true;
+        partialPaymentBtn.classList.add('selected');
+        fullPaymentBtn.classList.remove('selected');
+        updateTotalPrice();
+    });
+
+    fullPaymentBtn.addEventListener('click', () => {
+        isPartialPayment = false;
+        fullPaymentBtn.classList.add('selected');
+        partialPaymentBtn.classList.remove('selected');
+        updateTotalPrice();
+    });
+
+    // Package selection
+    document.querySelectorAll('.tour-package').forEach(packageEl => {
+        packageEl.addEventListener('click', function () {
+            document.querySelectorAll('.tour-package').forEach(p => p.classList.remove('selected'));
+            this.classList.add('selected');
+
+            selectedPackage = this.getAttribute('data-package');
+            basePrice = parseInt(this.getAttribute('data-price'));
+            selectedSharing = null;
+
+            document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
+            updateTotalPrice();
+        });
+    });
+
+    // Sharing selection
+    document.querySelectorAll('.sharing-option').forEach(sharingEl => {
+        sharingEl.addEventListener('click', function () {
+            if (!selectedPackage) {
+                alert("Please select a package first.");
+                return;
+            }
+            document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
+            this.classList.add('selected');
+
+            selectedSharing = this.getAttribute('data-sharing');
+            basePrice = packages[selectedPackage][selectedSharing];
+            updateTotalPrice();
+        });
+    });
+
+    // Date selection
+    document.querySelectorAll('.date-option').forEach(dateEl => {
+        dateEl.addEventListener('click', function () {
+            selectedDate = this.textContent.trim().split('(')[0];
+            dateInput.value = selectedDate;
+        });
+    });
+
+    // Open and close travellers popup
+    travellersTrigger.addEventListener('click', () => {
+        travellersPopup.classList.remove('hidden');
+    });
+
+    closeTravellersPopup.addEventListener('click', () => {
+        travellersPopup.classList.add('hidden');
+    });
+
+    // Adult and child count adjustments
+    document.getElementById('total-travellers-adult-plus').addEventListener('click', () => {
+        adultCount++;
+        adultCountEl.textContent = adultCount;
+        adultDisplayCountEl.textContent = adultCount;
+        updateTotalPrice();
+    });
+
+    document.getElementById('total-travellers-adult-minus').addEventListener('click', () => {
+        if (adultCount > 1) {
+            adultCount--;
+            adultCountEl.textContent = adultCount;
+            adultDisplayCountEl.textContent = adultCount;
+            updateTotalPrice();
+        }
+    });
+
+    document.getElementById('total-travellers-child-plus').addEventListener('click', () => {
+        childCount++;
+        childCountEl.textContent = childCount;
+        childDisplayCountEl.textContent = childCount;
+        updateTotalPrice();
+    });
+
+    document.getElementById('total-travellers-child-minus').addEventListener('click', () => {
+        if (childCount > 0) {
+            childCount--;
+            childCountEl.textContent = childCount;
+            childDisplayCountEl.textContent = childCount;
+            updateTotalPrice();
+        }
+    });
+
+    function handlePayment() {
+    let finalAmount = updateTotalPrice(); // Get the updated total price
+
+    // Check if partial payment is selected
+    if (isPartialPayment) {
+        // Ensure partial payment logic is only applied once
+        finalAmount = finalAmount ; // 30% for partial payment
+    }
+
+    // Validation to ensure the amount matches with Razorpay requirements
+    if (isPartialPayment && finalAmount < 100) {
+        alert("Partial payment amount must be at least ₹100.");
+        return;
+    }
+
+    const options = {
+        key: "rzp_live_FXai12FndgJZyQ", // Replace with your live Razorpay API key
+        amount: Math.round(finalAmount * 100), // Convert to paise
+        currency: "INR",
+        name: "Safarwallah",
+        description: `Kedarkantha - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
+        image: "https://drive.google.com/file/d/1srOLjBOzjRORsPI02rcrRnBgkGJwVVE0/view?usp=sharing",
+        handler: function (response) {
+            alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
+            window.location.reload(); // Reload the page after payment
+        },
+        prefill: {
+            email: "",        // User will fill these manually
+            contact: ""       // User will fill these manually
+        },
+        theme: { color: "#FF7A1F" }
+    };
+
+    const razorpayInstance = new Razorpay(options);
+    razorpayInstance.open();
+}
 
 
+    // Book Now button event listener
+    bookNowBtn.addEventListener('click', () => {
+        if (!selectedPackage || !selectedSharing || !selectedDate) {
+            alert("Please select a package, sharing option, and batch date before booking.");
+            return;
+        }
+        handlePayment();
+    });
 
-
-
-                                    dateInput.addEventListener('click', () => datePopup.classList.toggle('hidden'));
-                                    document.querySelectorAll('.date-option').forEach(dateEl => {
-                                        dateEl.addEventListener('click', function () {
-                                            dateInput.value = this.textContent;
-                                            datePopup.classList.add('hidden');
-                                        });
-                                    });
-
-                                    travellersTrigger.addEventListener('click', () => travellersPopup.classList.remove('hidden'));
-                                    closeTravellersPopup.addEventListener('click', () => travellersPopup.classList.add('hidden'));
-                                    // Function to show the popup when the "Book Now" button is clicked
-bookNowBtn.addEventListener('click', () => bookNowPopupBox.classList.remove('hidden'));
-
-// Function to close the popup when the close button is clicked
-bookNowClosePopupBtn.addEventListener('click', () => {
-bookNowPopupBox.classList.add('hidden');
+    // Initialize total price on page load
+    updateTotalPrice();
 });
 
-// Function to close the popup when clicking outside the popup
-window.addEventListener('click', (e) => {
-if (e.target === bookNowPopupBox) bookNowPopupBox.classList.add('hidden');
-});
-
-// Show the popup automatically after 5 seconds when the page loads
-window.addEventListener('DOMContentLoaded', () => {
-setTimeout(() => {
-bookNowPopupBox.classList.remove('hidden');
-}, 5000); // 5000ms = 5 seconds
-});
-
-                                });
-                            </script>
+                                    </script>
                                     
                                     
 
