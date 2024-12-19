@@ -887,25 +887,15 @@
 
 </script>
 
-    <div>
-        <button id="scrollToTopBtn"
-            class="bg-black bottom-28 fixed px-3.5 py-3.5 right-6 rounded-full text-white"
-            style="
-          z-index: 1000000;
-      "><svg xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                style="width: 20px; height:20px;"
-                class="size-6">
-                <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
-            </svg>
-        </button>
-
-    </div>
+<div class="overflow-x-hidden">
+    <button id="scrollToTopBtn" class="bg-black bottom-44 fixed px-3.5 py-3.5 right-8 rounded-full text-white" style="
+      z-index: 1000000;
+  "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 20px; height:20px;" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+    </svg>
+    </button>
+  
+  </div>
 
     <script>// Get the button
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -1133,20 +1123,12 @@
 
         <!-- contact-us-popup button                   -->
 
-        <div class="bg-black p-4 rounded-full fixed bottom-10 right-5 contact-us-icon-button "
-            id="contactUsButton"
+        <div class="bg-black p-4 rounded-full fixed bottom-28 right-7 contact-us-icon-button " id="contactUsButton"
             style="z-index: 150;">
             <p class="flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="white"
-                    class="size-6 contact-us-icon-button-svg"
-                    id="contactUsIcon"
-                    style="width: 20px;">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="white" class="size-6 contact-us-icon-button-svg" id="contactUsIcon" style="width: 20px;">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                         d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>
             </p>
@@ -1346,15 +1328,15 @@
                             <!-- Popup for Image -->
 
                             
-                            <!-- <div class="mt-6" style="width: fit-content;">
-                                <a href="/src/pdf/kashmir/Kashmir Itinerary Ex Srinagar_compressed.pdf"
+                            <div class="mt-6" style="width: fit-content;">
+                                <a href="/src/pdf/kerala/Kerala 5N6D Ex Kochi_compressed (1).pdf"
                                     class="btn btn-1 hover-filled-slide-up" style="margin: 0px !important;">
                                     <span class="flex px-4 py-4 text-md">Download Itinerary</span>
                                 </a>
                                 
         
         
-                            </div> -->
+                            </div>
 
                         </div>
                     </div>
@@ -2360,9 +2342,10 @@ A visit to Alleppey provides a glimpse into traditional Kerala life, surrounded 
                                 <div id="date-available-popup" class="date-available-popup hidden" style="z-index: 1000 !important;">
                                     <ul class="overflow-auto" style="max-height: 300px;">
                                         
-                                        <li class="date-option date-available-item">03 Jan - 08 Jan, 2025 and onwards ( <span
-                                                class="text-green-500">Available</span> ) </li>
-
+                                        <!-- <li class="date-option date-available-item">03 Jan - 08 Jan, 2025 and onwards ( <span
+                                                class="text-green-500">Available</span> ) </li> -->
+                                                <span
+                                                class="text-green-500">Available Soon</span>
                                         <!-- Add more dates as needed -->
                                     </ul>
                                 </div>
@@ -2519,7 +2502,7 @@ A visit to Alleppey provides a glimpse into traditional Kerala life, surrounded 
         totalPrice *= 0.2; // 30% for partial payment indication
     }
 
-    totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isPartialPayment ? "(20% Partial Payment)" : "(Full Payment)"}`;
+    totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isPartialPayment ? "(20% Partial Payment + 5% GST)" : "(Full Payment + 5% GST)"}`;
     return totalPrice;
 }
 
@@ -2641,7 +2624,7 @@ A visit to Alleppey provides a glimpse into traditional Kerala life, surrounded 
         amount: Math.round(finalAmount * 100), // Convert to paise
         currency: "INR",
         name: "Safarwallah",
-        description: `Kedarkantha - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
+        description: `Kerala - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
         image: "https://drive.google.com/file/d/1srOLjBOzjRORsPI02rcrRnBgkGJwVVE0/view?usp=sharing",
         handler: function (response) {
             alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
@@ -5275,7 +5258,18 @@ A visit to Alleppey provides a glimpse into traditional Kerala life, surrounded 
 
 
 
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/676255af49e2fd8dfef9b2e7/1ifc1tedb';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 
 
 </body>
@@ -5592,9 +5586,9 @@ A visit to Alleppey provides a glimpse into traditional Kerala life, surrounded 
   
   
                             </span>
-                            <span>
-                                Ludhiana, Punjab 141010
-                            </span>
+                            <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
                         </p>
                     </div>
                     <div class="flex  gap-2 items-baseline justify-start pl-28 text-sm py-10 text-white">
@@ -5821,9 +5815,9 @@ A visit to Alleppey provides a glimpse into traditional Kerala life, surrounded 
   
   
                             </span>
-                            <span>
-                                Ludhiana, Punjab 141010
-                            </span>
+                            <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
                         </p>
                         
                     </div>

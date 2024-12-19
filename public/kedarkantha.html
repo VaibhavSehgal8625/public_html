@@ -811,17 +811,15 @@
 
     </script>
 
-    <div>
-        <button id="scrollToTopBtn" class="bg-black bottom-28 fixed px-3.5 py-3.5 right-6 rounded-full text-white"
-            style="
+    <div class="overflow-x-hidden">
+        <button id="scrollToTopBtn" class="bg-black bottom-44 fixed px-3.5 py-3.5 right-8 rounded-full text-white" style="
           z-index: 1000000;
-      "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" style="width: 20px; height:20px;" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
-            </svg>
+      "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 20px; height:20px;" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+        </svg>
         </button>
-
-    </div>
+      
+      </div>
 
     <script>// Get the button
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -1005,7 +1003,7 @@
 
         <!-- contact-us-popup button                   -->
 
-        <div class="bg-black p-4 rounded-full fixed bottom-10 right-5 contact-us-icon-button " id="contactUsButton"
+        <div class="bg-black p-4 rounded-full fixed bottom-28 right-7 contact-us-icon-button " id="contactUsButton"
             style="z-index: 150;">
             <p class="flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -3577,31 +3575,13 @@
                                     <div id="date-available-popup" class="date-available-popup hidden"
                                         style="z-index: 1000 !important;">
                                         <ul class="overflow-auto" style="max-height: 300px;">
-                                            <li class="date-option date-available-item">15 Nov - 19 Nov, 2024 ( <span
+                                            
+                                            <li class="date-option date-available-item">03 Jan - 07 Jan, 2025 ( <span
                                                     class="text-green-500">Available</span> ) </li>
-                                            <li class="date-option date-available-item">22 Nov - 26 Nov, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) </li>
-                                            <li class="date-option date-available-item">29 Nov - 03 Dec, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) </li>
-                                            <li class="date-option date-available-item">06 Dec - 10 Dec, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) </li>
-                                            <li class="date-option date-available-item">13 Dec - 17 Dec, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) </li>
-                                            <li class="date-option date-available-item">20 Dec - 24 Dec, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) </li>
-                                            <li class="date-option date-available-item">23 Dec - 27 Dec, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) - Only Girls </li>
-                                            <li class="date-option date-available-item">23 Dec - 27 Dec, 2024 ( <span
-                                                    class="text-green-500">Available</span> )</li>
-                                            <li class="date-option date-available-item">27 Dec - 31 Dec, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) </li>
-                                            <li class="date-option date-available-item">30 Dec - 03 Jan, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) - Only Girls (NY Special)
-                                            </li>
-                                            <li class="date-option date-available-item">30 Dec - 03 Jan, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) - (NY Special) </li>
-                                            <li class="date-option date-available-item">03 Jan - 07 Jan, 2024 ( <span
-                                                    class="text-green-500">Available</span> ) </li>
+                                                    <li class="date-option date-available-item">10 Jan - 14 Jan, 2025 ( <span
+                                                        class="text-green-500">Available</span> ) </li>
+                                                        <li class="date-option date-available-item">24 Jan - 28 Jan, 2025 ( <span
+                                                            class="text-green-500">Available</span> ) </li>
 
                                             <!-- Add more dates as needed -->
                                         </ul>
@@ -3766,10 +3746,10 @@
 
     // Apply partial payment indication if selected
     if (isPartialPayment) {
-        totalPrice *= 0.3; // 30% for partial payment indication
+        totalPrice *= 0.2; // 30% for partial payment indication
     }
 
-    totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isPartialPayment ? "(30% Partial Payment)" : "(Full Payment)"}`;
+    totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isPartialPayment ? "(20% Partial Payment + 5% GST)" : "(Full Payment + 5% GST)"}`;
     return totalPrice;
 }
 
@@ -6243,7 +6223,18 @@
 
 
 
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/676255af49e2fd8dfef9b2e7/1ifc1tedb';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 
 
 </body>
@@ -6496,9 +6487,9 @@
 
 
                             </span>
-                            <span>
-                                Ludhiana, Punjab 141010
-                            </span>
+                            <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
                         </p>
                     </div>
                     <div class="flex  gap-2 items-baseline justify-start pl-28 text-sm py-10 text-white">
@@ -6685,9 +6676,9 @@
 
 
                             </span>
-                            <span>
-                                Ludhiana, Punjab 141010
-                            </span>
+                            <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
                         </p>
 
                     </div>

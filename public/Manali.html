@@ -20,6 +20,9 @@
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- razorpay checkout modal -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
     <!-- Include Owl Carousel CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -820,7 +823,7 @@
                 </svg>
             </span>
             <h2 class="booking-popup-title font-bold" style="color: #FF931F;">Hey Buddy!</h2>
-            <p class="booking-popup-message capitalize">Rohan and 10 Others booked this trek! When Will You?</p>
+            <p class="booking-popup-message capitalize">Tanya and 23 Others booked this trip! When Will You?</p>
         </div>
     </div>
     
@@ -884,25 +887,15 @@
 
 </script>
 
-    <div>
-        <button id="scrollToTopBtn"
-            class="bg-black bottom-28 fixed px-3.5 py-3.5 right-6 rounded-full text-white"
-            style="
-          z-index: 1000000;
-      "><svg xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                style="width: 20px; height:20px;"
-                class="size-6">
-                <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
-            </svg>
-        </button>
-
-    </div>
+<div class="overflow-x-hidden">
+    <button id="scrollToTopBtn" class="bg-black bottom-44 fixed px-3.5 py-3.5 right-8 rounded-full text-white" style="
+      z-index: 1000000;
+  "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 20px; height:20px;" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+    </svg>
+    </button>
+  
+  </div>
 
     <script>// Get the button
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -940,7 +933,7 @@
                         class="custom-font-heading font-bold lg:pr-0 lg:text-8xl  md:pr-0 md:text-7xl sm:pr-0 sm:text-7xl text-6xl text-white"
                         style="text-transform: capitalize !important;">Manali</span>
                     <p class="lg:text-3xl md:text-2xl sm:text-xl text-white text-xl"
-                        style="">Where the Mountains Meet the Sky
+                        style="">Manali-Solang-Kasol
 
                     </p>
 
@@ -969,7 +962,7 @@
                         </p>
                         <p class="font-normal  namesinpicture text-xl"
                             style="">
-                            2N/3D
+                            3N/4D
                         </p>
                     </div>
                     <!-- <div
@@ -1020,7 +1013,7 @@
                         <p class="flex flex-col justify-center text-xl items-center namesinpicture"
                             style="">
                             <span>
-                                ₹ 7,499/-
+                                ₹ 9,499/-
                             </span>
                             <span>
                                 Onwards
@@ -1131,20 +1124,12 @@
 
         <!-- contact-us-popup button                   -->
 
-        <div class="bg-black p-4 rounded-full fixed bottom-10 right-5 contact-us-icon-button "
-            id="contactUsButton"
+        <div class="bg-black p-4 rounded-full fixed bottom-28 right-7 contact-us-icon-button " id="contactUsButton"
             style="z-index: 150;">
             <p class="flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="white"
-                    class="size-6 contact-us-icon-button-svg"
-                    id="contactUsIcon"
-                    style="width: 20px;">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="white" class="size-6 contact-us-icon-button-svg" id="contactUsIcon" style="width: 20px;">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                         d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>
             </p>
@@ -1331,7 +1316,7 @@
 
                         </p>
                         <p class="text-lg mb-3">
-                            For spiritual seekers, ancient temples like Hadimba Devi Temple and Manu Temple provide a sense of peace. The bustling Mall Road offers vibrant markets, local handicrafts, and delicious cuisines. Whether you're trekking through dense forests, exploring quaint villages, or simply enjoying the crisp mountain air, Manali promises an unforgettable experience, blending adventure, culture, and nature in one exquisite destination.
+                            For spiritual seekers, ancient temples like Hadimba Devi Temple and Manu Temple provide a sense of peace. The bustling Mall Road offers vibrant markets, local handicrafts, and delicious cuisines. Whether you're trip through dense forests, exploring quaint villages, or simply enjoying the crisp mountain air, Manali promises an unforgettable experience, blending adventure, culture, and nature in one exquisite destination.
 
 
 
@@ -1350,7 +1335,7 @@
                         data-animation="fade-scroll-right">
                         <!-- Sticky Image Container -->
                         <div class="flex flex-col items-center sticky top-20">
-                            <img src="/src/images/tungnath/Tungnath trek map.webp"
+                            <img src="/src/images/manali/Manali Trip Map.webp"
                                 class="image-width-small map-image-trigger"
                                 style="width: 400px; height: 400px;"
                                 alt="Map Of Trek">
@@ -1358,7 +1343,7 @@
 
                             
                             <div class="mt-6" style="width: fit-content;">
-                                <a href="/src/pdf/kashmir/Kashmir Itinerary Ex Srinagar_compressed.pdf"
+                                <a href="/src/pdf/manali/Manali 3N4D Ex Delhi_compressed.pdf"
                                     class="btn btn-1 hover-filled-slide-up" style="margin: 0px !important;">
                                     <span class="flex px-4 py-4 text-md">Download Itinerary</span>
                                 </a>
@@ -1396,7 +1381,7 @@
                                 d="M6 18 18 6M6 6l12 12" />
                         </svg>
                     </button>
-                    <img src="/src/images/tungnath/Tungnath trek map.webp"
+                    <img src="/src/images/manali/Manali Trip Map.webp"
                         class="map-image"
                         alt="Map Of Trek">
                 </div>
@@ -1424,7 +1409,7 @@
                     <div class="accordion-container flex flex-col gap-2">
                         <!-- Accordion 1 -->
                         <div class="accordion-header border rounded-2xl border-gray-300 flex justify-between p-4" onclick="toggleAccordion(this)">
-                            <p>DAY 0/1 : Depart from Delhi and Arrival in Kasol</p>
+                            <p>DAY 0/1 : Depart from Delhi and Arrival in Manali</p>
                             <p class="rotate-parent-svg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" fill="black" style="width: 20px;height:20px">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -1435,8 +1420,8 @@
                             <div class="flex flex-col gap-3">
 
                                 <p class="p-4"><ul class="drive-info">
-                                    <li>555 km drive from Delhi to Kasol</li>
-                                    <li>11-12 hours drive</li>
+                                    <li>503 km drive from Delhi to Manali</li>
+                                    <li>10-11 hours drive</li>
                                 </ul>
                                 
                                 
@@ -1445,9 +1430,9 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/manali/kasol.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
-                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Kasol
-                                    </span> <span class="text-gray-500">Kasol, a serene village in Himachal Pradesh's Parvati Valley, is a haven for backpackers and nature lovers. Known for its scenic beauty, vibrant cafes, and laid-back vibe, it offers trekking, riverbank camping, and cultural fusion. Often called "Mini Israel," Kasol charms with its tranquility and breathtaking Himalayan landscapes.
+                                    <img src="/src/images/manali/banner-image.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Manali
+                                    </span> <span class="text-gray-500">Manali, a picturesque hill station in Himachal Pradesh, is a haven for nature lovers and adventure enthusiasts. Surrounded by snow-capped mountains, lush valleys, and gushing rivers, it offers thrilling activities like trekking, skiing, and paragliding. Manali’s charming cafes, vibrant markets, and serene temples make it a perfect blend of tranquility and excitement.
                                     </span></p>
                                 </div>
                             </div>
@@ -1477,47 +1462,51 @@
                             <div class="p-4 text-gray-600 flex flex-col gap-6"
                                 style="font-size: 18px;line-height: 25px;font-weight: 400;">
                                 <p>
-                                    Kasol, a quaint village in Himachal Pradesh's Parvati Valley, is a paradise for travelers seeking peace, adventure, and a connection with nature. Nestled along the banks of the Parvati River, this picturesque destination is surrounded by lush greenery, snow-capped mountains, and crystal-clear streams, creating a tranquil and refreshing escape from urban life.
-                                </p>
-                                <p>
-                                    Popularly known as "Mini Israel" due to its significant influx of Israeli tourists, Kasol boasts a unique cultural fusion, evident in its vibrant cafes serving Israeli delicacies and the laid-back vibe of the town. It is an ideal base for trekkers and explorers, offering access to stunning trails like Kheerganga, Tosh, and Malana, each providing breathtaking views and a peek into the region's distinct culture.
+                                    Manali, nestled in the scenic Kullu Valley of Himachal Pradesh, is a breathtaking hill station that enchants visitors with its pristine beauty and adventurous spirit. Surrounded by the majestic Himalayas, it offers a blend of natural splendor and cultural richness, making it a sought-after destination for travelers. The town is dotted with lush green valleys, gushing rivers, and snow-capped peaks, providing a serene backdrop for those seeking peace and tranquility.
 
 
                                 </p>
                                 <p>
-                                    The Parvati River enhances the charm of Kasol, perfect for leisurely strolls or simply soaking in the serene ambiance. Adventure enthusiasts can enjoy camping, angling, and nature photography, while shoppers can explore local markets for handcrafted items and souvenirs.
+                                    For adventure enthusiasts, Manali is a playground of activities such as trekking, paragliding, skiing, and river rafting. The nearby Solang Valley and Rohtang Pass are popular for their thrilling snow sports and stunning landscapes. Nature lovers can explore the enchanting trails to Jogini Falls or visit the Great Himalayan National Park, a UNESCO World Heritage Site.
+
+
+
                                 </p>
                                 <p>
-                                    With its blend of tranquility, adventure, and cultural richness, Kasol has become a favorite destination for backpackers and nature enthusiasts alike. Whether you're seeking solitude or adventure, this idyllic village promises an unforgettable experience amidst the Himalayas.
+                                    Manali also holds spiritual significance, with attractions like the Hadimba Devi Temple, Manu Temple, and Tibetan monasteries. Its vibrant markets, cozy cafes, and bustling streets offer a mix of local flavors and global appeal. Be it exploring the cultural heritage, indulging in adventurous pursuits, or simply soaking in the natural beauty, Manali offers an unforgettable experience, leaving every traveler mesmerized and longing to return.
+
+
+
+
+
+
+
                                 </p>
+                                
                             </div>
                             <div class="p-4 text-gray-600 flex flex-col gap-6"
                                 style="font-size: 18px;line-height: 25px;font-weight: 400;">
-                                <li style="color: #FF931F;">Activity of Day 1
+                                <li style="color: #FF931F;">Activity of Day 0/1
                                 </li>
                                 <li class="px-8"
-                                    style="color: black;">Check in Camps in Kasol
+                                    style="color: black;">Check in Hotel in Manali
                                 </li>
                                 <li class="px-8"
-                                    style="color: black;">Hot Water bath in Manikaran 
+                                    style="color: black;">Visit Vashisht Temple and short hike to Jogini Waterfalls
 
                                     
                                 </li>
                                 <li class="px-8"
-                                    style="color: black;">Visit chalal village
+                                    style="color: black;">Visit Hadimba Devi Temple & Mall Road
 
                                     
                                 </li>
                                 <li class="px-8"
-                                    style="color: black;">Explore Kasol market
+                                    style="color: black;">Overnight stay in Manali
 
                                     
                                 </li>
-                                <li class="px-8"
-                                    style="color: black;">Dinner in camps
-
-                                    
-                                </li>
+                                
                             </div>
                         </div>
                     </div>
@@ -1526,7 +1515,7 @@
                                     <p class="rounded-full bg-orange-low p-2" style="width: fit-content;" ><img style="width: 30px; height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFUklEQVR4nO2cf6gVRRTHv+9q+npm6fNHVqZkUASClj7rr3iIISSkCPrULAqpF/2hCAWBRZbQH0lKfz1/oL2oQIgwy8qCUPRhvbKoKAvT0tSEMhFUVNQ2BmZpXeacnZ2dvXf37vnA+evODDtn5uw5Z87sBQRBEARBEARBEATBkQ4Ana6dhex8DqDPwziCAw8BCLTMcBlAcGcAgB8jC7A3w1iCA09FlB/KTJeBhPRcB+CEYQG+dBhLcOBlg/JDmeUyoGDPTQDOMgvwDYCWFOMJKdnIKD8UFR0JOXAXgEsWC/ADgJqsgH8+slB+KHNlAfzSmUL5gc4RxAo80QJgH6Hof5lFmO/rAarOw4ySXwJwiPjtJ7GC7AxiFHwcwBAAjzMLtNDDM1SaZxnlLomcC/1CtDkAYGCD51BahgP4h1Ds/phiH2EWanED51Bq1jBKfTDWVlnBz0TbX8UK0nMbgAuEQncSfRYxC/aYwzNUmi1M2DmF6FPTWbCp3+/aoQsWTGPi+7cS+s63cNqCRZ3XpMCLACZYJG3fEf0PixUkM5vZwa/CjrnMGN2WY1SSAbE6b1ROAWi3HEdZwdfEOH8AGJzzPJqqzhtoWe7Rkp7O6fmbss4bAPjNcdf2E+P9CeDaHObQtHXeLscxZzFjLvX8/KXmZqbO+xVT41VW817CUcMXxLjK2tpymk9T1XmnE31uAfBtJDlbSSzUTI9+pXJ13m1En0kAjhraq+y51dB+NzH+X9qKKs12Zoc+amg/J+Fayi5DuPoA014dd1eWTkYxgT6Mi77flwG4ktBHyUEAd+o+aod/yLT9G8BQVJAWps4bFfV+fwFAj0XbuGLnAfjeou1zqCCLUyo0TzkJ4Ho0CTWL6yCt+njYh/JsXkk28jyahCcAbEpYhGcYRdjcfItmtOroerWHBVBnTTeg5IzQ5hwwi9CuJ0tdI5kM4IiFwlThZVxk3G7LxeNu172IkrM+NqHNhkVYa3G1fIzOgKl2nxG7VX2mdJroEyZrik+JNqdTnLgWjmnE+zhqCRNS1HnbAGw1tOtJuGYyURdeon3Oxe6K3scs7iqUkJr+OoWaVGgJXJ13KhGqrjTs4CSiFnRCf8oa52PiWc4AGIWS0W3x7v2EqfO+Y1EnUBlwGtr062488XsH8zyvoES066THNfq4aFHnzYsPiGdSRx2jURI2ZFB+oEPIRnEPYwU29WdVJLoGDWRKxkToVAGijq2MFdzI9BukLci1WJSZGhMqXtExfdICLEfjmcRYwWvMzg/zib4iOt51Ok6narJBhjpvHrxLPON5Xfgx7fxoO1MEV7eMNy4n9e+KYcz1kAUoDhOZV+nrkXaDifC1t0iOV50FRTFZQn8Bv+XdwljBWGLnh3IhwV94pYPZLf3E+U/cEu5HMUujl4l5bWQSt1BWNDrjVYtyL9M3tIT3UVzezhDRHa9HSPpkguNNYpi+919U7mCswEa6GpXxqs+IRqI5eDPDAvQVxfGWmdtTFoWCeoSkLo63zGxKULJKwo4Rv/UWyfGWlfH6kJA61W3VUU9dQtKsjresbCB2fpi9j9I5Qq4haVUcr4lxMSvYYbj2+EbeIWlVHC9FD6N8xd15hqTcUfO+JnS8Jm7VF4RNyg/Zk0dImnTUXPfTvwLDfRarCj65HDUL/zOQuCofaB+Rmio7Xle8hqTrK+54XRjJhKSp7pyK43Unc0haxYzXJ5lDUnG82XEOSbNerhJBog6mujpeEXjRQW9el6tEYKUDY0iadKtZBF51sCLNUbMIvOvgqpBUHC8assnk75QFQRAEQRAEQRAEQRAEQRAE1In/AAV0ovdEYklKAAAAAElFTkSuQmCC" alt="mountain--v3"></p>
                                     <div class="flex flex-col">
                                         <p class="text-xl font-bold" style="color: #FF7A1F;">Altitude</p>
-                                        <p class="text-xs">5,366 ft</p>
+                                        <p class="text-xs">5,730 ft</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-3">
@@ -1534,7 +1523,7 @@
                                         <img   style="width: 30px; height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFLUlEQVR4nO2aa6xdQxTHf8erWtqcS+NR8QxS4Xrdlja+cEWKen1AoqpfcD8RIbghQokEJcQz7geRII340GrSoL2RChok1UijiaQoaVS0Rcu9fdDjyErWxMqY/T679j7OP1k558ysNWfWf8/898zsDT30UDc8A+wF2imsBbxCF2E/YEfK5J39ARxMl2CuSext4PEYe9P4zqPGaAADwD3Adk3od6AvIW4SsE39x4D7gfN1FNUKD3lD+q8MV/TKgF6IhtQKS0znvwIuzxh/IbDOtLGKiqAPeE6tLwUB63U65MXHVSJgAPjaXJXvgdkJBHxR8D9XVYWAIWBP4Hb1JzAcuMp5CDgAmKGflSGgCSw1CQsJd6hZQpZ6UyIrAROBlRrzfFUIGEgY8nH1WQiwyYu9UAUChrwrvAw4LOA3BXgrMCVe099CkIMM7RfVJGn0c9TErzR1gs/N/+8TTIlIqJGRsG/081fjM8PUjyqhcckLvtO6V6mYyqeJd3asGQF2qP+WkHxTN0ZtXViVhkaEqEkHsqLPE02/8xOA5V59KHnBZcbnEvaxyjcKtCmxd5k213r1kuwKrVsRkTxGR3YCkykB5wEbTUc3almnsNhsbY/36vYHztXPEI4ExjX+df5DlS+CM3UTJO2/kTH2JdO3C6jYkL9FLQ3cMBYirsmwEXK7QelrZVT+NOBdE78aOCsh5hi9FYr/L9pGHE4EfjTnAadQgSE/FXg24kyvpVf56Jj4K8ztTJI7I8LvZL0oHT0RahYY8ofoLWzMxO+N+D6mvhITwt3GV06GFnj1t5uTI7GHy1D5b4GZKeJEmW8GNntXe5l23P1eoGXWZ7PGhtT9NiOKYh8A1+p+wbZxXxkLmyUpFzZzvJMYsTUqTOinK7dla7yYddqWj4uBTYGpZJfehdYhTe84Ku2Q7wfe8zoj83G+dyAZIgD1me/N4ba2KW37q8UnzdTaBXyY84IVVvlpwIg3n2WOLoxYoUUR4HCQEm7nc0s3WMd5vkcAN+mdIm//c6v8JN3l7fCG34iuwqKQRIDD4XrOb/s0rmWy4+zYbvTQjEM+TuCmx3QsKwEO0zMKZZyGSa7/wrBx+iFB5ZMEjhIIIIdQOszUnJz/vSGn2cBudditj6F89AeUNyRwZRIQJ5SbAkKJ5mJzmxXV8KWqpG4KXBUjcHtiBK5sAnyh3BUjlFE5RcJn62VvBedsEcXQCQIcFgX6N6Z9TxrVQVjWrI1634cL2Ihpa6RgW7ZfVvnbWa58HAkiOhdpebvi5vRsdZHkHU4FBj2BqwMBaJ8HNYeOoq0mAlgVLAwQUBraPQIoPAIm6uHGnWpzC77HU6sRcCuwNTB3t2Q4H6wtAU+kELHHupWAq03sT3pON1l3bTdqmauX6dF1BKw1z/HkxNbHSeYZn6w7uoqAaSbugRi/B43fUd1EwCwTNydh9en85J2+riGg38TdEOM3z/id3k0ETDBHZu9HnDI1zGss23Wr2zUEoK+zuFjZvh7IP5DvT5l6eXeQbiNgEPjZW/h8pLbFlG/LcT5QaQLOAT7Lsav7FDi77gQMmpcT8ti4OYeoHQFTzevqLZ3jJ6RoXxZJT5unwFtTPH2uJAGPGt88m5whE/9IHQn4Uv0+yfk/DaMdcu5fOwJ2qp/sAB2aMS81oHXNwGmvaEHtCGgH/NZr2XUB/+u1TkZO1sRqQ0A7JjaURI8AKjwCRhMeVji/DcA7aqEyZxtMfags7YOR0tEqsLAp26RvpWNxRUlo5XiLtAf+7/gbFVDlieNOVasAAAAASUVORK5CYII=" alt="external-stay-corona-virus-others-iconmarket-2"></p>
                                     <div class="flex flex-col">
                                         <p class="text-xl font-bold" style="color: #FF7A1F;">Stay</p>
-                                        <p class="text-xs">Camps</p>
+                                        <p class="text-xs">Hotel</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-3">
@@ -1550,7 +1539,7 @@
                     
                         <!-- Accordion 2 -->
                         <div class="accordion-header border rounded-2xl border-gray-300 flex justify-between p-4" onclick="toggleAccordion(this)">
-                            <p>DAY 2 : Depart from Kasol | Arrival in Manali</p>
+                            <p>DAY 2 : Visit Solang Valley & Sissu</p>
                             <p class="rotate-parent-svg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" fill="black" style="width: 20px;height:20px">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -1561,10 +1550,9 @@
                             <div class="flex flex-col gap-3">
 
                                 <p class="p-4"><ul class="drive-info">
-                                    <li> Distance : 75.1 km | 2-3 hours</li>
+                                    <li> Distance : 13 km | 0.5 - 01 hrs</li>
                                     <li>
-                                        Arrival in Manali "Where the Mountains Meet the Sky
-                                        "
+                                        Arrival in Solang Valley & Sissu
                                     </li>
                                     
                                 </ul>
@@ -1572,12 +1560,20 @@
                                 
                                 </p>
                             </div>
-                            <div class="p-4 " style="">
+                            <div class="p-4 flex flex-col gap-3" style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/manali/hadimba-devi-temple.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
-                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Hadimba Temple
-                                    </span> <span class="text-gray-500">Hadimba Devi Temple, located in Manali, Himachal Pradesh, is a sacred site dedicated to Goddess Hadimba, wife of Bhima from the Mahabharata. Surrounded by cedar forests, the temple features unique wooden architecture and intricate carvings. Its serene ambiance and spiritual significance make it a must-visit destination for travelers.
+                                    <img src="/src/images/manali/solang-valley.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Solang Valley
+                                    </span> <span class="text-gray-500">Solang Valley, located near Manali, is a picturesque haven for adventure enthusiasts and nature lovers. Renowned for activities like paragliding, skiing, and zorbing, it offers thrilling experiences year-round. During winter, it transforms into a snowy wonderland, while summer reveals lush green landscapes. Solang Valley is a perfect blend of beauty and excitement.
+
+  </span></p>
+                                </div>
+                                <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
+
+                                    <img src="/src/images/manali/sissu.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Sissu
+                                    </span> <span class="text-gray-500">Sissu, a charming village in Himachal Pradesh's Lahaul Valley, is a hidden gem known for its breathtaking landscapes. Surrounded by snow-capped peaks, cascading waterfalls, and serene rivers, it offers tranquility and natural beauty. Sissu is ideal for nature enthusiasts, providing opportunities for exploration, relaxation, and stunning views of the Himalayan wonders.
   </span></p>
                                 </div>
                             </div>
@@ -1608,53 +1604,43 @@
                         <div class="p-4 text-gray-600 flex flex-col gap-6"
                             style="font-size: 18px;line-height: 25px;font-weight: 400;">
                             <p>
-                                The Hadimba Devi Temple, also known as Hidimba Temple, is a revered spiritual site located amidst dense cedar forests in Manali, Himachal Pradesh. Dedicated to Goddess Hadimba, it has deep roots in Hindu mythology and the Mahabharata.
+                                Solang Valley and Sissu are two stunning destinations in Himachal Pradesh that showcase the natural beauty and adventure of the Himalayas.
 
 
 
                             </p>
                             <p>
-                                According to legend, Hadimba was a rakshasi (demoness) and the sister of the demon king Hadimb. During the Pandavas' exile, they reached the Kullu Valley, ruled by Hadimb. He ordered Hadimba to lure them into a trap, but upon meeting Bhima, the second Pandava, Hadimba fell in love with him due to his immense strength and courage. Bhima, in a fierce battle, defeated and killed Hadimb to protect his family.
-
-
-
-                            </p>
-                            <p>
-                                After the battle, Bhima married Hadimba, and they lived in the valley for a short time. Their union bore a son, Ghatotkacha, a powerful warrior in the Mahabharata. Eventually, Bhima departed, and Hadimba chose a life of meditation, attaining the status of a goddess.
-
+                                Solang Valley, located just 13 kilometers from Manali, is a paradise for thrill-seekers and nature enthusiasts. Known for its lush green meadows in summer and snow-covered slopes in winter, Solang offers a range of adventure activities, including paragliding, skiing, and zorbing. The valley is surrounded by majestic mountains, providing panoramic views and making it a favorite spot for photography. During winter, it transforms into a snowy wonderland, attracting visitors for snow sports and a serene retreat amidst pristine landscapes. Its accessibility and vibrant charm make Solang Valley a must-visit destination.
 
 
                             </p>
                             <p>
-                                The temple, built in 1553 by Maharaja Bahadur Singh, is renowned for its unique pagoda-style architecture, wooden carvings, and serene surroundings. A symbol of devotion and peace, it continues to attract pilgrims and visitors who admire its spiritual significance and enchanting natural setting.
+                                Sissu, located in the picturesque Lahaul Valley, is a tranquil village that captivates visitors with its untouched beauty. Famous for its magnificent waterfalls, snow-clad peaks, and verdant fields, Sissu offers a serene escape from bustling city life. The Sissu Waterfall is a major highlight, providing a breathtaking backdrop for memorable experiences. The village is also a gateway to explore the rugged charm of the Lahaul-Spiti region. With its peaceful environment, Sissu appeals to those seeking solitude and an authentic connection with nature.
 
 
-
-
-
-
-
-
+                            </p>
+                            <p>
+                                Together, Solang Valley and Sissu present a harmonious blend of adventure, tranquility, and breathtaking Himalayan vistas, making them unforgettable travel destinations.
                             </p>
                         </div>
                         <div class="p-4 text-gray-600 flex flex-col gap-6"
                             style="font-size: 18px;line-height: 25px;font-weight: 400;">
-                            <li style="color: #FF931F;">Activity:  arrival in Manali</li>
+                            <li style="color: #FF931F;">Activity:  Visit Solang Valley & Sissu</li>
                             <li class="px-8"
-                                style="color: black;">Breakfast and Checkout from Kasol
+                                style="color: black;">Today morning after breakfast,we will leave for Solang Valley
                                 </li>
                             <li class="px-8"
-                                style="color: black;">Way to Manali (river ride in Kullu)
+                                style="color: black;">Do some advanture activities in Solang.
                             </li>
                             <li class="px-8"
-                                style="color: black;"> Check in Manali Hotel
+                                style="color: black;">Then, visit Atal Tunnel and witness the longest tunnel in India.
                             </li>
                             <li class="px-8"
-                                style="color: black;">Visit Hadimba Temple
+                                style="color: black;">Visit Rohtang Pass and Sissu are subject to weather conditions.
 
                             </li>
                             <li class="px-8"
-                                style="color: black;">Explore mall road in Manali.
+                                style="color: black;">Dinner & overnight stay in Manali.
 
                             </li>
                             
@@ -1668,7 +1654,7 @@
                                     <p class="rounded-full bg-orange-low p-2" style="width: fit-content;" ><img style="width: 30px; height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFUklEQVR4nO2cf6gVRRTHv+9q+npm6fNHVqZkUASClj7rr3iIISSkCPrULAqpF/2hCAWBRZbQH0lKfz1/oL2oQIgwy8qCUPRhvbKoKAvT0tSEMhFUVNQ2BmZpXeacnZ2dvXf37vnA+evODDtn5uw5Z87sBQRBEARBEARBEATBkQ4Ana6dhex8DqDPwziCAw8BCLTMcBlAcGcAgB8jC7A3w1iCA09FlB/KTJeBhPRcB+CEYQG+dBhLcOBlg/JDmeUyoGDPTQDOMgvwDYCWFOMJKdnIKD8UFR0JOXAXgEsWC/ADgJqsgH8+slB+KHNlAfzSmUL5gc4RxAo80QJgH6Hof5lFmO/rAarOw4ySXwJwiPjtJ7GC7AxiFHwcwBAAjzMLtNDDM1SaZxnlLomcC/1CtDkAYGCD51BahgP4h1Ds/phiH2EWanED51Bq1jBKfTDWVlnBz0TbX8UK0nMbgAuEQncSfRYxC/aYwzNUmi1M2DmF6FPTWbCp3+/aoQsWTGPi+7cS+s63cNqCRZ3XpMCLACZYJG3fEf0PixUkM5vZwa/CjrnMGN2WY1SSAbE6b1ROAWi3HEdZwdfEOH8AGJzzPJqqzhtoWe7Rkp7O6fmbss4bAPjNcdf2E+P9CeDaHObQtHXeLscxZzFjLvX8/KXmZqbO+xVT41VW817CUcMXxLjK2tpymk9T1XmnE31uAfBtJDlbSSzUTI9+pXJ13m1En0kAjhraq+y51dB+NzH+X9qKKs12Zoc+amg/J+Fayi5DuPoA014dd1eWTkYxgT6Mi77flwG4ktBHyUEAd+o+aod/yLT9G8BQVJAWps4bFfV+fwFAj0XbuGLnAfjeou1zqCCLUyo0TzkJ4Ho0CTWL6yCt+njYh/JsXkk28jyahCcAbEpYhGcYRdjcfItmtOroerWHBVBnTTeg5IzQ5hwwi9CuJ0tdI5kM4IiFwlThZVxk3G7LxeNu172IkrM+NqHNhkVYa3G1fIzOgKl2nxG7VX2mdJroEyZrik+JNqdTnLgWjmnE+zhqCRNS1HnbAGw1tOtJuGYyURdeon3Oxe6K3scs7iqUkJr+OoWaVGgJXJ13KhGqrjTs4CSiFnRCf8oa52PiWc4AGIWS0W3x7v2EqfO+Y1EnUBlwGtr062488XsH8zyvoES066THNfq4aFHnzYsPiGdSRx2jURI2ZFB+oEPIRnEPYwU29WdVJLoGDWRKxkToVAGijq2MFdzI9BukLci1WJSZGhMqXtExfdICLEfjmcRYwWvMzg/zib4iOt51Ok6narJBhjpvHrxLPON5Xfgx7fxoO1MEV7eMNy4n9e+KYcz1kAUoDhOZV+nrkXaDifC1t0iOV50FRTFZQn8Bv+XdwljBWGLnh3IhwV94pYPZLf3E+U/cEu5HMUujl4l5bWQSt1BWNDrjVYtyL9M3tIT3UVzezhDRHa9HSPpkguNNYpi+919U7mCswEa6GpXxqs+IRqI5eDPDAvQVxfGWmdtTFoWCeoSkLo63zGxKULJKwo4Rv/UWyfGWlfH6kJA61W3VUU9dQtKsjresbCB2fpi9j9I5Qq4haVUcr4lxMSvYYbj2+EbeIWlVHC9FD6N8xd15hqTcUfO+JnS8Jm7VF4RNyg/Zk0dImnTUXPfTvwLDfRarCj65HDUL/zOQuCofaB+Rmio7Xle8hqTrK+54XRjJhKSp7pyK43Unc0haxYzXJ5lDUnG82XEOSbNerhJBog6mujpeEXjRQW9el6tEYKUDY0iadKtZBF51sCLNUbMIvOvgqpBUHC8assnk75QFQRAEQRAEQRAEQRAEQRAE1In/AAV0ovdEYklKAAAAAElFTkSuQmCC" alt="mountain--v3"></p>
                                     <div class="flex flex-col">
                                         <p class="text-xl font-bold" style="color: #FF7A1F;">Max Altitude</p>
-                                        <p class="text-xs">6,398 ft</p>
+                                        <p class="text-xs">10,235 ft</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-3">
@@ -1694,7 +1680,7 @@
                     
                         <!-- Accordion 3 -->
                         <div class="accordion-header border rounded-2xl border-gray-300 flex justify-between p-4" onclick="toggleAccordion(this)">
-                            <p>DAY 3 : Visit Sonmarg & return to Srinagar</p>
+                            <p>DAY 3 : Leave for Kasol | Do rafting in Kullu</p>
                             <p class="rotate-parent-svg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" fill="black" style="width: 20px;height:20px">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -1705,9 +1691,9 @@
                             <div class="flex flex-col gap-3">
 
                                 <p class="p-4"><ul class="drive-info">
-                                    <li>Trek Distance: 80 km
+                                    <li>Trip Distance: 115 km | 4-5 Hrs
                                     </li>
-                                    <li>Trail Type: Easy steps
+                                    <li>Trail Type: Easy steps and Drive
                                     </li>
                                 </ul>
                                 
@@ -1717,19 +1703,9 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/kashmir/sonmarg.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
-                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Sonmarg
-                                    </span> <span class="text-gray-500">Sonmarg, near Srinagar, is a picturesque hill station surrounded by snow-capped peaks, lush meadows, and glacial streams. It’s a paradise for nature lovers, trekking enthusiasts, and adventure seekers.
-
-
-
-
-
-
-
-
-
-                                    </span></p>
+                                    <img src="/src/images/manali/kasol.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Kasol
+                                    </span> <span class="text-gray-500">Kasol, a quaint village in Himachal Pradesh, is nestled along the banks of the Parvati River. Known as the "Mini Israel of India," it attracts backpackers and nature lovers with its serene landscapes, vibrant cafes, and trekking trails. Kasol offers a perfect blend of tranquility, adventure, and cultural charm. </span></p>
                                 </div>
                             </div>
                             <!-- Accordion 3 -->
@@ -1758,46 +1734,37 @@
                         style="">
                         <div class="p-4 text-gray-600 flex flex-col gap-6"
                             style="font-size: 18px;line-height: 25px;font-weight: 400;">
-                            Sonmarg, meaning "Meadow of Gold," is a breathtaking hill station located around 80 kilometers from Srinagar in Jammu and Kashmir. Nestled at an altitude of 2,800 meters, this enchanting destination is surrounded by majestic snow-capped peaks, lush green meadows, and sparkling glacial rivers, making it a haven for nature enthusiasts. The Sindh River, flowing through Sonmarg, adds to its charm and offers opportunities for trout fishing and water sports.
+                            Kasol, a serene village in the Parvati Valley of Himachal Pradesh, is a haven for nature lovers and adventure enthusiasts. Known as the "Mini Israel of India," it boasts a unique blend of cultures, attracting travelers from around the globe. With its crystal-clear river streams, lush green landscapes, and snow-capped mountains, Kasol is an idyllic escape for those seeking tranquility amidst nature's splendor.
 
+                            The Parvati River, flowing gracefully through the village, enhances its charm and offers opportunities for fishing and riverside strolls. Kasol serves as the gateway to various trips, including the Kheerganga and Tosh trails, making it a popular destination for trekking enthusiasts. The village is also known for its vibrant cafes and restaurants serving global cuisines, particularly Israeli dishes, adding a unique gastronomic appeal.
 
-
-                            Sonmarg is a gateway to numerous trekking routes, including the famous Amarnath Yatra and the Kashmir Great Lakes trek, which takes adventurers through pristine alpine landscapes. The Thajiwas Glacier, accessible via short treks or pony rides, is a popular spot for visitors seeking close encounters with snow even in summer. In winter, Sonmarg transforms into a snowy wonderland, attracting skiing and sledding enthusiasts.
-
-
-                            Apart from its natural beauty, Sonmarg serves as a base for exploring nearby attractions like Baltal, a starting point for the Amarnath Cave pilgrimage. Its untouched tranquility, combined with the warmth of local hospitality, makes Sonmarg a must-visit destination for those seeking both adventure and serenity. Whether you're an adventurer or a leisure traveler, Sonmarg promises unforgettable experiences amidst nature's grandeur.
-
-
-
-
-
-
-
+                            For cultural explorers, Kasol offers a chance to engage with the warm and welcoming locals, experiencing the simplistic yet rich traditions of the Himachali lifestyle. Its proximity to the spiritual village of Manikaran, renowned for its hot springs and gurudwara, adds a spiritual dimension to the visit. Whether you're looking to unwind in nature, indulge in adventure, or explore diverse cultures, Kasol is a destination that promises unforgettable experiences.
                         </div>
                         <div class="p-4 text-gray-600 flex flex-col gap-6"
                             style="font-size: 18px;line-height: 25px;font-weight: 400;">
 
-                            <li style="color: #FF931F;">Activity: Visit Sonmarg
-                                & return to
-                                Srinagar
+                            <li style="color: #FF931F;">Activity: Leave for Kasol and Do rafting in Kullu
                             </li>
                             <li class="px-8"
-                                style="color: black;">After morning tea and breakfast, we get ready to depart for
-                                Sonmarg.
+                                style="color: black;">Post breakfast, we will leave for Kasol.
 
                             </li>
                             <li class="px-8"
-                                style="color: black;">Visit the Zoji La Pass and Thajiwas Glacier. (on your own)
+                                style="color: black;">Enroute, we will do river rafting in Kullu.
 
 
                             </li>
                             <li class="px-8"
-                                style="color: black;">Return back to Srinagar for the day.
+                                style="color: black;">Check into the camp in Kasol and then explore Kasol.
 
 
                             </li>
                             <li class="px-8"
-                                style="color: black;">Dinner and overnight stay in Srinagar.
+                                style="color: black;">Return back to the camps for an amazing bonfire & DJ night
+
+                            </li>
+                            <li class="px-8"
+                                style="color: black;">Dinner & overnight stay in Kasol.
 
                             </li>
                             
@@ -1812,7 +1779,7 @@
                                     <p class="rounded-full bg-orange-low p-2" style="width: fit-content;" ><img style="width: 30px; height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFUklEQVR4nO2cf6gVRRTHv+9q+npm6fNHVqZkUASClj7rr3iIISSkCPrULAqpF/2hCAWBRZbQH0lKfz1/oL2oQIgwy8qCUPRhvbKoKAvT0tSEMhFUVNQ2BmZpXeacnZ2dvXf37vnA+evODDtn5uw5Z87sBQRBEARBEARBEATBkQ4Ana6dhex8DqDPwziCAw8BCLTMcBlAcGcAgB8jC7A3w1iCA09FlB/KTJeBhPRcB+CEYQG+dBhLcOBlg/JDmeUyoGDPTQDOMgvwDYCWFOMJKdnIKD8UFR0JOXAXgEsWC/ADgJqsgH8+slB+KHNlAfzSmUL5gc4RxAo80QJgH6Hof5lFmO/rAarOw4ySXwJwiPjtJ7GC7AxiFHwcwBAAjzMLtNDDM1SaZxnlLomcC/1CtDkAYGCD51BahgP4h1Ds/phiH2EWanED51Bq1jBKfTDWVlnBz0TbX8UK0nMbgAuEQncSfRYxC/aYwzNUmi1M2DmF6FPTWbCp3+/aoQsWTGPi+7cS+s63cNqCRZ3XpMCLACZYJG3fEf0PixUkM5vZwa/CjrnMGN2WY1SSAbE6b1ROAWi3HEdZwdfEOH8AGJzzPJqqzhtoWe7Rkp7O6fmbss4bAPjNcdf2E+P9CeDaHObQtHXeLscxZzFjLvX8/KXmZqbO+xVT41VW817CUcMXxLjK2tpymk9T1XmnE31uAfBtJDlbSSzUTI9+pXJ13m1En0kAjhraq+y51dB+NzH+X9qKKs12Zoc+amg/J+Fayi5DuPoA014dd1eWTkYxgT6Mi77flwG4ktBHyUEAd+o+aod/yLT9G8BQVJAWps4bFfV+fwFAj0XbuGLnAfjeou1zqCCLUyo0TzkJ4Ho0CTWL6yCt+njYh/JsXkk28jyahCcAbEpYhGcYRdjcfItmtOroerWHBVBnTTeg5IzQ5hwwi9CuJ0tdI5kM4IiFwlThZVxk3G7LxeNu172IkrM+NqHNhkVYa3G1fIzOgKl2nxG7VX2mdJroEyZrik+JNqdTnLgWjmnE+zhqCRNS1HnbAGw1tOtJuGYyURdeon3Oxe6K3scs7iqUkJr+OoWaVGgJXJ13KhGqrjTs4CSiFnRCf8oa52PiWc4AGIWS0W3x7v2EqfO+Y1EnUBlwGtr062488XsH8zyvoES066THNfq4aFHnzYsPiGdSRx2jURI2ZFB+oEPIRnEPYwU29WdVJLoGDWRKxkToVAGijq2MFdzI9BukLci1WJSZGhMqXtExfdICLEfjmcRYwWvMzg/zib4iOt51Ok6narJBhjpvHrxLPON5Xfgx7fxoO1MEV7eMNy4n9e+KYcz1kAUoDhOZV+nrkXaDifC1t0iOV50FRTFZQn8Bv+XdwljBWGLnh3IhwV94pYPZLf3E+U/cEu5HMUujl4l5bWQSt1BWNDrjVYtyL9M3tIT3UVzezhDRHa9HSPpkguNNYpi+919U7mCswEa6GpXxqs+IRqI5eDPDAvQVxfGWmdtTFoWCeoSkLo63zGxKULJKwo4Rv/UWyfGWlfH6kJA61W3VUU9dQtKsjresbCB2fpi9j9I5Qq4haVUcr4lxMSvYYbj2+EbeIWlVHC9FD6N8xd15hqTcUfO+JnS8Jm7VF4RNyg/Zk0dImnTUXPfTvwLDfRarCj65HDUL/zOQuCofaB+Rmio7Xle8hqTrK+54XRjJhKSp7pyK43Unc0haxYzXJ5lDUnG82XEOSbNerhJBog6mujpeEXjRQW9el6tEYKUDY0iadKtZBF51sCLNUbMIvOvgqpBUHC8assnk75QFQRAEQRAEQRAEQRAEQRAE1In/AAV0ovdEYklKAAAAAElFTkSuQmCC" alt="mountain--v3"></p>
                                     <div class="flex flex-col">
                                         <p class="text-xl font-bold" style="color: #FF7A1F;">Max Altitude</p>
-                                        <p class="text-xs">8,960 ft</p>
+                                        <p class="text-xs">5,184 ft</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-3">
@@ -1839,8 +1806,7 @@
 
                         <!-- Accordion 4 -->
                         <div class="accordion-header border rounded-2xl border-gray-300 flex justify-between p-4" onclick="toggleAccordion(this)">
-                            <p>DAY 4 : Visit Gulmarg &
-                                return to Srinagar</p>
+                            <p>DAY 4 : Visit Manikaran Gurudwara & chalal village | leave for Delhi</p>
                             <p class="rotate-parent-svg">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" fill="black" style="width: 20px;height:20px">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -1851,7 +1817,7 @@
                             <div class="flex flex-col gap-3">
 
                                 <p class="p-4"><ul class="drive-info">
-                                    <li>Trek Distance: 51 km/1.5-2hrs
+                                    <li>last day of trip
                                     </li>
                                     <li>Trail Type: Travel
                                     </li>
@@ -1863,9 +1829,9 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/kashmir/gulmarg.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
-                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Gulmarg
-                                    </span> <span class="text-gray-500">Gulmarg, near Srinagar, is a picturesque hill station renowned for its lush meadows, snow-capped peaks, and thrilling activities like skiing, snowboarding, and riding the iconic Gulmarg Gondola.
+                                    <img src="/src/images/manali/manikaran-sahib.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Manikaran Sahib
+                                    </span> <span class="text-gray-500">Manikaran Gurudwara, nestled in Himachal Pradesh's Parvati Valley, is a sacred Sikh pilgrimage site known for its divine tranquility. Renowned for its natural hot springs, visitors believe in their healing properties. The gurudwara offers free langar, serving thousands daily, and embodies spiritual devotion amidst breathtaking mountain scenery.
 
 
                                     </span></p>
@@ -1897,45 +1863,31 @@
                         style="">
                         <div class="p-4 text-gray-600 flex flex-col gap-6"
                             style="font-size: 18px;line-height: 25px;font-weight: 400;">
-                            Gulmarg, meaning "Meadow of Flowers," is a stunning hill station located approximately 50 kilometers from Srinagar in Jammu and Kashmir. Nestled at an altitude of 2,650 meters, it is famed for its pristine natural beauty, lush green meadows, and snow-capped peaks, making it one of India’s premier tourist destinations. In spring and summer, the meadows bloom with vibrant wildflowers, offering a picturesque setting against the backdrop of the Himalayas.
+                            Manikaran Sahib, nestled in the enchanting Parvati Valley of Himachal Pradesh, is a revered Sikh pilgrimage site and a symbol of divine faith. Known for its serene ambiance and natural hot springs, this gurudwara draws visitors from across the world. The hot springs are believed to have healing properties and are an integral part of the gurudwara’s unique charm. Pilgrims partake in the langar, a free community meal served with immense devotion. The gurudwara is not only a spiritual retreat but also a scenic marvel, surrounded by lush greenery and snow-capped peaks.
 
-                            Gulmarg is a hub for adventure and winter sports enthusiasts. It boasts one of Asia’s best skiing and snowboarding destinations, attracting visitors from around the globe. The iconic Gulmarg Gondola, one of the highest cable cars in the world, provides breathtaking views and connects travelers to the snow-covered Apharwat Peak. Trekking, golfing on the world’s highest green golf course, and pony rides are popular activities during the warmer months.
-
-                            In winter, Gulmarg transforms into a snowy wonderland, perfect for skiing, sledding, and snowmobiling. The serene ambiance, combined with world-class facilities and local Kashmiri hospitality, makes Gulmarg an ideal getaway for relaxation and adventure alike. Whether you’re a nature lover, thrill-seeker, or leisure traveler, Gulmarg promises an unforgettable experience.
-
-
-
-
-
-
+                            Just a short trip from Manikaran lies Chalal Village, a quaint hamlet known for its bohemian vibe and picturesque beauty. Nestled amidst dense pine forests, Chalal is a haven for trekkers, nature enthusiasts, and those seeking solitude. The village is dotted with quaint cafes and homestays, offering a perfect blend of tranquility and local culture. The trip to Chalal, alongside the Parvati River, is a mesmerizing experience filled with breathtaking views and the soothing sound of flowing water. Together, Manikaran Sahib and Chalal Village offer a unique mix of spirituality, natural beauty, and cultural exploration, making them must-visit destinations for travelers in Himachal Pradesh.
 
                         </div>
                         <div class="p-4 text-gray-600 flex flex-col gap-6"
                             style="font-size: 18px;line-height: 25px;font-weight: 400;">
 
-                            <li style="color: #FF931F;">Activity: Visit Gulmarg &
-                                return to Srinagar
+                            <li style="color: #FF931F;">Activity: Visit Manikaran Gurudwara and Chalal Village
                             </li>
                             <li class="px-8"
-                                style="color: black;">The next morning after breakfast, leave from Srinagar and
-                                drive to Gulmarg. (Meadow of Flowers)
+                                style="color: black;">Visit manikaran Gurudwar and Chalal village.
                                 
 
                             </li>
                             <li class="px-8"
-                                style="color: black;">You can enjoy a pony ride and Gondola ride (At own cost) to
-                                Khilanmarg.
+                                style="color: black;">Return back to kasol and leave for delhi.
 
                             </li>
                             <li class="px-8"
-                                style="color: black;">Afternoon is free to explore the charm & natural beauty of
-                                Gulmarg Valley.
+                                style="color: black;">Overnight Journey to Delhi.
                                 
 
                             </li>
-                            <li class="px-8"
-                                style="color: black;">In the evening return to Srinagar. Overnight stay Srinagar.
-                            </li>
+                           
                             
                             
 
@@ -1944,28 +1896,14 @@
 
                 </div>
                             <div class="flex gap-3 flex-col my-4 ">
-                                <div class="flex gap-3">
-                                    <p class="rounded-full bg-orange-low p-2" style="width: fit-content;" ><img style="width: 30px; height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFUklEQVR4nO2cf6gVRRTHv+9q+npm6fNHVqZkUASClj7rr3iIISSkCPrULAqpF/2hCAWBRZbQH0lKfz1/oL2oQIgwy8qCUPRhvbKoKAvT0tSEMhFUVNQ2BmZpXeacnZ2dvXf37vnA+evODDtn5uw5Z87sBQRBEARBEARBEATBkQ4Ana6dhex8DqDPwziCAw8BCLTMcBlAcGcAgB8jC7A3w1iCA09FlB/KTJeBhPRcB+CEYQG+dBhLcOBlg/JDmeUyoGDPTQDOMgvwDYCWFOMJKdnIKD8UFR0JOXAXgEsWC/ADgJqsgH8+slB+KHNlAfzSmUL5gc4RxAo80QJgH6Hof5lFmO/rAarOw4ySXwJwiPjtJ7GC7AxiFHwcwBAAjzMLtNDDM1SaZxnlLomcC/1CtDkAYGCD51BahgP4h1Ds/phiH2EWanED51Bq1jBKfTDWVlnBz0TbX8UK0nMbgAuEQncSfRYxC/aYwzNUmi1M2DmF6FPTWbCp3+/aoQsWTGPi+7cS+s63cNqCRZ3XpMCLACZYJG3fEf0PixUkM5vZwa/CjrnMGN2WY1SSAbE6b1ROAWi3HEdZwdfEOH8AGJzzPJqqzhtoWe7Rkp7O6fmbss4bAPjNcdf2E+P9CeDaHObQtHXeLscxZzFjLvX8/KXmZqbO+xVT41VW817CUcMXxLjK2tpymk9T1XmnE31uAfBtJDlbSSzUTI9+pXJ13m1En0kAjhraq+y51dB+NzH+X9qKKs12Zoc+amg/J+Fayi5DuPoA014dd1eWTkYxgT6Mi77flwG4ktBHyUEAd+o+aod/yLT9G8BQVJAWps4bFfV+fwFAj0XbuGLnAfjeou1zqCCLUyo0TzkJ4Ho0CTWL6yCt+njYh/JsXkk28jyahCcAbEpYhGcYRdjcfItmtOroerWHBVBnTTeg5IzQ5hwwi9CuJ0tdI5kM4IiFwlThZVxk3G7LxeNu172IkrM+NqHNhkVYa3G1fIzOgKl2nxG7VX2mdJroEyZrik+JNqdTnLgWjmnE+zhqCRNS1HnbAGw1tOtJuGYyURdeon3Oxe6K3scs7iqUkJr+OoWaVGgJXJ13KhGqrjTs4CSiFnRCf8oa52PiWc4AGIWS0W3x7v2EqfO+Y1EnUBlwGtr062488XsH8zyvoES066THNfq4aFHnzYsPiGdSRx2jURI2ZFB+oEPIRnEPYwU29WdVJLoGDWRKxkToVAGijq2MFdzI9BukLci1WJSZGhMqXtExfdICLEfjmcRYwWvMzg/zib4iOt51Ok6narJBhjpvHrxLPON5Xfgx7fxoO1MEV7eMNy4n9e+KYcz1kAUoDhOZV+nrkXaDifC1t0iOV50FRTFZQn8Bv+XdwljBWGLnh3IhwV94pYPZLf3E+U/cEu5HMUujl4l5bWQSt1BWNDrjVYtyL9M3tIT3UVzezhDRHa9HSPpkguNNYpi+919U7mCswEa6GpXxqs+IRqI5eDPDAvQVxfGWmdtTFoWCeoSkLo63zGxKULJKwo4Rv/UWyfGWlfH6kJA61W3VUU9dQtKsjresbCB2fpi9j9I5Qq4haVUcr4lxMSvYYbj2+EbeIWlVHC9FD6N8xd15hqTcUfO+JnS8Jm7VF4RNyg/Zk0dImnTUXPfTvwLDfRarCj65HDUL/zOQuCofaB+Rmio7Xle8hqTrK+54XRjJhKSp7pyK43Unc0haxYzXJ5lDUnG82XEOSbNerhJBog6mujpeEXjRQW9el6tEYKUDY0iadKtZBF51sCLNUbMIvOvgqpBUHC8assnk75QFQRAEQRAEQRAEQRAEQRAE1In/AAV0ovdEYklKAAAAAElFTkSuQmCC" alt="mountain--v3"></p>
-                                    <div class="flex flex-col">
-                                        <p class="text-xl font-bold" style="color: #FF7A1F;">Max Altitude</p>
-                                        <p class="text-xs">8,694 ft</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-3">
-                                    <p class="rounded-full bg-orange-low p-2" style="width: fit-content;" >
-                                        <img   style="width: 30px; height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFLUlEQVR4nO2aa6xdQxTHf8erWtqcS+NR8QxS4Xrdlja+cEWKen1AoqpfcD8RIbghQokEJcQz7geRII340GrSoL2RChok1UijiaQoaVS0Rcu9fdDjyErWxMqY/T679j7OP1k558ysNWfWf8/898zsDT30UDc8A+wF2imsBbxCF2E/YEfK5J39ARxMl2CuSext4PEYe9P4zqPGaAADwD3Adk3od6AvIW4SsE39x4D7gfN1FNUKD3lD+q8MV/TKgF6IhtQKS0znvwIuzxh/IbDOtLGKiqAPeE6tLwUB63U65MXHVSJgAPjaXJXvgdkJBHxR8D9XVYWAIWBP4Hb1JzAcuMp5CDgAmKGflSGgCSw1CQsJd6hZQpZ6UyIrAROBlRrzfFUIGEgY8nH1WQiwyYu9UAUChrwrvAw4LOA3BXgrMCVe099CkIMM7RfVJGn0c9TErzR1gs/N/+8TTIlIqJGRsG/081fjM8PUjyqhcckLvtO6V6mYyqeJd3asGQF2qP+WkHxTN0ZtXViVhkaEqEkHsqLPE02/8xOA5V59KHnBZcbnEvaxyjcKtCmxd5k213r1kuwKrVsRkTxGR3YCkykB5wEbTUc3almnsNhsbY/36vYHztXPEI4ExjX+df5DlS+CM3UTJO2/kTH2JdO3C6jYkL9FLQ3cMBYirsmwEXK7QelrZVT+NOBdE78aOCsh5hi9FYr/L9pGHE4EfjTnAadQgSE/FXg24kyvpVf56Jj4K8ztTJI7I8LvZL0oHT0RahYY8ofoLWzMxO+N+D6mvhITwt3GV06GFnj1t5uTI7GHy1D5b4GZKeJEmW8GNntXe5l23P1eoGXWZ7PGhtT9NiOKYh8A1+p+wbZxXxkLmyUpFzZzvJMYsTUqTOinK7dla7yYddqWj4uBTYGpZJfehdYhTe84Ku2Q7wfe8zoj83G+dyAZIgD1me/N4ba2KW37q8UnzdTaBXyY84IVVvlpwIg3n2WOLoxYoUUR4HCQEm7nc0s3WMd5vkcAN+mdIm//c6v8JN3l7fCG34iuwqKQRIDD4XrOb/s0rmWy4+zYbvTQjEM+TuCmx3QsKwEO0zMKZZyGSa7/wrBx+iFB5ZMEjhIIIIdQOszUnJz/vSGn2cBudditj6F89AeUNyRwZRIQJ5SbAkKJ5mJzmxXV8KWqpG4KXBUjcHtiBK5sAnyh3BUjlFE5RcJn62VvBedsEcXQCQIcFgX6N6Z9TxrVQVjWrI1634cL2Ihpa6RgW7ZfVvnbWa58HAkiOhdpebvi5vRsdZHkHU4FBj2BqwMBaJ8HNYeOoq0mAlgVLAwQUBraPQIoPAIm6uHGnWpzC77HU6sRcCuwNTB3t2Q4H6wtAU+kELHHupWAq03sT3pON1l3bTdqmauX6dF1BKw1z/HkxNbHSeYZn6w7uoqAaSbugRi/B43fUd1EwCwTNydh9en85J2+riGg38TdEOM3z/id3k0ETDBHZu9HnDI1zGss23Wr2zUEoK+zuFjZvh7IP5DvT5l6eXeQbiNgEPjZW/h8pLbFlG/LcT5QaQLOAT7Lsav7FDi77gQMmpcT8ti4OYeoHQFTzevqLZ3jJ6RoXxZJT5unwFtTPH2uJAGPGt88m5whE/9IHQn4Uv0+yfk/DaMdcu5fOwJ2qp/sAB2aMS81oHXNwGmvaEHtCGgH/NZr2XUB/+u1TkZO1sRqQ0A7JjaURI8AKjwCRhMeVji/DcA7aqEyZxtMfags7YOR0tEqsLAp26RvpWNxRUlo5XiLtAf+7/gbFVDlieNOVasAAAAASUVORK5CYII=" alt="external-stay-corona-virus-others-iconmarket-2"></p>
-                                    <div class="flex flex-col">
-                                        <p class="text-xl font-bold" style="color: #FF7A1F;">Stay</p>
-                                        <p class="text-xs">Hotel</p>
-                                    </div>
-                                </div>
+                                
+                                
                                 <div class="flex gap-3">
                                     <p class="rounded-full bg-orange-low p-2" style="width: fit-content;" >
                                         <svg xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px;" viewBox="0 0 48 48"><g data-name="3-Food equipment"><path d="M24 48a24 24 0 1 1 24-24 24.028 24.028 0 0 1-24 24zm0-46a22 22 0 1 0 22 22A22.025 22.025 0 0 0 24 2z"/><path d="M12.412 37.765a17.975 17.975 0 0 1-2.126-25.412l1.524 1.294a15.976 15.976 0 0 0 1.89 22.588zM35.645 37.765l-1.29-1.53a15.975 15.975 0 0 0 1.892-22.588l1.524-1.294a17.975 17.975 0 0 1-2.126 25.412zM18 19a5.006 5.006 0 0 1-5-5V7h2v7a3 3 0 0 0 6 0V7h2v7a5.006 5.006 0 0 1-5 5z"/><path d="M17 5h2v21h-2z"/><path d="M18 43a3 3 0 0 1-3-3V28a3 3 0 0 1 6 0v12a3 3 0 0 1-3 3zm0-16a1 1 0 0 0-1 1v12a1 1 0 0 0 2 0V28a1 1 0 0 0-1-1zM29 18h2v8h-2z"/><path d="M30 43a3 3 0 0 1-3-3V28a3 3 0 0 1 6 0v12a3 3 0 0 1-3 3zm0-16a1 1 0 0 0-1 1v12a1 1 0 0 0 2 0V28a1 1 0 0 0-1-1zM30 19c-2.8 0-5-3.075-5-7s2.2-7 5-7 5 3.075 5 7-2.2 7-5 7zm0-12c-1.626 0-3 2.29-3 5s1.374 5 3 5 3-2.29 3-5-1.374-5-3-5z"/></g></svg></p>
                                     <div class="flex flex-col">
                                         <p class="text-xl font-bold" style="color: #FF7A1F;">Food</p>
-                                        <p class="text-xs">Breakfast &
-                                            dinner
+                                        <p class="text-xs">Breakfast 
 
                                         </p>
                                     </div>
@@ -2041,7 +1979,7 @@
             <span class="  custom-font-heading fade-scroll font-bold fade-scroll-left"
                 data-animation="fade-scroll-left"
                 style="font-size: 32px; line-height: 38px;  ;">
-                Trek Highlights
+                Trip Highlights
             </span>
             <span class="uppercase fade-scroll fade-scroll-right font-medium text-gray-500  "
                 data-animation="fade-scroll-right"
@@ -2181,530 +2119,531 @@
                     style="color: #FF931F; font-size: 32px; line-height: 38px;  ;"> Price And
                     Batches</p>
 
-                <div>
-                    <div class="border rounded-lg h-auto p-6 flex md:flex-col sm:flex-col lg:flex-row flex-col"
-                        style="">
-                        <div class="border-b h-full lg:border-r lg:border-b-0 md:border-b pr-4 responsivewidthpricebox"
-                            style="width: 60%;">
-                            <p class="font-bold text-lg">Select Package Options</p>
-                            <div>
-                                <p class="text-sm mt-6">Please Select A Date</p>
-                                <div class="p-3 w-auto" >
-                                    <input class="border cursor-pointer lg:w-auto md:w-full p-3 rounded-lg w-full" type="text" id="date-available-input" placeholder="Select a date"  readonly="">
+                    <div>
+                        <div class="border rounded-lg h-auto p-6 flex md:flex-col sm:flex-col lg:flex-row flex-col"
+                            style="">
+                            <div class="border-b h-full lg:border-r lg:border-b-0 md:border-b pr-4 responsivewidthpricebox"
+                                style="width: 60%;">
+                                <p class="font-bold text-lg">Select Package Options</p>
+                                <div>
+                                    <p class="text-sm mt-6">Please Select A Date</p>
+                                    <div class="p-3 w-auto" >
+                                        <input class="border cursor-pointer lg:w-auto md:w-full p-3 rounded-lg w-full" type="text" id="date-available-input" placeholder="Select a date"  readonly="">
+                                    </div>
+    
+                                    <!-- Popup -->
+                                    <div id="date-available-popup" class="date-available-popup hidden" style="z-index: 1000 !important;">
+                                        <ul class="overflow-auto" style="max-height: 300px;">
+                                            <li class="date-option date-available-item">3 Jan - 6 Jan, 2025 ( <span
+                                                    class="text-green-500">Available</span> ) </li>
+                                                    <li class="date-option date-available-item">10 Jan - 13 Jan, 2025 ( <span
+                                                        class="text-green-500">Available</span> ) </li>
+                                                        <li class="date-option date-available-item">17 Jan - 20 Jan, 2025 ( <span
+                                                            class="text-green-500">Available</span> ) </li>
+                                                            <li class="date-option date-available-item">24 Jan - 27 Jan, 2025 ( <span
+                                                                class="text-green-500">Available</span> ) </li>
+                                                                <li class="date-option date-available-item">31 Jan - 3 Feb, 2025 ( <span
+                                                                    class="text-green-500">Available</span> ) </li>
+                                            
+    
+                                            <!-- Add more dates as needed -->
+                                        </ul>
+                                    </div>
+    
+                                    <div>
+                                        <p class="text-sm mt-6">Please Select A Tour Package</p>
+                                        <div class="tour-packages gap-2 px-2 flex-wrap flex mt-3">
+                                            <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Sankri to Sankri" data-price="5999">Raithal to Raithal - ₹5,999</div> -->
+                                            <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Delhi to Delhi" data-price="9499">Delhi to Delhi - ₹9,499</div>
+                                            <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Dehradun to Dehradun" data-price="7999">Dehradun to Dehradun - ₹8,499</div> -->
+                                        </div>
+                                    </div>
+    
+                                    <div id="sharing-section" class="">
+                                        <p class="text-sm mt-6">Please Select A Sharing Option</p>
+                                        <div class="sharing-options gap-2 px-2 flex-wrap flex mt-3">
+                                            <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="triple">Triple Sharing</div>
+                                            <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="double">Double Sharing</div>
+                                        </div>
+                                    </div>
+                                    
+    
+                                    <div>
+                                        <p class="text-sm mt-6">Total Travellers</p>
+                                        <div id="total-travellers-trigger"
+                                            class="total-travellers-trigger mt-3 text-sm border rounded-lg p-3"
+                                            style="width: fit-content;">
+                                            <span>Adults: <span id="total-travellers-adult-count">1</span>, Children: <span
+                                                    id="total-travellers-child-count">0</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="payment-option mt-3">
+                                        <label class="block text-sm  mb-2">Choose Payment Option:</label>
+                                        <button id="partialPaymentBtn"
+                                            class="payment-btn border rounded-lg p-2 mr-2">Partial Payment</button>
+                                        <button id="fullPaymentBtn" class="payment-btn border rounded-lg p-2">Full
+                                            Payment</button>
+                                    </div>
+                                    <div
+                                        class="flex gap-3 pt-6 lg:flex-row md:flex-row sm:flex-col flex-col justify-between items-center">
+                                        <div
+                                            class="flex items-center gap-3 lg:flex-row md:flex-row sm:flex-col flex-col justify-center">
+                                            <p class="text-xl ">Price Total </p>
+                                            <div id="total-price"
+                                                style="color: #FF7A1F;"
+                                                class="font-bold">₹9,499/-</div>
+                                        </div>
+    
+                                        <div class="flex items-center justify-center">
+                                            <a id="bookNowBtn"
+                                                class="btn btn-1 hover-filled-slide-up mx-auto">
+                                                <span class="flex text-center py-2">Book Now</span>
+                                            </a>
+                                        </div>
+    
+    
+    
+    
+                                    </div>
+    
+    
+                                    <!-- Book Now Popup Container -->
+                                    <div id="bookNowPopupBox"
+                                    class="book-now-popup fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+                                    style="z-index: 1000000000 !important;">
+                                    <div class="book-now-popup-content bg-white p-6 rounded-lg shadow-lg  relative lg:w-1/2 md:w-3/4 sm:w-3/4 w-3/4"
+                                        style="height: 70% !important; ">
+                                        <button
+                                            class="book-now-close-popup absolute top-2 right-2 text-2xl">&times;</button>
+                                        <iframe
+                                            src="https://docs.google.com/forms/d/e/1FAIpQLSfP03Ob4vYy0084Q0hFZlpgmXcCX6mtz2pe06PjpsHQnZgELw/viewform?embedded=true"
+                                            class="w-full h-full"
+                                            frameborder="0"
+                                            marginheight="0"
+                                            marginwidth="0">Loading…</iframe>
+                                        <!-- 
+                                    <h2 class="text-xl font-bold mb-4 text-center">Book Your Trip</h2>
+                                    <a href="https://wa.me/917347004282"
+                                        class="block mb-4"
+                                        target="_blank">
+                                        <button
+                                            class="book-now-btn bg-green-500 text-white py-2 px-4 rounded w-full hover:bg-green-600">WhatsApp</button>
+                                    </a>
+                                    <button id="bookNowCallButton"
+                                        class="book-now-btn bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600">Call
+                                        Now: +91 7347004282</button> -->
+                                    </div>
                                 </div>
-
-                                <!-- Popup -->
-                                <div id="date-available-popup" class="date-available-popup hidden" style="z-index: 1000 !important;">
-                                    <ul class="overflow-auto" style="max-height: 300px;">
-                                        <li class="date-option date-available-item">15 Nov - 19 Nov, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">22 Nov - 26 Nov, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">29 Nov - 03 Dec, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">06 Dec - 10 Dec, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">13 Dec - 17 Dec, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">20 Dec - 24 Dec, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">23 Dec - 27 Dec, 2024 ( <span
-                                                class="text-green-500">Available</span> )  </li>
-                                        <li class="date-option date-available-item">23 Dec - 27 Dec, 2024 ( <span
-                                                class="text-green-500">Available</span> )</li>
-                                        <li class="date-option date-available-item">27 Dec - 31 Dec, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-                                        <li class="date-option date-available-item">30 Dec - 03 Jan, 2024 ( <span
-                                                class="text-green-500">Available</span> ) 
-                                        </li>
-                                        <li class="date-option date-available-item">30 Dec - 03 Jan, 2024 ( <span
-                                                class="text-green-500">Available</span> )  </li>
-                                        <li class="date-option date-available-item">03 Jan - 07 Jan, 2024 ( <span
-                                                class="text-green-500">Available</span> ) </li>
-
-                                        <!-- Add more dates as needed -->
+    
+    
+    
+    
+                                <!-- Travellers Popup -->
+                                <div id="total-travellers-popup"
+                                    class="total-travellers-popup hidden"
+                                    style="z-index: 1000000000 !important;">
+                                    <div class="total-travellers-popup-content">
+                                        <div class="total-travellers-header">
+                                            <h3>Total Travellers</h3>
+                                            <button id="total-travellers-close">X</button>
+                                        </div>
+                                        <div class="total-travellers-body">
+                                            <div>
+                                                <label>Adults</label>
+                                                <button id="total-travellers-adult-minus">-</button>
+                                                <span id="total-travellers-adult-popup-count">1</span>
+                                                <button id="total-travellers-adult-plus">+</button>
+                                            </div>
+                                            <div>
+                                                <label>Children</label>
+                                                <button id="total-travellers-child-minus">-</button>
+                                                <span id="total-travellers-child-popup-count">0</span>
+                                                <button id="total-travellers-child-plus">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', () => {
+        const totalPriceEl = document.getElementById('total-price');
+        const bookNowBtn = document.getElementById('bookNowBtn');
+        const travellersTrigger = document.getElementById('total-travellers-trigger');
+        const travellersPopup = document.getElementById('total-travellers-popup');
+        const closeTravellersPopup = document.getElementById('total-travellers-close');
+        const adultCountEl = document.getElementById('total-travellers-adult-popup-count');
+        const childCountEl = document.getElementById('total-travellers-child-popup-count');
+        const adultDisplayCountEl = document.getElementById('total-travellers-adult-count');
+        const childDisplayCountEl = document.getElementById('total-travellers-child-count');
+        const dateInput = document.getElementById('selected-date');
+        const partialPaymentBtn = document.getElementById('partialPaymentBtn');
+        const fullPaymentBtn = document.getElementById('fullPaymentBtn');
+    
+        let selectedPackage = null;
+        let selectedSharing = null;
+        let adultCount = 1;
+        let childCount = 0;
+        let basePrice = 6999;
+        let selectedDate = null;
+        let isPartialPayment = false;
+    
+        const packages = {
+            "Delhi to Delhi": { triple: 9499, double: 10499 }
+            
+        };
+    
+        function updateTotalPrice() {
+        const totalBasePrice = (adultCount + childCount) * basePrice;
+        const gst = totalBasePrice * 0.05; // 5% GST
+        let totalPrice = totalBasePrice + gst;
+    
+        // Apply partial payment indication if selected
+        if (isPartialPayment) {
+            totalPrice *= 0.2; // 30% for partial payment indication
+        }
+    
+        totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isPartialPayment ? "(20% Partial Payment + 5% GST)" : "(Full Payment + 5% GST)"}`;
+        return totalPrice;
+    }
+    
+    
+    
+        // Payment Option Selection
+        partialPaymentBtn.addEventListener('click', () => {
+            isPartialPayment = true;
+            partialPaymentBtn.classList.add('selected');
+            fullPaymentBtn.classList.remove('selected');
+            updateTotalPrice();
+        });
+    
+        fullPaymentBtn.addEventListener('click', () => {
+            isPartialPayment = false;
+            fullPaymentBtn.classList.add('selected');
+            partialPaymentBtn.classList.remove('selected');
+            updateTotalPrice();
+        });
+    
+        // Package selection
+        document.querySelectorAll('.tour-package').forEach(packageEl => {
+            packageEl.addEventListener('click', function () {
+                document.querySelectorAll('.tour-package').forEach(p => p.classList.remove('selected'));
+                this.classList.add('selected');
+    
+                selectedPackage = this.getAttribute('data-package');
+                basePrice = parseInt(this.getAttribute('data-price'));
+                selectedSharing = null;
+    
+                document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
+                updateTotalPrice();
+            });
+        });
+    
+        // Sharing selection
+        document.querySelectorAll('.sharing-option').forEach(sharingEl => {
+            sharingEl.addEventListener('click', function () {
+                if (!selectedPackage) {
+                    alert("Please select a package first.");
+                    return;
+                }
+                document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+    
+                selectedSharing = this.getAttribute('data-sharing');
+                basePrice = packages[selectedPackage][selectedSharing];
+                updateTotalPrice();
+            });
+        });
+    
+        // Date selection
+        document.querySelectorAll('.date-option').forEach(dateEl => {
+            dateEl.addEventListener('click', function () {
+                selectedDate = this.textContent.trim().split('(')[0];
+                dateInput.value = selectedDate;
+            });
+        });
+    
+        // Open and close travellers popup
+        travellersTrigger.addEventListener('click', () => {
+            travellersPopup.classList.remove('hidden');
+        });
+    
+        closeTravellersPopup.addEventListener('click', () => {
+            travellersPopup.classList.add('hidden');
+        });
+    
+        // Adult and child count adjustments
+        document.getElementById('total-travellers-adult-plus').addEventListener('click', () => {
+            adultCount++;
+            adultCountEl.textContent = adultCount;
+            adultDisplayCountEl.textContent = adultCount;
+            updateTotalPrice();
+        });
+    
+        document.getElementById('total-travellers-adult-minus').addEventListener('click', () => {
+            if (adultCount > 1) {
+                adultCount--;
+                adultCountEl.textContent = adultCount;
+                adultDisplayCountEl.textContent = adultCount;
+                updateTotalPrice();
+            }
+        });
+    
+        document.getElementById('total-travellers-child-plus').addEventListener('click', () => {
+            childCount++;
+            childCountEl.textContent = childCount;
+            childDisplayCountEl.textContent = childCount;
+            updateTotalPrice();
+        });
+    
+        document.getElementById('total-travellers-child-minus').addEventListener('click', () => {
+            if (childCount > 0) {
+                childCount--;
+                childCountEl.textContent = childCount;
+                childDisplayCountEl.textContent = childCount;
+                updateTotalPrice();
+            }
+        });
+    
+        function handlePayment() {
+        let finalAmount = updateTotalPrice(); // Get the updated total price
+    
+        // Check if partial payment is selected
+        if (isPartialPayment) {
+            // Ensure partial payment logic is only applied once
+            finalAmount = finalAmount ; // 30% for partial payment
+        }
+    
+        // Validation to ensure the amount matches with Razorpay requirements
+        if (isPartialPayment && finalAmount < 100) {
+            alert("Partial payment amount must be at least ₹100.");
+            return;
+        }
+    
+        const options = {
+            key: "rzp_live_FXai12FndgJZyQ", // Replace with your live Razorpay API key
+            amount: Math.round(finalAmount * 100), // Convert to paise
+            currency: "INR",
+            name: "Safarwallah",
+            description: `Tungnath - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
+            image: "https://drive.google.com/file/d/1srOLjBOzjRORsPI02rcrRnBgkGJwVVE0/view?usp=sharing",
+            handler: function (response) {
+                alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
+                window.location.reload(); // Reload the page after payment
+            },
+            prefill: {
+                email: "",        // User will fill these manually
+                contact: ""       // User will fill these manually
+            },
+            theme: { color: "#FF7A1F" }
+        };
+    
+        const razorpayInstance = new Razorpay(options);
+        razorpayInstance.open();
+    }
+    
+    
+        // Book Now button event listener
+        bookNowBtn.addEventListener('click', () => {
+            if (!selectedPackage || !selectedSharing || !selectedDate) {
+                alert("Please select a package, sharing option, and batch date before booking.");
+                return;
+            }
+            handlePayment();
+        });
+    
+        // Initialize total price on page load
+        updateTotalPrice();
+    });
+    
+                                        </script>
+                                        
+    
+                                    <style>
+                                        @media (max-width:1024px) {
+                                            .responsivewidthpricebox {
+                                                width: 100% !important;
+                                            }
+                                        }
+    
+    
+                                        .tour-package {
+                                            padding: 10px;
+                                            cursor: pointer;
+                                            transition: all 0.3s;
+                                        }
+    
+                                        .tour-package.selected {
+                                            border-color: orange;
+                                            color: orange;
+                                        }
+    
+                                        /* Popup styling */
+                                        .total-travellers-popup {
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: rgba(0, 0, 0, 0.5);
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+    
+    
+                                        /* Smooth transition styling */
+                                        .selected {
+                                            border-color: #FF7A1F !important;
+                                            color: #FF7A1F !important;
+                                            transition: color 0.3s ease, border-color 0.3s ease;
+                                        }
+                                    .total-travellers-popup-content {
+                                    background: white;
+                                    padding: 20px;
+                                    width: 300px;
+                                    border-radius: 8px;
+                                    }
+                                    .total-travellers-popup.hidden {
+                                    display: none;
+                                    }
+                                    .total-travellers-header {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    }
+                                    .total-travellers-body {
+                                    margin-top: 20px;
+                                    }
+                                    .total-travellers-body div {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    margin-bottom: 15px;
+                                    }
+                                    @media (max-width:720px){
+                                    .responsivesearchanimation{
+                                    min-width: 80% !important;
+                                    }
+                                    .responsivesvg{
+                                    width: 30px !important;
+                                    height: 30px !important;
+                                    }
+                                    .responsivetext{
+                                    font-size: 10px !important;
+                                    }
+                                    .responsiveLARGEtext{
+                                    font-size: 12px !important;
+                                    }
+                                    .crouselresponsivewidth{
+                                    width: 100% !important;
+                                    }
+                                    }
+                                    </style>
+    
+    
+    
+                                </div>
+                            </div>
+    
+                            <div class=" h-full responsivewidthpricebox"
+                                style="width: 40%;">
+                                <div class="py-5 lg:px-5">
+                                    <p class="font-bold text-lg">Costings</p>
+                                    <ul id="inclusions-list">
+                                        <li class="inclusion-item">Select a package to see costing.</li>
                                     </ul>
                                 </div>
-
-                                <div>
-                                    <p class="text-sm mt-6">Please Select A Tour Package</p>
-                                    <div class="tour-packages gap-2 px-2 flex-wrap flex mt-3">
-                                        <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Sankri to Sankri" data-price="5999">Raithal to Raithal - ₹5,999</div> -->
-                                        <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Srinagar to Srinagar" data-price="17999">Srinagar to Srinagar - ₹17,999</div>
-                                        <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Dehradun to Dehradun" data-price="7999">Dehradun to Dehradun - ₹8,499</div> -->
-                                    </div>
-                                </div>
-
-                                <div id="sharing-section" class="">
-                                    <p class="text-sm mt-6">Please Select A Sharing Option</p>
-                                    <div class="sharing-options gap-2 px-2 flex-wrap flex mt-3">
-                                        <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="triple">Triple Sharing</div>
-                                        <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="double">Double Sharing</div>
-                                    </div>
-                                </div>
-                                
-
-                                <div>
-                                    <p class="text-sm mt-6">Total Travellers</p>
-                                    <div id="total-travellers-trigger"
-                                        class="total-travellers-trigger mt-3 text-sm border rounded-lg p-3"
-                                        style="width: fit-content;">
-                                        <span>Adults: <span id="total-travellers-adult-count">1</span>, Children: <span
-                                                id="total-travellers-child-count">0</span></span>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex gap-3 pt-6 lg:flex-row md:flex-row sm:flex-col flex-col justify-between items-center">
-                                    <div
-                                        class="flex items-center gap-3 lg:flex-row md:flex-row sm:flex-col flex-col justify-center">
-                                        <p class="text-xl ">Price Total </p>
-                                        <div id="total-price"
-                                            style="color: #FF7A1F;"
-                                            class="font-bold">₹17,999/-</div>
-                                    </div>
-
-                                    <div class="flex items-center justify-center">
-                                        <a id="bookNowBtn"
-                                            class="btn btn-1 hover-filled-slide-up mx-auto">
-                                            <span class="flex text-center py-2">Book Now</span>
-                                        </a>
-                                    </div>
-
-
-
-
-                                </div>
-
-
-                                <!-- Book Now Popup Container -->
-                                <div id="bookNowPopupBox"
-                                class="book-now-popup fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
-                                style="z-index: 1000000000 !important;">
-                                <div class="book-now-popup-content bg-white p-6 rounded-lg shadow-lg  relative lg:w-1/2 md:w-3/4 sm:w-3/4 w-3/4"
-                                    style="height: 70% !important; ">
-                                    <button
-                                        class="book-now-close-popup absolute top-2 right-2 text-2xl">&times;</button>
-                                    <iframe
-                                        src="https://docs.google.com/forms/d/e/1FAIpQLSfP03Ob4vYy0084Q0hFZlpgmXcCX6mtz2pe06PjpsHQnZgELw/viewform?embedded=true"
-                                        class="w-full h-full"
-                                        frameborder="0"
-                                        marginheight="0"
-                                        marginwidth="0">Loading…</iframe>
-                                    <!-- 
-                                <h2 class="text-xl font-bold mb-4 text-center">Book Your Trip</h2>
-                                <a href="https://wa.me/917347004282"
-                                    class="block mb-4"
-                                    target="_blank">
-                                    <button
-                                        class="book-now-btn bg-green-500 text-white py-2 px-4 rounded w-full hover:bg-green-600">WhatsApp</button>
+                                <a class="mt-6 px-6 flex justify-center items-center" href="/public/christmus-event/tungnath.html">
+                                    <img src="/src/images/christmus/click-page-image.webp" class="w-full h-full " alt="">
                                 </a>
-                                <button id="bookNowCallButton"
-                                    class="book-now-btn bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600">Call
-                                    Now: +91 7347004282</button> -->
-                                </div>
                             </div>
-
-
-
-
-                            <!-- Travellers Popup -->
-                            <div id="total-travellers-popup"
-                                class="total-travellers-popup hidden"
-                                style="z-index: 1000000000 !important;">
-                                <div class="total-travellers-popup-content">
-                                    <div class="total-travellers-header">
-                                        <h3>Total Travellers</h3>
-                                        <button id="total-travellers-close">X</button>
-                                    </div>
-                                    <div class="total-travellers-body">
-                                        <div>
-                                            <label>Adults</label>
-                                            <button id="total-travellers-adult-minus">-</button>
-                                            <span id="total-travellers-adult-popup-count">1</span>
-                                            <button id="total-travellers-adult-plus">+</button>
-                                        </div>
-                                        <div>
-                                            <label>Children</label>
-                                            <button id="total-travellers-child-minus">-</button>
-                                            <span id="total-travellers-child-popup-count">0</span>
-                                            <button id="total-travellers-child-plus">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <script>
                                 document.addEventListener('DOMContentLoaded', () => {
-                                    const totalPriceEl = document.getElementById('total-price');
-                                    const travellersTrigger = document.getElementById('total-travellers-trigger');
-                                    const travellersPopup = document.getElementById('total-travellers-popup');
-                                    const closeTravellersPopup = document.getElementById('total-travellers-close');
-
-                                    const adultCountEl = document.getElementById('total-travellers-adult-popup-count');
-                                    const childCountEl = document.getElementById('total-travellers-child-popup-count');
-                                    const adultDisplayCountEl = document.getElementById('total-travellers-adult-count');
-                                    const childDisplayCountEl = document.getElementById('total-travellers-child-count');
-
-                                    let selectedPackage = null;
-                                    let selectedSharing = null;
-
-                                    let adultCount = 1; // Starting with 1 adult
-                                    let childCount = 0;
-                                    let basePrice = 17999; // Default price for the first tour package
-
-                                    const packages = {
-                                        "Srinagar to Srinagar": { triple: 17999, double: 19999 }
-                                        
+                                    const tourPackageElements = document.querySelectorAll('.tour-package');
+                                    const inclusionsListElement = document.getElementById('inclusions-list');
+    
+                                    // Define inclusions for each tour package
+                                    const inclusionsData = {
+                                        // "Raithal to Raithal - ₹5,999": {
+                                        //     route: "Raithal to Raithal",
+                                        //     triple: "₹5,999",
+                                        //     double: "₹6,999"
+                                        // },
+                                        "Delhi to Delhi - ₹9,499": {
+                                            route: "Delhi to Delhi",
+                                            triple: "₹9,499",
+                                            double: "₹10,499"
+                                        },
+                                        // "Dehradun to Dehradun - ₹8,499": {
+                                        //     route: "Dehradun to Dehradun",
+                                        //     triple: "₹8,499",
+                                        //     double: "₹9,499"
+                                        // }
                                     };
-
-                                    // Update total price function
-                                    function updateTotalPrice() {
-                                        const adultPrice = adultCount * basePrice;
-                                        const childPrice = childCount * basePrice; // Child price same as adult
-                                        const totalPrice = adultPrice + childPrice;
-
-                                        // Calculate GST (5%)
-                                        const gst = totalPrice * 0.05;
-                                        const finalTotalPrice = totalPrice + gst;
-
-                                        // Display the total price with GST breakdown
-                                        totalPriceEl.textContent = `₹ ${finalTotalPrice.toLocaleString()} ( ₹  ${totalPrice.toLocaleString()} + ₹ ${gst.toLocaleString()} GST[5%])`;
-                                    }
-
-                                    // Event listeners for clicking on tour packages
-                                    document.querySelectorAll('.tour-package').forEach(packageEl => {
-                                        packageEl.addEventListener('click', function () {
-                                            // Remove the selected class from all packages
-                                            document.querySelectorAll('.tour-package').forEach(p => p.classList.remove('selected'));
-
-                                            // Add the selected class to the clicked package
-                                            this.classList.add('selected');
-
-                                            // Update selected package and base price
-                                            selectedPackage = this.getAttribute('data-package');
-                                            basePrice = parseInt(this.getAttribute('data-price'));
-                                            selectedSharing = null; // Reset sharing selection
-
-                                            // Deselect all sharing options
-                                            document.querySelectorAll('.sharing-option').forEach(s => {
-                                                s.classList.remove('selected');
-                                            });
-
-                                            updateTotalPrice(); // Update total price when package is selected
+    
+                                    // Function to set inclusions as a table based on package name
+                                    const setInclusions = (packageName) => {
+                                        const inclusions = inclusionsData[packageName] || inclusionsData["Delhi to Delhi - ₹9,499"];
+    
+                                        // Create a table with headers
+                                        const tableHTML = `
+          <table class="mt-10 rounded-lg" style="width: 100%; border-collapse: collapse;">
+            <thead class="rounded-t-lg">
+              <tr>
+                <th  style="text-align: center; color:orange;  font-weight: bold; padding: 8px; border-left:1px solid gray; border-bottom:1px solid gray; border-top:1px solid gray; border-right: 1px solid gray;">Route</th>
+                <th style="text-align: center; color:orange; font-weight: bold; padding: 8px; border-top:1px solid gray; border-bottom:1px solid gray; border-right: 1px solid gray;"">Triple Sharing Price</th>
+                <th style="text-align: center; color:orange; font-weight: bold; padding: 8px; border-top:1px solid gray; border-bottom:1px solid gray; border-right: 1px solid gray;"">Double Sharing Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center" style="padding: 8px;border-left:1px solid gray;  border-bottom:1px solid gray; border-right: 1px solid gray;"><strong>${inclusions.route}</strong></td>
+                <td class="text-center" style="padding: 8px; border-right: 1px solid gray;  border-bottom:1px solid gray;"><strong>${inclusions.triple}</strong></td>
+                <td class="text-center" style="padding: 8px; border-right: 1px solid gray;  border-bottom:1px solid gray;"><strong>${inclusions.double}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        `;
+    
+                                        // Replace content in inclusionsListElement with the new table
+                                        inclusionsListElement.innerHTML = tableHTML;
+                                    };
+    
+                                    // Set default inclusions on page load
+                                    setInclusions("Delhi to Delhi - ₹9,499");
+    
+                                    tourPackageElements.forEach(packageElement => {
+                                        packageElement.addEventListener('click', () => {
+                                            const packageName = packageElement.textContent;
+                                            setInclusions(packageName);
                                         });
                                     });
-
-                                    // Sharing selection
-                                    document.querySelectorAll('.sharing-option').forEach(sharingEl => {
-                                        sharingEl.addEventListener('click', function () {
-                                            if (!selectedPackage) {
-                                                alert("Please select a package first.");
-                                                return;
-                                            }
-                                            document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
-                                            this.classList.add('selected');
-                                            selectedSharing = this.getAttribute('data-sharing');
-                                            basePrice = packages[selectedPackage][selectedSharing];
-                                            updateTotalPrice();
-                                        });
-                                    });
-
-                                    // Date selection popup
-                                    const dateInput = document.getElementById('date-available-input');
-                                    const datePopup = document.getElementById('date-available-popup');
-                                    dateInput.addEventListener('click', () => datePopup.classList.toggle('hidden'));
-
-                                    document.querySelectorAll('.date-option').forEach(dateEl => {
-                                        dateEl.addEventListener('click', function () {
-                                            dateInput.value = this.textContent;
-                                            dateInput.classList.add('selected');
-                                            datePopup.classList.add('hidden');
-                                        });
-                                    });
-
-                                    // Show popup when "Total Travellers" is clicked
-                                    travellersTrigger.addEventListener('click', function () {
-                                        travellersPopup.classList.remove('hidden');
-                                    });
-
-                                    // Close popup when close button is clicked
-                                    closeTravellersPopup.addEventListener('click', function () {
-                                        travellersPopup.classList.add('hidden');
-                                    });
-
-                                    // Event listeners for adult count in popup
-                                    document.getElementById('total-travellers-adult-plus').addEventListener('click', function () {
-                                        adultCount++;
-                                        adultCountEl.textContent = adultCount;
-                                        adultDisplayCountEl.textContent = adultCount;
-                                        updateTotalPrice(); // Update total price when adults count changes
-                                    });
-
-                                    document.getElementById('total-travellers-adult-minus').addEventListener('click', function () {
-                                        if (adultCount > 1) { // Prevent reducing adult count below 1
-                                            adultCount--;
-                                            adultCountEl.textContent = adultCount;
-                                            adultDisplayCountEl.textContent = adultCount;
-                                            updateTotalPrice(); // Update total price when adults count changes
-                                        }
-                                    });
-
-                                    // Event listeners for child count in popup
-                                    document.getElementById('total-travellers-child-plus').addEventListener('click', function () {
-                                        childCount++;
-                                        childCountEl.textContent = childCount;
-                                        childDisplayCountEl.textContent = childCount;
-                                        updateTotalPrice(); // Update total price when children count changes
-                                    });
-
-                                    document.getElementById('total-travellers-child-minus').addEventListener('click', function () {
-                                        if (childCount > 0) { // Prevent reducing child count below 0
-                                            childCount--;
-                                            childCountEl.textContent = childCount;
-                                            childDisplayCountEl.textContent = childCount;
-                                            updateTotalPrice(); // Update total price when children count changes
-                                        }
-                                    });
-
-                                    // Initialize total price on page load
-                                    updateTotalPrice();
                                 });
-
-                                document.addEventListener('DOMContentLoaded', () => {
-
-                                    const dateInput = document.getElementById('date-available-input');
-                                    const datePopup = document.getElementById('date-available-popup');
-                                    const travellersTrigger = document.getElementById('total-travellers-trigger');
-                                    const travellersPopup = document.getElementById('total-travellers-popup');
-                                    const closeTravellersPopup = document.getElementById('total-travellers-close');
-                                    const bookNowClosePopupBtn = document.querySelector('.book-now-close-popup');
-
-
-
-
-
-
-
-
-                                    dateInput.addEventListener('click', () => datePopup.classList.toggle('hidden'));
-                                    document.querySelectorAll('.date-option').forEach(dateEl => {
-                                        dateEl.addEventListener('click', function () {
-                                            dateInput.value = this.textContent;
-                                            datePopup.classList.add('hidden');
-                                        });
-                                    });
-
-                                    travellersTrigger.addEventListener('click', () => travellersPopup.classList.remove('hidden'));
-                                    closeTravellersPopup.addEventListener('click', () => travellersPopup.classList.add('hidden'));
-                                    // Function to show the popup when the "Book Now" button is clicked
-bookNowBtn.addEventListener('click', () => bookNowPopupBox.classList.remove('hidden'));
-
-// Function to close the popup when the close button is clicked
-bookNowClosePopupBtn.addEventListener('click', () => {
-bookNowPopupBox.classList.add('hidden');
-});
-
-// Function to close the popup when clicking outside the popup
-window.addEventListener('click', (e) => {
-if (e.target === bookNowPopupBox) bookNowPopupBox.classList.add('hidden');
-});
-
-// Show the popup automatically after 5 seconds when the page loads
-window.addEventListener('DOMContentLoaded', () => {
-setTimeout(() => {
-bookNowPopupBox.classList.remove('hidden');
-}, 5000); // 5000ms = 5 seconds
-});
-
-                                });
+    
                             </script>
-                                    
-
-                                <style>
-                                    @media (max-width:1024px) {
-                                        .responsivewidthpricebox {
-                                            width: 100% !important;
-                                        }
-                                    }
-
-
-                                    .tour-package {
-                                        padding: 10px;
-                                        cursor: pointer;
-                                        transition: all 0.3s;
-                                    }
-
-                                    .tour-package.selected {
-                                        border-color: orange;
-                                        color: orange;
-                                    }
-
-                                    /* Popup styling */
-                                    .total-travellers-popup {
-                                        position: fixed;
-                                        top: 0;
-                                        left: 0;
-                                        width: 100%;
-                                        height: 100%;
-                                        background: rgba(0, 0, 0, 0.5);
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                    }
-
-
-                                    /* Smooth transition styling */
-                                    .selected {
-                                        border-color: #FF7A1F !important;
-                                        color: #FF7A1F !important;
-                                        transition: color 0.3s ease, border-color 0.3s ease;
-                                    }
-                                .total-travellers-popup-content {
-                                background: white;
-                                padding: 20px;
-                                width: 300px;
-                                border-radius: 8px;
+                            <style>
+                                .inclusion-item {
+                                    font-size: 14px;
+                                    color: #333;
+                                    margin-bottom: 8px;
+                                    display: flex;
+                                    align-items: center;
                                 }
-                                .total-travellers-popup.hidden {
-                                display: none;
+    
+                                .inclusion-item::before {
+                                    content: '';
+                                    margin-right: 6px;
                                 }
-                                .total-travellers-header {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                }
-                                .total-travellers-body {
-                                margin-top: 20px;
-                                }
-                                .total-travellers-body div {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                margin-bottom: 15px;
-                                }
-                                @media (max-width:720px){
-                                .responsivesearchanimation{
-                                min-width: 80% !important;
-                                }
-                                .responsivesvg{
-                                width: 30px !important;
-                                height: 30px !important;
-                                }
-                                .responsivetext{
-                                font-size: 10px !important;
-                                }
-                                .responsiveLARGEtext{
-                                font-size: 12px !important;
-                                }
-                                .crouselresponsivewidth{
-                                width: 100% !important;
-                                }
-                                }
-                                </style>
-
-
-
-                            </div>
+                            </style>
                         </div>
-
-                        <div class=" h-full responsivewidthpricebox"
-                            style="width: 40%;">
-                            <div class="py-5 lg:px-5">
-                                <p class="font-bold text-lg">Costings</p>
-                                <ul id="inclusions-list">
-                                    <li class="inclusion-item">Select a package to see costing.</li>
-                                </ul>
-                            </div>
-                            
-                        </div>
-                        <script>
-                            document.addEventListener('DOMContentLoaded', () => {
-                                const tourPackageElements = document.querySelectorAll('.tour-package');
-                                const inclusionsListElement = document.getElementById('inclusions-list');
-
-                                // Define inclusions for each tour package
-                                const inclusionsData = {
-                                    // "Raithal to Raithal - ₹5,999": {
-                                    //     route: "Raithal to Raithal",
-                                    //     triple: "₹5,999",
-                                    //     double: "₹6,999"
-                                    // },
-                                    "Srinagar to Srinagar - ₹17,999": {
-                                        route: "Srinagar to Srinagar",
-                                        triple: "₹17,999",
-                                        double: "₹19,999"
-                                    },
-                                    // "Dehradun to Dehradun - ₹8,499": {
-                                    //     route: "Dehradun to Dehradun",
-                                    //     triple: "₹8,499",
-                                    //     double: "₹9,499"
-                                    // }
-                                };
-
-                                // Function to set inclusions as a table based on package name
-                                const setInclusions = (packageName) => {
-                                    const inclusions = inclusionsData[packageName] || inclusionsData["Srinagar to Srinagar - ₹17,999"];
-
-                                    // Create a table with headers
-                                    const tableHTML = `
-      <table class="mt-10 rounded-lg" style="width: 100%; border-collapse: collapse;">
-        <thead class="rounded-t-lg">
-          <tr>
-            <th  style="text-align: center; color:orange;  font-weight: bold; padding: 8px; border-left:1px solid gray; border-bottom:1px solid gray; border-top:1px solid gray; border-right: 1px solid gray;">Route</th>
-            <th style="text-align: center; color:orange; font-weight: bold; padding: 8px; border-top:1px solid gray; border-bottom:1px solid gray; border-right: 1px solid gray;"">Triple Sharing Price</th>
-            <th style="text-align: center; color:orange; font-weight: bold; padding: 8px; border-top:1px solid gray; border-bottom:1px solid gray; border-right: 1px solid gray;"">Double Sharing Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="text-center" style="padding: 8px;border-left:1px solid gray;  border-bottom:1px solid gray; border-right: 1px solid gray;"><strong>${inclusions.route}</strong></td>
-            <td class="text-center" style="padding: 8px; border-right: 1px solid gray;  border-bottom:1px solid gray;"><strong>${inclusions.triple}</strong></td>
-            <td class="text-center" style="padding: 8px; border-right: 1px solid gray;  border-bottom:1px solid gray;"><strong>${inclusions.double}</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    `;
-
-                                    // Replace content in inclusionsListElement with the new table
-                                    inclusionsListElement.innerHTML = tableHTML;
-                                };
-
-                                // Set default inclusions on page load
-                                setInclusions("Srinagar to Srinagar - ₹17,999");
-
-                                tourPackageElements.forEach(packageElement => {
-                                    packageElement.addEventListener('click', () => {
-                                        const packageName = packageElement.textContent;
-                                        setInclusions(packageName);
-                                    });
-                                });
-                            });
-
-                        </script>
-                        <style>
-                            .inclusion-item {
-                                font-size: 14px;
-                                color: #333;
-                                margin-bottom: 8px;
-                                display: flex;
-                                align-items: center;
-                            }
-
-                            .inclusion-item::before {
-                                content: '';
-                                margin-right: 6px;
-                            }
-                        </style>
                     </div>
-                </div>
             </div>
 
 
             <div class="py-20 flex flex-col gap-6">
                 <p class="custom-font-heading fade-scroll fade-scroll-down mb-4 mb-6 font-bold text-4xl   w-full"
                     data-animation="fade-scroll-down"
-                    style="color: #FF931F; font-size: 32px; line-height: 38px;  ;"> Why Trek
+                    style="color: #FF931F; font-size: 32px; line-height: 38px;  ;"> Why Trip
                     With US?</p>
 
                 <div
@@ -2809,39 +2748,40 @@ bookNowPopupBox.classList.remove('hidden');
                                 <ul class="list-none space-y-2">
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                        <p><strong>Transportation:</strong> Pick up & drop from Srinagar.</p>
+                                        <p><strong>Transportation:</strong> From Delhi to Delhi in tempo traveller.</p>
 
                                     </li>
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                        <p><strong>Accommodation:</strong>  Hotels/ houseboats will be arranged as per the
-                                            itinerary and availability on double sharing basis.</p>
+                                        <p><strong>Accommodation:</strong>  2N in mohali(hotel) & 1N in Kasol (camp) in sharing basis</p>
                                     </li>
                                     <div class="hidden read-more-content">
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            <p><strong>Accommodation:</strong>  : Nutritious and healthy meals from Day 1 dinner to Day 6
-                                                breakfast except lunch <strong>(Breakfast-5, Dinner-5)</strong></p>
+                                            <p><strong>Meals</strong>  : Nutritious and healthy meals from Day 2 dinner to Day 4
+                                                breakfast except lunch <strong>(Breakfast-3, Dinner-3)</strong></p>
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            Garland welcome
+                                            <p><strong>Local Sightseeing</strong>  : Solang Valley, Atal Tunnel, Kullu, Kasol, Manikaran Gurudwara, Chalal village, etc.</p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            <p><strong>Taxes included:</strong>  i.e., toll tax, parking fee, green tax, and driver & fuel
-                                                expense.</p>
+                                            <p><strong>Dj Night and bonfire</strong> 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            Similar hotels will be provided in case selected hotels are sold out or
-unavailable.
+                                           <strong>Taxes included </strong> : i.e., toll tax, parking fee, green tax, and driver & fuel expense.
                                         </li>
                                         
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            Medical Amenities - First Aid Kits , Oxymeters , Oxygen Cylinders.
+                                            First Aid Kits.
+                                        </li>
+                                        <li class="relative pl-6">
+                                            <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
+                                            Similar hotels will be provided in case selected hotels are sold out or unavailable.
                                         </li>
                                     </div>
                                 </ul>
@@ -2853,66 +2793,57 @@ unavailable.
                                 <ul class="list-none space-y-2">
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                        <strong>Any air /train charges
+                                        <strong>Any air /train charges to reach Delhi.
                                         </strong>
                                     </li>
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                        <strong>Guide charges
-                                        </strong>
+                                        <p>Extra activities: Like <strong>paragliding</strong>, etc. in Kullu or Solang Valley or Sissu, <strong>bungee jumping</strong> in Manali, etc.</p>
+
                                     </li>
 
                                     <div class="hidden read-more-content">
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Extra activities: </strong>
-                                            Like gondola ride, snow activities, horse rides,
-                                            shikara rides, etc. and for travelling locally in <strong>Pahalgam</strong> (Aru, Betaab
-                                            Valley, Chandanwari's Valley)
-                                        </li>
-                                        <li class="relative pl-6">
-                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Personal Expenses: </strong>
-                                            Any expense of a personal nature, such as
-additional meals, snacks, or personal items, tips, beverages, etc., is
-not included.
+                                            <p>Personal Expenses: Any expense of a personal nature, such as <strong>additional meals</strong>, <strong>snacks</strong>, or personal items, <strong>tips</strong>, <strong>beverages</strong>, etc., is not included.</p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Any extra stay/meals apart from the ones mentioned in the
-                                                inclusions.
-                                                </strong>
+                                            <p>Any <strong>extra stay/meals</strong> apart from the ones mentioned in the inclusions.</p>
+
+                                        </li>
+                                        <li class="relative pl-6">
+                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
+                                            <p><strong>Travel Insurance</strong>: The cost of travel insurance is not included.</p>
+
                                             
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Travel Insurance:</strong>
-                                            The cost of travel insurance is not included.
-                                        </li>
-                                        <li class="relative pl-6">
-                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Any entry fees, extra expenses for optional activities or tickets</strong>
-                                            unless quoted in inclusions.
+                                            <p>Any <strong>entry fees</strong>, extra expenses for <strong>optional activities</strong> or <strong>tickets</strong>, unless quoted in inclusions.</p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Costs due to unforeseen incidents:</strong>
-                                            Any additional costs incurred
-due to weather or natural conditions like heavy rain, landslides, snow,
-etc., along with roadblocks, medical evacuation, etc., will be borne by
-the travellers themselves.
+                                            <p>Cost of <strong>snow-chained or 4X4 vehicle</strong> if needed due to heavy snowfall.</p>
+
+
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Any other costs that are not mentioned in the inclusions.
-                                            </strong>
+                                            <p>Costs due to <strong>unforeseen incidents</strong>: Any additional costs incurred due to weather or natural conditions like <strong>heavy rain</strong>, <strong>landslides</strong>, <strong>snow</strong>, etc., along with roadblocks, medical evacuation, etc., will be borne by the travellers themselves.</p>
+
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <strong>Extra 5% GST.
-                                            </strong>
+                                            <p>Any other costs that are not mentioned in the inclusions.</p>
+
+                                        </li>
+                                        <li class="relative pl-6">
+                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
+                                            <p>Extra <strong>5% GST</strong>.</p>
+
                                         </li>
                                     </div>
                                 </ul>
@@ -2972,8 +2903,8 @@ the travellers themselves.
                             id="closeFit">&times;</span>
                         <h2>Get Yourself Fit</h2>
                         <p>
-                        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">How to Get Fit for the Kedarkantha
-                            Trek</h1>
+                        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">How to Get Fit for the Manali
+                            Trip</h1>
 
                         <!-- Cardio Fitness -->
                         <div class="mb-6">
@@ -3015,7 +2946,7 @@ the travellers themselves.
                                 style="color: #FF931F;">4. Mental Preparation</h2>
                             <ul class="list-disc list-inside space-y-2">
                                 <li>Practice deep breathing to improve lung capacity.</li>
-                                <li>Visualize the trek to build mental toughness.</li>
+                                <li>Visualize the trip to build mental toughness.</li>
                             </ul>
                         </div>
 
@@ -3072,7 +3003,7 @@ the travellers themselves.
                         <div class="mb-6">
                             <h2 class="text-xl font-semibold custom-heading mb-2">2. Include Complex Carbohydrates</h2>
                             <p>Fuel your energy levels with whole grains, fruits, and vegetables for sustained energy
-                                during the trek.</p>
+                                during the trip.</p>
                         </div>
 
                         <div class="mb-6">
@@ -3138,7 +3069,7 @@ the travellers themselves.
                     <div class="mb-6">
                         <h2 class="text-xl font-semibold custom-heading mb-2">5. Personal Hygiene Items</h2>
                         <p>Include biodegradable soap, hand sanitizer, and toilet paper for maintaining hygiene on the
-                            trek.</p>
+                            trip.</p>
                     </div>
 
                     <div class="mb-6">
@@ -3149,7 +3080,7 @@ the travellers themselves.
 
                     <div class="mb-6">
                         <h2 class="text-xl font-semibold custom-heading mb-2">7. Warm Clothing</h2>
-                        <p>Bring warm layers to stay comfortable, especially in cold weather conditions during the trek.
+                        <p>Bring warm layers to stay comfortable, especially in cold weather conditions during the trip.
                         </p>
                     </div>
                     </p>
@@ -3168,7 +3099,7 @@ the travellers themselves.
                     <!-- Health and Safety Tips -->
                     <div class="mb-6">
                         <h2 class="text-xl font-semibold custom-heading mb-2">1. Stay Hydrated</h2>
-                        <p>Drink plenty of water throughout the trek to prevent dehydration. Aim for at least 2-3 liters
+                        <p>Drink plenty of water throughout the trip to prevent dehydration. Aim for at least 2-3 liters
                             daily.</p>
                     </div>
 
@@ -3201,7 +3132,7 @@ the travellers themselves.
 
                     <div class="mb-6">
                         <h2 class="text-xl font-semibold custom-heading mb-2">7. Carry a First Aid Kit</h2>
-                        <p>Always have a first aid kit on hand for minor injuries or emergencies during the trek.</p>
+                        <p>Always have a first aid kit on hand for minor injuries or emergencies during the trip.</p>
                     </div>
                     </p>
                 </div>
@@ -3215,7 +3146,7 @@ the travellers themselves.
                     <span class="  custom-font-heading fade-scroll font-bold fade-scroll-left"
                         data-animation="fade-scroll-left"
                         style="font-size: 32px; line-height: 38px;  ;">
-                        Trek Details
+                        Trip Details
                     </span>
                     <span class="custom-font-heading fade-scroll fade-scroll-right font-medium text-gray-500  "
                         data-animation="fade-scroll-right"
@@ -3512,7 +3443,7 @@ the travellers themselves.
                                     <div class="mb-6">
                                         <h3 class="text-xl font-semibold text-gray-700 mb-2">Trekking</h3>
                                         <p class="text-gray-700 leading-relaxed">
-                                            Embark on thrilling treks through the scenic trails of Manali, leading to breathtaking destinations like Hampta Pass, Beas Kund, and Bhrigu Lake. Experience diverse terrains ranging from lush green meadows and dense pine forests to rugged mountain passes. Perfect for trekkers of all levels, these trails promise adventure and serene natural beauty.
+                                            Embark on thrilling trips through the scenic trails of Manali, leading to breathtaking destinations like Hampta Pass, Beas Kund, and Bhrigu Lake. Experience diverse terrains ranging from lush green meadows and dense pine forests to rugged mountain passes. Perfect for trekkers of all levels, these trails promise adventure and serene natural beauty.
 
 
 
@@ -4942,7 +4873,18 @@ the travellers themselves.
 
 
 
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/676255af49e2fd8dfef9b2e7/1ifc1tedb';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 
 
 </body>
@@ -5259,9 +5201,9 @@ the travellers themselves.
   
   
                             </span>
-                            <span>
-                                Ludhiana, Punjab 141010
-                            </span>
+                            <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
                         </p>
                     </div>
                     <div class="flex  gap-2 items-baseline justify-start pl-28 text-sm py-10 text-white">
@@ -5488,9 +5430,9 @@ the travellers themselves.
   
   
                             </span>
-                            <span>
-                                Ludhiana, Punjab 141010
-                            </span>
+                            <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
                         </p>
                         
                     </div>

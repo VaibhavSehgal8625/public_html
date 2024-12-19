@@ -416,6 +416,146 @@ updateCarouselPosition2();
 
 
 
+    const carousel3 = document.getElementById('carousel3');
+    const prevBtn3 = document.getElementById('prevBtn3');
+    const nextBtn3 = document.getElementById('nextBtn3');
+    const items3 = Array.from(carousel3.children);
+    const totalItems3 = items3.length;
+    let currentIndex3 = 0;
+    let isDragging3 = false;
+    let startPos3 = 0;
+    let currentTranslate3 = 0;
+    let prevTranslate3 = 0;
+    let animationID3;
+    
+    // Get the visible number of items based on the screen size
+    function getVisibleItems3() {
+        const screenWidth3 = window.innerWidth;
+        if (screenWidth3 < 650) {
+            return 1; // Show 1 item for small screens
+        } else if (screenWidth3 >= 650 && screenWidth3 <= 1100) {
+            return 3; // Show 3 items for medium screens
+        } else {
+            return 4; // Show 4 items for larger screens
+        }
+    }
+    
+    // Update carousel position
+    function updateCarouselPosition3() {
+        const visibleItems3 = getVisibleItems3();
+        const itemWidth3 = carousel3.clientWidth / visibleItems3;
+        const offset3 = (carousel3.clientWidth - visibleItems3 * itemWidth3) / 3; // To center the items
+        const newTransform3 = `translateX(${offset3 - currentIndex3 * itemWidth3}px)`;
+        carousel3.style.transition = 'transform 0.5s ease'; // Smooth sliding effect
+        carousel3.style.transform = newTransform3;
+        updateButtonStates3(visibleItems3);
+    }
+    
+    // Update button states (enable/disable based on the current index)
+    function updateButtonStates3(visibleItems3) {
+        prevBtn3.disabled = currentIndex3 === 0;
+        nextBtn3.disabled = currentIndex3 >= totalItems3 - visibleItems3;
+    
+        // Update styles based on button state
+        if (prevBtn3.disabled) {
+            prevBtn3.classList.remove('bg-orange');
+            prevBtn3.classList.add('bg-white');
+            prevBtn3.querySelector('path').classList.replace('white-stroke', 'orange-stroke');
+        } else {
+            prevBtn3.classList.add('bg-orange');
+            prevBtn3.classList.remove('bg-white');
+            prevBtn3.querySelector('path').classList.replace('orange-stroke', 'white-stroke');
+        }
+    
+        if (nextBtn3.disabled) {
+            nextBtn3.classList.remove('bg-orange');
+            nextBtn3.classList.add('bg-white');
+            nextBtn3.querySelector('path').classList.replace('white-stroke', 'orange-stroke');
+        } else {
+            nextBtn3.classList.add('bg-orange');
+            nextBtn3.classList.remove('bg-white');
+            nextBtn3.querySelector('path').classList.replace('orange-stroke', 'white-stroke');
+        }
+    }
+    
+    // Handle next button click
+    nextBtn3.addEventListener('click', () => {
+        const visibleItems3 = getVisibleItems3();
+        if (currentIndex3 < totalItems3 - visibleItems3) {
+            currentIndex3++;
+            updateCarouselPosition3();
+        }
+    });
+    
+    // Handle previous button click
+    prevBtn3.addEventListener('click', () => {
+        if (currentIndex3 > 0) {
+            currentIndex3--;
+            updateCarouselPosition3();
+        }
+    });
+    
+    // Touch start event
+    carousel3.addEventListener('touchstart', touchStart3);
+    carousel3.addEventListener('touchmove', touchMove3);
+    carousel3.addEventListener('touchend', touchEnd3);
+    
+    // Functions to handle touch events
+    function touchStart3(event) {
+        isDragging3 = true;
+        startPos3 = getPositionX3(event);
+        carousel3.style.transition = ''; // Stop the smooth transition when dragging
+        animationID3 = requestAnimationFrame(animation3);
+    }
+    
+    function touchMove3(event) {
+        if (isDragging3) {
+            const currentPosition3 = getPositionX3(event);
+            currentTranslate3 = prevTranslate3 + currentPosition3 - startPos3;
+        }
+    }
+    
+    function touchEnd3() {
+        isDragging3 = false;
+        cancelAnimationFrame(animationID3);
+        
+        const visibleItems3 = getVisibleItems3();
+        const itemWidth3 = carousel3.clientWidth / visibleItems3;
+        const movedBy3 = currentTranslate3 - prevTranslate3;
+    
+        // Determine the new currentIndex based on swipe distance
+        if (movedBy3 < -itemWidth3 / 3 && currentIndex3 < totalItems3 - visibleItems3) {
+            currentIndex3++;
+        }
+        if (movedBy3 > itemWidth3 / 3 && currentIndex3 > 0) {
+            currentIndex3--;
+        }
+    
+        updateCarouselPosition3();
+        prevTranslate3 = currentTranslate3 = -currentIndex3 * itemWidth3;
+    }
+    
+    // Utility functions for touch event handling
+    function getPositionX3(event) {
+        return event.touches[0].clientX;
+    }
+    
+    function animation3() {
+        setCarouselPosition3();
+        if (isDragging3) requestAnimationFrame(animation3);
+    }
+    
+    function setCarouselPosition3() {
+        carousel3.style.transform = `translateX(${currentTranslate3}px)`;
+    }
+    
+    // Handle window resizing
+    window.addEventListener('resize', updateCarouselPosition3);
+    
+    // Initialize carousel position and button states
+    updateCarouselPosition3();
+    
+
 
     // const reviewSectionData = [
     //   {

@@ -709,7 +709,7 @@
     
   }
  </style>
- <div class="absolute  right-4   lg:flex md:flex hidden flex-col gap-2 responsivesocialbannerlinks" >
+ <div class="absolute  right-4   lg:flex md:flex hidden flex-col gap-2 responsivesocialbannerlinks" style="z-index: 10000000" >
   <div onclick="location.href='https://www.facebook.com/hisafarwallah/'">
     <svg style="width: 30px; height:30px;" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" stroke="" class="responsivewidthofsvg">
       <path class="svghovereffect" d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z" fill="white"/>
@@ -1060,7 +1060,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
 
         <!-- contact-us-popup button                   -->
 
-        <div class="bg-black p-4 rounded-full fixed bottom-10 right-5 contact-us-icon-button " id="contactUsButton"
+        <div class="bg-black p-4 rounded-full fixed bottom-28 right-7 contact-us-icon-button " id="contactUsButton"
             style="z-index: 150;">
             <p class="flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -1199,6 +1199,257 @@ document.getElementById('searchInput').addEventListener('input', function () {
   
 </div>
 
+
+  <!-- upcoming treks are here  -->
+
+  <div class="carousel-wrapper overflow-x-hidden lg:px-20 md:px-14 sm:px-10 px-6 py-10">
+    <div class="flex items-center justify-between">
+      <div class="fade-scroll overflow-x-hidden" data-animation="fade-scroll-down">
+        <p class="text-4xl font-bold custom-font-heading" style="color: #FF931F;"> Upcoming Bagpacking Trips </p>
+
+        <p class="text-md  pb-12  text-gray-500">Discover Your New Adventure in Bagpacking trips</p>
+      </div>
+
+      <div class="lg:flex md:flex hidden items-center justify-between gap-2 fade-scroll overflow-x-hidden " data-animation="fade-scroll-left">
+        <button id="prevBtn3" class="bg-orange borderorange px-3 py-2 rounded-full" disabled>
+          <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.79297 2L2.50008 7.29289C2.10955 7.68342 2.10955 8.31658 2.50008 8.70711L7.79297 14"
+              class="white-stroke" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button id="nextBtn3" class="bg-orange borderorange px-3 py-2 rounded-full">
+          <svg width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.125 15.25L7.875 8.5L1.125 1.75" class="white-stroke" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+<style>
+  .hoverbordercrouselitem:hover{
+    border: 1px solid #FF931F;
+  }
+  .icon-svg {
+  transition: transform 0.3s ease, stroke 0.3s ease; /* Smooth transition for rotation and color */
+}
+
+a:hover .icon-svg {
+  stroke: #FF931F; /* Change stroke color to orange on hover */
+  transform: rotate(45deg); /* Rotate 30 degrees on hover */
+}
+
+</style>
+
+    <div class="px-6 overflow-x-hidden fade-scroll" data-animation="fade-scroll-right">
+      <div class="carousel transition-transform duration-500 ease-in-out flex lg:space-x-2 md:space-x-2 sm:space-x-1 space-x-1 rounded-2xl" id="carousel3">
+        <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
+          <a href="/public/Manali.html" class="">
+            <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
+              <img src="/src/images/manali/banner-image.webp" alt="Trek 1" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
+
+              <!-- Gradient from bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
+                <div class="absolute top-2 right-2">
+                  <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
+                    ₹ 9,499/-  onwards
+                  </p>
+                </div>
+                  <div class="absolute bottom-0 p-4 w-full">
+                      <p class="text-white font-bold text-lg mb-3"> Manali
+                      </p>
+                      <div class="flex flex-col gap-3">
+
+                          <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
+                                      </svg>
+                                  </p>
+
+                                  <p class="text-xs text-white font-bold">Himachal Pradesh</p>
+                              </div>
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                                      </svg>
+                                  </p>
+
+                                  <p class="text-xs text-white font-bold">4D/3N</p>
+                              </div>
+
+                          </div>
+                          <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                              
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                <p>
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                                  </svg>
+                                  
+                                    
+                                </p>
+
+                                <p class="text-xs text-white font-bold">1 Jan<span style="color: #FF931F;"> + Many Batches</span></p>
+                            </div>
+                            
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </a>
+          
+          
+        </div>
+        
+        <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
+          <a href="/public/kerala.html" class="">
+            <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
+              <img src="/src/images/kerala/banner-image.webp" alt="Trek 1" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
+
+              <!-- Gradient from bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
+                <div class="absolute top-2 right-2">
+                  <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
+                    ₹ 11,999/-  onwards
+                  </p>
+                </div>
+                  <div class="absolute bottom-0 p-4 w-full">
+                      <p class="text-white font-bold text-lg mb-3"> Kerala
+                      </p>
+                      <div class="flex flex-col gap-3">
+
+                          <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
+                                      </svg>
+                                  </p>
+
+                                  <p class="text-xs text-white font-bold">Kerala</p>
+                              </div>
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                                      </svg>
+                                  </p>
+
+                                  <p class="text-xs text-white font-bold">6D/5N</p>
+                              </div>
+
+                          </div>
+                          <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                              
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                <p>
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                                  </svg>
+                                  
+                                    
+                                </p>
+
+                                <p class="text-xs text-white font-bold">1 Jan <span style="color: #FF931F;">+ Many Batches</span></p>
+                            </div>
+                            
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </a>
+          
+          
+        </div>
+        <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
+          <a href="/public/kashmir.html" class="">
+            <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
+              <img src="/src/images/kashmir/banner-image.webp" alt="Trek 1" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
+
+              <!-- Gradient from bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
+                <div class="absolute top-2 right-2">
+                  <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
+                    ₹ 17,999/-  onwards
+                  </p>
+                </div>
+                  <div class="absolute bottom-0 p-4 w-full">
+                      <p class="text-white font-bold text-lg mb-3"> Kashmir
+                      </p>
+                      <div class="flex flex-col gap-3">
+
+                          <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
+                                      </svg>
+                                  </p>
+
+                                  <p class="text-xs text-white font-bold">Jammu & Kashmir</p>
+                              </div>
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                                      </svg>
+                                  </p>
+
+                                  <p class="text-xs text-white font-bold">6D/5N</p>
+                              </div>
+
+                          </div>
+                          <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                              
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                <p>
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                                  </svg>
+                                  
+                                    
+                                </p>
+
+                                <p class="text-xs text-white font-bold">1 Jan <span style="color: #FF931F;">+ Many Batches</span></p>
+                            </div>
+                            
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </a>
+          
+          
+        </div>
+        
+        
+        <!-- Repeat for other carousel items -->
+      </div>
+      <!-- Navigation Buttons -->
+      <div class="w-full flex justify-center mt-6  items-center">
+        <a href="/public/bagpacking-trips.html" class="bg-orange borderorange text-white hover:bg-white flex gap-1 rounded-full py-2 px-4 hovertextorange">
+          <span>View All</span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" style="width: 20px;height:20px" class="icon-svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
+          </span>
+        </a>
+        
+      </div>
+    </div>
+  </div>
 
 
   <!-- upcoming treks are here  -->
@@ -2326,7 +2577,7 @@ a:hover .icon-svg {
 
 
 <div class="overflow-x-hidden">
-  <button id="scrollToTopBtn" class="bg-black bottom-28 fixed px-3.5 py-3.5 right-6 rounded-full text-white" style="
+  <button id="scrollToTopBtn" class="bg-black bottom-44 fixed px-3.5 py-3.5 right-8 rounded-full text-white" style="
     z-index: 1000000;
 "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 20px; height:20px;" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
@@ -2694,9 +2945,10 @@ a:hover .icon-svg {
 
 
                           </span>
-                          <span>
-                              Ludhiana, Punjab 141010
-                          </span>
+                          <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
+
                       </p>
                   </div>
                   <div class="flex  gap-2 items-baseline justify-start pl-28 text-sm py-10 text-white">
@@ -2923,9 +3175,9 @@ a:hover .icon-svg {
 
 
                           </span>
-                          <span>
-                              Ludhiana, Punjab 141010
-                          </span>
+                          <a href="https://maps.app.goo.gl/1anyhYxc1PJn1AaaA" class="navcomponents">
+                            Ludhiana, Punjab 141010
+                        </a>
                       </p>
                       
                   </div>
@@ -2941,7 +3193,19 @@ a:hover .icon-svg {
 
 </footer>
 
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/676255af49e2fd8dfef9b2e7/1ifc1tedb';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
 
 
 </body>
