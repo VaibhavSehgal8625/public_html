@@ -2233,6 +2233,9 @@ Together, Bir Waterfall and Bir’s paragliding experience showcase the village�
                                             class="payment-btn border rounded-lg p-2 mr-2">Partial Payment</button>
                                         <button id="fullPaymentBtn" class="payment-btn border rounded-lg p-2">Full
                                             Payment</button>
+                                            <button id="slotBookingBtn" class="payment-btn border rounded-lg p-2 mr-2">
+                                                Book Your Slot in ₹49 Only
+                                            </button>
                                     </div>
                                     <div
                                         class="flex gap-3 pt-6 lg:flex-row md:flex-row sm:flex-col flex-col justify-between items-center">
@@ -2257,33 +2260,120 @@ Together, Bir Waterfall and Bir’s paragliding experience showcase the village�
                                     </div>
     
     
-                                    <!-- Book Now Popup Container -->
+                                    <style>
+                                        .unique-container {
+                                          color: #333;
+                                          margin: 0 auto;
+                                          text-align: center;
+                                        }
+                                    
+                                        
+                                        .unique-list-item {
+                                          display: inline-block;
+                                          font-weight: 700;
+                                          text-transform: uppercase;
+                                        }
+                                    
+                                        .unique-list-item span {
+                                          display: block;
+                                        }
+                                    
+                                        
+                                    
+                                        .unique-emoji {
+                                          display: none;
+                                        }
+                                    
+                                        
+                                    
+                                        @media all and (max-width: 768px) {
+                                          .unique-title {
+                                            font-size: calc(0.5rem * var(--smaller));
+                                          }
+                                    
+                                          .unique-list-item {
+                                            font-size: calc(0.125rem * var(--smaller));
+                                          }
+                                    
+                                          .unique-list-item span {
+                                            font-size: calc(0.375rem * var(--smaller));
+                                          }
+                                        }
+                                    </style>
+
                                     <div id="bookNowPopupBox"
-                                    class="book-now-popup fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
-                                    style="z-index: 1000000000 !important;">
-                                    <div class="book-now-popup-content bg-white p-6 rounded-lg shadow-lg  relative lg:w-1/2 md:w-3/4 sm:w-3/4 w-3/4"
-                                        style="height: 70% !important; ">
-                                        <button
-                                            class="book-now-close-popup absolute top-2 right-2 text-2xl">&times;</button>
-                                        <iframe
-                                            src="https://docs.google.com/forms/d/e/1FAIpQLSfP03Ob4vYy0084Q0hFZlpgmXcCX6mtz2pe06PjpsHQnZgELw/viewform?embedded=true"
-                                            class="w-full h-full"
-                                            frameborder="0"
-                                            marginheight="0"
-                                            marginwidth="0">Loading…</iframe>
-                                        <!-- 
-                                    <h2 class="text-xl font-bold mb-4 text-center">Book Your Trip</h2>
-                                    <a href="https://wa.me/917347004282"
-                                        class="block mb-4"
-                                        target="_blank">
-                                        <button
-                                            class="book-now-btn bg-green-500 text-white py-2 px-4 rounded w-full hover:bg-green-600">WhatsApp</button>
-                                    </a>
-                                    <button id="bookNowCallButton"
-                                        class="book-now-btn bg-blue-500 text-white py-2 px-4 rounded w-full hover:bg-blue-600">Call
-                                        Now: +91 7347004282</button> -->
+                                        class="book-now-popup fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+                                        style="z-index: 1000000000 !important;">
+                                        <div class="book-now-popup-content bg-white  rounded-lg shadow-lg relative "
+                                            style="height: 70% !important; width: fit-content;">
+                                            <button id="closePopupBtn"
+                                                class="book-now-close-popup absolute top-2 right-2 text-2xl">&times;</button>
+                                            
+                                            <a href="#section-dates" class=""
+                                                style="color: black !important; border-left: none !important;"><a href="#section-dates" style="color: black !important; border-left: none !important;">
+                                                    <img src="/src/images/offer_11zon.webp" class="w-full h-full rounded-2xl" id="offerImage">
+                                                  </a>
+                                                <div class="unique-container absolute left-0 right-0 bottom-4">
+                                                    <h1 class="unique-title text-center font-bold " style="font-size: 22px !important;margin-bottom: 5px !important; color: black;">Offer Lasts Until...</h1>
+                                                    <div id="countdown">
+                                                      <ul class="flex gap-3 justify-center items-center">
+                                                        <li class="unique-list-item "><span id="days" class="unique-days text-2xl text-red-600 font-bold"></span>Days</li>
+                                                        <li class="unique-list-item"><span id="hours" class="unique-hours text-2xl text-red-600 font-bold"></span>Hours</li>
+                                                        <li class="unique-list-item"><span id="minutes" class="unique-minutes text-2xl text-red-600 font-bold"></span>Minutes</li>
+                                                        <li class="unique-list-item"><span id="seconds" class="unique-seconds text-2xl text-red-600 font-bold"></span>Seconds</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                        </div>
                                     </div>
-                                </div>
+
+                                    <script>
+                                        // Show popup after 2 seconds
+                                        window.addEventListener('load', function () {
+                                            setTimeout(function () {
+                                                document.getElementById('bookNowPopupBox').classList.remove('hidden');
+                                            }, 2000);
+                                        });
+
+                                        // Close popup when the close button is clicked
+                                        document.getElementById('closePopupBtn').addEventListener('click', function () {
+                                            document.getElementById('bookNowPopupBox').classList.add('hidden');
+                                        });
+
+                                        // Close popup when the image is clicked
+    document.getElementById('offerImage').addEventListener('click', function () {
+      document.getElementById('bookNowPopupBox').classList.add('hidden');
+      document.getElementById('overlay').classList.add('hidden');
+    });
+                                    </script>
+
+<script>
+    (function () {
+      const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+      // Target date: January 2nd, 2024 in IST (GMT+5:30)
+      const targetDate = new Date("2025-01-02T00:00:00+05:30").getTime();
+
+      const x = setInterval(function () {
+        const now = new Date().getTime(),
+              distance = targetDate - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / day);
+        document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
+        document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
+        document.getElementById("seconds").innerText = Math.floor((distance % minute) / second);
+
+        // Do something when the countdown is over
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "<h2>The countdown has ended!</h2>";
+        }
+      }, 1000);
+    })();
+  </script>
     
     
     
@@ -2328,7 +2418,8 @@ Together, Bir Waterfall and Bir’s paragliding experience showcase the village�
         const dateInput = document.getElementById('selected-date');
         const partialPaymentBtn = document.getElementById('partialPaymentBtn');
         const fullPaymentBtn = document.getElementById('fullPaymentBtn');
-    
+        const slotin49 = document.getElementById('slotBookingBtn');
+                                
         let selectedPackage = null;
         let selectedSharing = null;
         let adultCount = 1;
@@ -2336,6 +2427,7 @@ Together, Bir Waterfall and Bir’s paragliding experience showcase the village�
         let basePrice = 9999;
         let selectedDate = null;
         let isPartialPayment = false;
+        let isslotpayment = false;
     
         const packages = {
             "Delhi to Delhi": { triple: 9999, double: 10999 }
@@ -2345,166 +2437,172 @@ Together, Bir Waterfall and Bir’s paragliding experience showcase the village�
         function updateTotalPrice() {
         const totalBasePrice = (adultCount + childCount) * basePrice;
         const gst = totalBasePrice * 0.05; // 5% GST
-        let totalPrice = totalBasePrice + gst;
-    
-        // Apply partial payment indication if selected
-        if (isPartialPayment) {
-            totalPrice *= 0.2; // 30% for partial payment indication
+        let totalPrice;
+
+        if (isslotpayment) {
+            totalPrice = 49; // Slot booking fixed price
+        } else {
+            totalPrice = totalBasePrice + gst;
+            if (isPartialPayment) {
+                totalPrice *= 0.2; // 20% for partial payment
+            }
         }
-    
-        totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isPartialPayment ? "(20% Partial Payment + 5% GST)" : "(Full Payment + 5% GST)"}`;
+
+        totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()} ${isslotpayment
+            ? "(Slot Booking Payment of ₹49)"
+            : isPartialPayment
+                ? "(20% Partial Payment + 5% GST)"
+                : "(Full Payment + 5% GST)"
+        }`;
+
         return totalPrice;
     }
-    
-    
-    
-        // Payment Option Selection
-        partialPaymentBtn.addEventListener('click', () => {
-            isPartialPayment = true;
-            partialPaymentBtn.classList.add('selected');
-            fullPaymentBtn.classList.remove('selected');
+
+    partialPaymentBtn.addEventListener('click', () => {
+        isPartialPayment = true;
+        isslotpayment = false; // Reset slot payment state
+        partialPaymentBtn.classList.add('selected');
+        fullPaymentBtn.classList.remove('selected');
+        slotin49.classList.remove('selected');
+        updateTotalPrice();
+    });
+
+    fullPaymentBtn.addEventListener('click', () => {
+        isPartialPayment = false;
+        isslotpayment = false; // Reset slot payment state
+        fullPaymentBtn.classList.add('selected');
+        partialPaymentBtn.classList.remove('selected');
+        slotin49.classList.remove('selected');
+        updateTotalPrice();
+    });
+
+    slotin49.addEventListener('click', () => {
+        isslotpayment = true;
+        isPartialPayment = false; // Reset partial payment state
+        slotin49.classList.add('selected');
+        fullPaymentBtn.classList.remove('selected');
+        partialPaymentBtn.classList.remove('selected');
+        updateTotalPrice();
+    });
+
+    // Package selection
+    document.querySelectorAll('.tour-package').forEach(packageEl => {
+        packageEl.addEventListener('click', function () {
+            document.querySelectorAll('.tour-package').forEach(p => p.classList.remove('selected'));
+            this.classList.add('selected');
+
+            selectedPackage = this.getAttribute('data-package');
+            basePrice = parseInt(this.getAttribute('data-price')); // Get base price from data-price attribute
+            selectedSharing = null;
+
+            document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
             updateTotalPrice();
         });
-    
-        fullPaymentBtn.addEventListener('click', () => {
-            isPartialPayment = false;
-            fullPaymentBtn.classList.add('selected');
-            partialPaymentBtn.classList.remove('selected');
-            updateTotalPrice();
+    });
+
+    // Sharing selection
+    document.querySelectorAll('.sharing-option').forEach(sharingEl => {
+        sharingEl.addEventListener('click', function () {
+            if (!selectedPackage) {
+                alert("Please select a package first.");
+                return;
+            }
+            document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
+            this.classList.add('selected');
+
+            selectedSharing = this.getAttribute('data-sharing');
+            basePrice = packages[selectedPackage][selectedSharing]; // Update basePrice based on sharing type
+            updateTotalPrice(); // Recalculate total price
         });
-    
-        // Package selection
-        document.querySelectorAll('.tour-package').forEach(packageEl => {
-            packageEl.addEventListener('click', function () {
-                document.querySelectorAll('.tour-package').forEach(p => p.classList.remove('selected'));
-                this.classList.add('selected');
-    
-                selectedPackage = this.getAttribute('data-package');
-                basePrice = parseInt(this.getAttribute('data-price'));
-                selectedSharing = null;
-    
-                document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
-                updateTotalPrice();
-            });
+    });
+
+    // Date selection
+    document.querySelectorAll('.date-option').forEach(dateEl => {
+        dateEl.addEventListener('click', function () {
+            selectedDate = this.textContent.trim().split('(')[0];
+            dateInput.value = selectedDate;
         });
-    
-        // Sharing selection
-        document.querySelectorAll('.sharing-option').forEach(sharingEl => {
-            sharingEl.addEventListener('click', function () {
-                if (!selectedPackage) {
-                    alert("Please select a package first.");
-                    return;
-                }
-                document.querySelectorAll('.sharing-option').forEach(s => s.classList.remove('selected'));
-                this.classList.add('selected');
-    
-                selectedSharing = this.getAttribute('data-sharing');
-                basePrice = packages[selectedPackage][selectedSharing];
-                updateTotalPrice();
-            });
-        });
-    
-        // Date selection
-        document.querySelectorAll('.date-option').forEach(dateEl => {
-            dateEl.addEventListener('click', function () {
-                selectedDate = this.textContent.trim().split('(')[0];
-                dateInput.value = selectedDate;
-            });
-        });
-    
-        // Open and close travellers popup
-        travellersTrigger.addEventListener('click', () => {
-            travellersPopup.classList.remove('hidden');
-        });
-    
-        closeTravellersPopup.addEventListener('click', () => {
-            travellersPopup.classList.add('hidden');
-        });
-    
-        // Adult and child count adjustments
-        document.getElementById('total-travellers-adult-plus').addEventListener('click', () => {
-            adultCount++;
+    });
+
+    // Open and close travellers popup
+    travellersTrigger.addEventListener('click', () => {
+        travellersPopup.classList.remove('hidden');
+    });
+
+    closeTravellersPopup.addEventListener('click', () => {
+        travellersPopup.classList.add('hidden');
+    });
+
+    // Adult and child count adjustments
+    document.getElementById('total-travellers-adult-plus').addEventListener('click', () => {
+        adultCount++;
+        adultCountEl.textContent = adultCount;
+        adultDisplayCountEl.textContent = adultCount;
+        updateTotalPrice();
+    });
+
+    document.getElementById('total-travellers-adult-minus').addEventListener('click', () => {
+        if (adultCount > 1) {
+            adultCount--;
             adultCountEl.textContent = adultCount;
             adultDisplayCountEl.textContent = adultCount;
             updateTotalPrice();
-        });
-    
-        document.getElementById('total-travellers-adult-minus').addEventListener('click', () => {
-            if (adultCount > 1) {
-                adultCount--;
-                adultCountEl.textContent = adultCount;
-                adultDisplayCountEl.textContent = adultCount;
-                updateTotalPrice();
-            }
-        });
-    
-        document.getElementById('total-travellers-child-plus').addEventListener('click', () => {
-            childCount++;
+        }
+    });
+
+    document.getElementById('total-travellers-child-plus').addEventListener('click', () => {
+        childCount++;
+        childCountEl.textContent = childCount;
+        childDisplayCountEl.textContent = childCount;
+        updateTotalPrice();
+    });
+
+    document.getElementById('total-travellers-child-minus').addEventListener('click', () => {
+        if (childCount > 0) {
+            childCount--;
             childCountEl.textContent = childCount;
             childDisplayCountEl.textContent = childCount;
             updateTotalPrice();
-        });
-    
-        document.getElementById('total-travellers-child-minus').addEventListener('click', () => {
-            if (childCount > 0) {
-                childCount--;
-                childCountEl.textContent = childCount;
-                childDisplayCountEl.textContent = childCount;
-                updateTotalPrice();
-            }
-        });
-    
-        function handlePayment() {
-        let finalAmount = updateTotalPrice(); // Get the updated total price
-    
-        // Check if partial payment is selected
-        if (isPartialPayment) {
-            // Ensure partial payment logic is only applied once
-            finalAmount = finalAmount ; // 30% for partial payment
         }
-    
-        // Validation to ensure the amount matches with Razorpay requirements
-        if (isPartialPayment && finalAmount < 100) {
-            alert("Partial payment amount must be at least ₹100.");
-            return;
-        }
-    
+    });
+
+    function handlePayment() {
+        let finalAmount = updateTotalPrice();
+
         const options = {
-            key: "rzp_live_FXai12FndgJZyQ", // Replace with your live Razorpay API key
+            key: "rzp_live_FXai12FndgJZyQ",
             amount: Math.round(finalAmount * 100), // Convert to paise
             currency: "INR",
             name: "Safarwallah",
-            description: `Mcleodganj - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
+            description: `Chadar - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
             image: "https://drive.google.com/file/d/1srOLjBOzjRORsPI02rcrRnBgkGJwVVE0/view?usp=sharing",
             handler: function (response) {
                 alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
-                window.location.reload(); // Reload the page after payment
+                window.location.reload();
             },
             prefill: {
-                email: "",        // User will fill these manually
-                contact: ""       // User will fill these manually
+                email: "",
+                contact: ""
             },
             theme: { color: "#FF7A1F" }
         };
-    
+
         const razorpayInstance = new Razorpay(options);
         razorpayInstance.open();
     }
-    
-    
-        // Book Now button event listener
-        bookNowBtn.addEventListener('click', () => {
-            if (!selectedPackage || !selectedSharing || !selectedDate) {
-                alert("Please select a package, sharing option, and batch date before booking.");
-                return;
-            }
-            handlePayment();
-        });
-    
-        // Initialize total price on page load
-        updateTotalPrice();
+
+    // Book Now button event listener
+    bookNowBtn.addEventListener('click', () => {
+        if (!selectedPackage || !selectedSharing || !selectedDate) {
+            alert("Please select a package, sharing option, and batch date before booking.");
+            return;
+        }
+        handlePayment();
     });
-    
+
+    // Initialize total price on page load
+    updateTotalPrice();
+});
                                         </script>
                                         
     
