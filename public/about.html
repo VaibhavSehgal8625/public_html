@@ -58,35 +58,58 @@ svg:hover {
 }
 </style>
 
+  <!-- large screen navbar -->
+
+
   <header class="flex justify-center items-center hidden lg:flex absolute z-10 w-full">
 
-    <div class="bg-transparent px-20 flex justify-between w-full py-6">
-        
-      <div> 
-      <a href="/index.html"><img src="/src/images/logo/white-logo.png" style="width: 101px;" alt=""></a>
-        
+    <div class="bg-transparent px-20 flex justify-between w-full pt-6">
+      <div>
+        <img src="/src/images/logo/white-logo.png" style="width: 101px;" alt="">
       </div>
       <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
-        <div class=" bg-white  cursor-pointer flex flex-row items-start justify-between  px-4 py-2 responsivesearchanimation rounded-full"
-      style="min-width: 260px; height: 40px;" onclick="toggleSearchPopup()">
- 
-   <p class="text-md custom-font-heading text-black my-auto text-gray-500">
-     Search Trek By
-     <span id="rotatingText" class="text-black custom-font-heading sliding-text">Difficulty</span>
-   </p>
- 
-   <p class="flex h-full items-center justify-center my-auto">
-     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-          class="size-6" style="width: 15px; stroke:#FF931F;">
-       <path stroke-linecap="round" stroke-linejoin="round"
-             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-     </svg>
-   </p>
- </div>
         <a class="text-white navcomponents  custom-font-normal" href="/index.html">Home</a>
         <a class="text-white navcomponents  custom-font-normal" href="/public/about.html">About</a>
-<a class="text-white navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
-        <a class="text-white navcomponents custom-font-normal" href="/public/bagpacking-trips.html">Bagpacking-trips</a>        <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
+        <div class="relative inline-block">
+          <!-- Main Link -->
+          <a  
+             class="text-white custom-font-normal cursor-pointer  navcomponents  dropdown-trigger">All Treks & Trips</a>
+      
+          <!-- Dropdown Menu -->
+          <div id="dropdown-menu" 
+               class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+              <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+              <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+              <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+          </div>
+      </div>
+      
+      <script>
+          // Select the trigger and the dropdown menu
+          const trigger = document.querySelector('.dropdown-trigger');
+          const dropdownMenu = document.getElementById('dropdown-menu');
+      
+          // Show dropdown on hover
+          trigger.addEventListener('mouseenter', () => {
+              dropdownMenu.classList.remove('hidden');
+          });
+      
+          // Hide dropdown when mouse leaves
+          
+      
+          // Ensure dropdown stays open when hovering over the menu
+          dropdownMenu.addEventListener('mouseenter', () => {
+              dropdownMenu.classList.remove('hidden');
+          });
+      
+          dropdownMenu.addEventListener('mouseleave', () => {
+              dropdownMenu.classList.add('hidden');
+          });
+      </script>
+      
+      
+      
+        <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
         <a class="text-white navcomponents custom-font-normal" href="/public/blogs.html">Blogs</a>
         <a class="text-white navcomponents custom-font-normal" href="/public/contact.html">Contact</a>
         <!-- <a class="relative text-white bg-orange py-1.5 px-3 rounded-2xl hover:bg-white hovertextorange transition duration-300 ease-in-out"
@@ -96,6 +119,12 @@ svg:hover {
 
     </div>
   </header>
+
+
+
+  <!-- mobile screen navbar -->
+
+  
 
  <!-- Popup Container -->
  <div id="searchPopup" class="fixed inset-0 bg-black bg-opacity-50 fade-inw-full flex items-center justify-center z-50"
@@ -361,28 +390,18 @@ document.getElementById('searchInput').addEventListener('input', function () {
           <img src="/src/images/logo/white-logo.png" style="width: 101px;z-index: 200 !important;"  alt="">
         </a>
       </div>
-      <div class="flex gap-5 items-center">
+      
 
-          <div class="" onclick="toggleSearchPopup1()">
-            <p class="p-2  flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                    style="width: 15px;" stroke="white" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
-                </svg>
-            </p>
-        </div>
-          <div id="svgContainer" onclick="togglePopup()" style="cursor: pointer;z-index: 200;">
-            <!-- Initial Hamburger Icon -->
-            <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px; height:20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          
-            <!-- X Icon (hidden initially) -->
-            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="display: none; width: 20px; height:20px">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
+      <div id="svgContainer" onclick="togglePopup()" style="cursor: pointer;z-index: 200;">
+        <!-- Initial Hamburger Icon -->
+        <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px; height:20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      
+        <!-- X Icon (hidden initially) -->
+        <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="display: none; width: 20px; height:20px">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </div>
     </div>
     <div id="popup" style="opacity: 0; position: absolute; transition: opacity 0.3s ease-in-out; inset: 0px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; display: none;">
@@ -394,7 +413,43 @@ document.getElementById('searchInput').addEventListener('input', function () {
           <div class="absolute h-screen inset-0 ml-10 flex flex-col gap-6 mt-40 ">
             <a href="/index.html" class="text-white "><span class="navcomponents">Home</span></a>
             <a class="text-white  " href="/public/about.html"><span class="navcomponents">About</span></a>
-        <a class="text-white  " href="/all-treks"><span class="navcomponents">Treks</span></a>
+            <div class="relative inline-block">
+              <!-- Main Link -->
+              <a  
+                 class="text-white  cursor-pointer  navcomponents  dropdown-trigger1">All Treks & Trips</a>
+          
+              <!-- Dropdown Menu -->
+              <div id="dropdown-menu1" 
+                   class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                  <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                  <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                  <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+              </div>
+          </div>
+          
+          <script>
+              // Select the trigger and the dropdown menu
+              const trigger1 = document.querySelector('.dropdown-trigger1');
+              const dropdownMenu1 = document.getElementById('dropdown-menu1');
+          
+              // Show dropdown on hover
+              trigger1.addEventListener('mouseenter', () => {
+                  dropdownMenu1.classList.remove('hidden');
+              });
+          
+              // Hide dropdown when mouse leaves
+              
+          
+              // Ensure dropdown stays open when hovering over the menu
+              dropdownMenu1.addEventListener('mouseenter', () => {
+                  dropdownMenu1.classList.remove('hidden');
+              });
+          
+              dropdownMenu1.addEventListener('mouseleave', () => {
+                  dropdownMenu1.classList.add('hidden');
+              });
+          </script>              
+
         <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
         <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
         <a class="text-white  " href="/public/contact.html"><span class="navcomponents">Contact</span></a>

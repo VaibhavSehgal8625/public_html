@@ -374,8 +374,45 @@
       <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
         <a class="text-white navcomponents  custom-font-normal" href="/index.html">Home</a>
         <a class="text-white navcomponents  custom-font-normal" href="/public/about.html">About</a>
-<a class="text-white navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
-               <a class="text-white navcomponents custom-font-normal" href="/public/bagpacking-trips.html">Bagpacking-trips</a>
+        <div class="relative inline-block">
+          <!-- Main Link -->
+          <a  
+             class="text-white custom-font-normal cursor-pointer  navcomponents  dropdown-trigger">All Treks & Trips</a>
+      
+          <!-- Dropdown Menu -->
+          <div id="dropdown-menu" 
+               class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+              <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+              <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+              <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+          </div>
+      </div>
+      
+      <script>
+          // Select the trigger and the dropdown menu
+          const trigger = document.querySelector('.dropdown-trigger');
+          const dropdownMenu = document.getElementById('dropdown-menu');
+      
+          // Show dropdown on hover
+          trigger.addEventListener('mouseenter', () => {
+              dropdownMenu.classList.remove('hidden');
+          });
+      
+          // Hide dropdown when mouse leaves
+          
+      
+          // Ensure dropdown stays open when hovering over the menu
+          dropdownMenu.addEventListener('mouseenter', () => {
+              dropdownMenu.classList.remove('hidden');
+          });
+      
+          dropdownMenu.addEventListener('mouseleave', () => {
+              dropdownMenu.classList.add('hidden');
+          });
+      </script>
+      
+      
+      
         <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
         <a class="text-white navcomponents custom-font-normal" href="/public/blogs.html">Blogs</a>
         <a class="text-white navcomponents custom-font-normal" href="/public/contact.html">Contact</a>
@@ -423,8 +460,42 @@
           <div class="absolute h-screen inset-0 ml-10 flex flex-col gap-6 mt-40 ">
             <a href="/index.html" class="text-white "><span class="navcomponents">Home</span></a>
             <a class="text-white  " href="/public/about.html"><span class="navcomponents">About</span></a>
-<a class="text-white  " href="/public/all-treks.html"><span class="navcomponents">Treks</span></a>
-               <a class="text-white  " href="/public/bagpacking-trips.html"><span class="navcomponents">Bagpacking-trips</span></a>
+            <div class="relative inline-block">
+              <!-- Main Link -->
+              <a  
+                 class="text-white  cursor-pointer  navcomponents  dropdown-trigger1">All Treks & Trips</a>
+          
+              <!-- Dropdown Menu -->
+              <div id="dropdown-menu1" 
+                   class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                  <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                  <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                  <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+              </div>
+          </div>
+          
+          <script>
+              // Select the trigger and the dropdown menu
+              const trigger1 = document.querySelector('.dropdown-trigger1');
+              const dropdownMenu1 = document.getElementById('dropdown-menu1');
+          
+              // Show dropdown on hover
+              trigger1.addEventListener('mouseenter', () => {
+                  dropdownMenu1.classList.remove('hidden');
+              });
+          
+              // Hide dropdown when mouse leaves
+              
+          
+              // Ensure dropdown stays open when hovering over the menu
+              dropdownMenu1.addEventListener('mouseenter', () => {
+                  dropdownMenu1.classList.remove('hidden');
+              });
+          
+              dropdownMenu1.addEventListener('mouseleave', () => {
+                  dropdownMenu1.classList.add('hidden');
+              });
+          </script>              
 
         <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
         <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
@@ -2447,7 +2518,7 @@ a:hover .icon-svg {
 
     
     </style>
-<div class="lg:px-20 md:px-14  overflow-x-hidden sm:px-10 px-6 py-10 flex lg:flex-row md:flex-col sm:flex-col flex-col gap-6">
+<div class="lg:px-20 md:px-14  overflow-x-hidden sm:px-10 px-6 py-10 flex lg:flex-row md:flex-col sm:flex-col flex-col gap-6" style="height: 550px;">
   <div class="  w-full ">
     <div class="flex flex-col items-center justify-between lg:flex-row md:flex-row sm:flex-col">
 
@@ -2463,13 +2534,22 @@ a:hover .icon-svg {
     <!-- <div id="reviewSectionCarousel" class="owl-carousel hidden flex flex-col owl-theme overflow-x-hidden fade-scroll" data-animation="fade-scroll-down"> -->
     <!-- Review items will be dynamically generated here by JavaScript -->
     <div class="" >
-      <iframe src="https://widget.tagembed.com/2144001" style="width:100%;height:500px;border:none;"></iframe></div>
+      <iframe src="https://widget.tagembed.com/2144001" style="width:100%;height:400px;border:none;"></iframe></div>
   </div>
+  
+
+
+
   
 </div>
 </div>
 
-
+<div  class="w-full fade-scroll overflow-x-hidden lg:px-20 md:px-14  overflow-x-hidden sm:px-10 px-6 py-10" data-animation="fade-scroll-left">
+  <p class="text-4xl font-bold custom-font-heading py-6" style="color: #FF931F;"> Our Instagram Page</p>
+  <div >
+    <iframe src="https://widget.tagembed.com/2144335" style="width:100%;height: 580px;border:none;"></iframe>
+  </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 

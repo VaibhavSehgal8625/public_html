@@ -171,76 +171,45 @@
     <!-- for large screen header -->
     <header id="unique-header"
         class="absolute top-0 duration-500 lg:flex md:flex hidden justify-center items-center p-4 lg:flex transition-transform w-full">
-        <div class="h-full "
-            style="z-index: 100;">
-            <a href="/index.html"
-                class="custom-logo-link transparent-custom-logo bg-black-less-opacity "
-                rel="home"
-                itemprop="url"
-                aria-label="safarwallah.com">
-                <img width="200"
-                    height="200"
-                    src="/src/images/logo/logo.png"
-                    class="custom-logo"
-                    alt="">
+        <div class="h-full " style="z-index: 100;">
+            <a href="/index.html" class="custom-logo-link transparent-custom-logo bg-black-less-opacity " rel="home"
+                itemprop="url" aria-label="safarwallah.com">
+                <img width="200" height="200" src="/src/images/logo/logo.png" class="custom-logo" alt="">
             </a>
         </div>
 
         <!-- Floating Menu and Icons -->
-        <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50"
-            style="width: 50px;">
+        <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50" style="width: 50px;">
 
             <!-- Search Icon Section -->
-            <div class="border border-black"
-                onclick="toggleSearchPopup()">
+            <div class="border border-black" onclick="toggleSearchPopup()">
                 <p class="p-2 bg-white flex justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="3"
-                        style="width: 20px;"
-                        stroke="black"
-                        class="size-6">
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                        style="width: 20px;" stroke="black" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
                             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                     </svg>
                 </p>
             </div>
 
             <!-- Rotated Text Section -->
-            <div class="bg-black flex items-center border border-black justify-center"
-                style="height: 80px;">
-                <p class="text-white"
-                    style="transform: rotate(90deg); white-space: nowrap;">Menu</p>
+            <div class="bg-black flex items-center border border-black justify-center" style="height: 80px;">
+                <p class="text-white" style="transform: rotate(90deg); white-space: nowrap;">Menu</p>
             </div>
 
             <!-- Menu Icon Section -->
             <div id="unique-menu-icon"
                 class="bg-white border border-black cursor-pointer flex items-center justify-center p-2">
                 <!-- Hamburger Icon -->
-                <svg id="unique-hamburger-icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-6 h-6 smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
+                <svg id="unique-hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" class="w-6 h-6 smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                 </svg>
                 <!-- Close Icon -->
-                <svg id="unique-close-icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-6 h-6 hidden smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"></path>
+                <svg id="unique-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" class="w-6 h-6 hidden smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </div>
         </div>
@@ -249,29 +218,55 @@
         <div id="unique-popup"
             class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-40 open">
             <div class="bg-white w-full h-full flex items-center justify-center relative">
-                <img src="/src/images/navbar/navmobile.webp"
-                    class="w-full h-full object-cover">
+                <img src="/src/images/kedar-kantha/nav-image.webp" class="w-full h-full object-cover">
 
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
-                    <a href="/index.html"
-                        class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html"
-                        class="text-white text-lg navcomponents mb-2">Treks</a>
-                        <a href="/public/bagpacking-trips.html"
-                        class="text-white text-lg navcomponents mb-2">Bagpacking trips</a>
+                    <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger1">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu1" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger1 = document.querySelector('.dropdown-trigger1');
+                        const dropdownMenu1 = document.getElementById('dropdown-menu1');
+                    
+                        // Show dropdown on hover
+                        trigger1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu1.addEventListener('mouseleave', () => {
+                            dropdownMenu1.classList.add('hidden');
+                        });
+                    </script>
 
-                    <a href="/public/blogs.html"
-                        class="text-white text-lg mb-2 navcomponents">Blogs</a>
+                    <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
-                    <a href="/carriers"
-                        class="text-white text-lg mb-2 navcomponents">Carries</a>
+                    <a href="/carriers" class="text-white text-lg mb-2 navcomponents">Carries</a>
 
-                    <a href="/public/about.html"
-                        class="text-white text-lg mb-2 navcomponents">About Us</a>
+                    <a href="/public/about.html" class="text-white text-lg mb-2 navcomponents">About Us</a>
 
-                    <a href="/public/contact.html"
-                        class="text-white text-lg mb-2 navcomponents">Contact Us</a>
+                    <a href="/public/contact.html" class="text-white text-lg mb-2 navcomponents">Contact Us</a>
 
                 </div>
             </div>
@@ -284,20 +279,12 @@
         class="fixed inset-0 bg-black bg-opacity-50 fade-inw-full flex items-center justify-center z-50"
         style="display: none; transition: opacity 0.3s ease-in-out;">
 
-        <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive"
-            style="width: 80%;">
+        <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive" style="width: 80%;">
             <!-- Close Button -->
-            <button class="absolute top-2 right-2 text-gray-500"
-                onclick="toggleSearchPopup1()">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-6 h-6">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12" />
+            <button class="absolute top-2 right-2 text-gray-500" onclick="toggleSearchPopup1()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
 
@@ -305,8 +292,7 @@
             <h2 class="text-2xl font-bold mb-4">Search Trek Here</h2>
             <div class="search-container">
                 <p class="flex flex-row gap-2">
-                    <input id="searchInput" autocomplete="off"
-                        type="text"
+                    <input id="searchInput" autocomplete="off" type="text"
                         placeholder="Search by Trek, Blog, Duration, Distance, etc."
                         class="border w-full rounded-full p-2">
                     <span>
@@ -319,14 +305,12 @@
                 </p>
 
                 <!-- Loader -->
-                <div id="loader"
-                    class="hidden flex justify-center items-center py-2">
+                <div id="loader" class="hidden flex justify-center items-center py-2">
                     <div class="loader"></div>
                 </div>
 
                 <!-- Search Results Container -->
-                <div id="resultContainer"
-                    class="results"></div>
+                <div id="resultContainer" class="results"></div>
             </div>
 
             <style>
@@ -350,126 +334,127 @@
                     }
                 }
             </style>
-<script>
-    const treks = [
-      {
-        name: "kedarkantha",
-        duration: "4D/5N",
-        distance: "20/40km",
-        altitude: "12,500ft / 3800m",
-        time: "November to April",
-        difficulty: "moderate",
-        location: "Uttarakhand",
-        budget: "6k to 9k",
-        href:"/public/kedarkantha.html"
-      },
-      {
-        name: "Brahmatal",
-        duration: "5D/6N",
-        distance: "15/30km",
-        altitude: "10,250ft / 3735m",
-        time: "November to February",
-        difficulty: "moderate",
-        location: "Uttarakhand",
-        budget: "6k to 9k",
-        href:"/public/brahmatal.html"
-      },
-      {
-        name: "Dayara Buggal",
-        duration: "3D/4N",
-        distance: "10/20km",
-        altitude: "11,810ft / 3600m",
-        time: "December to March",
-        difficulty: "easy",
-        location: "Uttarakhand",
-        budget: "5500 to 9000",
-        href:"/public/dyara-bugyal.html"
-      },
-      {
-        name: "Chandrashila",
-        duration: "3D/4N",
-        distance: "10/20km",
-        altitude: "11,810ft / 3600m",
-        time: "December to March",
-        difficulty: "easy",
-        location: "Uttarakhand",
-        budget: "5500 to 9000",
-        href:"/public/tungnath.html"
-      }
-    ];
-    
-    const blogs = [
-      {
-        author: "Vaibhav",
-        date: "2024-11-13",
-        contentSnippet: "A memorable advanture with safarwallah",
-        location: "Uttarakhand",
-        href:"/public/blogs/a-memorable-advanture-with-safarwallah.html"
-      },
-      {
-        author: "Sameekshya",
-        date: "2024-11-06",
-        contentSnippet: "Escaping the city with safarwallah",
-        location: "Uttarakhand",
-        href:"/public/blogs/Escaping-the-City-with-Safarwallah.html"
-      },
-      {
-        author: "Gaurav",
-        date: "2024-09-21",
-        contentSnippet: "The Ultimate Guide to Treeking in winter",
-        location: "Uttarakhand",
-        href:"/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
-      },
-      {
-        author: "Abhishek",
-        date: "2024-10-30",
-        contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
-        location: "Uttarakhand",
-        href:"public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
-      }
-    ];
-    
-    /// Function to filter treks and blogs
-  function searchTreksAndBlogs(query) {
-    query = query.toLowerCase();
-  
-    const filteredTreks = treks.filter(trek => {
-      return (
-        trek.name.toLowerCase().includes(query) ||
-        trek.duration.toLowerCase().includes(query) ||
-        trek.distance.toLowerCase().includes(query) ||
-        trek.altitude.toLowerCase().includes(query) ||
-        trek.time.toLowerCase().includes(query) ||
-        trek.difficulty.toLowerCase().includes(query) ||
-        trek.location.toLowerCase().includes(query) ||
-        trek.budget.toLowerCase().includes(query)
-      );
-    });
-  
-    const filteredBlogs = blogs.filter(blog => {
-      return (
-        blog.author.toLowerCase().includes(query) ||
-        blog.date.toLowerCase().includes(query) ||
-        blog.contentSnippet.toLowerCase().includes(query)
-      );
-    });
-  
-    return { filteredTreks, filteredBlogs };
-  }
-  
-  // Display filtered results
-  function displayResults(results) {
-    const resultContainer = document.getElementById('resultContainer');
-    resultContainer.innerHTML = ''; // Clear previous results
-  
-    const { filteredTreks, filteredBlogs } = results;
-  
-    if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
-      resultContainer.innerHTML = '<p>No results found</p>';
-    } else {
-      // Display Treks
-      filteredTreks.forEach(trek => {
-        resultContainer.innerHTML += `
+
+            <script>
+                const treks = [
+                    {
+                        name: "kedarkantha",
+                        duration: "4D/5N",
+                        distance: "20/40km",
+                        altitude: "12,500ft / 3800m",
+                        time: "November to April",
+                        difficulty: "moderate",
+                        location: "Uttarakhand",
+                        budget: "6k to 9k",
+                        href: "/public/kedarkantha.html"
+                    },
+                    {
+                        name: "Brahmatal",
+                        duration: "5D/6N",
+                        distance: "15/30km",
+                        altitude: "10,250ft / 3735m",
+                        time: "November to February",
+                        difficulty: "moderate",
+                        location: "Uttarakhand",
+                        budget: "6k to 9k",
+                        href: "/public/brahmatal.html"
+                    },
+                    {
+                        name: "Dayara Buggal",
+                        duration: "3D/4N",
+                        distance: "10/20km",
+                        altitude: "11,810ft / 3600m",
+                        time: "December to March",
+                        difficulty: "easy",
+                        location: "Uttarakhand",
+                        budget: "5500 to 9000",
+                        href: "/public/dyara-bugyal.html"
+                    },
+                    {
+                        name: "Chandrashila",
+                        duration: "3D/4N",
+                        distance: "10/20km",
+                        altitude: "11,810ft / 3600m",
+                        time: "December to March",
+                        difficulty: "easy",
+                        location: "Uttarakhand",
+                        budget: "5500 to 9000",
+                        href: "/public/tungnath.html"
+                    }
+                ];
+
+                const blogs = [
+                    {
+                        author: "Vaibhav",
+                        date: "2024-11-13",
+                        contentSnippet: "A memorable advanture with safarwallah",
+                        location: "Uttarakhand",
+                        href: "/public/blogs/a-memorable-advanture-with-safarwallah.html"
+                    },
+                    {
+                        author: "Sameekshya",
+                        date: "2024-11-06",
+                        contentSnippet: "Escaping the city with safarwallah",
+                        location: "Uttarakhand",
+                        href: "/public/blogs/Escaping-the-City-with-Safarwallah.html"
+                    },
+                    {
+                        author: "Gaurav",
+                        date: "2024-09-21",
+                        contentSnippet: "The Ultimate Guide to Treeking in winter",
+                        location: "Uttarakhand",
+                        href: "/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
+                    },
+                    {
+                        author: "Abhishek",
+                        date: "2024-10-30",
+                        contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
+                        location: "Uttarakhand",
+                        href: "public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
+                    }
+                ];
+
+                /// Function to filter treks and blogs
+                function searchTreksAndBlogs(query) {
+                    query = query.toLowerCase();
+
+                    const filteredTreks = treks.filter(trek => {
+                        return (
+                            trek.name.toLowerCase().includes(query) ||
+                            trek.duration.toLowerCase().includes(query) ||
+                            trek.distance.toLowerCase().includes(query) ||
+                            trek.altitude.toLowerCase().includes(query) ||
+                            trek.time.toLowerCase().includes(query) ||
+                            trek.difficulty.toLowerCase().includes(query) ||
+                            trek.location.toLowerCase().includes(query) ||
+                            trek.budget.toLowerCase().includes(query)
+                        );
+                    });
+
+                    const filteredBlogs = blogs.filter(blog => {
+                        return (
+                            blog.author.toLowerCase().includes(query) ||
+                            blog.date.toLowerCase().includes(query) ||
+                            blog.contentSnippet.toLowerCase().includes(query)
+                        );
+                    });
+
+                    return { filteredTreks, filteredBlogs };
+                }
+
+                // Display filtered results
+                function displayResults(results) {
+                    const resultContainer = document.getElementById('resultContainer');
+                    resultContainer.innerHTML = ''; // Clear previous results
+
+                    const { filteredTreks, filteredBlogs } = results;
+
+                    if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
+                        resultContainer.innerHTML = '<p>No results found</p>';
+                    } else {
+                        // Display Treks
+                        filteredTreks.forEach(trek => {
+                            resultContainer.innerHTML += `
         <a href="${trek.href}">
           <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
             <div class="flex gap-4">
@@ -478,11 +463,11 @@
             </div>
           </div>
         </a>`;
-      });
-  
-      // Display Blogs
-      filteredBlogs.forEach(blog => {
-        resultContainer.innerHTML += `
+                        });
+
+                        // Display Blogs
+                        filteredBlogs.forEach(blog => {
+                            resultContainer.innerHTML += `
         <a href="${blog.href}">
           <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
             <div class="flex gap-4">
@@ -491,29 +476,29 @@
             </div>
           </div>
         </a>`;
-      });
-    }
-  }
-  
-  // Handle input and loader visibility
-  document.getElementById('searchInput').addEventListener('input', function () {
-    const query = this.value;
-    const loader = document.getElementById('loader');
-    const resultContainer = document.getElementById('resultContainer');
-  
-    // Show loader
-    loader.style.display = 'flex';
-  
-    // Simulate a slight delay to mimic async processing
-    setTimeout(() => {
-      const results = searchTreksAndBlogs(query);
-      displayResults(results);
-  
-      // Hide loader
-      loader.style.display = 'none';
-    }, 500); // Adjust delay as necessary
-  });
-    </script>
+                        });
+                    }
+                }
+
+                // Handle input and loader visibility
+                document.getElementById('searchInput').addEventListener('input', function () {
+                    const query = this.value;
+                    const loader = document.getElementById('loader');
+                    const resultContainer = document.getElementById('resultContainer');
+
+                    // Show loader
+                    loader.style.display = 'flex';
+
+                    // Simulate a slight delay to mimic async processing
+                    setTimeout(() => {
+                        const results = searchTreksAndBlogs(query);
+                        displayResults(results);
+
+                        // Hide loader
+                        loader.style.display = 'none';
+                    }, 500); // Adjust delay as necessary
+                });
+            </script>
 
 
 
@@ -556,65 +541,35 @@
     <header
         class="absolute top-0 duration-500 flex md:hidden lg:hidden justify-center items-center p-4  transition-transform w-full">
 
-        <div class="h-full "
-            style="z-index: 100;">
-            <a href="/index.html"
-                class="custom-logo-link transparent-custom-logo bg-black-less-opacity "
-                rel="home"
-                itemprop="url"
-                aria-label="safarwallah.com">
-                <img width="200"
-                    height="200"
-                    src="/src/images/logo/logo.png"
-                    class="custom-logo"
-                    alt="">
+        <div class="h-full " style="z-index: 100;">
+            <a href="/index.html" class="custom-logo-link transparent-custom-logo bg-black-less-opacity " rel="home"
+                itemprop="url" aria-label="safarwallah.com">
+                <img width="200" height="200" src="/src/images/logo/logo.png" class="custom-logo" alt="">
             </a>
         </div>
-        <div class="absolute flex right-5 top-5"
-            style="z-index: 100;">
+        <div class="absolute flex right-5 top-5" style="z-index: 100;">
             <!-- Search Icon Section -->
-            <div class=""
-                onclick="toggleSearchPopup()">
+            <div class="" onclick="toggleSearchPopup()">
                 <p class="p-2  flex justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="3"
-                        style="width: 20px;"
-                        stroke="white"
-                        class="size-6">
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                        style="width: 20px;" stroke="white" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
                             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                     </svg>
                 </p>
             </div>
             <!-- Menu Icon Section -->
-            <div id="unique-menu-icon-mobile"
-                class=" cursor-pointer flex items-center justify-center p-2">
+            <div id="unique-menu-icon-mobile" class=" cursor-pointer flex items-center justify-center p-2">
                 <!-- Hamburger Icon -->
-                <svg id="unique-hamburger-icon-mobile"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="white"
-                    class="w-6 h-6 smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
+                <svg id="unique-hamburger-icon-mobile" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-6 h-6 smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                 </svg>
                 <!-- Close Icon -->
-                <svg id="unique-close-icon-mobile"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="white"
-                    class="w-6 h-6 hidden smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"></path>
+                <svg id="unique-close-icon-mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="white" class="w-6 h-6 hidden smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </div>
         </div>
@@ -628,17 +583,10 @@
             <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive"
                 style="width: 80%;">
                 <!-- Close Button -->
-                <button class="absolute top-2 right-2 text-gray-500"
-                    onclick="toggleSearchPopup1()">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                        class="w-6 h-6">
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18L18 6M6 6l12 12" />
+                <button class="absolute top-2 right-2 text-gray-500" onclick="toggleSearchPopup1()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
@@ -646,8 +594,7 @@
                 <h2 class="text-2xl font-bold mb-4">Search Trek Here</h2>
                 <div class="search-container">
                     <p class="flex flex-row gap-2">
-                        <input id="searchInput" autocomplete="off"
-                            type="text"
+                        <input id="searchInput" autocomplete="off" type="text"
                             placeholder="Search by Trek, Blog, Duration, Distance, etc."
                             class="border w-full rounded-full p-2">
                         <span>
@@ -660,14 +607,12 @@
                     </p>
 
                     <!-- Loader -->
-                    <div id="loader"
-                        class="hidden flex justify-center items-center py-2">
+                    <div id="loader" class="hidden flex justify-center items-center py-2">
                         <div class="loader"></div>
                     </div>
 
                     <!-- Search Results Container -->
-                    <div id="resultContainer"
-                        class="results"></div>
+                    <div id="resultContainer" class="results"></div>
                 </div>
 
                 <style>
@@ -824,7 +769,7 @@
  <a href="/${trek.name}">
    <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
      <div class="flex gap-2" style="width:50%">
-       <img src="/src/images/search/${trek.name.toLowerCase().replace(' ', '-')}/banner-image.jpg" style="width: 30px;height: 30px;" class="rounded" alt="${trek.name}">
+       <img src="/src/images/search/${trek.name.toLowerCase().replace(' ', '-')}/banner-image.webp" style="width: 30px;height: 30px;" class="rounded" alt="${trek.name}">
        <p class="font-bold flex gap-2">
          <span>${trek.name}</span><span class="text-gray-500 font-normal italic">- Trek</span>
        </p>
@@ -856,7 +801,7 @@
  <a href="/${blog.name}-blogs">
    <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
      <div class="flex gap-2" style="width:100%">
-       <img src="/src/images/search/${blog.name.toLowerCase().replace(' ', '-')}/banner-image.jpg" style="width: 30px;height: 30px;" class="rounded" alt="${blog.name}">
+       <img src="/src/images/search/${blog.name.toLowerCase().replace(' ', '-')}/banner-image.webp" style="width: 30px;height: 30px;" class="rounded" alt="${blog.name}">
        <p class="font-bold flex gap-2 w-full">
          <span>${blog.name}</span><span class="text-gray-500 font-normal italic">- Blog</span>
        </p>
@@ -929,29 +874,56 @@
         <div id="unique-popup-mobile"
             class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-40 open">
             <div class="bg-white w-full h-full flex items-center justify-center relative">
-                <img src="/src/images/kedar-kantha/nav-image.webp"
-                    class="w-full h-full object-cover">
+                <img src="/src/images/kedar-kantha/nav-image.webp" class="w-full h-full object-cover">
 
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
-                    <a href="/index.html"
-                        class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html"
-                        class="text-white text-lg navcomponents mb-2">Treks</a>
-                        <a href="/public/bagpacking-trips.html"
-                        class="text-white text-lg navcomponents mb-2">Bagpacking trips</a>
+                    <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger = document.querySelector('.dropdown-trigger');
+                        const dropdownMenu = document.getElementById('dropdown-menu');
+                    
+                        // Show dropdown on hover
+                        trigger.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu.addEventListener('mouseleave', () => {
+                            dropdownMenu.classList.add('hidden');
+                        });
+                    </script>
+                    
 
-                    <a href="/public/blogs.html"
-                        class="text-white text-lg mb-2 navcomponents">Blogs</a>
+                    <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
-                    <a href="/carriers"
-                        class="text-white text-lg mb-2 navcomponents">Carries</a>
+                    <a href="/carriers" class="text-white text-lg mb-2 navcomponents">Carries</a>
 
-                    <a href="/public/about.html"
-                        class="text-white text-lg mb-2 navcomponents">About Us</a>
+                    <a href="/public/about.html" class="text-white text-lg mb-2 navcomponents">About Us</a>
 
-                    <a href="/public/contact.html"
-                        class="text-white text-lg mb-2 navcomponents">Contact Us</a>
+                    <a href="/public/contact.html" class="text-white text-lg mb-2 navcomponents">Contact Us</a>
 
                 </div>
             </div>

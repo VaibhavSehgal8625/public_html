@@ -64,392 +64,445 @@
   }
 </style>
 
-  <header class="flex justify-center items-center hidden lg:flex absolute z-10 w-full">
+    <!-- large screen navbar -->
 
-    <div class="bg-transparent px-20 flex justify-between w-full py-6">
+
+    <header class="flex justify-center items-center hidden lg:flex absolute z-10 w-full">
+
+      <div class="bg-transparent px-20 flex justify-between w-full pt-6">
+        <div>
+          <img src="/src/images/logo/white-logo.png" style="width: 101px;" alt="">
+        </div>
+        <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
+          <a class="text-white navcomponents  custom-font-normal" href="/index.html">Home</a>
+          <a class="text-white navcomponents  custom-font-normal" href="/public/about.html">About</a>
+          <div class="relative inline-block">
+            <!-- Main Link -->
+            <a  
+               class="text-white custom-font-normal cursor-pointer  navcomponents  dropdown-trigger">All Treks & Trips</a>
         
-      <div> 
-      <a href="/index.html"><img src="/src/images/logo/white-logo.png" style="width: 101px;" alt=""></a>
+            <!-- Dropdown Menu -->
+            <div id="dropdown-menu" 
+                 class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+            </div>
+        </div>
         
-      </div>
-      <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
-        <div class=" bg-white  cursor-pointer flex flex-row items-start justify-between  px-4 py-2 responsivesearchanimation rounded-full"
-      style="min-width: 260px; height: 40px;" onclick="toggleSearchPopup()">
- 
-   <p class="text-md custom-font-heading text-black my-auto text-gray-500">
-     Search Trek By
-     <span id="rotatingText" class="text-black custom-font-heading sliding-text">Difficulty</span>
-   </p>
- 
-   <p class="flex h-full items-center justify-center my-auto">
-     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-          class="size-6" style="width: 15px; stroke:#FF931F;">
-       <path stroke-linecap="round" stroke-linejoin="round"
-             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-     </svg>
-   </p>
- </div>
-        <a class="text-white navcomponents  custom-font-normal" href="/index.html">Home</a>
-        <a class="text-white navcomponents  custom-font-normal" href="/public/about.html">About</a>
-<a class="text-white navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
-        <a class="text-white navcomponents custom-font-normal" href="/public/bagpacking-trips.html">Bagpacking-trips</a>        <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
-        <a class="text-white navcomponents custom-font-normal" href="/public/blogs.html">Blogs</a>
-        <a class="text-white navcomponents custom-font-normal" href="/public/contact.html">Contact</a>
-        <!-- <a class="relative text-white bg-orange py-1.5 px-3 rounded-2xl hover:bg-white hovertextorange transition duration-300 ease-in-out"
-          href="/login">Sign Up</a> -->
-
-      </div>
-
-    </div>
-  </header>
-
- <!-- Popup Container -->
- <div id="searchPopup" class="fixed inset-0 bg-black bg-opacity-50 fade-inw-full flex items-center justify-center z-50"
- style="display: none; transition: opacity 0.3s ease-in-out;">
- 
- <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive" style="width: 80%;">
- <!-- Close Button -->
- <button class="absolute top-2 right-2 text-gray-500" onclick="toggleSearchPopup1()">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-       class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-  </svg>
- </button>
- 
- <!-- Popup Content -->
- <h2 class="text-2xl font-bold mb-4">Search Trek Here</h2>
- <div class="search-container">
- <p class="flex flex-row gap-2">
- <input id="searchInput" autocomplete="off" type="text" placeholder="Search by Trek, Blog, Duration, Distance, etc." class="border w-full rounded-full p-2">
- <span>
-  <button id="searchBtn" class="bg-orange text-white p-2 rounded-full justify-center items-center flex w-full hover:bg-white hover:text-orange transition duration-300 ease-in-out hovertextorange" style="border: 1px solid #FF931F;">
-    Search
-  </button>
- </span>
- </p>
- 
- <!-- Loader -->
- <div id="loader" class="hidden flex justify-center items-center py-2">
- <div class="loader"></div>
- </div>
- 
- <!-- Search Results Container -->
- <div id="resultContainer" class="results"></div>
- </div>
- 
- <style>
- /* Loader styling */
- .loader {
- border: 6px solid #f3f3f3;
- border-radius: 50%;
- border-top: 6px solid #FF931F;
- width: 40px;
- height: 40px;
- animation: spin 1s linear infinite;
- }
- 
- @keyframes spin {
- 0% { transform: rotate(0deg); }
- 100% { transform: rotate(360deg); }
- }
- </style>
- 
- <script>
-  const treks = [
-    {
-      name: "kedarkantha",
-      duration: "4D/5N",
-      distance: "20/40km",
-      altitude: "12,500ft / 3800m",
-      time: "November to April",
-      difficulty: "moderate",
-      location: "Uttarakhand",
-      budget: "6k to 9k",
-      href:"/public/kedarkantha.html"
-    },
-    {
-      name: "Brahmatal",
-      duration: "5D/6N",
-      distance: "15/30km",
-      altitude: "10,250ft / 3735m",
-      time: "November to February",
-      difficulty: "moderate",
-      location: "Uttarakhand",
-      budget: "6k to 9k",
-      href:"/public/brahmatal.html"
-    },
-    {
-      name: "Dayara Buggal",
-      duration: "3D/4N",
-      distance: "10/20km",
-      altitude: "11,810ft / 3600m",
-      time: "December to March",
-      difficulty: "easy",
-      location: "Uttarakhand",
-      budget: "5500 to 9000",
-      href:"/public/dyara-bugyal.html"
-    },
-    {
-      name: "Chandrashila",
-      duration: "3D/4N",
-      distance: "10/20km",
-      altitude: "11,810ft / 3600m",
-      time: "December to March",
-      difficulty: "easy",
-      location: "Uttarakhand",
-      budget: "5500 to 9000",
-      href:"/public/tungnath.html"
-    }
-  ];
+        <script>
+            // Select the trigger and the dropdown menu
+            const trigger = document.querySelector('.dropdown-trigger');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+        
+            // Show dropdown on hover
+            trigger.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.remove('hidden');
+            });
+        
+            // Hide dropdown when mouse leaves
+            
+        
+            // Ensure dropdown stays open when hovering over the menu
+            dropdownMenu.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.remove('hidden');
+            });
+        
+            dropdownMenu.addEventListener('mouseleave', () => {
+                dropdownMenu.classList.add('hidden');
+            });
+        </script>
+        
+        
+        
+          <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
+          <a class="text-white navcomponents custom-font-normal" href="/public/blogs.html">Blogs</a>
+          <a class="text-white navcomponents custom-font-normal" href="/public/contact.html">Contact</a>
+          <!-- <a class="relative text-white bg-orange py-1.5 px-3 rounded-2xl hover:bg-white hovertextorange transition duration-300 ease-in-out"
+            href="/login">Sign Up</a> -->
   
-  const blogs = [
-    {
-      author: "Vaibhav",
-      date: "2024-11-13",
-      contentSnippet: "A memorable advanture with safarwallah",
-      location: "Uttarakhand",
-      href:"/public/blogs/a-memorable-advanture-with-safarwallah.html"
-    },
-    {
-      author: "Sameekshya",
-      date: "2024-11-06",
-      contentSnippet: "Escaping the city with safarwallah",
-      location: "Uttarakhand",
-      href:"/public/blogs/Escaping-the-City-with-Safarwallah.html"
-    },
-    {
-      author: "Gaurav",
-      date: "2024-09-21",
-      contentSnippet: "The Ultimate Guide to Treeking in winter",
-      location: "Uttarakhand",
-      href:"/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
-    },
-    {
-      author: "Abhishek",
-      date: "2024-10-30",
-      contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
-      location: "Uttarakhand",
-      href:"public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
-    }
-  ];
+        </div>
   
-  /// Function to filter treks and blogs
-function searchTreksAndBlogs(query) {
-  query = query.toLowerCase();
-
-  const filteredTreks = treks.filter(trek => {
-    return (
-      trek.name.toLowerCase().includes(query) ||
-      trek.duration.toLowerCase().includes(query) ||
-      trek.distance.toLowerCase().includes(query) ||
-      trek.altitude.toLowerCase().includes(query) ||
-      trek.time.toLowerCase().includes(query) ||
-      trek.difficulty.toLowerCase().includes(query) ||
-      trek.location.toLowerCase().includes(query) ||
-      trek.budget.toLowerCase().includes(query)
-    );
-  });
-
-  const filteredBlogs = blogs.filter(blog => {
-    return (
-      blog.author.toLowerCase().includes(query) ||
-      blog.date.toLowerCase().includes(query) ||
-      blog.contentSnippet.toLowerCase().includes(query)
-    );
-  });
-
-  return { filteredTreks, filteredBlogs };
-}
-
-// Display filtered results
-function displayResults(results) {
-  const resultContainer = document.getElementById('resultContainer');
-  resultContainer.innerHTML = ''; // Clear previous results
-
-  const { filteredTreks, filteredBlogs } = results;
-
-  if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
-    resultContainer.innerHTML = '<p>No results found</p>';
-  } else {
-    // Display Treks
-    filteredTreks.forEach(trek => {
-      resultContainer.innerHTML += `
-      <a href="${trek.href}">
-        <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
-          <div class="flex gap-4">
-            <h4>${trek.name}</h4>
-            <p>${trek.location}</p>
-          </div>
-        </div>
-      </a>`;
-    });
-
-    // Display Blogs
-    filteredBlogs.forEach(blog => {
-      resultContainer.innerHTML += `
-      <a href="${blog.href}">
-        <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
-          <div class="flex gap-4">
-            <h4>${blog.author}</h4>
-            <p>${blog.contentSnippet}</p>
-          </div>
-        </div>
-      </a>`;
-    });
-  }
-}
-
-// Handle input and loader visibility
-document.getElementById('searchInput').addEventListener('input', function () {
-  const query = this.value;
-  const loader = document.getElementById('loader');
-  const resultContainer = document.getElementById('resultContainer');
-
-  // Show loader
-  loader.style.display = 'flex';
-
-  // Simulate a slight delay to mimic async processing
-  setTimeout(() => {
-    const results = searchTreksAndBlogs(query);
-    displayResults(results);
-
-    // Hide loader
-    loader.style.display = 'none';
-  }, 500); // Adjust delay as necessary
-});
-  </script>
- 
- 
- 
- 
- 
- </div>
- </div>
- 
- <script>
-     function toggleSearchPopup() {
-       const popup = document.getElementById('searchPopup');
-       if (popup.style.display === "none" || popup.style.display === "") {
-         popup.style.display = "flex";
-         setTimeout(() => {
-           popup.style.opacity = "1";  // Smooth transition effect
-         }, 10);
-       } else {
-         popup.style.opacity = "0";
-         setTimeout(() => {
-           popup.style.display = "none";
-         }, 300);  // Wait for the opacity transition to finish
-       }
-     }
-     function toggleSearchPopup1() {
-       const popup = document.getElementById('searchPopup');
-       if (popup.style.display === "none" || popup.style.display === "") {
-         popup.style.display = "flex";
-         setTimeout(() => {
-           popup.style.opacity = "1";  // Smooth transition effect
-         }, 10);
-       } else {
-         popup.style.opacity = "0";
-         setTimeout(() => {
-           popup.style.display = "none";
-         }, 300);  // Wait for the opacity transition to finish
-       }
-     }
-   </script>
-
-  <!-- mobile screen navbar -->
-
-  <header class="flex justify-center lg:hidden items-center absolute z-50 w-full">
-
-    <div class="bg-transparent px-6 flex justify-between w-full items-center py-2">
-      <div style="z-index: 200;">
-        <a href="/index.html">
-
-          <img src="/src/images/logo/white-logo.png" style="width: 101px;z-index: 200 !important;"  alt="">
-        </a>
       </div>
-      <div class="flex gap-5 items-center">
-
-          <div class="" onclick="toggleSearchPopup1()">
-            <p class="p-2  flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                    style="width: 15px;" stroke="white" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
-                </svg>
-            </p>
-        </div>
-          <div id="svgContainer" onclick="togglePopup()" style="cursor: pointer;z-index: 200;">
-            <!-- Initial Hamburger Icon -->
-            <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px; height:20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          
-            <!-- X Icon (hidden initially) -->
-            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="display: none; width: 20px; height:20px">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-      </div>
-    </div>
-    <div id="popup" style="opacity: 0; position: absolute; transition: opacity 0.3s ease-in-out; inset: 0px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; display: none;">
-      <div style="position: relative; height: 100vh; width: 100vw;">
-        <img src="/src/images/navbar/navmobile.webp" class="h-screen object-cover w-screen " alt="">
-        
-        <!-- Add the text over the image -->
-        <div class="bg-black-less-opacity flex h-full h-screen items-center justify-center left-1/2 top-1/2 w-full w-screen" style="position: absolute;/* top: 50%; *//* left: 50%; */transform: translate(-50%, -50%);color: white;">
-          <div class="absolute h-screen inset-0 ml-10 flex flex-col gap-6 mt-40 ">
-            <a href="/index.html" class="text-white "><span class="navcomponents">Home</span></a>
-            <a class="text-white  " href="/public/about.html"><span class="navcomponents">About</span></a>
-<a class="text-white  " href="/public/all-treks.html"><span class="navcomponents">Treks</span></a>
-        <a class="text-white  " href="/public/bagpacking-trips.html"><span class="navcomponents">Bagpacking-trips</span></a>        <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
-        <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
-        <a class="text-white  " href="/public/contact.html"><span class="navcomponents">Contact</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    </header>
+  
+  
+  
+    <!-- mobile screen navbar -->
+  
     
-    
-    <script>
-      function togglePopup() {
-        const popup = document.getElementById("popup");
-        const hamburgerIcon = document.getElementById("hamburgerIcon");
-        const closeIcon = document.getElementById("closeIcon");
-    
-        // Check if the popup is currently displayed
-        if (popup.style.display === "none" || popup.style.display === "") {
-          // Show the popup
-          popup.style.display = "block";
-          setTimeout(() => {
-            popup.style.opacity = "1"; // Smooth transition effect
-          }, 10);
-    
-          // Disable scrolling
-          document.body.classList.add('no-scroll');
-    
-          // Toggle to X icon
-          hamburgerIcon.style.display = "none";
-          closeIcon.style.display = "inline";
-        } else {
-          // Hide the popup
-          popup.style.opacity = "0";
-          setTimeout(() => {
-            popup.style.display = "none"; // After the transition
-          }, 300);
-    
-          // Enable scrolling
-          document.body.classList.remove('no-scroll');
-    
-          // Toggle back to Hamburger icon
-          closeIcon.style.display = "none";
-          hamburgerIcon.style.display = "inline";
-        }
+  
+   <!-- Popup Container -->
+   <div id="searchPopup" class="fixed inset-0 bg-black bg-opacity-50 fade-inw-full flex items-center justify-center z-50"
+   style="display: none; transition: opacity 0.3s ease-in-out;">
+   
+   <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive" style="width: 80%;">
+   <!-- Close Button -->
+   <button class="absolute top-2 right-2 text-gray-500" onclick="toggleSearchPopup1()">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+         class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+   </button>
+   
+   <!-- Popup Content -->
+   <h2 class="text-2xl font-bold mb-4">Search Trek Here</h2>
+   <div class="search-container">
+   <p class="flex flex-row gap-2">
+   <input id="searchInput" type="text" placeholder="Search by Trek, Blog, Duration, Distance, etc." class="border w-full rounded-full p-2" autocomplete="off">
+   <span>
+    <button id="searchBtn" class="bg-orange text-white p-2 rounded-full justify-center items-center flex w-full hover:bg-white hover:text-orange transition duration-300 ease-in-out hovertextorange" style="border: 1px solid #FF931F;">
+      Search
+    </button>
+   </span>
+   </p>
+   
+   <!-- Loader -->
+   <div id="loader" class="hidden flex justify-center items-center py-2">
+   <div class="loader"></div>
+   </div>
+   
+   <!-- Search Results Container -->
+   <div id="resultContainer" class="results"></div>
+   </div>
+   
+   <style>
+   /* Loader styling */
+   .loader {
+   border: 6px solid #f3f3f3;
+   border-radius: 50%;
+   border-top: 6px solid #FF931F;
+   width: 40px;
+   height: 40px;
+   animation: spin 1s linear infinite;
+   }
+   
+   @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+   }
+   </style>
+   
+   <script>
+    const treks = [
+      {
+        name: "kedarkantha",
+        duration: "4D/5N",
+        distance: "20/40km",
+        altitude: "12,500ft / 3800m",
+        time: "November to April",
+        difficulty: "moderate",
+        location: "Uttarakhand",
+        budget: "6k to 9k",
+        href:"/public/kedarkantha.html"
+      },
+      {
+        name: "Brahmatal",
+        duration: "5D/6N",
+        distance: "15/30km",
+        altitude: "10,250ft / 3735m",
+        time: "November to February",
+        difficulty: "moderate",
+        location: "Uttarakhand",
+        budget: "6k to 9k",
+        href:"/public/brahmatal.html"
+      },
+      {
+        name: "Dayara Buggal",
+        duration: "3D/4N",
+        distance: "10/20km",
+        altitude: "11,810ft / 3600m",
+        time: "December to March",
+        difficulty: "easy",
+        location: "Uttarakhand",
+        budget: "5500 to 9000",
+        href:"/public/dyara-bugyal.html"
+      },
+      {
+        name: "Chandrashila",
+        duration: "3D/4N",
+        distance: "10/20km",
+        altitude: "11,810ft / 3600m",
+        time: "December to March",
+        difficulty: "easy",
+        location: "Uttarakhand",
+        budget: "5500 to 9000",
+        href:"/public/tungnath.html"
       }
-    </script>
+    ];
     
-  </header>
-
+    const blogs = [
+      {
+        author: "Vaibhav",
+        date: "2024-11-13",
+        contentSnippet: "A memorable advanture with safarwallah",
+        location: "Uttarakhand",
+        href:"/public/blogs/a-memorable-advanture-with-safarwallah.html"
+      },
+      {
+        author: "Sameekshya",
+        date: "2024-11-06",
+        contentSnippet: "Escaping the city with safarwallah",
+        location: "Uttarakhand",
+        href:"/public/blogs/Escaping-the-City-with-Safarwallah.html"
+      },
+      {
+        author: "Gaurav",
+        date: "2024-09-21",
+        contentSnippet: "The Ultimate Guide to Treeking in winter",
+        location: "Uttarakhand",
+        href:"/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
+      },
+      {
+        author: "Abhishek",
+        date: "2024-10-30",
+        contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
+        location: "Uttarakhand",
+        href:"public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
+      }
+    ];
+    
+    /// Function to filter treks and blogs
+  function searchTreksAndBlogs(query) {
+    query = query.toLowerCase();
+  
+    const filteredTreks = treks.filter(trek => {
+      return (
+        trek.name.toLowerCase().includes(query) ||
+        trek.duration.toLowerCase().includes(query) ||
+        trek.distance.toLowerCase().includes(query) ||
+        trek.altitude.toLowerCase().includes(query) ||
+        trek.time.toLowerCase().includes(query) ||
+        trek.difficulty.toLowerCase().includes(query) ||
+        trek.location.toLowerCase().includes(query) ||
+        trek.budget.toLowerCase().includes(query)
+      );
+    });
+  
+    const filteredBlogs = blogs.filter(blog => {
+      return (
+        blog.author.toLowerCase().includes(query) ||
+        blog.date.toLowerCase().includes(query) ||
+        blog.contentSnippet.toLowerCase().includes(query)
+      );
+    });
+  
+    return { filteredTreks, filteredBlogs };
+  }
+  
+  // Display filtered results
+  function displayResults(results) {
+    const resultContainer = document.getElementById('resultContainer');
+    resultContainer.innerHTML = ''; // Clear previous results
+  
+    const { filteredTreks, filteredBlogs } = results;
+  
+    if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
+      resultContainer.innerHTML = '<p>No results found</p>';
+    } else {
+      // Display Treks
+      filteredTreks.forEach(trek => {
+        resultContainer.innerHTML += `
+        <a href="${trek.href}">
+          <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+            <div class="flex gap-4">
+              <h4>${trek.name}</h4>
+              <p>${trek.location}</p>
+            </div>
+          </div>
+        </a>`;
+      });
+  
+      // Display Blogs
+      filteredBlogs.forEach(blog => {
+        resultContainer.innerHTML += `
+        <a href="${blog.href}">
+          <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+            <div class="flex gap-4">
+              <h4>${blog.author}</h4>
+              <p>${blog.contentSnippet}</p>
+            </div>
+          </div>
+        </a>`;
+      });
+    }
+  }
+  
+  // Handle input and loader visibility
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value;
+    const loader = document.getElementById('loader');
+    const resultContainer = document.getElementById('resultContainer');
+  
+    // Show loader
+    loader.style.display = 'flex';
+  
+    // Simulate a slight delay to mimic async processing
+    setTimeout(() => {
+      const results = searchTreksAndBlogs(query);
+      displayResults(results);
+  
+      // Hide loader
+      loader.style.display = 'none';
+    }, 500); // Adjust delay as necessary
+  });
+    </script>
+   
+   
+   
+   
+   </div>
+   </div>
+   
+   <script>
+       function toggleSearchPopup() {
+         const popup = document.getElementById('searchPopup');
+         if (popup.style.display === "none" || popup.style.display === "") {
+           popup.style.display = "flex";
+           setTimeout(() => {
+             popup.style.opacity = "1";  // Smooth transition effect
+           }, 10);
+         } else {
+           popup.style.opacity = "0";
+           setTimeout(() => {
+             popup.style.display = "none";
+           }, 300);  // Wait for the opacity transition to finish
+         }
+       }
+       function toggleSearchPopup1() {
+         const popup = document.getElementById('searchPopup');
+         if (popup.style.display === "none" || popup.style.display === "") {
+           popup.style.display = "flex";
+           setTimeout(() => {
+             popup.style.opacity = "1";  // Smooth transition effect
+           }, 10);
+         } else {
+           popup.style.opacity = "0";
+           setTimeout(() => {
+             popup.style.display = "none";
+           }, 300);  // Wait for the opacity transition to finish
+         }
+       }
+     </script>
+  
+    <!-- mobile screen navbar -->
+  
+    <header class="flex justify-center lg:hidden items-center absolute z-50 w-full">
+  
+      <div class="bg-transparent px-6 flex justify-between w-full items-center py-2">
+        <div style="z-index: 200;">
+          <a href="/index.html">
+  
+            <img src="/src/images/logo/white-logo.png" style="width: 101px;z-index: 200 !important;"  alt="">
+          </a>
+        </div>
+        
+  
+        <div id="svgContainer" onclick="togglePopup()" style="cursor: pointer;z-index: 200;">
+          <!-- Initial Hamburger Icon -->
+          <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px; height:20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        
+          <!-- X Icon (hidden initially) -->
+          <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="display: none; width: 20px; height:20px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+      </div>
+      <div id="popup" style="opacity: 0; position: absolute; transition: opacity 0.3s ease-in-out; inset: 0px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; display: none;">
+        <div style="position: relative; height: 100vh; width: 100vw;">
+          <img src="/src/images/navbar/navmobile.webp" class="h-screen object-cover w-screen " alt="">
+          
+          <!-- Add the text over the image -->
+          <div class="bg-black-less-opacity flex h-full h-screen items-center justify-center left-1/2 top-1/2 w-full w-screen" style="position: absolute;/* top: 50%; *//* left: 50%; */transform: translate(-50%, -50%);color: white;">
+            <div class="absolute h-screen inset-0 ml-10 flex flex-col gap-6 mt-40 ">
+              <a href="/index.html" class="text-white "><span class="navcomponents">Home</span></a>
+              <a class="text-white  " href="/public/about.html"><span class="navcomponents">About</span></a>
+              <div class="relative inline-block">
+                <!-- Main Link -->
+                <a  
+                   class="text-white  cursor-pointer  navcomponents  dropdown-trigger1">All Treks & Trips</a>
+            
+                <!-- Dropdown Menu -->
+                <div id="dropdown-menu1" 
+                     class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                    <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                    <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                    <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                </div>
+            </div>
+            
+            <script>
+                // Select the trigger and the dropdown menu
+                const trigger1 = document.querySelector('.dropdown-trigger1');
+                const dropdownMenu1 = document.getElementById('dropdown-menu1');
+            
+                // Show dropdown on hover
+                trigger1.addEventListener('mouseenter', () => {
+                    dropdownMenu1.classList.remove('hidden');
+                });
+            
+                // Hide dropdown when mouse leaves
+                
+            
+                // Ensure dropdown stays open when hovering over the menu
+                dropdownMenu1.addEventListener('mouseenter', () => {
+                    dropdownMenu1.classList.remove('hidden');
+                });
+            
+                dropdownMenu1.addEventListener('mouseleave', () => {
+                    dropdownMenu1.classList.add('hidden');
+                });
+            </script>              
+  
+          <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
+          <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
+          <a class="text-white  " href="/public/contact.html"><span class="navcomponents">Contact</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <script>
+        function togglePopup() {
+          const popup = document.getElementById("popup");
+          const hamburgerIcon = document.getElementById("hamburgerIcon");
+          const closeIcon = document.getElementById("closeIcon");
+      
+          // Check if the popup is currently displayed
+          if (popup.style.display === "none" || popup.style.display === "") {
+            // Show the popup
+            popup.style.display = "block";
+            setTimeout(() => {
+              popup.style.opacity = "1"; // Smooth transition effect
+            }, 10);
+      
+            // Disable scrolling
+            document.body.classList.add('no-scroll');
+      
+            // Toggle to X icon
+            hamburgerIcon.style.display = "none";
+            closeIcon.style.display = "inline";
+          } else {
+            // Hide the popup
+            popup.style.opacity = "0";
+            setTimeout(() => {
+              popup.style.display = "none"; // After the transition
+            }, 300);
+      
+            // Enable scrolling
+            document.body.classList.remove('no-scroll');
+      
+            // Toggle back to Hamburger icon
+            closeIcon.style.display = "none";
+            hamburgerIcon.style.display = "inline";
+          }
+        }
+      </script>
+      
+    </header>
 
  <!-- banner images and banner of home page  -->
 

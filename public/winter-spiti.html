@@ -175,76 +175,45 @@
     <!-- for large screen header -->
     <header id="unique-header"
         class="absolute top-0 duration-500 lg:flex md:flex hidden justify-center items-center p-4 lg:flex transition-transform w-full">
-        <div class="h-full "
-            style="z-index: 100;">
-            <a href="/index.html"
-                class="custom-logo-link transparent-custom-logo bg-black-less-opacity "
-                rel="home"
-                itemprop="url"
-                aria-label="safarwallah.com">
-                <img width="200"
-                    height="200"
-                    src="/src/images/logo/logo.png"
-                    class="custom-logo"
-                    alt="">
+        <div class="h-full " style="z-index: 100;">
+            <a href="/index.html" class="custom-logo-link transparent-custom-logo bg-black-less-opacity " rel="home"
+                itemprop="url" aria-label="safarwallah.com">
+                <img width="200" height="200" src="/src/images/logo/logo.png" class="custom-logo" alt="">
             </a>
         </div>
 
         <!-- Floating Menu and Icons -->
-        <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50"
-            style="width: 50px;">
+        <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50" style="width: 50px;">
 
             <!-- Search Icon Section -->
-            <div class="border border-black"
-                onclick="toggleSearchPopup()">
+            <div class="border border-black" onclick="toggleSearchPopup()">
                 <p class="p-2 bg-white flex justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="3"
-                        style="width: 20px;"
-                        stroke="black"
-                        class="size-6">
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                        style="width: 20px;" stroke="black" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
                             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                     </svg>
                 </p>
             </div>
 
             <!-- Rotated Text Section -->
-            <div class="bg-black flex items-center border border-black justify-center"
-                style="height: 80px;">
-                <p class="text-white"
-                    style="transform: rotate(90deg); white-space: nowrap;">Menu</p>
+            <div class="bg-black flex items-center border border-black justify-center" style="height: 80px;">
+                <p class="text-white" style="transform: rotate(90deg); white-space: nowrap;">Menu</p>
             </div>
 
             <!-- Menu Icon Section -->
             <div id="unique-menu-icon"
                 class="bg-white border border-black cursor-pointer flex items-center justify-center p-2">
                 <!-- Hamburger Icon -->
-                <svg id="unique-hamburger-icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-6 h-6 smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
+                <svg id="unique-hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" class="w-6 h-6 smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                 </svg>
                 <!-- Close Icon -->
-                <svg id="unique-close-icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-6 h-6 hidden smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"></path>
+                <svg id="unique-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" class="w-6 h-6 hidden smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </div>
         </div>
@@ -253,29 +222,55 @@
         <div id="unique-popup"
             class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-40 open">
             <div class="bg-white w-full h-full flex items-center justify-center relative">
-                <img src="/src/images/navbar/navmobile.webp"
-                    class="w-full h-full object-cover">
+                <img src="/src/images/kedar-kantha/nav-image.webp" class="w-full h-full object-cover">
 
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
-                    <a href="/index.html"
-                        class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html"
-                        class="text-white text-lg navcomponents mb-2">Treks</a>
-                        <a href="/public/bagpacking-trips.html"
-                        class="text-white text-lg navcomponents mb-2">Bagpacking trips</a>
+                    <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger1">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu1" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger1 = document.querySelector('.dropdown-trigger1');
+                        const dropdownMenu1 = document.getElementById('dropdown-menu1');
+                    
+                        // Show dropdown on hover
+                        trigger1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu1.addEventListener('mouseleave', () => {
+                            dropdownMenu1.classList.add('hidden');
+                        });
+                    </script>
 
-                    <a href="/public/blogs.html"
-                        class="text-white text-lg mb-2 navcomponents">Blogs</a>
+                    <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
-                    <a href="/carriers"
-                        class="text-white text-lg mb-2 navcomponents">Carries</a>
+                    <a href="/carriers" class="text-white text-lg mb-2 navcomponents">Carries</a>
 
-                    <a href="/public/about.html"
-                        class="text-white text-lg mb-2 navcomponents">About Us</a>
+                    <a href="/public/about.html" class="text-white text-lg mb-2 navcomponents">About Us</a>
 
-                    <a href="/public/contact.html"
-                        class="text-white text-lg mb-2 navcomponents">Contact Us</a>
+                    <a href="/public/contact.html" class="text-white text-lg mb-2 navcomponents">Contact Us</a>
 
                 </div>
             </div>
@@ -288,20 +283,12 @@
         class="fixed inset-0 bg-black bg-opacity-50 fade-inw-full flex items-center justify-center z-50"
         style="display: none; transition: opacity 0.3s ease-in-out;">
 
-        <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive"
-            style="width: 80%;">
+        <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive" style="width: 80%;">
             <!-- Close Button -->
-            <button class="absolute top-2 right-2 text-gray-500"
-                onclick="toggleSearchPopup1()">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-6 h-6">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12" />
+            <button class="absolute top-2 right-2 text-gray-500" onclick="toggleSearchPopup1()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
 
@@ -309,8 +296,7 @@
             <h2 class="text-2xl font-bold mb-4">Search Trek Here</h2>
             <div class="search-container">
                 <p class="flex flex-row gap-2">
-                    <input id="searchInput" autocomplete="off"
-                        type="text"
+                    <input id="searchInput" autocomplete="off" type="text"
                         placeholder="Search by Trek, Blog, Duration, Distance, etc."
                         class="border w-full rounded-full p-2">
                     <span>
@@ -323,14 +309,12 @@
                 </p>
 
                 <!-- Loader -->
-                <div id="loader"
-                    class="hidden flex justify-center items-center py-2">
+                <div id="loader" class="hidden flex justify-center items-center py-2">
                     <div class="loader"></div>
                 </div>
 
                 <!-- Search Results Container -->
-                <div id="resultContainer"
-                    class="results"></div>
+                <div id="resultContainer" class="results"></div>
             </div>
 
             <style>
@@ -355,126 +339,126 @@
                 }
             </style>
 
-<script>
-    const treks = [
-      {
-        name: "kedarkantha",
-        duration: "4D/5N",
-        distance: "20/40km",
-        altitude: "12,500ft / 3800m",
-        time: "November to April",
-        difficulty: "moderate",
-        location: "Uttarakhand",
-        budget: "6k to 9k",
-        href:"/public/kedarkantha.html"
-      },
-      {
-        name: "Brahmatal",
-        duration: "5D/6N",
-        distance: "15/30km",
-        altitude: "10,250ft / 3735m",
-        time: "November to February",
-        difficulty: "moderate",
-        location: "Uttarakhand",
-        budget: "6k to 9k",
-        href:"/public/brahmatal.html"
-      },
-      {
-        name: "Dayara Buggal",
-        duration: "3D/4N",
-        distance: "10/20km",
-        altitude: "11,810ft / 3600m",
-        time: "December to March",
-        difficulty: "easy",
-        location: "Uttarakhand",
-        budget: "5500 to 9000",
-        href:"/public/dyara-bugyal.html"
-      },
-      {
-        name: "Chandrashila",
-        duration: "3D/4N",
-        distance: "10/20km",
-        altitude: "11,810ft / 3600m",
-        time: "December to March",
-        difficulty: "easy",
-        location: "Uttarakhand",
-        budget: "5500 to 9000",
-        href:"/public/tungnath.html"
-      }
-    ];
-    
-    const blogs = [
-      {
-        author: "Vaibhav",
-        date: "2024-11-13",
-        contentSnippet: "A memorable advanture with safarwallah",
-        location: "Uttarakhand",
-        href:"/public/blogs/a-memorable-advanture-with-safarwallah.html"
-      },
-      {
-        author: "Sameekshya",
-        date: "2024-11-06",
-        contentSnippet: "Escaping the city with safarwallah",
-        location: "Uttarakhand",
-        href:"/public/blogs/Escaping-the-City-with-Safarwallah.html"
-      },
-      {
-        author: "Gaurav",
-        date: "2024-09-21",
-        contentSnippet: "The Ultimate Guide to Treeking in winter",
-        location: "Uttarakhand",
-        href:"/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
-      },
-      {
-        author: "Abhishek",
-        date: "2024-10-30",
-        contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
-        location: "Uttarakhand",
-        href:"public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
-      }
-    ];
-    
-    /// Function to filter treks and blogs
-  function searchTreksAndBlogs(query) {
-    query = query.toLowerCase();
-  
-    const filteredTreks = treks.filter(trek => {
-      return (
-        trek.name.toLowerCase().includes(query) ||
-        trek.duration.toLowerCase().includes(query) ||
-        trek.distance.toLowerCase().includes(query) ||
-        trek.altitude.toLowerCase().includes(query) ||
-        trek.time.toLowerCase().includes(query) ||
-        trek.difficulty.toLowerCase().includes(query) ||
-        trek.location.toLowerCase().includes(query) ||
-        trek.budget.toLowerCase().includes(query)
-      );
-    });
-  
-    const filteredBlogs = blogs.filter(blog => {
-      return (
-        blog.author.toLowerCase().includes(query) ||
-        blog.date.toLowerCase().includes(query) ||
-        blog.contentSnippet.toLowerCase().includes(query)
-      );
-    });
-  
-    return { filteredTreks, filteredBlogs };
-  }
-  
-  // Display filtered results
-  function displayResults(results) {
-    const resultContainer = document.getElementById('resultContainer');
-    resultContainer.innerHTML = ''; // Clear previous results
-  
-    const { filteredTreks, filteredBlogs } = results;
-  
-    if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
-      resultContainer.innerHTML = '<p>No results found</p>';
-    } else {
-      // Display Treks
-      filteredTreks.forEach(trek => {
-        resultContainer.innerHTML += `
+            <script>
+                const treks = [
+                    {
+                        name: "kedarkantha",
+                        duration: "4D/5N",
+                        distance: "20/40km",
+                        altitude: "12,500ft / 3800m",
+                        time: "November to April",
+                        difficulty: "moderate",
+                        location: "Uttarakhand",
+                        budget: "6k to 9k",
+                        href: "/public/kedarkantha.html"
+                    },
+                    {
+                        name: "Brahmatal",
+                        duration: "5D/6N",
+                        distance: "15/30km",
+                        altitude: "10,250ft / 3735m",
+                        time: "November to February",
+                        difficulty: "moderate",
+                        location: "Uttarakhand",
+                        budget: "6k to 9k",
+                        href: "/public/brahmatal.html"
+                    },
+                    {
+                        name: "Dayara Buggal",
+                        duration: "3D/4N",
+                        distance: "10/20km",
+                        altitude: "11,810ft / 3600m",
+                        time: "December to March",
+                        difficulty: "easy",
+                        location: "Uttarakhand",
+                        budget: "5500 to 9000",
+                        href: "/public/dyara-bugyal.html"
+                    },
+                    {
+                        name: "Chandrashila",
+                        duration: "3D/4N",
+                        distance: "10/20km",
+                        altitude: "11,810ft / 3600m",
+                        time: "December to March",
+                        difficulty: "easy",
+                        location: "Uttarakhand",
+                        budget: "5500 to 9000",
+                        href: "/public/tungnath.html"
+                    }
+                ];
+
+                const blogs = [
+                    {
+                        author: "Vaibhav",
+                        date: "2024-11-13",
+                        contentSnippet: "A memorable advanture with safarwallah",
+                        location: "Uttarakhand",
+                        href: "/public/blogs/a-memorable-advanture-with-safarwallah.html"
+                    },
+                    {
+                        author: "Sameekshya",
+                        date: "2024-11-06",
+                        contentSnippet: "Escaping the city with safarwallah",
+                        location: "Uttarakhand",
+                        href: "/public/blogs/Escaping-the-City-with-Safarwallah.html"
+                    },
+                    {
+                        author: "Gaurav",
+                        date: "2024-09-21",
+                        contentSnippet: "The Ultimate Guide to Treeking in winter",
+                        location: "Uttarakhand",
+                        href: "/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
+                    },
+                    {
+                        author: "Abhishek",
+                        date: "2024-10-30",
+                        contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
+                        location: "Uttarakhand",
+                        href: "public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
+                    }
+                ];
+
+                /// Function to filter treks and blogs
+                function searchTreksAndBlogs(query) {
+                    query = query.toLowerCase();
+
+                    const filteredTreks = treks.filter(trek => {
+                        return (
+                            trek.name.toLowerCase().includes(query) ||
+                            trek.duration.toLowerCase().includes(query) ||
+                            trek.distance.toLowerCase().includes(query) ||
+                            trek.altitude.toLowerCase().includes(query) ||
+                            trek.time.toLowerCase().includes(query) ||
+                            trek.difficulty.toLowerCase().includes(query) ||
+                            trek.location.toLowerCase().includes(query) ||
+                            trek.budget.toLowerCase().includes(query)
+                        );
+                    });
+
+                    const filteredBlogs = blogs.filter(blog => {
+                        return (
+                            blog.author.toLowerCase().includes(query) ||
+                            blog.date.toLowerCase().includes(query) ||
+                            blog.contentSnippet.toLowerCase().includes(query)
+                        );
+                    });
+
+                    return { filteredTreks, filteredBlogs };
+                }
+
+                // Display filtered results
+                function displayResults(results) {
+                    const resultContainer = document.getElementById('resultContainer');
+                    resultContainer.innerHTML = ''; // Clear previous results
+
+                    const { filteredTreks, filteredBlogs } = results;
+
+                    if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
+                        resultContainer.innerHTML = '<p>No results found</p>';
+                    } else {
+                        // Display Treks
+                        filteredTreks.forEach(trek => {
+                            resultContainer.innerHTML += `
         <a href="${trek.href}">
           <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
             <div class="flex gap-4">
@@ -483,11 +467,11 @@
             </div>
           </div>
         </a>`;
-      });
-  
-      // Display Blogs
-      filteredBlogs.forEach(blog => {
-        resultContainer.innerHTML += `
+                        });
+
+                        // Display Blogs
+                        filteredBlogs.forEach(blog => {
+                            resultContainer.innerHTML += `
         <a href="${blog.href}">
           <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
             <div class="flex gap-4">
@@ -496,29 +480,29 @@
             </div>
           </div>
         </a>`;
-      });
-    }
-  }
-  
-  // Handle input and loader visibility
-  document.getElementById('searchInput').addEventListener('input', function () {
-    const query = this.value;
-    const loader = document.getElementById('loader');
-    const resultContainer = document.getElementById('resultContainer');
-  
-    // Show loader
-    loader.style.display = 'flex';
-  
-    // Simulate a slight delay to mimic async processing
-    setTimeout(() => {
-      const results = searchTreksAndBlogs(query);
-      displayResults(results);
-  
-      // Hide loader
-      loader.style.display = 'none';
-    }, 500); // Adjust delay as necessary
-  });
-    </script>
+                        });
+                    }
+                }
+
+                // Handle input and loader visibility
+                document.getElementById('searchInput').addEventListener('input', function () {
+                    const query = this.value;
+                    const loader = document.getElementById('loader');
+                    const resultContainer = document.getElementById('resultContainer');
+
+                    // Show loader
+                    loader.style.display = 'flex';
+
+                    // Simulate a slight delay to mimic async processing
+                    setTimeout(() => {
+                        const results = searchTreksAndBlogs(query);
+                        displayResults(results);
+
+                        // Hide loader
+                        loader.style.display = 'none';
+                    }, 500); // Adjust delay as necessary
+                });
+            </script>
 
 
 
@@ -561,65 +545,35 @@
     <header
         class="absolute top-0 duration-500 flex md:hidden lg:hidden justify-center items-center p-4  transition-transform w-full">
 
-        <div class="h-full "
-            style="z-index: 100;">
-            <a href="/index.html"
-                class="custom-logo-link transparent-custom-logo bg-black-less-opacity "
-                rel="home"
-                itemprop="url"
-                aria-label="safarwallah.com">
-                <img width="200"
-                    height="200"
-                    src="/src/images/logo/logo.png"
-                    class="custom-logo"
-                    alt="">
+        <div class="h-full " style="z-index: 100;">
+            <a href="/index.html" class="custom-logo-link transparent-custom-logo bg-black-less-opacity " rel="home"
+                itemprop="url" aria-label="safarwallah.com">
+                <img width="200" height="200" src="/src/images/logo/logo.png" class="custom-logo" alt="">
             </a>
         </div>
-        <div class="absolute flex right-5 top-5"
-            style="z-index: 100;">
+        <div class="absolute flex right-5 top-5" style="z-index: 100;">
             <!-- Search Icon Section -->
-            <div class=""
-                onclick="toggleSearchPopup()">
+            <div class="" onclick="toggleSearchPopup()">
                 <p class="p-2  flex justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="3"
-                        style="width: 20px;"
-                        stroke="white"
-                        class="size-6">
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                        style="width: 20px;" stroke="white" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
                             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                     </svg>
                 </p>
             </div>
             <!-- Menu Icon Section -->
-            <div id="unique-menu-icon-mobile"
-                class=" cursor-pointer flex items-center justify-center p-2">
+            <div id="unique-menu-icon-mobile" class=" cursor-pointer flex items-center justify-center p-2">
                 <!-- Hamburger Icon -->
-                <svg id="unique-hamburger-icon-mobile"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="white"
-                    class="w-6 h-6 smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
+                <svg id="unique-hamburger-icon-mobile" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-6 h-6 smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                 </svg>
                 <!-- Close Icon -->
-                <svg id="unique-close-icon-mobile"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="white"
-                    class="w-6 h-6 hidden smooth-icon-transition">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"></path>
+                <svg id="unique-close-icon-mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="white" class="w-6 h-6 hidden smooth-icon-transition">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </div>
         </div>
@@ -633,17 +587,10 @@
             <div class="bg-white p-8 rounded-lg relative  h-auto mx-auto searchpopupcontentresponsive"
                 style="width: 80%;">
                 <!-- Close Button -->
-                <button class="absolute top-2 right-2 text-gray-500"
-                    onclick="toggleSearchPopup1()">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                        class="w-6 h-6">
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18L18 6M6 6l12 12" />
+                <button class="absolute top-2 right-2 text-gray-500" onclick="toggleSearchPopup1()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
@@ -651,8 +598,7 @@
                 <h2 class="text-2xl font-bold mb-4">Search Trek Here</h2>
                 <div class="search-container">
                     <p class="flex flex-row gap-2">
-                        <input id="searchInput" autocomplete="off"
-                            type="text"
+                        <input id="searchInput" autocomplete="off" type="text"
                             placeholder="Search by Trek, Blog, Duration, Distance, etc."
                             class="border w-full rounded-full p-2">
                         <span>
@@ -665,14 +611,12 @@
                     </p>
 
                     <!-- Loader -->
-                    <div id="loader"
-                        class="hidden flex justify-center items-center py-2">
+                    <div id="loader" class="hidden flex justify-center items-center py-2">
                         <div class="loader"></div>
                     </div>
 
                     <!-- Search Results Container -->
-                    <div id="resultContainer"
-                        class="results"></div>
+                    <div id="resultContainer" class="results"></div>
                 </div>
 
                 <style>
@@ -711,6 +655,187 @@
                         position: fixed;
                     }
                 </style>
+
+                <script>
+                    // Trek and Blog data as objects
+                    const treks1 = [
+                        {
+                            name: "Kedarkantha",
+                            duration: "4D/5N",
+                            distance: "20/40km",
+                            altitude: "12,500ft / 3800m",
+                            time: "November to April",
+                            difficulty: "moderate",
+                            location: "Uttarakhand",
+                            budget: "6k to 9k",
+                        },
+                        {
+                            name: "Brahmatal",
+                            duration: "5D/6N",
+                            distance: "15/30km",
+                            altitude: "10,250ft / 3735m",
+                            time: "November to February",
+                            difficulty: "moderate",
+                            location: "Uttarakhand",
+                            budget: "6k to 9k",
+                        },
+                        {
+                            name: "Kuari-Pass",
+                            duration: "5D/6N",
+                            distance: "20 to 44km",
+                            altitude: "12,516ft / 3803m",
+                            time: "November to March",
+                            difficulty: "easy to moderate",
+                            location: "Uttarakhand",
+                            budget: "6k to 9k",
+                        },
+                        {
+                            name: "Triund",
+                            duration: "1D/2N",
+                            distance: "8/15km",
+                            altitude: "9,350ft / 2830m",
+                            time: "March to December",
+                            difficulty: "easy",
+                            location: "Himachal",
+                            budget: "1500 to 2400",
+                        },
+                        {
+                            name: "Dayara Bugfal",
+                            duration: "3D/4N",
+                            distance: "10/20km",
+                            altitude: "11,810ft / 3600m",
+                            time: "December to March",
+                            difficulty: "easy",
+                            location: "Uttarakhand",
+                            budget: "5500 to 9000",
+                        }
+                    ];
+
+                    const blogs1 = [
+                        {
+                            name: "Kedarkantha",
+                            author: "John Doe",
+                            date: "2024-10-10",
+                            contentSnippet: "Kedarkantha is a popular trek in Uttarakhand...",
+                            location: "Uttarakhand"
+                        },
+                        {
+                            name: "Brahmatal",
+                            author: "Jane Smith",
+                            date: "2024-09-25",
+                            contentSnippet: "Brahmatal offers a breathtaking view of snow-capped mountains...",
+                            location: "Uttarakhand"
+                        }
+                    ];
+
+                    // Function to filter treks and blogs
+                    function searchTreksAndBlogs(query) {
+                        query = query.toLowerCase();
+
+                        const filteredTreks = treks1.filter(trek => {
+                            return (
+                                trek.name.toLowerCase().includes(query) ||
+                                trek.duration.toLowerCase().includes(query) ||
+                                trek.distance.toLowerCase().includes(query) ||
+                                trek.altitude.toLowerCase().includes(query) ||
+                                trek.time.toLowerCase().includes(query) ||
+                                trek.difficulty.toLowerCase().includes(query) ||
+                                trek.location.toLowerCase().includes(query) ||
+                                trek.budget.toLowerCase().includes(query)
+                            );
+                        });
+
+                        const filteredBlogs = blogs1.filter(blog => {
+                            return (
+                                blog.name.toLowerCase().includes(query) ||
+                                blog.author.toLowerCase().includes(query) ||
+                                blog.date.toLowerCase().includes(query) ||
+                                blog.contentSnippet.toLowerCase().includes(query)
+                            );
+                        });
+
+                        return { filteredTreks, filteredBlogs };
+                    }
+
+                    // Display filtered results
+                    function displayResults(results) {
+                        const resultContainer = document.getElementById('resultContainer');
+                        resultContainer.innerHTML = ''; // Clear previous results
+
+                        const { filteredTreks, filteredBlogs } = results;
+
+                        if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
+                            resultContainer.innerHTML = '<p>No results found</p>';
+                        } else {
+                            // Display Treks
+                            filteredTreks.forEach(trek => {
+                                resultContainer.innerHTML += `
+ <a href="/${trek.name}">
+   <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+     <div class="flex gap-2" style="width:50%">
+       <img src="/src/images/search/${trek.name.toLowerCase().replace(' ', '-')}/banner-image.webp" style="width: 30px;height: 30px;" class="rounded" alt="${trek.name}">
+       <p class="font-bold flex gap-2">
+         <span>${trek.name}</span><span class="text-gray-500 font-normal italic">- Trek</span>
+       </p>
+     </div>
+     <p class="flex flex-row gap-2 justify-end items-end" style="width:25%">
+       <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#FF931F" class="size-6" style="width: 20px;height:20px">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+</svg>
+</span>
+       <span class="text-gray-500">${trek.location}</span>
+     </p>
+     <p class="flex flex-row gap-2 justify-end items-end" style="width:25%">
+       <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FF931F" class="size-6" style="width: 20px;height:20px">
+<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+</svg>
+
+</span>
+       <span class="text-gray-500">${trek.duration}</span>
+     </p>
+   </div>
+   </a>
+ `;
+                            });
+
+                            // Display Blogs
+                            filteredBlogs.forEach(blog => {
+                                resultContainer.innerHTML += `
+ <a href="/${blog.name}-blogs">
+   <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+     <div class="flex gap-2" style="width:100%">
+       <img src="/src/images/search/${blog.name.toLowerCase().replace(' ', '-')}/banner-image.webp" style="width: 30px;height: 30px;" class="rounded" alt="${blog.name}">
+       <p class="font-bold flex gap-2 w-full">
+         <span>${blog.name}</span><span class="text-gray-500 font-normal italic">- Blog</span>
+       </p>
+       <p class="text-gray-500 w-full">
+         ${blog.contentSnippet}
+       </p>
+     </div>
+   </div>
+ `;
+                            });
+                        }
+                    }
+
+                    // Search button click event
+                    document.getElementById('searchBtn').addEventListener('click', function () {
+                        const query = document.getElementById('searchInput').value.trim();
+
+                        // Show loader
+                        document.getElementById('loader').classList.remove('hidden');
+
+                        // Simulate search delay to display loader
+                        setTimeout(() => {
+                            const results = searchTreksAndBlogs(query);
+                            displayResults(results);
+
+                            // Hide loader
+                            document.getElementById('loader').classList.add('hidden');
+                        }, 1000); // Simulate a 1-second delay for the search process
+                    });
+                </script>
 
 
 
@@ -753,29 +878,56 @@
         <div id="unique-popup-mobile"
             class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-40 open">
             <div class="bg-white w-full h-full flex items-center justify-center relative">
-                <img src="/src/images/navbar/navmobile.webp"
-                    class="w-full h-full object-cover">
+                <img src="/src/images/kedar-kantha/nav-image.webp" class="w-full h-full object-cover">
 
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
-                    <a href="/index.html"
-                        class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html"
-                        class="text-white text-lg navcomponents mb-2">Treks</a>
-                        <a href="/public/bagpacking-trips.html"
-                        class="text-white text-lg navcomponents mb-2">Bagpacking trips</a>
+                    <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger = document.querySelector('.dropdown-trigger');
+                        const dropdownMenu = document.getElementById('dropdown-menu');
+                    
+                        // Show dropdown on hover
+                        trigger.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu.addEventListener('mouseleave', () => {
+                            dropdownMenu.classList.add('hidden');
+                        });
+                    </script>
+                    
 
-                    <a href="/public/blogs.html"
-                        class="text-white text-lg mb-2 navcomponents">Blogs</a>
+                    <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
-                    <a href="/carriers"
-                        class="text-white text-lg mb-2 navcomponents">Carries</a>
+                    <a href="/carriers" class="text-white text-lg mb-2 navcomponents">Carries</a>
 
-                    <a href="/public/about.html"
-                        class="text-white text-lg mb-2 navcomponents">About Us</a>
+                    <a href="/public/about.html" class="text-white text-lg mb-2 navcomponents">About Us</a>
 
-                    <a href="/public/contact.html"
-                        class="text-white text-lg mb-2 navcomponents">Contact Us</a>
+                    <a href="/public/contact.html" class="text-white text-lg mb-2 navcomponents">Contact Us</a>
 
                 </div>
             </div>
@@ -921,7 +1073,7 @@
     <!-- page content  -->
     <div class="overflow-x-hidden">
         <div class=" flex content flex-col justify-center items-center overflow-hidden">
-            <img src="/src/images/mcleodganj/mcleodganj.webp"
+            <img src="/src/images/spiti/kaza_11zon.webp"
                 class="w-full h-screen object-cover"
                 style="min-width: 1024px;"
                 alt="Description of the image">
@@ -1338,7 +1490,7 @@
                         data-animation="fade-scroll-right">
                         <!-- Sticky Image Container -->
                         <div class="flex flex-col items-center sticky top-20">
-                            <img src="/src/images/mcleodganj/map.webp"
+                            <img src="/src/images/spiti/Spiti winter (Road trip)_11zon.webp"
                                 class="image-width-small map-image-trigger"
                                 style="width: 400px; height: 400px;"
                                 alt="Map Of Trek">
@@ -1346,7 +1498,7 @@
 
                             
                             <div class="mt-6" style="width: fit-content;">
-                                <a href="/src/pdf/mcleodgand/McLeodganj-Bir Ex Delhi_compressed.pdf"
+                                <a href="/src/pdf/spiti/Winter Spiti 7N8D Ex Delhi-compressed.pdf"
                                     class="btn btn-1 hover-filled-slide-up" style="margin: 0px !important;">
                                     <span class="flex px-4 py-4 text-md">Download Itinerary</span>
                                 </a>
@@ -1384,7 +1536,7 @@
                                 d="M6 18 18 6M6 6l12 12" />
                         </svg>
                     </button>
-                    <img src="/src/images/mcleodganj/map.webp"
+                    <img src="/src/images/spiti/Spiti winter (Road trip)_11zon.webp"
                         class="map-image"
                         alt="Map Of Trek">
                 </div>
@@ -1434,7 +1586,7 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/mcleodganj/banner-image.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <img src="/src/images/spiti/shimla_11zon.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
                                     <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Shimla
                                     </span> <span class="text-gray-500">Shimla, the capital of Himachal Pradesh, is a charming hill station known for its colonial architecture, lush greenery, and pleasant weather. Nestled in the Himalayas, it offers attractions like Mall Road, Jakhoo Temple, and the Ridge. Popular for its snowfall in winter, Shimla is a year-round destination for travelers.
 
@@ -1588,7 +1740,7 @@
                             <div class="p-4 flex flex-col gap-3" style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/mcleodganj/top.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <img src="/src/images/spiti/kalpa_11zon.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
                                     <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Arrival in Kalpa
                                     </span> <span class="text-gray-500">Kalpa, a serene village in Himachal Pradesh’s Kinnaur district, is renowned for its breathtaking views of the Kinnaur Kailash range. Surrounded by lush apple orchards, Kalpa offers a tranquil escape with attractions like the Chandika Devi Temple and ancient monasteries. Its peaceful charm makes it a perfect Himalayan retreat.
   </span></p>
@@ -1731,7 +1883,7 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/mcleodganj/wallpaperflare.com_wallpaper (2)_6_11zon.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <img src="/src/images/spiti/tabo_11zon.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
                                     <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Tabo
                                     </span> <span class="text-gray-500">Tabo, a quaint village in Himachal Pradesh's Spiti Valley, is renowned for its ancient Tabo Monastery, a UNESCO World Heritage Site candidate. Founded in 996 AD, it houses exquisite murals and scriptures. Surrounded by stark, rugged landscapes, Tabo offers a serene atmosphere, perfect for spiritual seekers and nature enthusiasts alike.          </span></p>
                                 </div>
@@ -1874,7 +2026,7 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/mcleodganj/bir-waterfall.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <img src="/src/images/spiti/kaza-1_11zon.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
                                     <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Wlcome to Kaza
                                     </span> <span class="text-gray-500">Kaza, the largest town in Spiti Valley, Himachal Pradesh, is a hub of culture and adventure. Surrounded by snow-capped peaks and barren landscapes, it’s home to landmarks like Key Monastery and Kibber Village. Kaza offers vibrant local markets, thrilling treks, and a gateway to Spiti’s stunning natural and spiritual beauty.        </span></p>
                                 </div>
@@ -2019,7 +2171,7 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/mcleodganj/bir-waterfall.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <img src="/src/images/spiti/bridge.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
                                     <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Chicham Bridge
                                     </span> <span class="text-gray-500">Chicham Bridge, located in Spiti Valley, Himachal Pradesh, is Asia's highest suspension bridge, perched at an altitude of over 13,500 feet. Spanning a dramatic gorge, it connects Chicham and Kibber villages. The bridge offers thrilling views of the rugged Himalayan terrain, making it a must-visit spot for adventurers and photographers.
       </span></p>
@@ -2175,7 +2327,7 @@
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/mcleodganj/bir-waterfall.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <img src="/src/images/spiti/kalpa_11zon.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
                                     <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Kalpa
                                     </span> <span class="text-gray-500">Kalpa, a serene village in Himachal Pradesh's Kinnaur district, is famous for its stunning views of the Kinnaur Kailash range. Surrounded by apple orchards and pine forests, Kalpa offers a tranquil escape with attractions like the ancient Chandika Devi Temple. Its peaceful ambiance makes it a haven for nature lovers.
                                     </span></p>
@@ -2323,8 +2475,8 @@ Return to Kaza in the evening and spend some leisure time exploring the vibrant 
                             <div class="p-4 " style="">
                                 <div class="px-2 flex lg:flex-row flex-col md:flex-row gap-6" style="border-left: 4px solid #FF7A1F;">
 
-                                    <img src="/src/images/mcleodganj/bir-waterfall.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
-                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Chitkal
+                                    <img src="/src/images/spiti/chitkul_11zon.webp" class="rounded-2xl responsivewidthpricebox h-44" style="width: 30%;"  alt="">
+                                    <p class="flex flex-col gap-3"><span class="text-bold text-2xl text-gray-700">Welcome to Chitkul
                                     </span> <span class="text-gray-500">Chitkul, the last inhabited village near the Indo-China border in Himachal Pradesh, is a picturesque hamlet in the Sangla Valley. Known for its pristine beauty, the Baspa River flows serenely alongside. With lush green meadows, traditional wooden houses, and majestic Himalayan views, Chitkul is a haven for nature lovers and trekkers.
 
 
@@ -2642,7 +2794,7 @@ End the day with a delicious dinner prepared with local flavors, and relax in th
         </h1>
         <div class="flex flex-wrap grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 grid-cols-1">
             <div class="p-4 transition-transform transform hover:bg-gray-100 hover:scale-105 rounded-lg">
-                <img src="/src/images/mcleodganj/birbilling-paragliding.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
+                <img src="/src/images/spiti/spiti h1_11zon.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
                 <p class="font-bold text-xl text-gray-700 pl-3 my-2" style="border-left: 4px solid #FF931F;">
                     Ancient Monasteries
 
@@ -2657,7 +2809,7 @@ End the day with a delicious dinner prepared with local flavors, and relax in th
                 </p>
             </div>
             <div class="p-4 transition-transform transform hover:bg-gray-100 hover:scale-105 rounded-lg">
-                <img src="/src/images/mcleodganj/Norbulingka_Monastery.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
+                <img src="/src/images/spiti/villages spiti_11zon.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
                 <p class="font-bold text-xl text-gray-700 pl-3 my-2" style="border-left: 4px solid #FF931F;">
                     High-Altitude Villages
 
@@ -2674,7 +2826,7 @@ End the day with a delicious dinner prepared with local flavors, and relax in th
                 </p>
             </div>
             <div class="p-4 transition-transform transform hover:bg-gray-100 hover:scale-105 rounded-lg">
-                <img src="/src/images/mcleodganj/temple.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
+                <img src="/src/images/spiti/night view_11zon.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
                 <p class="font-bold text-xl text-gray-700 pl-3 my-2" style="border-left: 4px solid #FF931F;">
                     Stunning Night Skies
 
@@ -2694,7 +2846,7 @@ End the day with a delicious dinner prepared with local flavors, and relax in th
                 </p>
             </div>
             <div class="p-4 transition-transform transform hover:bg-gray-100 hover:scale-105 rounded-lg">
-                <img src="/src/images/mcleodganj/triund-trek.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
+                <img src="/src/images/spiti//h4 roadtrip.webp" class="object-cover h-36 w-screen rounded-lg" alt="">
                 <p class="font-bold text-xl text-gray-700 pl-3 my-2" style="border-left: 4px solid #FF931F;">
                     Spiti Valley Road Trip
 
@@ -3318,9 +3470,7 @@ End the day with a delicious dinner prepared with local flavors, and relax in th
                                         <li class="inclusion-item">Select a package to see costing.</li>
                                     </ul>
                                 </div>
-                                <a class="mt-6 px-6 flex justify-center items-center" href="/public/christmus-event/tungnath.html">
-                                    <img src="/src/images/christmus/click-page-image.webp" class="w-full h-full " alt="">
-                                </a>
+                                
                             </div>
                             <script>
                                 document.addEventListener('DOMContentLoaded', () => {
@@ -4307,117 +4457,127 @@ End the day with a delicious dinner prepared with local flavors, and relax in th
                             <div id="carousel-inner"
                                 class="carousel-inner flex transition-transform duration-700 ease-in-out gap-4">
                                 <!-- Images -->
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/1.webp"
+                                <img src="/src/images/spiti/gallary/1.webp"
                                     alt="Image 1"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/2.webp"
+                                <img src="/src/images/spiti/gallary/2.webp"
                                     alt="Image 2"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/3.webp"
+                                <img src="/src/images/spiti/gallary/3.webp"
                                     alt="Image 3"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/4.webp"
+                                <img src="/src/images/spiti/gallary/4.webp"
                                     alt="Image 4"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/5.webp"
+                                <img src="/src/images/spiti/gallary/5.webp"
                                     alt="Image 5"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/6.webp"
+                                <img src="/src/images/spiti/gallary/6.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/7.webp"
+                                <img src="/src/images/spiti/gallary/7.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/8.webp"
+                                <img src="/src/images/spiti/gallary/8.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/9.webp"
+                                <img src="/src/images/spiti/gallary/9.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/10.webp"
+                                <img src="/src/images/spiti/gallary/10.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/11.webp"
+                                <img src="/src/images/spiti/gallary/11.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/12.webp"
+                                <img src="/src/images/spiti/gallary/12.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/13.webp"
+                                <img src="/src/images/spiti/gallary/13.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/14.webp"
+                                <img src="/src/images/spiti/gallary/14.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/15.webp"
+                                <img src="/src/images/spiti/gallary/15.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/16.webp"
+                                <img src="/src/images/spiti/gallary/16.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/17.webp"
+                                <img src="/src/images/spiti/gallary/17.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/18.webp"
+                                <img src="/src/images/spiti/gallary/18.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/19.webp"
+                                <img src="/src/images/spiti/gallary/19.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                <img src="/src/images/mcleodganj/Maclodeganj gallery/20.webp"
+                                <img src="/src/images/spiti/gallary/20.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                    <img src="/src/images/mcleodganj/Maclodeganj gallery/21.webp"
+                                    <img src="/src/images/spiti/gallary/21.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                    <img src="/src/images/mcleodganj/Maclodeganj gallery/22.webp"
+                                    <img src="/src/images/spiti/gallary/22.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"
                                     onclick="openPopup(this.src)">
-                                    <img src="/src/images/mcleodganj/Maclodeganj gallery/23.webp"
+                                    <img src="/src/images/spiti/gallary/23.webp"
+                                    alt="Image 6"
+                                    class="carousel-item w-1/3  object-cover w-full rounded-2xl"
+                                    style="min-width: 200px;max-height: 200px;"
+                                    onclick="openPopup(this.src)">
+                                    <img src="/src/images/spiti/gallary/24.webp"
+                                    alt="Image 6"
+                                    class="carousel-item w-1/3  object-cover w-full rounded-2xl"
+                                    style="min-width: 200px;max-height: 200px;"
+                                    onclick="openPopup(this.src)">
+                                    <img src="/src/images/spiti/gallary/25.webp"
                                     alt="Image 6"
                                     class="carousel-item w-1/3  object-cover w-full rounded-2xl"
                                     style="min-width: 200px;max-height: 200px;"

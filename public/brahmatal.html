@@ -224,9 +224,42 @@
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
                     <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html" class="text-white text-lg navcomponents mb-2">Treks</a>
-                    <a href="/public/bagpacking-trips.html" class="text-white text-lg navcomponents mb-2">Bagpacking
-                        trips</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger1">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu1" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger1 = document.querySelector('.dropdown-trigger1');
+                        const dropdownMenu1 = document.getElementById('dropdown-menu1');
+                    
+                        // Show dropdown on hover
+                        trigger1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu1.addEventListener('mouseleave', () => {
+                            dropdownMenu1.classList.add('hidden');
+                        });
+                    </script>
 
                     <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
@@ -847,9 +880,43 @@
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
                     <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html" class="text-white text-lg navcomponents mb-2">Treks</a>
-                    <a href="/public/bagpacking-trips.html" class="text-white text-lg navcomponents mb-2">Bagpacking
-                        trips</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger = document.querySelector('.dropdown-trigger');
+                        const dropdownMenu = document.getElementById('dropdown-menu');
+                    
+                        // Show dropdown on hover
+                        trigger.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu.addEventListener('mouseleave', () => {
+                            dropdownMenu.classList.add('hidden');
+                        });
+                    </script>
+                    
 
                     <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 

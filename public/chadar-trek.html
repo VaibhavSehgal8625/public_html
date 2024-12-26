@@ -224,14 +224,47 @@
         <div id="unique-popup"
             class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-40 open">
             <div class="bg-white w-full h-full flex items-center justify-center relative">
-                <img src="/src/images/navbar/navmobile.webp" class="w-full h-full object-cover">
+                <img src="/src/images/kedar-kantha/nav-image.webp" class="w-full h-full object-cover">
 
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
                     <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html" class="text-white text-lg navcomponents mb-2">Treks</a>
-                    <a href="/public/bagpacking-trips.html" class="text-white text-lg navcomponents mb-2">Bagpacking
-                        trips</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger1">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu1" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger1 = document.querySelector('.dropdown-trigger1');
+                        const dropdownMenu1 = document.getElementById('dropdown-menu1');
+                    
+                        // Show dropdown on hover
+                        trigger1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu1.addEventListener('mouseenter', () => {
+                            dropdownMenu1.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu1.addEventListener('mouseleave', () => {
+                            dropdownMenu1.classList.add('hidden');
+                        });
+                    </script>
 
                     <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
@@ -625,6 +658,187 @@
                     }
                 </style>
 
+                <script>
+                    // Trek and Blog data as objects
+                    const treks1 = [
+                        {
+                            name: "Kedarkantha",
+                            duration: "4D/5N",
+                            distance: "20/40km",
+                            altitude: "12,500ft / 3800m",
+                            time: "November to April",
+                            difficulty: "moderate",
+                            location: "Uttarakhand",
+                            budget: "6k to 9k",
+                        },
+                        {
+                            name: "Brahmatal",
+                            duration: "5D/6N",
+                            distance: "15/30km",
+                            altitude: "10,250ft / 3735m",
+                            time: "November to February",
+                            difficulty: "moderate",
+                            location: "Uttarakhand",
+                            budget: "6k to 9k",
+                        },
+                        {
+                            name: "Kuari-Pass",
+                            duration: "5D/6N",
+                            distance: "20 to 44km",
+                            altitude: "12,516ft / 3803m",
+                            time: "November to March",
+                            difficulty: "easy to moderate",
+                            location: "Uttarakhand",
+                            budget: "6k to 9k",
+                        },
+                        {
+                            name: "Triund",
+                            duration: "1D/2N",
+                            distance: "8/15km",
+                            altitude: "9,350ft / 2830m",
+                            time: "March to December",
+                            difficulty: "easy",
+                            location: "Himachal",
+                            budget: "1500 to 2400",
+                        },
+                        {
+                            name: "Dayara Bugfal",
+                            duration: "3D/4N",
+                            distance: "10/20km",
+                            altitude: "11,810ft / 3600m",
+                            time: "December to March",
+                            difficulty: "easy",
+                            location: "Uttarakhand",
+                            budget: "5500 to 9000",
+                        }
+                    ];
+
+                    const blogs1 = [
+                        {
+                            name: "Kedarkantha",
+                            author: "John Doe",
+                            date: "2024-10-10",
+                            contentSnippet: "Kedarkantha is a popular trek in Uttarakhand...",
+                            location: "Uttarakhand"
+                        },
+                        {
+                            name: "Brahmatal",
+                            author: "Jane Smith",
+                            date: "2024-09-25",
+                            contentSnippet: "Brahmatal offers a breathtaking view of snow-capped mountains...",
+                            location: "Uttarakhand"
+                        }
+                    ];
+
+                    // Function to filter treks and blogs
+                    function searchTreksAndBlogs(query) {
+                        query = query.toLowerCase();
+
+                        const filteredTreks = treks1.filter(trek => {
+                            return (
+                                trek.name.toLowerCase().includes(query) ||
+                                trek.duration.toLowerCase().includes(query) ||
+                                trek.distance.toLowerCase().includes(query) ||
+                                trek.altitude.toLowerCase().includes(query) ||
+                                trek.time.toLowerCase().includes(query) ||
+                                trek.difficulty.toLowerCase().includes(query) ||
+                                trek.location.toLowerCase().includes(query) ||
+                                trek.budget.toLowerCase().includes(query)
+                            );
+                        });
+
+                        const filteredBlogs = blogs1.filter(blog => {
+                            return (
+                                blog.name.toLowerCase().includes(query) ||
+                                blog.author.toLowerCase().includes(query) ||
+                                blog.date.toLowerCase().includes(query) ||
+                                blog.contentSnippet.toLowerCase().includes(query)
+                            );
+                        });
+
+                        return { filteredTreks, filteredBlogs };
+                    }
+
+                    // Display filtered results
+                    function displayResults(results) {
+                        const resultContainer = document.getElementById('resultContainer');
+                        resultContainer.innerHTML = ''; // Clear previous results
+
+                        const { filteredTreks, filteredBlogs } = results;
+
+                        if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
+                            resultContainer.innerHTML = '<p>No results found</p>';
+                        } else {
+                            // Display Treks
+                            filteredTreks.forEach(trek => {
+                                resultContainer.innerHTML += `
+ <a href="/${trek.name}">
+   <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+     <div class="flex gap-2" style="width:50%">
+       <img src="/src/images/search/${trek.name.toLowerCase().replace(' ', '-')}/banner-image.webp" style="width: 30px;height: 30px;" class="rounded" alt="${trek.name}">
+       <p class="font-bold flex gap-2">
+         <span>${trek.name}</span><span class="text-gray-500 font-normal italic">- Trek</span>
+       </p>
+     </div>
+     <p class="flex flex-row gap-2 justify-end items-end" style="width:25%">
+       <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#FF931F" class="size-6" style="width: 20px;height:20px">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+</svg>
+</span>
+       <span class="text-gray-500">${trek.location}</span>
+     </p>
+     <p class="flex flex-row gap-2 justify-end items-end" style="width:25%">
+       <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FF931F" class="size-6" style="width: 20px;height:20px">
+<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+</svg>
+
+</span>
+       <span class="text-gray-500">${trek.duration}</span>
+     </p>
+   </div>
+   </a>
+ `;
+                            });
+
+                            // Display Blogs
+                            filteredBlogs.forEach(blog => {
+                                resultContainer.innerHTML += `
+ <a href="/${blog.name}-blogs">
+   <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
+     <div class="flex gap-2" style="width:100%">
+       <img src="/src/images/search/${blog.name.toLowerCase().replace(' ', '-')}/banner-image.webp" style="width: 30px;height: 30px;" class="rounded" alt="${blog.name}">
+       <p class="font-bold flex gap-2 w-full">
+         <span>${blog.name}</span><span class="text-gray-500 font-normal italic">- Blog</span>
+       </p>
+       <p class="text-gray-500 w-full">
+         ${blog.contentSnippet}
+       </p>
+     </div>
+   </div>
+ `;
+                            });
+                        }
+                    }
+
+                    // Search button click event
+                    document.getElementById('searchBtn').addEventListener('click', function () {
+                        const query = document.getElementById('searchInput').value.trim();
+
+                        // Show loader
+                        document.getElementById('loader').classList.remove('hidden');
+
+                        // Simulate search delay to display loader
+                        setTimeout(() => {
+                            const results = searchTreksAndBlogs(query);
+                            displayResults(results);
+
+                            // Hide loader
+                            document.getElementById('loader').classList.add('hidden');
+                        }, 1000); // Simulate a 1-second delay for the search process
+                    });
+                </script>
+
 
 
 
@@ -666,14 +880,48 @@
         <div id="unique-popup-mobile"
             class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-40 open">
             <div class="bg-white w-full h-full flex items-center justify-center relative">
-                <img src="/src/images/navbar/navmobile.webp" class="w-full h-full object-cover">
+                <img src="/src/images/kedar-kantha/nav-image.webp" class="w-full h-full object-cover">
 
                 <div
                     class="absolute bg-black-less-opacity bottom-0 flex flex-col gap-3 items-start justify-center left-0 pl-28 right-0 top-0">
                     <a href="/index.html" class="text-white text-lg mb-2 navcomponents">Home</a>
-                    <a href="/public/all-treks.html" class="text-white text-lg navcomponents mb-2">Treks</a>
-                    <a href="/public/bagpacking-trips.html" class="text-white text-lg navcomponents mb-2">Bagpacking
-                        trips</a>
+                    <div class="relative inline-block">
+                        <!-- Main Link -->
+                        <a  
+                           class="text-white text-lg mb-2 navcomponents dropdown-trigger">All Treks & Trips</a>
+                    
+                        <!-- Dropdown Menu -->
+                        <div id="dropdown-menu" 
+                             class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
+                            <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
+                            <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
+                            <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Select the trigger and the dropdown menu
+                        const trigger = document.querySelector('.dropdown-trigger');
+                        const dropdownMenu = document.getElementById('dropdown-menu');
+                    
+                        // Show dropdown on hover
+                        trigger.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        // Hide dropdown when mouse leaves
+                        
+                    
+                        // Ensure dropdown stays open when hovering over the menu
+                        dropdownMenu.addEventListener('mouseenter', () => {
+                            dropdownMenu.classList.remove('hidden');
+                        });
+                    
+                        dropdownMenu.addEventListener('mouseleave', () => {
+                            dropdownMenu.classList.add('hidden');
+                        });
+                    </script>
+                    
 
                     <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
