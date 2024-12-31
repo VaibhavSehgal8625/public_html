@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 
   <!-- Include Owl Carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -388,28 +388,7 @@
           </div>
       </div>
       
-      <script>
-          // Select the trigger and the dropdown menu
-          const trigger = document.querySelector('.dropdown-trigger');
-          const dropdownMenu = document.getElementById('dropdown-menu');
       
-          // Show dropdown on hover
-          trigger.addEventListener('mouseenter', () => {
-              dropdownMenu.classList.remove('hidden');
-          });
-      
-          // Hide dropdown when mouse leaves
-          
-      
-          // Ensure dropdown stays open when hovering over the menu
-          dropdownMenu.addEventListener('mouseenter', () => {
-              dropdownMenu.classList.remove('hidden');
-          });
-      
-          dropdownMenu.addEventListener('mouseleave', () => {
-              dropdownMenu.classList.add('hidden');
-          });
-      </script>
       
       
       
@@ -474,28 +453,7 @@
               </div>
           </div>
           
-          <script>
-              // Select the trigger and the dropdown menu
-              const trigger1 = document.querySelector('.dropdown-trigger1');
-              const dropdownMenu1 = document.getElementById('dropdown-menu1');
-          
-              // Show dropdown on hover
-              trigger1.addEventListener('mouseenter', () => {
-                  dropdownMenu1.classList.remove('hidden');
-              });
-          
-              // Hide dropdown when mouse leaves
-              
-          
-              // Ensure dropdown stays open when hovering over the menu
-              dropdownMenu1.addEventListener('mouseenter', () => {
-                  dropdownMenu1.classList.remove('hidden');
-              });
-          
-              dropdownMenu1.addEventListener('mouseleave', () => {
-                  dropdownMenu1.classList.add('hidden');
-              });
-          </script>              
+                   
 
         <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
         <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
@@ -506,42 +464,7 @@
     </div>
     
     
-    <script>
-      function togglePopup() {
-        const popup = document.getElementById("popup");
-        const hamburgerIcon = document.getElementById("hamburgerIcon");
-        const closeIcon = document.getElementById("closeIcon");
     
-        // Check if the popup is currently displayed
-        if (popup.style.display === "none" || popup.style.display === "") {
-          // Show the popup
-          popup.style.display = "block";
-          setTimeout(() => {
-            popup.style.opacity = "1"; // Smooth transition effect
-          }, 10);
-    
-          // Disable scrolling
-          document.body.classList.add('no-scroll');
-    
-          // Toggle to X icon
-          hamburgerIcon.style.display = "none";
-          closeIcon.style.display = "inline";
-        } else {
-          // Hide the popup
-          popup.style.opacity = "0";
-          setTimeout(() => {
-            popup.style.display = "none"; // After the transition
-          }, 300);
-    
-          // Enable scrolling
-          document.body.classList.remove('no-scroll');
-    
-          // Toggle back to Hamburger icon
-          closeIcon.style.display = "none";
-          hamburgerIcon.style.display = "inline";
-        }
-      }
-    </script>
     
   </header>
 
@@ -634,95 +557,12 @@
     <!-- Snowfall Container positioned absolutely over the banner image -->
     <div class="snow-fall-banner absolute inset-0 z-10 pointer-events-none"></div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const snowContainer = document.querySelector(".snow-fall-banner");
-
-            const particlesPerThousandPixels = 0.1;
-            const fallSpeed = 0.50;
-            const pauseWhenNotActive = true;
-            const maxSnowflakes = 200;
-            const snowflakes = [];
-            
-            let snowflakeInterval;
-            let isTabActive = true;
-
-            function resetSnowflake(snowflake) {
-                const size = Math.random() * 5 + 1;
-                const viewportWidth = snowContainer.offsetWidth - size;
-                const viewportHeight = snowContainer.offsetHeight;
-
-                snowflake.style.width = `${size}px`;
-                snowflake.style.height = `${size}px`;
-                snowflake.style.left = `${Math.random() * viewportWidth}px`;
-                snowflake.style.top = `-${size}px`;
-
-                const animationDuration = (Math.random() * 3 + 2) / fallSpeed;
-                snowflake.style.animationDuration = `${animationDuration}s`;
-                snowflake.style.animationTimingFunction = "linear";
-                snowflake.classList.add("overflow-hidden");
-                snowflake.style.animationName =
-                    Math.random() < 0.5 ? "snow-fall-banner-fall" : "snow-fall-banner-diagonal-fall";
-
-                setTimeout(() => {
-                    if (parseInt(snowflake.style.top, 10) < viewportHeight) {
-                        resetSnowflake(snowflake);
-                    } else {
-                        snowflake.remove();
-                    }
-                }, animationDuration * 1000);
-            }
-
-            function createSnowflake() {
-                if (snowflakes.length < maxSnowflakes) {
-                    const snowflake = document.createElement("div");
-                    snowflake.classList.add("snowflake");
-                    snowflakes.push(snowflake);
-                    snowContainer.appendChild(snowflake);
-                    resetSnowflake(snowflake);
-                }
-            }
-
-            function generateSnowflakes() {
-                const numberOfParticles =
-                    Math.ceil((snowContainer.offsetWidth * snowContainer.offsetHeight) / 1000) *
-                    particlesPerThousandPixels;
-                const interval = 5000 / numberOfParticles;
-
-                clearInterval(snowflakeInterval);
-                snowflakeInterval = setInterval(() => {
-                    if (isTabActive && snowflakes.length < maxSnowflakes) {
-                        requestAnimationFrame(createSnowflake);
-                    }
-                }, interval);
-            }
-
-            function handleVisibilityChange() {
-                if (!pauseWhenNotActive) return;
-
-                isTabActive = !document.hidden;
-                if (isTabActive) {
-                    generateSnowflakes();
-                } else {
-                    clearInterval(snowflakeInterval);
-                }
-            }
-
-            generateSnowflakes();
-
-            window.addEventListener("resize", () => {
-                clearInterval(snowflakeInterval);
-                setTimeout(generateSnowflakes, 1000);
-            });
-
-            document.addEventListener("visibilitychange", handleVisibilityChange);
-        });
-    </script>
+    
     <div class="absolute bg-black-less-opacity flex  h-screen items-center justify-center w-full fade-in">
       <!-- Text and Search Button -->
 <div class="absolute flex flex-col items-center gap-16 justify-center inset-0 z-10">
   <p id="bannerText" 
-     class="font-bold custom-font-heading lg:-bottom-0 lg:-bottom-0.5 lg:table lg:text-6xl md:-bottom-0 md:-bottom-0.5 md:text-5xl sm:table sm:text-5xl text-5xl text-white slide-up" 
+     class="font-bold text-center px-4 custom-font-heading lg:-bottom-0 lg:-bottom-0.5 lg:table lg:text-6xl md:-bottom-0 md:-bottom-0.5 md:text-5xl sm:table sm:text-5xl text-5xl text-white slide-up" 
      style="text-transform: capitalize !important;">
     Trek Beyond The Ordinary
   </p>
@@ -858,171 +698,8 @@
 }
 </style>
 
-<script>
-  const treks = [
-    {
-      name: "kedarkantha",
-      duration: "4D/5N",
-      distance: "20/40km",
-      altitude: "12,500ft / 3800m",
-      time: "November to April",
-      difficulty: "moderate",
-      location: "Uttarakhand",
-      budget: "6k to 9k",
-      href:"/public/kedarkantha.html"
-    },
-    {
-      name: "Brahmatal",
-      duration: "5D/6N",
-      distance: "15/30km",
-      altitude: "10,250ft / 3735m",
-      time: "November to February",
-      difficulty: "moderate",
-      location: "Uttarakhand",
-      budget: "6k to 9k",
-      href:"/public/brahmatal.html"
-    },
-    {
-      name: "Dayara Buggal",
-      duration: "3D/4N",
-      distance: "10/20km",
-      altitude: "11,810ft / 3600m",
-      time: "December to March",
-      difficulty: "easy",
-      location: "Uttarakhand",
-      budget: "5500 to 9000",
-      href:"/public/dyara-bugyal.html"
-    },
-    {
-      name: "Chandrashila",
-      duration: "3D/4N",
-      distance: "10/20km",
-      altitude: "11,810ft / 3600m",
-      time: "December to March",
-      difficulty: "easy",
-      location: "Uttarakhand",
-      budget: "5500 to 9000",
-      href:"/public/tungnath.html"
-    }
-  ];
-  
-  const blogs = [
-    {
-      author: "Vaibhav",
-      date: "2024-11-13",
-      contentSnippet: "A memorable advanture with safarwallah",
-      location: "Uttarakhand",
-      href:"/public/blogs/a-memorable-advanture-with-safarwallah.html"
-    },
-    {
-      author: "Sameekshya",
-      date: "2024-11-06",
-      contentSnippet: "Escaping the city with safarwallah",
-      location: "Uttarakhand",
-      href:"/public/blogs/Escaping-the-City-with-Safarwallah.html"
-    },
-    {
-      author: "Gaurav",
-      date: "2024-09-21",
-      contentSnippet: "The Ultimate Guide to Treeking in winter",
-      location: "Uttarakhand",
-      href:"/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
-    },
-    {
-      author: "Abhishek",
-      date: "2024-10-30",
-      contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
-      location: "Uttarakhand",
-      href:"public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
-    }
-  ];
-  
-  /// Function to filter treks and blogs
-function searchTreksAndBlogs(query) {
-  query = query.toLowerCase();
 
-  const filteredTreks = treks.filter(trek => {
-    return (
-      trek.name.toLowerCase().includes(query) ||
-      trek.duration.toLowerCase().includes(query) ||
-      trek.distance.toLowerCase().includes(query) ||
-      trek.altitude.toLowerCase().includes(query) ||
-      trek.time.toLowerCase().includes(query) ||
-      trek.difficulty.toLowerCase().includes(query) ||
-      trek.location.toLowerCase().includes(query) ||
-      trek.budget.toLowerCase().includes(query)
-    );
-  });
-
-  const filteredBlogs = blogs.filter(blog => {
-    return (
-      blog.author.toLowerCase().includes(query) ||
-      blog.date.toLowerCase().includes(query) ||
-      blog.contentSnippet.toLowerCase().includes(query)
-    );
-  });
-
-  return { filteredTreks, filteredBlogs };
-}
-
-// Display filtered results
-function displayResults(results) {
-  const resultContainer = document.getElementById('resultContainer');
-  resultContainer.innerHTML = ''; // Clear previous results
-
-  const { filteredTreks, filteredBlogs } = results;
-
-  if (filteredTreks.length === 0 && filteredBlogs.length === 0) {
-    resultContainer.innerHTML = '<p>No results found</p>';
-  } else {
-    // Display Treks
-    filteredTreks.forEach(trek => {
-      resultContainer.innerHTML += `
-      <a href="${trek.href}">
-        <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
-          <div class="flex gap-4">
-            <h4>${trek.name}</h4>
-            <p>${trek.location}</p>
-          </div>
-        </div>
-      </a>`;
-    });
-
-    // Display Blogs
-    filteredBlogs.forEach(blog => {
-      resultContainer.innerHTML += `
-      <a href="${blog.href}">
-        <div class="flex flex-row w-full justify-between py-2 px-2 border-b items-center">
-          <div class="flex gap-4">
-            <h4>${blog.author}</h4>
-            <p>${blog.contentSnippet}</p>
-          </div>
-        </div>
-      </a>`;
-    });
-  }
-}
-
-// Handle input and loader visibility
-document.getElementById('searchInput').addEventListener('input', function () {
-  const query = this.value;
-  const loader = document.getElementById('loader');
-  const resultContainer = document.getElementById('resultContainer');
-
-  // Show loader
-  loader.style.display = 'flex';
-
-  // Simulate a slight delay to mimic async processing
-  setTimeout(() => {
-    const results = searchTreksAndBlogs(query);
-    displayResults(results);
-
-    // Hide loader
-    loader.style.display = 'none';
-  }, 500); // Adjust delay as necessary
-});
-  </script>
-  
+  <script src="/js/search-popup.js"></script>
   
 
     
@@ -1042,22 +719,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
 
   
 
-  <script>
-    function toggleSearchPopup() {
-      const popup = document.getElementById('searchPopup');
-      if (popup.style.display === "none" || popup.style.display === "") {
-        popup.style.display = "flex";
-        setTimeout(() => {
-          popup.style.opacity = "1";  // Smooth transition effect
-        }, 10);
-      } else {
-        popup.style.opacity = "0";
-        setTimeout(() => {
-          popup.style.display = "none";
-        }, 300);  // Wait for the opacity transition to finish
-      }
-    }
-  </script>
+
   
 
 
@@ -1216,13 +878,16 @@ document.getElementById('searchInput').addEventListener('input', function () {
 <!-- Popular categories -->
 
 <div class="lg:px-20 md:px-14 sm:px-10 px-6 py-10 overflow-x-hidden fade-scroll" data-animation="fade-scroll-down">
-  <p class="text-4xl font-bold custom-font-heading mb-6" style="color: #FF931F;">Popular Categories</p>
+  <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading mb-6" style="color: #FF931F;">Safarwallah Adventure Services</p>
 
   <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col justify-between gap-3">
     <div class="lg:w-1/2 md:w-1/3 sm:w-full w-full" style="
 
 ">
-      <p class="text-gray-500 responsivetext">Browse through these categories to find the best adventure for yourself. We organise Trekking, Cycling, Skiing &amp; Mountaineering Expeditions. We offer adventure activities in Uttrakhand, Himachal, J &amp; K, Ladakh, Sikkim, Karnataka, Maharashtra &amp; Nepal
+      <p class="text-gray-500 responsivetext">Safarwallah provides best outdoor experiences for everyone. 
+        We organise best adventures services include treks, winter treks, skydiving, extreme sports, bike rides, 4x4 offroading, backpacking trips, and School of outdoor learning programs.
+         Whether you want to explore nature or try something adventurous, Safarwallah has it all. Start your journey with us today!
+        
 
       </p>
 
@@ -1231,36 +896,36 @@ document.getElementById('searchInput').addEventListener('input', function () {
 
       <div class="flex flex-col ">
         <p><img src="/src/images/home/banner-image-1.webp" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
-        <p class="text-sm text-center">Treks</p>
+        <p class="responsivetext text-center ">Treks</p>
       </div>
       <div class="flex flex-col ">
         <p><img src="/src/images/home/banner-image-3.webp" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
-        <p class="flex flex-col text-sm text-center"> <span>Winter</span> <span>Treks</span>
+        <p class="flex flex-col responsivetext text-center"> <span>Winter</span> <span>Treks</span>
         </p>
       </div>
       <div class="flex flex-col ">
         <p><img src="/src/images/home/banner-image-4.webp" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
-        <p class="text-sm text-center">Paragliding 
+        <p class="responsivetext text-center">Paragliding 
         </p>
       </div>
       <div class="flex flex-col ">
         <p><img src="/src/images/home/banner-image-5.webp" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
-        <p class="flex flex-col text-sm text-center"> <span>Bungee</span> <span>Jumping</span>
+        <p class="flex flex-col responsivetext text-center"> <span>Bungee</span> <span>Jumping</span>
         </p>
       </div>
       <div class="flex flex-col ">
         <p><img src="/src/images/home/triund trek.webp" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
-        <p class="flex flex-col text-sm text-center"> <span>Giant</span> <span>Swing</span>
+        <p class="flex flex-col responsivetext text-center"> <span>Giant</span> <span>Swing</span>
         </p>
       </div>
       <div class="flex flex-col ">
         <p><img src="/src/images/home/kuari.webp" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
-        <p class="flex flex-col text-sm text-center"> <span>River</span> <span>Rafting</span>
+        <p class="flex flex-col responsivetext text-center"> <span>River</span> <span>Rafting</span>
         </p>
       </div>
       <div class="flex flex-col ">
         <p><img src="/src/images/home/kedarkatha.webp" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
-        <p class="text-sm text-center">Expeditions</p>
+        <p class="responsivetext text-center">Expeditions</p>
       </div>
       
       
@@ -1276,9 +941,11 @@ document.getElementById('searchInput').addEventListener('input', function () {
   <div class="carousel-wrapper overflow-x-hidden lg:px-20 md:px-14 sm:px-10 px-6 py-10">
     <div class="flex items-center justify-between">
       <div class="fade-scroll overflow-x-hidden" data-animation="fade-scroll-down">
-        <p class="text-4xl font-bold custom-font-heading" style="color: #FF931F;"> Upcoming Bagpacking Trips </p>
+        <p class=" font-bold lg:text-4xl md:text-3xl sm:text-2xl text-xl custom-font-heading" style="color: #FF931F;">Safarwallah Backpacking Trips
+        </p>
 
-        <p class="text-md  pb-12  text-gray-500">Discover Your New Adventure in Bagpacking trips</p>
+        <p class="text-md  pb-12 responsivetext  text-gray-500">Discover Best backpacking trips in India/Best backpacking destinations in india 
+        </p>
       </div>
 
       <div class="lg:flex md:flex hidden items-center justify-between gap-2 fade-scroll overflow-x-hidden " data-animation="fade-scroll-left">
@@ -1591,9 +1258,9 @@ a:hover .icon-svg {
   <div class="carousel-wrapper overflow-x-hidden lg:px-20 md:px-14 sm:px-10 px-6 py-10">
     <div class="flex items-center justify-between">
       <div class="fade-scroll overflow-x-hidden" data-animation="fade-scroll-down">
-        <p class="text-4xl font-bold custom-font-heading" style="color: #FF931F;"> Upcoming Treks </p>
+        <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading" style="color: #FF931F;"> Upcoming Treks </p>
 
-        <p class="text-md  pb-12  text-gray-500">Discover Your New Adventure</p>
+        <p class="text-md  pb-12  text-gray-500 responsivetext">Discover Best Treks In India</p>
       </div>
 
       <div class="lg:flex md:flex hidden items-center justify-between gap-2 fade-scroll overflow-x-hidden " data-animation="fade-scroll-left">
@@ -1943,9 +1610,10 @@ a:hover .icon-svg {
   <div class="carousel-wrapper overflow-x-hidden  lg:px-20 md:px-14 sm:px-10 px-6 py-10">
     <div class="flex items-center justify-between">
       <div class="fade-scroll overflow-x-hidden" data-animation="fade-scroll-down">
-        <p class="text-4xl font-bold custom-font-heading" style="color: #FF931F;"> Trending Treks </p>
+        <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold  custom-font-heading" style="color: #FF931F;">Trending winter treks</p>
 
-        <p class="text-md  pb-12  text-gray-500">Treks That Are Making Waves This Season</p>
+        <p class="text-md responsivetext pb-12  text-gray-500">Discover Best Winter Treks In India
+        </p>
       </div>
 
       <div class="lg:flex md:flex hidden items-center justify-between gap-2 fade-scroll overflow-x-hidden" data-animation="fade-scroll-left" >
@@ -2245,8 +1913,8 @@ a:hover .icon-svg {
  <div class="relative overflow-x-hidden">
   <div class="absolute inset-0 bg-cover h-auto bg-center" style="background-image: url('/src/images/51754898_9323173.jpg'); opacity: 0.1; z-index: -1; max-height: 80vh;min-height: 40vh;"></div>
   <div class="lg:px-20 flex justify-center items-center flex-col h-auto md:px-14 sm:px-10 px-6 py-10 overflow-x-hidden  fade-scroll" data-animation="fade-scroll-down" style="max-height: 80vh;min-height: 40vh;">
-    <p class="text-4xl font-bold custom-font-heading text-center" style="color: #FF931F;">Why Choose Safarwallah?</p>
-    <p class="text-md  pb-4 text-gray-500 text-center">Crafting Unforgettable Journeys for Every Adventurer!</p>
+    <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading text-center" style="color: #FF931F;">Why Choose Safarwallah?</p>
+    <p class="text-md  pb-4 text-gray-500 text-center responsivetext">Crafting Unforgettable Journeys for Every Adventurer!</p>
 
     <div class="w-full rounded-2xl flex lg:flex-row md:flex-row sm:flex-col flex-col grid lg:grid-cols-2 md:grid-cols-2 grid-cols-2 gap-4 justify-between items-center  py-8 px-8">
       <div class="flex  items-center  justify-center gap-2 text-2xl overflow-x-hidden fade-scroll text-gray-700" data-animation="fade-scroll-left">
@@ -2325,73 +1993,7 @@ a:hover .icon-svg {
 
 
   <!-- blogs section  -->
-  <div class="lg:px-20 md:px-14 overflow-x-hidden sm:px-10 px-6 py-10 overflow-x-hidden fade-scroll" data-animation="fade-scroll-down">
-    <p class="text-4xl font-bold custom-font-heading" style="color: #FF931F;"> Vlogs </p>
-    <p class="capitalize pb-4 text-gray-500 text-md">Behind the scenes from the trails</p>
-
-    <div>
-      <div class=" mx-auto p-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <!-- Large Video -->
-          <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-3 video-container overflow-x-hidden fade-scroll " data-animation="fade-scroll-left">
-            <video id="largeVideo" class="w-full video-transition rounded-2xl" controls>
-              <source src="/src/videos/home/blogs/4.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button hidden lg:flex" id="playButton" onclick="playLargeVideo()">
-              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M5 3l10 7-10 7V3z" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Smaller Videos -->
-          <div class="hidden md:block col-span-1 md:col-span-1 lg:col-span-1 overflow-x-hidden fade-scroll" data-animation="fade-scroll-right">
-            <div class="relative mb-4">
-              <video id="smallVideo1" class="w-full rounded-2xl"
-                onclick="playSmallVideo('/src/videos/home/blogs/1.mp4')">
-                <source src="/src/videos/home/blogs/1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="play-button" onclick="playSmallVideo('/src/videos/home/blogs/1.mp4')">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5 3l10 7-10 7V3z" />
-                </svg>
-              </div>
-            </div>
-            <div class="relative mb-4">
-              <video id="smallVideo2" class="w-full rounded-2xl"
-                onclick="playSmallVideo('/src/videos/home/blogs/2.mp4')">
-                <source src="/src/videos/home/blogs/2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="play-button" onclick="playSmallVideo('/src/videos/home/blogs/2.mp4')">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5 3l10 7-10 7V3z" />
-                </svg>
-              </div>
-            </div>
-            <div class="relative">
-              <video id="smallVideo3" class="w-full rounded-2xl"
-                onclick="playSmallVideo('/src/videos/home/blogs/3.mp4')">
-                <source src="/src/videos/home/blogs/3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="play-button" onclick="playSmallVideo('/src/videos/home/blogs/3.mp4')">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5 3l10 7-10 7V3z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div>
-      <a href="/public/blogs.html" class="justify-center lg:hidden md:hidden items-center flex w-full bg-orange text-white rounded-full p-3 hover:bg-white hover:text-orange transition duration-300 hovertextorange ease-in-out" style="border: 2px solid #FF931F;">Load More</a>
-    </div>
-  </div>
+  
 
   <style>
 
@@ -2523,8 +2125,8 @@ a:hover .icon-svg {
     <div class="flex flex-col items-center justify-between lg:flex-row md:flex-row sm:flex-col">
 
       <div class="w-full fade-scroll overflow-x-hidden" data-animation="fade-scroll-left">
-        <p class="text-4xl font-bold custom-font-heading" style="color: #FF931F;"> What Our Safar squad Says</p>
-        <p class="text-md  pb-4  text-gray-500">Real reviews from real customers who love us for who we are </p>  
+        <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading" style="color: #FF931F;"> Our Clients Reviews and Testimonials</p>
+        <p class="responsivetext  pb-4  text-gray-500">See what our clients says </p>  
         
       </div>
       <!-- <div class="flex gap-3 items-center hidden fade-scroll overflow-x-hidden justify-end owl-nav w-full " data-animation="fade-scroll-right">
@@ -2545,13 +2147,12 @@ a:hover .icon-svg {
 </div>
 
 <div  class="w-full fade-scroll overflow-x-hidden lg:px-20 md:px-14  overflow-x-hidden sm:px-10 px-6 py-10" data-animation="fade-scroll-left">
-  <p class="text-4xl font-bold custom-font-heading py-6" style="color: #FF931F;"> Our Instagram Page</p>
+  <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading py-6" style="color: #FF931F;">Visit Our Instagram Page</p>
   <div >
     <iframe src="https://widget.tagembed.com/2144335" style="width:100%;height: 580px;border:none;"></iframe>
   </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 
 
   <!-- Section Wrapper with background image -->
@@ -2567,9 +2168,11 @@ a:hover .icon-svg {
       <div class="flex items-center justify-between lg:flex-row md:flex-row sm:flex-col">
         <!-- Blog Section Header -->
         <div class="w-full overflow-x-hidden fade-scroll" data-animation="fade-scroll-left">
-          <p class="text-4xl font-bold custom-font-heading" style="color: #FF931F;">Blogs</p>
-          <p class="text-md pb-4 text-gray-500">
-            Authentic insights and stories from those who trust us – real experiences shared by our community.
+          <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading" style="color: #FF931F;">Our Travel and Adventure Blogs 
+          </p>
+          <p class="responsivetext pb-4 text-gray-500">
+            Safarwallah Trekking and Travelling Tips 
+
           </p>
         </div>
         <div class="flex">
@@ -2685,43 +2288,8 @@ a:hover .icon-svg {
 
 
 <!-- Owl Carousel CSS/JS Initialization -->
-<script>
-  $(document).ready(function(){
-    $(".blogs-section-carousel").owlCarousel({
-      loop: true, // Infinite loop
-      margin: 10,
-      nav: true, // Enable Next/Prev buttons
-      dots: true, // Enable pagination dots
-      navText: [
-          `<button id="reviewnavbtn-prev" class="bg-orange border-orange hover-svg-review hover:bg-white hovertextorange px-3 py-2 rounded-full" style="border:1px solid #ff931f" >
-            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.79297 2L2.50008 7.29289C2.10955 7.68342 2.10955 8.31658 2.50008 8.70711L7.79297 14"
-                class="" stroke="white" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </button>`,
-          `<button id="reviewnavbtn-next" class="bg-orange border-orange hover-svg-review hover:bg-white hovertextorange px-3 py-2 rounded-full" style="border:1px solid #ff931f">
-            <svg width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.125 15.25L7.875 8.5L1.125 1.75" class="" stroke="white" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>`
-        ],
-        navContainer: '.owl-nav-blog-section', // Specifies where to place the nav buttons
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 2
-        },
-        1024: {
-          items: 3
-        }
-      }
-    });
-  });
-</script>
 
+<script src="/js/owl-crousel.js"></script>
 
 <div class="overflow-x-hidden">
   <button id="scrollToTopBtn" class="bg-black bottom-44 fixed px-3.5 py-3.5 right-8 rounded-full text-white" style="
@@ -2739,17 +2307,15 @@ a:hover .icon-svg {
 
 <div class="lg:px-20 md:px-14 sm:px-10 overflow-x-hidden px-6 py-10 flex lg:flex-row md:flex-col sm:flex-col flex-col gap-6">
   <div class="lg:w-1/2  w-full overflow-x-hidden fade-scroll" data-animation="fade-scroll-down">
-    <p class="text-4xl font-bold custom-font-heading " style="color: #FF931F;">About Us</p>
+    <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading " style="color: #FF931F;">About Us</p>
     <div class="fade-scroll overflow-x-hidden" data-animation="fade-scroll-left">
-      <p class="text-sm text-gray-500 pb-3">
+      <p class="text-sm responsivetext text-gray-500 pb-3">
         The Journey Behind Safarwallah
       </p>
-      <p class="custom-font-normal responsiveLARGEtext text-gray-500 text-xl">
-        Safarwallah, founded by Pankaj and Pooja, emerged from their deep love for the Himalayas and passion for
-        adventure. Growing up amidst the majestic mountains, their connection to nature strengthened through countless
-        expeditions. Despite facing challenges and setbacks, their determination and shared vision led to the creation
-        of Safarwallah, a travel company focused on personalized, responsible travel. It serves as a sanctuary for
-        adventurers seeking to explore and thrive in the great outdoors.
+      <p class="custom-font-normal responsivetext text-gray-500 text-xl">
+        Pankaj and Pooja started Safarwallah, a startup that's changing how people travel. We make adventures that get people excited to explore and have a thrill. 
+Our trips are different from the usual ones - we take you to amazing places that most people don't see. If you're ready to try something new, we've got experiences that will blow your mind.
+
       </p>
     </div>
   </div>
@@ -3340,41 +2906,13 @@ a:hover .icon-svg {
 
 </footer>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/676255af49e2fd8dfef9b2e7/1ifc1tedb';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
+<script src="/js/tawk-api.js"></script>
   <!--End of Tawk.to Script-->
 
 
 </body>
 <script src="/js/home.js"></script>
-<script>// Get the button
-  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+<script src="/js/scroll-to-top.js">// Get the button
   
-  // Show or hide the button when scrolling
-  window.onscroll = function() {
-    if (window.scrollY > 200) {
-      scrollToTopBtn.classList.add("show");
-    } else {
-      scrollToTopBtn.classList.remove("show");
-    }
-  };
-  
-  // Smooth scroll to the top when the button is clicked
-  scrollToTopBtn.addEventListener("click", function() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
   </script>
 </html>

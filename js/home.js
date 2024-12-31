@@ -390,29 +390,7 @@ updateCarouselPosition2();
 
 
 
-    const largeVideo = document.getElementById('largeVideo');
-    const playButton = document.getElementById('playButton');
-  
-    function playLargeVideo() {
-        largeVideo.play();
-        playButton.style.display = 'none'; // Hide play button when playing
-    }
-  
-    function playSmallVideo(videoSrc) {
-        largeVideo.src = videoSrc; // Change the source of the large video
-        largeVideo.play(); // Play the new video
-        playButton.style.display = 'none'; // Hide play button when playing
-    }
-  
-    // Optional: Hide the play button when the video is playing
-    largeVideo.addEventListener('play', function () {
-        playButton.style.display = 'none';
-    });
-  
-    // Optional: Show the play button when the video is paused
-    largeVideo.addEventListener('pause', function () {
-        playButton.style.display = 'block';
-    });
+    
 
 
 
@@ -903,4 +881,169 @@ updateCarouselPosition2();
 // Observe all elements with the 'fade-scroll' class
 document.querySelectorAll('.fade-scroll').forEach(el => {
   observer.observe(el);
+});
+
+
+// Select the trigger and the dropdown menu
+const trigger = document.querySelector('.dropdown-trigger');
+const dropdownMenu = document.getElementById('dropdown-menu');
+
+// Show dropdown on hover
+trigger.addEventListener('mouseenter', () => {
+    dropdownMenu.classList.remove('hidden');
+});
+
+// Hide dropdown when mouse leaves
+
+
+// Ensure dropdown stays open when hovering over the menu
+dropdownMenu.addEventListener('mouseenter', () => {
+    dropdownMenu.classList.remove('hidden');
+});
+
+dropdownMenu.addEventListener('mouseleave', () => {
+    dropdownMenu.classList.add('hidden');
+});
+
+
+ // Select the trigger and the dropdown menu
+ const trigger1 = document.querySelector('.dropdown-trigger1');
+ const dropdownMenu1 = document.getElementById('dropdown-menu1');
+
+ // Show dropdown on hover
+ trigger1.addEventListener('mouseenter', () => {
+     dropdownMenu1.classList.remove('hidden');
+ });
+
+ // Hide dropdown when mouse leaves
+ 
+
+ // Ensure dropdown stays open when hovering over the menu
+ dropdownMenu1.addEventListener('mouseenter', () => {
+     dropdownMenu1.classList.remove('hidden');
+ });
+
+ dropdownMenu1.addEventListener('mouseleave', () => {
+     dropdownMenu1.classList.add('hidden');
+ });
+
+
+ function togglePopup() {
+    const popup = document.getElementById("popup");
+    const hamburgerIcon = document.getElementById("hamburgerIcon");
+    const closeIcon = document.getElementById("closeIcon");
+
+    // Check if the popup is currently displayed
+    if (popup.style.display === "none" || popup.style.display === "") {
+      // Show the popup
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.opacity = "1"; // Smooth transition effect
+      }, 10);
+
+      // Disable scrolling
+      document.body.classList.add('no-scroll');
+
+      // Toggle to X icon
+      hamburgerIcon.style.display = "none";
+      closeIcon.style.display = "inline";
+    } else {
+      // Hide the popup
+      popup.style.opacity = "0";
+      setTimeout(() => {
+        popup.style.display = "none"; // After the transition
+      }, 300);
+
+      // Enable scrolling
+      document.body.classList.remove('no-scroll');
+
+      // Toggle back to Hamburger icon
+      closeIcon.style.display = "none";
+      hamburgerIcon.style.display = "inline";
+    }
+  }
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const snowContainer = document.querySelector(".snow-fall-banner");
+
+    const particlesPerThousandPixels = 0.1;
+    const fallSpeed = 0.50;
+    const pauseWhenNotActive = true;
+    const maxSnowflakes = 200;
+    const snowflakes = [];
+    
+    let snowflakeInterval;
+    let isTabActive = true;
+
+    function resetSnowflake(snowflake) {
+        const size = Math.random() * 5 + 1;
+        const viewportWidth = snowContainer.offsetWidth - size;
+        const viewportHeight = snowContainer.offsetHeight;
+
+        snowflake.style.width = `${size}px`;
+        snowflake.style.height = `${size}px`;
+        snowflake.style.left = `${Math.random() * viewportWidth}px`;
+        snowflake.style.top = `-${size}px`;
+
+        const animationDuration = (Math.random() * 3 + 2) / fallSpeed;
+        snowflake.style.animationDuration = `${animationDuration}s`;
+        snowflake.style.animationTimingFunction = "linear";
+        snowflake.classList.add("overflow-hidden");
+        snowflake.style.animationName =
+            Math.random() < 0.5 ? "snow-fall-banner-fall" : "snow-fall-banner-diagonal-fall";
+
+        setTimeout(() => {
+            if (parseInt(snowflake.style.top, 10) < viewportHeight) {
+                resetSnowflake(snowflake);
+            } else {
+                snowflake.remove();
+            }
+        }, animationDuration * 1000);
+    }
+
+    function createSnowflake() {
+        if (snowflakes.length < maxSnowflakes) {
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            snowflakes.push(snowflake);
+            snowContainer.appendChild(snowflake);
+            resetSnowflake(snowflake);
+        }
+    }
+
+    function generateSnowflakes() {
+        const numberOfParticles =
+            Math.ceil((snowContainer.offsetWidth * snowContainer.offsetHeight) / 1000) *
+            particlesPerThousandPixels;
+        const interval = 5000 / numberOfParticles;
+
+        clearInterval(snowflakeInterval);
+        snowflakeInterval = setInterval(() => {
+            if (isTabActive && snowflakes.length < maxSnowflakes) {
+                requestAnimationFrame(createSnowflake);
+            }
+        }, interval);
+    }
+
+    function handleVisibilityChange() {
+        if (!pauseWhenNotActive) return;
+
+        isTabActive = !document.hidden;
+        if (isTabActive) {
+            generateSnowflakes();
+        } else {
+            clearInterval(snowflakeInterval);
+        }
+    }
+
+    generateSnowflakes();
+
+    window.addEventListener("resize", () => {
+        clearInterval(snowflakeInterval);
+        setTimeout(generateSnowflakes, 1000);
+    });
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 });
