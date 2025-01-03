@@ -528,8 +528,9 @@
       </p>
       
       
+      
      <style>
-     /* Container for the sliding text */
+      /* Container for the sliding text */
 .message {
     display: inline-block; /* Align with surrounding text */
     height: 1em; /* Matches the font size line height */
@@ -547,18 +548,14 @@
     top: 0;
     opacity: 0;
     transform: translateY(100%);
-    display: none; /* Initially hide all words */
-    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Add transition for smooth slide-up effect */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 /* Show only active word */
 .word.active {
-    display: inline-block;
     opacity: 1;
     transform: translateY(0);
 }
-
-
 
      </style>
       
@@ -570,25 +567,19 @@ let currentWordIndex = 0;
 function showNextWord() {
     // Hide the current word
     words[currentWordIndex].classList.remove('active');
-    words[currentWordIndex].style.opacity = '0';  // Fade out
-    words[currentWordIndex].style.transform = 'translateY(100%)'; // Slide out of view
 
     // Move to the next word
     currentWordIndex = (currentWordIndex + 1) % words.length;
 
     // Show the next word
     words[currentWordIndex].classList.add('active');
-    words[currentWordIndex].style.opacity = '1';  // Fade in
-    words[currentWordIndex].style.transform = 'translateY(0)'; // Slide into view
 }
 
 // Initialize first word visibility
 words[currentWordIndex].classList.add('active');
-words[currentWordIndex].style.opacity = '1';
-words[currentWordIndex].style.transform = 'translateY(0)';
 
 // Change word every 2 seconds
-setInterval(showNextWord, 2000); // Change word every 2 seconds
+setInterval(showNextWord, 2000);
 
     </script>
       
