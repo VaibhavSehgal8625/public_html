@@ -59,55 +59,17 @@
 
       <div class="bg-transparent px-20 flex justify-between w-full pt-6">
         <div>
-          <img src="/src/images/logo/white-logo.png" style="width: 101px;" alt="">
+          <a href="/index.html">
+            <img src="/src/images/logo/white-logo.png" style="width: 101px;" alt="">
+
+          </a>
         </div>
         <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
-          <a class="text-white navcomponents  custom-font-normal" href="/index.html">Home</a>
-          <a class="text-white navcomponents  custom-font-normal" href="/public/about.html">About</a>
-          <div class="relative inline-block">
-            <!-- Main Link -->
-            <a  
-               class="text-white custom-font-normal cursor-pointer  navcomponents  dropdown-trigger">All Treks & Trips</a>
-        
-            <!-- Dropdown Menu -->
-            <div id="dropdown-menu" 
-                 class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
-                <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
-                <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
-                <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
-            </div>
-        </div>
-        
-        <script>
-            // Select the trigger and the dropdown menu
-            const trigger = document.querySelector('.dropdown-trigger');
-            const dropdownMenu = document.getElementById('dropdown-menu');
-        
-            // Show dropdown on hover
-            trigger.addEventListener('mouseenter', () => {
-                dropdownMenu.classList.remove('hidden');
-            });
-        
-            // Hide dropdown when mouse leaves
-            
-        
-            // Ensure dropdown stays open when hovering over the menu
-            dropdownMenu.addEventListener('mouseenter', () => {
-                dropdownMenu.classList.remove('hidden');
-            });
-        
-            dropdownMenu.addEventListener('mouseleave', () => {
-                dropdownMenu.classList.add('hidden');
-            });
-        </script>
-        
-        
-        
-          <a class="text-white navcomponents custom-font-normal" href="/public/careers.html">Careers</a>
-          <a class="text-white navcomponents custom-font-normal" href="/public/blogs.html">Blogs</a>
-          <a class="text-white navcomponents custom-font-normal" href="/public/contact.html">Contact</a>
-          <!-- <a class="relative text-white bg-orange py-1.5 px-3 rounded-2xl hover:bg-white hovertextorange transition duration-300 ease-in-out"
-            href="/login">Sign Up</a> -->
+          <a class="text-white navcomponents  custom-font-normal" href="/public/all-treks.html">Treks</a>
+          <a class="text-white navcomponents  custom-font-normal" href="/public/road-trips.html">Road-trip</a>
+          <a class="text-white navcomponents custom-font-normal" href="/public/bagpacking-trips.html">Bagpacking-trips</a>
+         
+         
   
         </div>
   
@@ -405,48 +367,9 @@
           <!-- Add the text over the image -->
           <div class="bg-black-less-opacity flex h-full h-screen items-center justify-center left-1/2 top-1/2 w-full w-screen" style="position: absolute;/* top: 50%; *//* left: 50%; */transform: translate(-50%, -50%);color: white;">
             <div class="absolute h-screen inset-0 ml-10 flex flex-col gap-6 mt-40 ">
-              <a href="/index.html" class="text-white "><span class="navcomponents">Home</span></a>
-              <a class="text-white  " href="/public/about.html"><span class="navcomponents">About</span></a>
-              <div class="relative inline-block">
-                <!-- Main Link -->
-                <a  
-                   class="text-white  cursor-pointer  navcomponents  dropdown-trigger1">All Treks & Trips</a>
-            
-                <!-- Dropdown Menu -->
-                <div id="dropdown-menu1" 
-                     class="absolute hidden bg-white text-black rounded shadow-lg mt-2 w-44 z-10">
-                    <a href="/public/all-treks.html" class="block px-4 py-2 hover:bg-gray-100"> <span class="navcomponents">All Treks</span></a>
-                    <a href="/public/bagpacking-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Bagpacking-trips</span></a>
-                    <a href="/public/Road-trips.html" class="block px-4 py-2 hover:bg-gray-100"><span class="navcomponents">Road-trips</span></a>
-                </div>
-            </div>
-            
-            <script>
-                // Select the trigger and the dropdown menu
-                const trigger1 = document.querySelector('.dropdown-trigger1');
-                const dropdownMenu1 = document.getElementById('dropdown-menu1');
-            
-                // Show dropdown on hover
-                trigger1.addEventListener('mouseenter', () => {
-                    dropdownMenu1.classList.remove('hidden');
-                });
-            
-                // Hide dropdown when mouse leaves
-                
-            
-                // Ensure dropdown stays open when hovering over the menu
-                dropdownMenu1.addEventListener('mouseenter', () => {
-                    dropdownMenu1.classList.remove('hidden');
-                });
-            
-                dropdownMenu1.addEventListener('mouseleave', () => {
-                    dropdownMenu1.classList.add('hidden');
-                });
-            </script>              
-  
-          <a class="text-white  " href="/public/careers.html"><span class="navcomponents">Careers</span></a>
-          <a class="text-white  " href="/public/blogs.html"><span class="navcomponents">Blogs</span></a>
-          <a class="text-white  " href="/public/contact.html"><span class="navcomponents">Contact</span></a>
+          <a class="text-white  " href="/public/all-treks.html"><span class="navcomponents">All Treks</span></a>
+          <a class="text-white  " href="/public/road-trips.html"><span class="navcomponents">Road-trips</span></a>
+          <a class="text-white  " href="/public/bagpacking-trips.html"><span class="navcomponents">Bagpacking-trips</span></a>
             </div>
           </div>
         </div>
@@ -505,7 +428,7 @@
 
 
         <p class="top-0 flex flex-col  bottom-0 left-10 absolute lg:text-7xl md:text-5xl sm:text-4xl text-3xl text-white" style="font-weight: 900 !important;">
-          <span class="flex flex-col lg:flex-row md:flex-row lg:gap-1 md:gap-1  gap-6 overflow-x-hidden">
+          <span class="flex flex-col lg:flex-row md:flex-row lg:gap-1 md:gap-1  gap-6 ">
             <span class="flex flex-col flex-wrap">  
               Book Your Slot for 
 
@@ -561,7 +484,7 @@
     opacity: 1;
     transform: translateY(0);
 }
-@media (max-width:550px){
+@media (max-width:767px){
   .word{
     transform: translateX(100%);
     top: 40px;
@@ -618,21 +541,25 @@ setInterval(showNextWord, 2000);
     <div>
       <div class="flex flex-col gap-6">
         <div class="flex flex-col  " >
-          <p class="text-4xl font-bold bg-gray-300 px-3" style="width: fit-content; border-left:4px solid #FF931F;">Special Offer</p>
+          <p class="lg:text-4xl md:text-3xl text-2xl font-bold bg-gray-300 px-3" style="width: fit-content; border-left:4px solid #FF931F;">Special Offer</p>
           
         </div>
 
         <div class="flex  ">
-          <div class="card-container flex justify-start items-start flex-wrap  gap-4" >
+          <div class="card-container flex justify-center items-center flex-wrap  gap-4" >
+            
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Kedarkantha">
               <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Kedarkantha trek.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Trek
@@ -715,7 +642,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -728,10 +655,13 @@ setInterval(showNextWord, 2000);
               <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Brahmatal.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Trek
@@ -812,7 +742,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -822,13 +752,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Chadar">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Chadar trek.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Trek
@@ -908,7 +841,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -918,13 +851,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Dyara-Bugyal">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Dayara bugyal.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Trek
@@ -1005,7 +941,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1015,13 +951,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Hampta Pass">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Hampta Pass.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Trek
@@ -1102,7 +1041,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1112,13 +1051,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Har Ki Dun">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Har ki Dun.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Trek
@@ -1201,7 +1143,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1211,13 +1153,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Tungnath">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Tungnath Trek.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Trek
@@ -1300,7 +1245,8 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                    <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
+                
                 </form>
 
                 
@@ -1310,13 +1256,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Kashmir">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Kashmir Trip.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Bagpacking-trip
@@ -1391,7 +1340,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1401,13 +1350,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Kerala">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/kerala thumbnail.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Bagpacking-trip
@@ -1482,7 +1434,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1492,13 +1444,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Manali">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Manali.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Bagpacking-trip
@@ -1576,7 +1531,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1586,13 +1541,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Mcleodganj">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Mcleodganj.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Bagpacking-trip
@@ -1667,7 +1625,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1677,13 +1635,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Winter Spiti">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Spiti.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Road-trips
@@ -1759,7 +1720,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1769,13 +1730,16 @@ setInterval(showNextWord, 2000);
             </div>
             <!-- Card -->
             <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Niti Valley">
-              <div class=" flex gap-3 flex-col " style="width: 270px;">
+              <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Niti Valley.webp" 
-                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90" 
+                       class="object-cover w-full rounded-2xl transition-opacity duration-300 ease-in-out group-hover:opacity-90 image-height" 
                        style="border: 4px solid #FF931F;height: 300px;" alt="">
-                  <p class="absolute top-0 left-0 bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                  <p class="absolute top-0 left-0 hidden lg:flex md:flex bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
                     Book your slot Rs. 49/- only
+                  </p>
+                  <p class="absolute top-0 left-0 lg:hidden md:hidden flex  bg-orange text-white rounded-r-2xl rounded-t-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:translate-y-1">
+                    Rs. 49/- only
                   </p>
                   <p class="absolute bottom-0 right-0 bg-orange text-white rounded-l-2xl rounded-t-2xl rounded-b-2xl text-xs px-2 py-1 transition-transform duration-300 ease-in-out group-hover:-translate-y-1">
                     Road-trip
@@ -1850,7 +1814,7 @@ setInterval(showNextWord, 2000);
                     </div>
                   </div>
                   
-                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="openRazorpayCheckout(event, this)">Submit</button>
+                  <button type="button" class="bg-orange text-white py-2 px-4 rounded-lg w-full" onclick="if (document.querySelector('.popup.open')) { openRazorpayCheckout1(event, this); } else { openRazorpayCheckout(event, this); }">Submit</button>
                 </form>
 
                 
@@ -1867,58 +1831,133 @@ setInterval(showNextWord, 2000);
           </div>
           
           
-          <style>
+            <style>
             .expandable {
-  max-width: 0;
-  overflow: hidden;
-  transition: max-width 0.4s ease-in-out;
-  padding: 0px;
-}
-
-.expandable.open {
-  max-width: 500px; /* Adjust based on content */
-  padding: 15px;
-}
-
-.card-container {
-  position: relative;
-}
-
-
-
-          </style>
-          
-          
-          <script>
-           document.querySelectorAll('.book-now-btn').forEach((button) => {
-  button.addEventListener('click', (e) => {
-    const card = e.target.closest('.card');
-    const expandable = card.querySelector('.expandable');
-
-    // Close any other open expandable sections
-    document.querySelectorAll('.expandable.open').forEach((section) => {
-      if (section !== expandable) {
-        section.classList.remove('open');
+        max-width: 0;
+        overflow: hidden;
+        transition: max-width 0.4s ease-in-out;
+        padding: 0px;
+        height: 0px;
+      
+        
       }
-    });
 
-    // Toggle the current expandable section
-    expandable.classList.toggle('open');
-  });
-});
+      .expandable.open {
+        max-width: 500px; /* Adjust based on content */
+        padding: 15px;
+        height: auto;
+      }
 
-// Close button functionality
-document.querySelectorAll('.close-btn').forEach((button) => {
-  button.addEventListener('click', (e) => {
-    const expandable = e.target.closest('.expandable');
-    expandable.classList.remove('open');
-  });
-});
+      .card-container {
+        position: relative;
+      }
 
+      @media (max-width: 768px) {
+        
+        
+        
+
+        .popup {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+        }
+
+        .popup.open {
+          display: flex;
+        }
+
+        .popup-content {
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          max-width: 90%;
+          height: fit-content;
+          overflow-y: auto;
+        }
+
+        .image-height {
+          height: 100% !important;
+        }
+      }
+        </style>
+        
+        <script>
+      document.querySelectorAll('.book-now-btn').forEach((button) => {
+        button.addEventListener('click', (e) => {
+          const card = e.target.closest('.card');
+          const expandable = card.querySelector('.expandable');
+
+          if (window.innerWidth < 769) {
+        const popup = document.createElement('div');
+        popup.classList.add('popup', 'open');
+        const popupContent = expandable.cloneNode(true);
+        popupContent.classList.add('popup-content');
+        popup.appendChild(popupContent);
+        document.body.appendChild(popup);
+
+        popup.querySelector('.close-btn').addEventListener('click', () => {
+          popup.classList.remove('open');
+          setTimeout(() => popup.remove(), 400);
+        });
+          } else {
+        // Close any other open expandable sections
+        document.querySelectorAll('.expandable.open').forEach((section) => {
+          if (section !== expandable) {
+            section.classList.remove('open');
+          }
+        });
+
+        // Toggle the current expandable section
+        expandable.classList.toggle('open');
+          }
+        });
+      });
+
+      // Close button functionality for expandable sections
+      document.querySelectorAll('.close-btn').forEach((button) => {
+        button.addEventListener('click', (e) => {
+          const expandable = e.target.closest('.expandable');
+          expandable.classList.remove('open');
+        });
+      });
+        </script>
+          <script>  
+          
 
           </script>
+          
           <script src="/js/special-payment-49.js"></script>
+          <script>
+            // Function to update classes based on screen size
+function updateGridClasses() {
+    const cardContainer = document.querySelector('.card-container');
 
+    if (window.innerWidth >= 640 && window.innerWidth <= 768) {
+        cardContainer.classList.add('grid', 'grid-cols-3');
+        cardContainer.classList.remove('grid-cols-2');
+    } else if (window.innerWidth < 640) {
+        cardContainer.classList.add('grid', 'grid-cols-2');
+        cardContainer.classList.remove('grid-cols-3');
+    } else {
+        cardContainer.classList.remove('grid', 'grid-cols-3', 'grid-cols-2');
+    }
+}
+
+// Initial call to set the classes on page load
+updateGridClasses();
+
+// Event listener to handle resizing of the window
+window.addEventListener('resize', updateGridClasses);
+
+          </script>
         </div>
       </div>
     </div>
