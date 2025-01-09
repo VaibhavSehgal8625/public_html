@@ -55,28 +55,83 @@
     <!-- large screen navbar -->
 
 
-    <header class="flex justify-center items-center hidden lg:flex absolute z-10 w-full">
-
+    <header class="fixed  hidden lg:flex  z-10 w-full nav-menu py-3" style="z-index: 9999;">
       <div class="bg-transparent px-20 flex justify-between w-full pt-6">
         <div>
           <a href="/index.html">
-            <img src="/src/images/logo/white-logo.png" style="width: 101px;" alt="">
-
+            <img src="/src/images/logo/white-logo.png" style="width: 101px;" alt="Logo">
           </a>
         </div>
         <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
-          <a class="text-white navcomponents  custom-font-normal" href="/public/all-treks.html">Treks</a>
-          <a class="text-white navcomponents  custom-font-normal" href="/public/road-trips.html">Road-trip</a>
-          <a class="text-white navcomponents custom-font-normal" href="/public/bagpacking-trips.html">Bagpacking-trips</a>
-         
-         
-  
+          <a class=" navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
+          <a class=" navcomponents custom-font-normal" href="/public/road-trips.html">Road-trip</a>
+          <a class=" navcomponents custom-font-normal" href="/public/bagpacking-trips.html">Bagpacking-trips</a>
+          <div id="searchbox" class="bg-white cursor-pointer flex flex-row items-start justify-between px-4 py-2 responsivesearchanimation rounded-full"
+               style="min-width: 120px; height: 40px;" onclick="toggleSearchPopup()">
+            <p class="text-sm text-md custom-font-heading text-black my-auto text-gray-500" 
+               style="text-transform: capitalize !important;">
+              Search Trek By
+              <span id="rotatingText" class="text-black custom-font-heading sliding-text" 
+                    style="text-transform: capitalize !important;">Difficulty</span>
+            </p>
+            <p class="flex h-full items-center px-2 justify-center my-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                   class="size-6" style="width: 20px; stroke:#FF931F;">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </p>
+          </div>
+          <a class="text-white bg-orange rounded-2xl p-2 flex gap-2 justify-center items-center" href="tel:+917347004282">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" 
+                   class="size-6 phone-icon" style="width: 15px;">
+                <path stroke-linecap="round" stroke-linejoin="round" 
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+            </span>
+            <span>+91 7347004282</span>
+          </a>
         </div>
-  
       </div>
     </header>
+<style>
+  /* Navbar scroll animation */
+.nav-menu {
+  background: transparent;
+  transition: all 0.4s ease;
+  color: white;
+}
+
+.costum-navbar {
+  background-color: rgba(0, 0, 0, 0.323) !important;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   
-  
+}
+
+@media (max-width: 1024px) {
+  .costum-navbar{
+    background-color: rgba(0, 0, 0, 0.623) !important;
+  }
+}
+
+</style>    
+<script>
+  // Navbar scroll animation
+  window.addEventListener('scroll', function () {
+    const headers = document.querySelectorAll('.nav-menu');
+    headers.forEach(header => {
+      if (window.scrollY >= 100) {
+        header.classList.add('costum-navbar');
+      } else {
+        header.classList.remove('costum-navbar');
+      }
+    });
+  });
+</script>  
   
     <!-- mobile screen navbar -->
   
@@ -337,7 +392,7 @@
   
     <!-- mobile screen navbar -->
   
-    <header class="flex justify-center lg:hidden items-center absolute z-50 w-full">
+    <header class="flex justify-center lg:hidden items-center fixed z-50 w-full nav-menu py-3" style="z-index: 9999;">
   
       <div class="bg-transparent px-6 flex justify-between w-full items-center py-2">
         <div style="z-index: 200;">
@@ -346,19 +401,30 @@
             <img src="/src/images/logo/white-logo.png" style="width: 101px;z-index: 200 !important;"  alt="">
           </a>
         </div>
-        
-  
-        <div id="svgContainer" onclick="togglePopup()" style="cursor: pointer;z-index: 200;">
-          <!-- Initial Hamburger Icon -->
-          <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px; height:20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <div class="flex gap-4 items-center">
+          <div onclick="toggleSearchPopup1()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="width: 20px; height:20px">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            
+          </div>
+          <a class="text-white  rounded-2xl p-2 flex gap-2 justify-center items-center" href="tel:+917347004282"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6 phone-icon" style="width: 15px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
           </svg>
-        
-          <!-- X Icon (hidden initially) -->
-          <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="display: none; width: 20px; height:20px">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          </span></a>
+          <div id="svgContainer" onclick="togglePopup()" style="cursor: pointer;z-index: 200;">
+            <!-- Initial Hamburger Icon -->
+            <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px; height:20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          
+            <!-- X Icon (hidden initially) -->
+            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6" style="display: none; width: 20px; height:20px">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
         </div>
+        
       </div>
       <div id="popup" style="opacity: 0; position: absolute; transition: opacity 0.3s ease-in-out; inset: 0px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; display: none;">
         <div style="position: relative; height: 100vh; width: 100vw;">
@@ -549,7 +615,7 @@ setInterval(showNextWord, 2000);
           <div class="card-container flex justify-center items-center flex-wrap  gap-4" >
             
             <!-- Card -->
-            <div class="card group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Kedarkantha">
+            <div class="card  group rounded-2xl shadow-2xl bg-white flex flex-row  transition-transform duration-300 ease-in-out " data-location="Kedarkantha">
               <div class=" flex gap-3 flex-col card-width" style="width: 270px;">
               <div class="relative">
                   <img src="/src/images/special-offer/Kedarkantha trek.webp" 
@@ -1890,7 +1956,7 @@ setInterval(showNextWord, 2000);
         </style>
         
         <script>
-      document.querySelectorAll('.book-now-btn').forEach((button) => {
+            document.querySelectorAll('.book-now-btn').forEach((button) => {
         button.addEventListener('click', (e) => {
           const card = e.target.closest('.card');
           const expandable = card.querySelector('.expandable');
@@ -1902,6 +1968,10 @@ setInterval(showNextWord, 2000);
         popupContent.classList.add('popup-content');
         popup.appendChild(popupContent);
         document.body.appendChild(popup);
+
+        // Store the data-location attribute in the popup-content
+        const location = card.getAttribute('data-location');
+        popupContent.setAttribute('data-location', location);
 
         popup.querySelector('.close-btn').addEventListener('click', () => {
           popup.classList.remove('open');
@@ -1919,15 +1989,15 @@ setInterval(showNextWord, 2000);
         expandable.classList.toggle('open');
           }
         });
-      });
+            });
 
-      // Close button functionality for expandable sections
-      document.querySelectorAll('.close-btn').forEach((button) => {
+            // Close button functionality for expandable sections
+            document.querySelectorAll('.close-btn').forEach((button) => {
         button.addEventListener('click', (e) => {
           const expandable = e.target.closest('.expandable');
           expandable.classList.remove('open');
         });
-      });
+            });
         </script>
           <script>  
           
