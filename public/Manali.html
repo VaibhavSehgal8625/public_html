@@ -270,7 +270,7 @@
 
                     <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
-                    <a href="/carriers" class="text-white text-lg mb-2 navcomponents">Carries</a>
+                    <a href="/public/careers.html" class="text-white text-lg mb-2 navcomponents">Carries</a>
 
                     <a href="/public/about.html" class="text-white text-lg mb-2 navcomponents">About Us</a>
 
@@ -927,7 +927,7 @@
 
                     <a href="/public/blogs.html" class="text-white text-lg mb-2 navcomponents">Blogs</a>
 
-                    <a href="/carriers" class="text-white text-lg mb-2 navcomponents">Carries</a>
+                    <a href="/public/careers.html" class="text-white text-lg mb-2 navcomponents">Carries</a>
 
                     <a href="/public/about.html" class="text-white text-lg mb-2 navcomponents">About Us</a>
 
@@ -1499,7 +1499,7 @@
 
                             
                             <div class="mt-6" style="width: fit-content;">
-                                <a href="/src/pdf/manali/Manali 3N4D Ex Delhi_compressed.pdf"
+                                <a href="/src/pdf/manali/MANALI_compressed (1).pdf"
                                     class="btn btn-1 hover-filled-slide-up" style="margin: 0px !important;">
                                     <span class="flex px-4 py-4 text-md">Download Itinerary</span>
                                 </a>
@@ -2310,7 +2310,7 @@
                                         <p class="text-sm mt-6">Please Select A Tour Package</p>
                                         <div class="tour-packages gap-2 px-2 flex-wrap flex mt-3">
                                             <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Sankri to Sankri" data-price="5999">Raithal to Raithal - ₹5,999</div> -->
-                                            <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Delhi to Delhi" data-price="5999">Delhi to Delhi - ₹5,999</div>
+                                            <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Delhi to Delhi" data-price="5499">Delhi to Delhi - ₹5,499</div>
                                             <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Dehradun to Dehradun" data-price="7999">Dehradun to Dehradun - ₹8,499</div> -->
                                         </div>
                                     </div>
@@ -2350,7 +2350,7 @@
                                             <p class="text-xl ">Price Total </p>
                                             <div id="total-price"
                                                 style="color: #FF7A1F;"
-                                                class="font-bold">₹9,499/-</div>
+                                                class="font-bold">₹5,499/-</div>
                                         </div>
     
                                         <div class="flex items-center justify-center">
@@ -2531,13 +2531,13 @@
         let selectedSharing = null;
         let adultCount = 1;
         let childCount = 0;
-        let basePrice = 5999;
+        let basePrice = 5499;
         let selectedDate = null;
         let isPartialPayment = false;
         let isslotpayment = false;
     
         const packages = {
-            "Delhi to Delhi": { triple: 5999, double: 6999 }
+            "Delhi to Delhi": { triple: 5499, double: 6999 }
             
         };
     
@@ -2822,9 +2822,9 @@
                                         //     triple: "₹5,999",
                                         //     double: "₹6,999"
                                         // },
-                                        "Delhi to Delhi - ₹5,999": {
+                                        "Delhi to Delhi - ₹5,499": {
                                             route: "Delhi to Delhi",
-                                            triple: "₹5,999",
+                                            triple: "₹5,499",
                                             double: "₹6,999"
                                         },
                                         // "Dehradun to Dehradun - ₹8,499": {
@@ -2836,7 +2836,7 @@
     
                                     // Function to set inclusions as a table based on package name
                                     const setInclusions = (packageName) => {
-                                        const inclusions = inclusionsData[packageName] || inclusionsData["Delhi to Delhi - ₹5,999"];
+                                        const inclusions = inclusionsData[packageName] || inclusionsData["Delhi to Delhi - ₹5,499"];
     
                                         // Create a table with headers
                                         const tableHTML = `
@@ -2863,7 +2863,7 @@
                                     };
     
                                     // Set default inclusions on page load
-                                    setInclusions("Delhi to Delhi - ₹5,999");
+                                    setInclusions("Delhi to Delhi - ₹5,499");
     
                                     tourPackageElements.forEach(packageElement => {
                                         packageElement.addEventListener('click', () => {

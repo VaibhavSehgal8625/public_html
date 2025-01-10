@@ -184,19 +184,19 @@ html {
 
 /* Animation classes when the element scrolls into view */
 .fade-scroll-in {
-  animation: fadeScrollIn 1s forwards;
+  animation: fadeScrollIn 0.5s forwards;
 }
 
 .fade-scroll-left {
-  animation: fadeScrollLeft 1s forwards;
+  animation: fadeScrollLeft 0.5s forwards;
 }
 
 .fade-scroll-right {
-  animation: fadeScrollRight 1s forwards;
+  animation: fadeScrollRight 0.5s forwards;
 }
 
 .fade-scroll-out {
-  animation: fadeScrollOut 1s forwards;
+  animation: fadeScrollOut 0.5s forwards;
 }
 /* Fade-scroll-up */
 @keyframes fadeScrollUp {
