@@ -11,6 +11,13 @@
 ">
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preload" as="image" href="/src/images/home/banner-image-5.webp">
+<link rel="preload" as="image" href="/src/images/home/banner-image-1.webp">
+<link rel="preload" as="image" href="/src/images/home/banner-image-3.webp">
+<link rel="preload" as="image" href="/src/images/home/banner-image-4.webp">
+<link rel="preload" href="/src/images/logo/white-logo.png" as="image" type="image/png" crossorigin="anonymous">
+
+
   <meta name="description" content="SafarWallah offers curated travel packages, adventure guides, and exclusive travel deals. Explore your next journey with us!">
   <meta name="keywords" content="Adventure Trek, Adventure Travel, Travel Company, Best treks in india, Best Tour Packages, best winter treks, budget friendly tour packages, Travel tips and guides ">
 
@@ -20,10 +27,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
   <!-- Include jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script async src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 
 
   <!-- Include Owl Carousel CSS -->
@@ -32,8 +39,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
   <!-- Include Owl Carousel JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" async></script>
+  <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -42,7 +49,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Meta Pixel Code -->
-<script>
+<script async>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -62,14 +69,21 @@
 
 <body class="custom-font-normal overflow-x-hidden">
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZ3R7PFM"
+<noscript async><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZ3R7PFM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+
+  
   <style>
     *{
       font-family: 'normalfont', sans-serif; /* Fallback to a similar font if needed */
 
     }
+    a:focus {
+  outline: 2px solid #ff9800; /* Highlight links with a border on focus */
+}
+
     @keyframes slide-Up {
       0% {
         transform: translateY(100%);
@@ -292,7 +306,7 @@
     .video-transition {
       transition: all 0.5s ease;
     }
-
+    
 
     .hover-container-2,
     .hover-container-2 .hover-text-2,
@@ -373,8 +387,8 @@
   <div class="bg-transparent px-20 flex justify-between w-full pt-6">
     <div>
       <a href="/index.html">
-        <img src="/src/images/logo/white-logo.png" style="width: 101px;" loading="lazy" alt="Safarwallah Adventure Travel Logo">
-      </a>
+        <img src="/src/images/logo/white-logo.png" width="101" height="40" style="z-index: 200 !important; object-fit: contain;" alt="">
+     </a>
     </div>
     <div class="flex gap-8 justify-center custom-font-normal items-center text-sm">
       <a class=" navcomponents custom-font-normal" href="/public/all-treks.html">Treks</a>
@@ -418,7 +432,7 @@ background-color: rgba(0, 0, 0, 0.623) !important;
 }
 
 </style>    
-<script>
+<script defer>
 // Navbar scroll animation
 window.addEventListener('scroll', function () {
 const headers = document.querySelectorAll('.nav-menu');
@@ -487,7 +501,7 @@ animation: spin 1s linear infinite;
 }
 </style>
 
-<script>
+<script defer>
 const treks = [
   {
     name: "kedarkantha",
@@ -658,7 +672,7 @@ setTimeout(() => {
 </div>
 </div>
 
-<script>
+<script defer>
    function toggleSearchPopup() {
      const popup = document.getElementById('searchPopup');
      if (popup.style.display === "none" || popup.style.display === "") {
@@ -695,14 +709,14 @@ setTimeout(() => {
 
   <div class="bg-transparent px-6 flex justify-between w-full items-center py-2">
     <div style="z-index: 200;">
-      <a href="/index.html">
+      <a href="/index.html" aria-label="Go to the homepage">
 
-        <img src="/src/images/logo/white-logo.png" loading="lazy" style="width: 101px;z-index: 200 !important;"  alt="">
+        <img src="/src/images/logo/white-logo.png"  width="101" height="40" style="z-index: 200 !important;object-fit: contain;" alt="">
       </a>
     </div>
     <div class="flex gap-4 items-center">
       
-      <a class="text-white  rounded-2xl p-2 flex gap-2 justify-center items-center" href="tel:+917347004282"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6 phone-icon" style="width: 15px;">
+      <a class="text-white  rounded-2xl p-2 flex gap-2 justify-center items-center" href="tel:+917347004282" aria-label="Call Safarwallah at +91 73470 04282"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6 phone-icon" style="width: 15px;">
         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
       </svg>
       </span></a>
@@ -736,7 +750,7 @@ setTimeout(() => {
   </div>
   
   
-  <script>
+  <script defer>
     function togglePopup() {
       const popup = document.getElementById("popup");
       const hamburgerIcon = document.getElementById("hamburgerIcon");
@@ -928,7 +942,7 @@ setTimeout(() => {
   }
  </style>
  <div class="absolute  right-4   lg:flex md:flex hidden flex-col gap-2 responsivesocialbannerlinks" style="z-index: 10000000" >
-  <div onclick="location.href='https://www.facebook.com/hisafarwallah/'">
+  <div onclick="location.href='https://www.facebook.com/hisafarwallah/'" >
     <svg style="width: 30px; height:30px;" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" stroke="" class="responsivewidthofsvg">
       <path class="svghovereffect" d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z" fill="white"/>
       </svg>
@@ -1006,7 +1020,7 @@ setTimeout(() => {
 </style>
 
 
-  <script src="/js/search-popup.js"></script>
+  <script src="/js/search-popup.js" defer></script>
   
 
     
@@ -1188,7 +1202,7 @@ setTimeout(() => {
   <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading mb-6" style="color: #FF931F;">Safarwallah Adventure Services</p>
 
   <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col justify-between gap-3">
-    <div class="lg:w-1/2 md:w-1/3 sm:w-full w-full" style="
+    <div class=" md:w-1/2  w-full" style="
 
 ">
       <p class="text-gray-500 responsivetext">Safarwallah provides best outdoor experiences for everyone. 
@@ -1202,36 +1216,36 @@ setTimeout(() => {
     <div class="flex flex-wrap gap-3 items-start justify-evenly w-full">
 
       <div class="flex flex-col ">
-        <p><img src="/src/images/home/banner-image-1.webp" loading="lazy" alt="Safarwallah Trek" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
+        <p><img src="/src/images/home/banner-image-1.webp" loading="lazy" alt="Safarwallah Trek" class="rounded-full object-cover" style="width: 75px !important;height: 75px !important;"></p>
         <p class="responsivetext text-center ">Treks</p>
       </div>
       <div class="flex flex-col ">
-        <p><img src="/src/images/home/banner-image-3.webp" loading="lazy" alt="Safarwallah Himalayan Trek" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
+        <p><img src="/src/images/home/banner-image-3.webp" loading="lazy" alt="Safarwallah Himalayan Trek" class="rounded-full object-cover" style="width: 75px !important;height: 75px !important;"></p>
         <p class="flex flex-col responsivetext text-center"> <span>Winter</span> <span>Treks</span>
         </p>
       </div>
       <div class="flex flex-col ">
-        <p><img src="/src/images/home/banner-image-4.webp" loading="lazy" alt="Safarwallah Winter Trek" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
+        <p><img src="/src/images/home/banner-image-4.webp" loading="lazy" alt="Safarwallah Winter Trek" class="rounded-full object-cover" style="width: 75px !important;height: 75px !important;"></p>
         <p class="responsivetext text-center">Paragliding 
         </p>
       </div>
       <div class="flex flex-col ">
-        <p><img src="/src/images/home/banner-image-5.webp" loading="lazy" alt="Safarwallah Treks" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
+        <p><img src="/src/images/home/banner-image-5.webp" loading="lazy" alt="Safarwallah Treks" class="rounded-full object-cover" style="width: 75px !important;height: 75px !important;"></p>
         <p class="flex flex-col responsivetext text-center"> <span>Bungee</span> <span>Jumping</span>
         </p>
       </div>
       <div class="flex flex-col ">
-        <p><img src="/src/images/home/triund trek.webp" loading="lazy" alt="Safarwallah Triund Trek" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
+        <p><img src="/src/images/home/triund trek.webp" loading="lazy" alt="Safarwallah Triund Trek" class="rounded-full object-cover" style="width: 75px !important;height: 75px !important;"></p>
         <p class="flex flex-col responsivetext text-center"> <span>Giant</span> <span>Swing</span>
         </p>
       </div>
       <div class="flex flex-col ">
-        <p><img src="/src/images/home/kuari.webp" alt="Safarwallah Kuari Pass Trek" loading="lazy" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
+        <p><img src="/src/images/home/kuari.webp" alt="Safarwallah Kuari Pass Trek" loading="lazy" class="rounded-full object-cover" style="width: 75px !important;height: 75px !important;"></p>
         <p class="flex flex-col responsivetext text-center"> <span>River</span> <span>Rafting</span>
         </p>
       </div>
       <div class="flex flex-col ">
-        <p><img src="/src/images/home/kedarkatha.webp" loading="lazy" alt="" class="rounded-full" style="width: 75px !important;height: 75px !important;"></p>
+        <p><img src="/src/images/home/kedarkatha.webp" loading="lazy" alt="" class="rounded-full object-cover" style="width: 75px !important;height: 75px !important;"></p>
         <p class="responsivetext text-center">Expeditions</p>
       </div>
       
@@ -1610,7 +1624,7 @@ a:hover .icon-svg {
               <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
                 <div class="absolute top-2 right-2">
                   <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
-                    ₹ 5,499/-  onwards
+                    ₹ 5,999/-  onwards
                   </p>
                 </div>
                   <div class="absolute bottom-0 p-4 w-full">
@@ -2437,7 +2451,7 @@ a:hover .icon-svg {
     <!-- <div id="reviewSectionCarousel" class="owl-carousel hidden flex flex-col owl-theme overflow-x-hidden fade-scroll" data-animation="fade-scroll-down"> -->
     <!-- Review items will be dynamically generated here by JavaScript -->
     <div class="" >
-      <div class="embedsocial-hashtag" data-ref="1cf9b4edaff51f1d4108c93adb35c405160cd8a1">  </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script></div>
+      <div class="embedsocial-hashtag" data-ref="1cf9b4edaff51f1d4108c93adb35c405160cd8a1">  </div> <script defer> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script></div>
   </div>
   <style>
     .feed-powered-by-es{
@@ -2518,7 +2532,7 @@ a:hover .icon-svg {
                 <p class="text-gray-500 text-sm p-1">As a first-time trekker, Safarwallah’s professional team and breathtaking trails made my experience unforgettable. From lush forests to sunrise at the summit, every moment was magical.....</p>
               </div>
               <div class="flex gap-2 px-3 py-2">
-                <img src="/src/images/home/reviews-images/1.webp" class="w-10 h-10" style="width: 2.5rem !important;" alt="Clients Reviews & Testimonials">
+                <img src="/src/images/home/reviews-images/1.webp" class="w-10 h-10"  style="width: 2.5rem !important;" style="width: 2.5rem !important;" alt="Clients Reviews & Testimonials">
                 <div class="">
                     <p class="text-gray-700 text-md">Vaibhav</p>
                     <p class="text-gray-500 text-xs">13 Nov,2024</p>
@@ -2541,7 +2555,7 @@ a:hover .icon-svg {
                   <p class="text-gray-500 text-sm p-1">Safarwallah’s weekend trek was the ideal break from city life. With stunning views, local culture, and a night under the stars, it was a seamless adventure to recharge and reconnect.....</p>
                 </div>
                 <div class="flex gap-2 px-3 py-2">
-                  <img src="/src/images/home/reviews-images/2.webp" class="w-10 h-10" style="width: 2.5rem !important;" alt="Safarwallah Adventure Travel Company Reviews">
+                  <img src="/src/images/home/reviews-images/2.webp" class="w-10 h-10"  style="width: 2.5rem !important;" style="width: 2.5rem !important;" alt="Safarwallah Adventure Travel Company Reviews">
                   <div class="">
                       <p class="text-gray-700 text-md">sameekshya</p>
                       <p class="text-gray-500 text-xs">06 Nov,2024</p>
@@ -2564,7 +2578,7 @@ a:hover .icon-svg {
                 <p class="text-gray-500 text-sm p-1">Winter trekking is an entirely different ballgame compared to summer treks. The cold temperatures, unpredictable weather, and challenging terrain make it an adventure worth taking only if you're well-prepared.....
                 </div>
                 <div class="flex gap-2 px-3 py-2">
-                  <img src="/src/images/home/reviews-images/3.webp" class="w-10 h-10" style="width: 2.5rem !important;" alt="Safarwa
+                  <img src="/src/images/home/reviews-images/3.webp" class="w-10 h-10"  style="width: 2.5rem !important;" style="width: 2.5rem !important;" alt="Safarwa
                    Client Reviews">
                   <div class="">
                       <p class="text-gray-700 text-md">Gaurav</p>
@@ -2588,10 +2602,203 @@ a:hover .icon-svg {
                 <p class="text-gray-500 text-sm p-1">Trekking in the Himalayas is an exhilarating experience, offering breathtaking views, challenging terrains, and a sense of accomplishment like no other.....
                 </div>
                 <div class="flex gap-2 px-3 py-2">
-                  <img src="/src/images/home/reviews-images/3.webp" class="w-10 h-10" style="width: 2.5rem !important;" alt="Our Clients Reviews">
+                  <img src="/src/images/home/reviews-images/3.webp" class="w-10 h-10"  style="width: 2.5rem !important;" style="width: 2.5rem !important;" alt="Our Clients Reviews">
                   <div class="">
                       <p class="text-gray-700 text-md">Abhishek</p>
                       <p class="text-gray-500 text-xs">30 Oct,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/top-10-places-in-india-to-celebrate-new-year.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/new-year-blog/banner-image.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Festive</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Enjoy</p>
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">Top 10 best destinations to celebrate New Year's Eve in India
+
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">With just a few hours left to the end of 2024, it’s time to start thinking about how you want to celebrate the arrival of 2025....
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/4.webp" class="w-10 h-10"  style="width: 2.5rem !important;" style="width: 2.5rem !important;" alt="">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Saurav</p>
+                      <p class="text-gray-500 text-xs">03 Dec,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/history-of-mount-everest.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/blogs/Mount-everest.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Mountain</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Enjoy</p>
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">History of Mount Everest
+
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">The Hidden Stories of Courage and Tragedy: A Comprehensive History of Mount Everest More than just a majestic mountain.......
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/5.webp" class="w-10 h-10"  style="width: 2.5rem !important;" alt="">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Priyanka Chawla</p>
+                      <p class="text-gray-500 text-xs">05 Dec,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/chopta-chandrashila-trek-blog.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/blogs/chandrashila.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Trek</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Mountains</p>
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">Chopta Chandrashila trek blog
+
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">Deep within the heart of Uttarakhand, the trail of Chopta Chandrashila Trek offers a beautiful trail through green meadows......
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/6.webp" class="w-10 h-10"  style="width: 2.5rem !important;" alt="">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Priyash Mehta</p>
+                      <p class="text-gray-500 text-xs">05 Dec,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/Best-Family-Vacation-Places-in-Goa.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/blogs/goa/banner-image.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Travel</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Beach</p>
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">Best family vacation places in Goa
+
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">Goa isn’t just for partygoers and thrill-seekers; it’s also a treasure trove of family-friendly destinations.......
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/1.webp" class="w-10 h-10"  style="width: 2.5rem !important;" alt="">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Prince Goyal</p>
+                      <p class="text-gray-500 text-xs">06 Dec,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/budget-trek-ideas.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/blogs/budget-trek-ideas.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Trek</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Mountains</p>
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">Budget trek ideas
+
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">Trekking outside doesn't have to cost an arm and a leg. Provide the right planning with smart choices......
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/1.webp" class="w-10 h-10"  style="width: 2.5rem !important;" alt="Clients Reviews & Testimonials">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Priyanks Kaushik</p>
+                      <p class="text-gray-500 text-xs">07 Dec,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/how-to-prepare-for-high-altitude-trek.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/blogs/top-10-highest-trek.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Trek</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Mountains</p>
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">How to prepare for high altitude trek
+
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">High-altitude trekking is an adventure that stretches the limits of your physical and mental strength......
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/2.webp" class="w-10 h-10"  style="width: 2.5rem !important;" alt="Safarwallah Adventure Travel Company Reviews">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Shrishti Chawla</p>
+                      <p class="text-gray-500 text-xs">08 Dec,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/top-10-treks-must-do-in-india.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/blogs/top-10-best-treks-in-india.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Trek</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Mountains</p>
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">Top 10 best treks in india
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">India's diverse terrain and breathtaking landscapes make for a haven for trekking enthusiasts.......
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/3.webp" class="w-10 h-10"  style="width: 2.5rem !important;" alt="SafarWallah Clients Reviews">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Riya Sharma</p>
+                      <p class="text-gray-500 text-xs">09 Dec,2024</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/public/blogs/7-Best-Places-for-Holi-Celebration-2025.html">
+              <div class="bg-white border rounded-2xl shadow-md">
+                <img src="/src/images/blogs/holi-banner.webp" alt="" style="height: 300px;" class="object-cover w-full rounded-t-2xl">
+                <div class="p-3 flex flex-col gap-3">
+                  <div class="flex gap-1">
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Festive</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Holi</p>
+                      <p class="py-1 px-2 bg-orange text-white text-xs rounded-full" style="width: fit-content;">Indian Culture</p>
+
+                  </div>
+                  <h3 class="text-lg font-bold pl-3" style="border-left: 4px solid #FF931F;">7 Best Places for Holi Celebration 2025
+
+                  </h3>
+                <p class="text-gray-500 text-sm p-1">Holi, often called the "festival of colors," is a vibrant and joyful Hindu celebration......
+                </div>
+                <div class="flex gap-2 px-3 py-2">
+                  <img src="/src/images/home/reviews-images/4.webp" class="w-10 h-10"  style="width: 2.5rem !important;" alt="SafarWallah Clients Reviews">
+                  <div class="">
+                      <p class="text-gray-700 text-md">Romit Singh</p>
+                      <p class="text-gray-500 text-xs">18 Jan,2025</p>
                   </div>
                 </div>
               </div>
@@ -2612,7 +2819,7 @@ a:hover .icon-svg {
 
 <!-- Owl Carousel CSS/JS Initialization -->
 
-<script src="/js/owl-crousel.js"></script>
+<script src="/js/owl-crousel.js" defer></script>
 
 <div class="overflow-x-hidden">
   <button id="scrollToTopBtn" class="bg-black bottom-44 fixed px-3.5 py-3.5 right-8 rounded-full text-white" style="
@@ -2768,7 +2975,7 @@ Our trips are different from the usual ones - we take you to amazing places that
               </clipPath>
           </defs>
       </svg>
-
+      
       <!-- large scr -->
       <div class="absolute inset-0 flex justify-center hidden lg:flex items-center px-20">
           <div class="absolute flex items-start justify-start left-2 px-20 pt-52 grid grid-cols-1 lg:grid-cols-4">
@@ -2781,7 +2988,7 @@ Our trips are different from the usual ones - we take you to amazing places that
 
                   <p class="flex gap-2 justify-start items-center w-full pl-4 ">
                       <span class="hover-container-2">
-                          <a href="https://www.facebook.com/hisafarwallah/"
+                          <a href="https://www.facebook.com/hisafarwallah/" aria-label="Visit Safarwallah on Facebook"
                               target="_blank">
                               <span
                                   class="bg-white flex h-8 items-center justify-center rounded-full w-8 hover-text-2">
@@ -2804,7 +3011,7 @@ Our trips are different from the usual ones - we take you to amazing places that
                       </span>
                       <span class="hover-container-2">
                           <a href="https://www.linkedin.com/company/safarwallah/"
-                              target="_blank">
+                              target="_blank" aria-label="Visit Safarwallah on LinkedIn">
 
                               <span
                                   class="bg-white flex h-8 items-center justify-center rounded-full w-8 hover-text-2">
@@ -2827,7 +3034,7 @@ Our trips are different from the usual ones - we take you to amazing places that
                       </span>
                       <span class="hover-container-2">
                           <a href="https://www.youtube.com/@Safarwallah"
-                              target="_blank">
+                              target="_blank" aria-label="Visit Safarwallah on Youtube">
 
                               <span
                                   class="bg-white flex h-8 items-center justify-center hover-text-2 rounded-full w-8">
@@ -2849,7 +3056,7 @@ Our trips are different from the usual ones - we take you to amazing places that
                       </span>
                       <span class="hover-container-2">
                           <a href="https://www.instagram.com/hisafarwallah/"
-                              target="_blank">
+                              target="_blank" aria-label="Visit Safarwallah on Instagram">
 
                               <span
                                   class="bg-white flex h-8 items-center justify-center hover-text-2 rounded-full w-8">
@@ -2872,7 +3079,7 @@ Our trips are different from the usual ones - we take you to amazing places that
                       </span>
                       <span class="hover-container-2">
                           <a href="https://wa.me/917347004282"
-                              target="_blank">
+                              target="_blank" aria-label="chat Safarwallah on Whatsapp">
 
 
                               <span
@@ -3229,13 +3436,40 @@ Our trips are different from the usual ones - we take you to amazing places that
 
 </footer>
 
-<script src="/js/tawk-api.js"></script>
+<script src="/js/tawk-api.js" defer></script>
   <!--End of Tawk.to Script-->
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Safarwallah",
+  "alternateName": "WayfarerWings Travels LLP",
+  "url": "https://safarwallah.com/",
+  "logo": "https://www.safarwallah.com/src/images/logo/white-logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-73470-04282",
+    "contactType": "customer service",
+    "contactOption": ["TollFree", "HearingImpairedSupported"],
+    "areaServed": "IN",
+    "availableLanguage": ["en", "Hindi"]
+  },
+  "sameAs": [
+    "https://www.instagram.com/hisafarwallah/",
+    "https://www.facebook.com/hisafarwallah",
+    "https://in.linkedin.com/company/safarwallah",
+    "https://www.youtube.com/@hisafarwallah"
+  ]
+}
+</script>
 
+    
+    
+    
 </body>
-<script src="/js/home.js"></script>
-<script src="/js/scroll-to-top.js">// Get the button
+<script src="/js/home.js" defer></script>
+<script src="/js/scroll-to-top.js" defer>// Get the button
   
   </script>
 </html>
