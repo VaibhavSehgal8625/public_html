@@ -481,92 +481,39 @@
       
     </header>
 
-
+<style>
+  @media (max-width:1024px){
+    .responsive-banner{
+      object-fit: cover !important;
+    }
+  }
+</style>
  <!-- banner images and banner of home page  -->
 
- <div class=" flex  flex-col justify-center items-center overflow-hidden">
-    <img id="bannerImage" src="/src/images/holi/banner-image.webp"
-      class="w-screen h-screen object-cover opacity-100 transition-opacity duration-500" alt="banner image ">
-
-
-    <div class="absolute  flex  h-screen  overflow-x-hidden items-center justify-center w-full fade-in">
-      <div class="absolute flex flex-col items-center justify-center left-0 l px-10 top-1/2 bottom-0 right-0 ">
-
-
-        <p class="top-0 flex flex-col  bottom-0 left-10 absolute lg:text-7xl md:text-5xl sm:text-4xl text-3xl text-white" style="font-weight: 900 !important;">
-          
+<div class="flex flex-col justify-center items-center overflow-hidden relative">
+  <img id="bannerImage" src="/src/images/holi/Holi banner image.webp"
+    class="w-screen h-screen responsive-banner opacity-100 transition-opacity duration-500" alt="banner image">
+  
+  <div class="absolute flex h-screen bg-black-less-opacity overflow-x-hidden inset-0 w-full fade-in">
+    <div class="absolute flex flex-col text-center justify-center items-center inset-0 px-10">
+      <p class="flex flex-wrap gap-6 text-center justify-center items-center lg:text-7xl md:text-5xl sm:text-4xl text-3xl" style="font-weight: 900 !important;">
+        <span style="color: #FF5733;">Holi</span>
+        <span style="color: #33FF57;">And</span>
+        <span style="color: #3357FF;">Woman's</span>
+        <span style="color: #FF33A1;">Day</span>
+        <span style="color: #FF5733;">Special</span>
+        <span style="color: #33FF57;">Offer</span>
       </p>
+    </div>
+    <div class="absolute bottom-0 w-screen">
+      <img src="/src/images/holi/holi colors.png" class="object-cover w-screen" alt="">
+    </div>
+  </div>
+</div>
       
       
       
-     <style>
-      /* Container for the sliding text */
-.message {
-    display: inline-block; /* Align with surrounding text */
-    height: 1em; /* Matches the font size line height */
-    overflow: hidden;
-    vertical-align: middle;
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Styling for each word */
-.word {
-    position: absolute;
-    width: fit-content;
-    color: #f3f3f3;
-    background-color: #FF931F;
-    top: 0;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-/* Show only active word */
-.word.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-@media (max-width:767px){
-  .word{
-    transform: translateX(100%);
-    top: 40px;
-    left: 0px;
-    
-  }
-  .word.active{
-    transform: translateX(0);
-  }
-  .card-width{
-    width: 100% !important;
-  }
-}
-     </style>
-      
-    <script>
-      // JavaScript to cycle through the words with sliding effect
-const words = document.querySelectorAll('.message .word');
-let currentWordIndex = 0;
-
-function showNextWord() {
-    // Hide the current word
-    words[currentWordIndex].classList.remove('active');
-
-    // Move to the next word
-    currentWordIndex = (currentWordIndex + 1) % words.length;
-
-    // Show the next word
-    words[currentWordIndex].classList.add('active');
-}
-
-// Initialize first word visibility
-words[currentWordIndex].classList.add('active');
-
-// Change word every 2 seconds
-setInterval(showNextWord, 2000);
-
-    </script>
-      
-      
+     
         
         
     

@@ -499,6 +499,9 @@ animation: spin 1s linear infinite;
 0% { transform: rotate(0deg); }
 100% { transform: rotate(360deg); }
 }
+.es-header-btn{
+  display: none !important;
+}
 </style>
 
 <script defer>
@@ -1195,10 +1198,285 @@ setTimeout(() => {
               </div>
         </div>
 
+<!-- trending trips  -->
+<div class="carousel-wrapper overflow-x-hidden  lg:px-20 md:px-14 sm:px-10 px-6 py-10">
+  <div class="flex items-center justify-between">
+    <div class="fade-scroll overflow-x-hidden" data-animation="fade-scroll-down">
+      <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold  custom-font-heading" style="color: #FF931F;">Trending winter trips</p>
 
+      <p class="text-md responsivetext pb-12  text-gray-500">Discover Best Winter Trips In India
+      </p>
+    </div>
+
+    <div class="lg:flex md:flex hidden items-center justify-between gap-2 fade-scroll overflow-x-hidden" data-animation="fade-scroll-left" >
+      <button id="prevBtn2" class="bg-orange borderorange px-3 py-2 rounded-full" disabled>
+        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.79297 2L2.50008 7.29289C2.10955 7.68342 2.10955 8.31658 2.50008 8.70711L7.79297 14"
+            class="white-stroke" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <button id="nextBtn2" class="bg-orange borderorange px-3 py-2 rounded-full">
+        <svg width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.125 15.25L7.875 8.5L1.125 1.75" class="white-stroke" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+
+  <style>
+    .hoverbordercrouselitem:hover{
+      border: 1px solid #FF931F;
+    }
+    .icon-svg {
+    transition: transform 0.3s ease, stroke 0.3s ease; /* Smooth transition for rotation and color */
+  }
+  
+  a:hover .icon-svg {
+    stroke: #FF931F; /* Change stroke color to orange on hover */
+    transform: rotate(45deg); /* Rotate 30 degrees on hover */
+  }
+  
+  </style>
+  
+      <div class="px-6 overflow-hidden fade-scroll overflow-x-hidden" data-animation="fade-scroll-right">
+        <div class="carousel transition-transform duration-500 ease-in-out flex lg:space-x-2 md:space-x-2 sm:space-x-1 space-x-1 rounded-2xl" id="carousel2">
+          <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
+            <a href="/public/kedarkantha.html" class="">
+              <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
+                <img src="/src/images/special-offer/Kedarkantha trek.webp" alt="Safarwallah Kedarkantha budget Trek" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
+  
+                <!-- Gradient from bottom -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
+                  <div class="absolute top-2 right-2">
+                    <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
+                      ₹ 5,999/-  onwards
+                    </p>
+                  </div>
+                    <div class="absolute bottom-0 p-4 w-full">
+                        <p class="text-white font-bold text-lg mb-3"> Kedarkantha
+                        </p>
+                        <div class="flex flex-col gap-3">
+  
+                            <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
+                                        </svg>
+                                    </p>
+  
+                                    <p class="text-xs text-white font-bold">Sankri,Uttarakhand</p>
+                                </div>
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                                        </svg>
+                                    </p>
+  
+                                    <p class="text-xs text-white font-bold">5D/4N</p>
+                                </div>
+  
+                            </div>
+                            <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                                
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                                    </svg>
+                                    
+                                      
+                                  </p>
+  
+                                  <p class="text-xs text-white font-bold">15 Nov <span style="color: #FF931F;">+ 11 Batches</span></p>
+                              </div>
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"></path>
+                                    </svg>
+                                </p>
+  
+                                <p class="text-xs text-white font-bold">20 kms</p>
+                            </div>
+  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            
+          </div>
+          
+          
+          <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
+            <a href="/public/har-ki-dun.html" class="">
+              <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
+                <img src="/src/images/special-offer/Har ki Dun.webp" alt="Trek 1" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
+  
+                <!-- Gradient from bottom -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
+                  <div class="absolute top-2 right-2">
+                    <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
+                      ₹ 9,999/-  onwards
+                    </p>
+                  </div>
+                    <div class="absolute bottom-0 p-4 w-full">
+                        <p class="text-white font-bold text-lg mb-3"> Har Ki Dhun
+                        </p>
+                        <div class="flex flex-col gap-3">
+  
+                            <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
+                                        </svg>
+                                    </p>
+  
+                                    <p class="text-xs text-white font-bold">Garhwal,Uttarakhand</p>
+                                </div>
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                                        </svg>
+                                    </p>
+  
+                                    <p class="text-xs text-white font-bold">7D/6N</p>
+                                </div>
+  
+                            </div>
+                            <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                                
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                                    </svg>
+                                    
+                                      
+                                  </p>
+  
+                                  <p class="text-xs text-white font-bold">15 Nov <span style="color: #FF931F;">+ 11 Batches</span></p>
+                              </div>
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"></path>
+                                    </svg>
+                                </p>
+  
+                                <p class="text-xs text-white font-bold">44 kms</p>
+                            </div>
+  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            
+          </div>
+          <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
+            <a href="/public/hampta-pass.html" class="">
+              <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
+                <img src="/src/images/special-offer/Hampta Pass.webp" alt="Trek 1" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
+  
+                <!-- Gradient from bottom -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
+                  <div class="absolute top-2 right-2">
+                    <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
+                      ₹ 6,999/-  onwards
+                    </p>
+                  </div>
+                    <div class="absolute bottom-0 p-4 w-full">
+                        <p class="text-white font-bold text-lg mb-3"> Hampta Pass
+                        </p>
+                        <div class="flex flex-col gap-3">
+  
+                            <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
+                                        </svg>
+                                    </p>
+  
+                                    <p class="text-xs text-white font-bold">Kullu,Himachal</p>
+                                </div>
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                                        </svg>
+                                    </p>
+  
+                                    <p class="text-xs text-white font-bold">5D/4N</p>
+                                </div>
+  
+                            </div>
+                            <div class="lg:flex md:flex flex flexresponsivetext justify-between">
+                                
+                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                  <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                                    </svg>
+                                    
+                                      
+                                  </p>
+  
+                                  <p class="text-xs text-white font-bold">15 Nov <span style="color: #FF931F;">+ 11 Batches</span></p>
+                              </div>
+                              <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"></path>
+                                    </svg>
+                                </p>
+  
+                                <p class="text-xs text-white font-bold">18 kms</p>
+                            </div>
+  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            
+          </div>
+          
+          <!-- Repeat for other carousel items -->
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="w-full flex justify-center mt-6  items-center">
+          <a href="/public/all-treks.html" class="bg-orange borderorange text-white hover:bg-white flex gap-1 rounded-full py-2 px-4 hovertextorange">
+            <span>View All</span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" style="width: 20px;height:20px" class="icon-svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </span>
+          </a>
+          
+        </div>
+      </div>
+</div>
 <!-- Popular categories -->
 
-<div class="lg:px-20 md:px-14 sm:px-10 px-6 py-10 overflow-x-hidden fade-scroll" data-animation="fade-scroll-down">
+<!-- <div class="lg:px-20 md:px-14 sm:px-10 px-6 py-10 overflow-x-hidden fade-scroll" data-animation="fade-scroll-down">
   <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold custom-font-heading mb-6" style="color: #FF931F;">Safarwallah Adventure Services</p>
 
   <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col justify-between gap-3">
@@ -1254,7 +1532,7 @@ setTimeout(() => {
   </div>
 
   
-</div>
+</div> -->
 
 
   <!-- upcoming treks are here  -->
@@ -1921,282 +2199,7 @@ a:hover .icon-svg {
   
 
   
-  <!-- trending treks  -->
-  <div class="carousel-wrapper overflow-x-hidden  lg:px-20 md:px-14 sm:px-10 px-6 py-10">
-    <div class="flex items-center justify-between">
-      <div class="fade-scroll overflow-x-hidden" data-animation="fade-scroll-down">
-        <p class="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold  custom-font-heading" style="color: #FF931F;">Trending winter treks</p>
-
-        <p class="text-md responsivetext pb-12  text-gray-500">Discover Best Winter Treks In India
-        </p>
-      </div>
-
-      <div class="lg:flex md:flex hidden items-center justify-between gap-2 fade-scroll overflow-x-hidden" data-animation="fade-scroll-left" >
-        <button id="prevBtn2" class="bg-orange borderorange px-3 py-2 rounded-full" disabled>
-          <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.79297 2L2.50008 7.29289C2.10955 7.68342 2.10955 8.31658 2.50008 8.70711L7.79297 14"
-              class="white-stroke" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </button>
-        <button id="nextBtn2" class="bg-orange borderorange px-3 py-2 rounded-full">
-          <svg width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.125 15.25L7.875 8.5L1.125 1.75" class="white-stroke" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-
-    <style>
-      .hoverbordercrouselitem:hover{
-        border: 1px solid #FF931F;
-      }
-      .icon-svg {
-      transition: transform 0.3s ease, stroke 0.3s ease; /* Smooth transition for rotation and color */
-    }
-    
-    a:hover .icon-svg {
-      stroke: #FF931F; /* Change stroke color to orange on hover */
-      transform: rotate(45deg); /* Rotate 30 degrees on hover */
-    }
-    
-    </style>
-    
-        <div class="px-6 overflow-hidden fade-scroll overflow-x-hidden" data-animation="fade-scroll-right">
-          <div class="carousel transition-transform duration-500 ease-in-out flex lg:space-x-2 md:space-x-2 sm:space-x-1 space-x-1 rounded-2xl" id="carousel2">
-            <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
-              <a href="/public/kedarkantha.html" class="">
-                <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
-                  <img src="/src/images/special-offer/Kedarkantha trek.webp" alt="Safarwallah Kedarkantha budget Trek" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
-    
-                  <!-- Gradient from bottom -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
-                    <div class="absolute top-2 right-2">
-                      <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
-                        ₹ 5,999/-  onwards
-                      </p>
-                    </div>
-                      <div class="absolute bottom-0 p-4 w-full">
-                          <p class="text-white font-bold text-lg mb-3"> Kedarkantha
-                          </p>
-                          <div class="flex flex-col gap-3">
-    
-                              <div class="lg:flex md:flex flex flexresponsivetext justify-between">
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                      <p>
-                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
-                                          </svg>
-                                      </p>
-    
-                                      <p class="text-xs text-white font-bold">Sankri,Uttarakhand</p>
-                                  </div>
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                      <p>
-                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                          </svg>
-                                      </p>
-    
-                                      <p class="text-xs text-white font-bold">5D/4N</p>
-                                  </div>
-    
-                              </div>
-                              <div class="lg:flex md:flex flex flexresponsivetext justify-between">
-                                  
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                    <p>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                                      </svg>
-                                      
-                                        
-                                    </p>
-    
-                                    <p class="text-xs text-white font-bold">15 Nov <span style="color: #FF931F;">+ 11 Batches</span></p>
-                                </div>
-                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                  <p>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"></path>
-                                      </svg>
-                                  </p>
-    
-                                  <p class="text-xs text-white font-bold">20 kms</p>
-                              </div>
-    
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              </a>
-              
-              
-            </div>
-            
-            
-            <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
-              <a href="/public/har-ki-dun.html" class="">
-                <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
-                  <img src="/src/images/special-offer/Har ki Dun.webp" alt="Trek 1" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
-    
-                  <!-- Gradient from bottom -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
-                    <div class="absolute top-2 right-2">
-                      <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
-                        ₹ 9,999/-  onwards
-                      </p>
-                    </div>
-                      <div class="absolute bottom-0 p-4 w-full">
-                          <p class="text-white font-bold text-lg mb-3"> Har Ki Dhun
-                          </p>
-                          <div class="flex flex-col gap-3">
-    
-                              <div class="lg:flex md:flex flex flexresponsivetext justify-between">
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                      <p>
-                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
-                                          </svg>
-                                      </p>
-    
-                                      <p class="text-xs text-white font-bold">Garhwal,Uttarakhand</p>
-                                  </div>
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                      <p>
-                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                          </svg>
-                                      </p>
-    
-                                      <p class="text-xs text-white font-bold">7D/6N</p>
-                                  </div>
-    
-                              </div>
-                              <div class="lg:flex md:flex flex flexresponsivetext justify-between">
-                                  
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                    <p>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                                      </svg>
-                                      
-                                        
-                                    </p>
-    
-                                    <p class="text-xs text-white font-bold">15 Nov <span style="color: #FF931F;">+ 11 Batches</span></p>
-                                </div>
-                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                  <p>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"></path>
-                                      </svg>
-                                  </p>
-    
-                                  <p class="text-xs text-white font-bold">44 kms</p>
-                              </div>
-    
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              </a>
-              
-              
-            </div>
-            <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" style="width: 20%;">
-              <a href="/public/hampta-pass.html" class="">
-                <div class="carousel-item relative h-full mr-4" style="min-width: 200px;">
-                  <img src="/src/images/special-offer/Hampta Pass.webp" alt="Trek 1" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
-    
-                  <!-- Gradient from bottom -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
-                    <div class="absolute top-2 right-2">
-                      <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
-                        ₹ 6,999/-  onwards
-                      </p>
-                    </div>
-                      <div class="absolute bottom-0 p-4 w-full">
-                          <p class="text-white font-bold text-lg mb-3"> Hampta Pass
-                          </p>
-                          <div class="flex flex-col gap-3">
-    
-                              <div class="lg:flex md:flex flex flexresponsivetext justify-between">
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                      <p>
-                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path>
-                                          </svg>
-                                      </p>
-    
-                                      <p class="text-xs text-white font-bold">Kullu,Himachal</p>
-                                  </div>
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                      <p>
-                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-                                          </svg>
-                                      </p>
-    
-                                      <p class="text-xs text-white font-bold">5D/4N</p>
-                                  </div>
-    
-                              </div>
-                              <div class="lg:flex md:flex flex flexresponsivetext justify-between">
-                                  
-                                  <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                    <p>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                                      </svg>
-                                      
-                                        
-                                    </p>
-    
-                                    <p class="text-xs text-white font-bold">15 Nov <span style="color: #FF931F;">+ 11 Batches</span></p>
-                                </div>
-                                <div class="lg:flex md:flex flex flexresponsivetext justify-center items-center gap-3">
-                                  <p>
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="stroke:#FF931F;width:15px">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5"></path>
-                                      </svg>
-                                  </p>
-    
-                                  <p class="text-xs text-white font-bold">18 kms</p>
-                              </div>
-    
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              </a>
-              
-              
-            </div>
-            
-            <!-- Repeat for other carousel items -->
-          </div>
-          <!-- Navigation Buttons -->
-          <div class="w-full flex justify-center mt-6  items-center">
-            <a href="/public/all-treks.html" class="bg-orange borderorange text-white hover:bg-white flex gap-1 rounded-full py-2 px-4 hovertextorange">
-              <span>View All</span>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" style="width: 20px;height:20px" class="icon-svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </span>
-            </a>
-            
-          </div>
-        </div>
-  </div>
+  
 
 <style>
   .hover-effect-chooseus {
@@ -2451,7 +2454,7 @@ a:hover .icon-svg {
     <!-- <div id="reviewSectionCarousel" class="owl-carousel hidden flex flex-col owl-theme overflow-x-hidden fade-scroll" data-animation="fade-scroll-down"> -->
     <!-- Review items will be dynamically generated here by JavaScript -->
     <div class="" >
-      <div class="embedsocial-hashtag" data-ref="1cf9b4edaff51f1d4108c93adb35c405160cd8a1">  </div> <script defer> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script></div>
+      <div class="embedsocial-hashtag" data-ref="2779b4401254ae35494cc2d7a552c29dc5749a7f"> <a class="feed-powered-by-es feed-powered-by-es-slider-img es-widget-branding" href="https://embedsocial.com/blog/embed-google-reviews/" target="_blank" title="Embed Google reviews"> <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial"> <div class="es-widget-branding-text">Embed Google reviews</div> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
   </div>
   <style>
     .feed-powered-by-es{
