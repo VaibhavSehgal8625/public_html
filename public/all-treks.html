@@ -7,6 +7,13 @@
   Explore All Treks|Book Your Adventure Trek Package
 </title><meta name="description" content=" Plan your next adventure with Safarwallah! Explore all treks, book your adventure trek package, and embark on thrilling winter treks.">
 <meta name="keywords" content="All Treks, Upcoming Treks, Adventure Treks, Adventure Trekking, Best treks in India, Best Winter Treks, Winter Treks, winter treks of india, best budget trek packages in india "> 
+<meta property="og:title" content=  Explore All Treks|Book Your Adventure Trek Package>
+<meta property="og:site_name" content=Safarwallah>
+<meta property="og:url" content=https://safarwallah.com/public/all-treks.html>
+<meta property="og:description" content= Plan your next adventure with Safarwallah! Explore all treks, book your adventure trek package, and embark on thrilling winter treks.>
+<meta property="og:type" content=website>
+<meta property="og:image" content=https://safarwallah.com/src/images/navbar/navmobile.webp>
+
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
     <!-- Standard favicon -->
@@ -838,7 +845,6 @@ function toggleAccordion1(id) {
       </div>
   </div>
 </div>
-  <!-- footer home page  -->
 <footer class="relative overflow-x-hidden">
   <div class="relative w-full h-auto">
       <img src="/src/images/footer/footer.webp"
@@ -1078,6 +1084,10 @@ function toggleAccordion1(id) {
                           class="navcomponents">Cancellation Policy</a>
                       <a href="/public/environmental-policy.html"
                           class="navcomponents">Environmental Policy</a>
+                          <a href="/public/payment-policy.html"
+                          class="navcomponents">Payment Policy</a>
+                          <a href="/public/refund-policy.html"
+                          class="navcomponents">Refund Policy</a>
 
                   </div>
               </div>
@@ -1306,6 +1316,10 @@ function toggleAccordion1(id) {
                       <a href="/public/cancelattion.html"><span class="navcomponents">Cancellation Policy</span></a>
                       <a href="/public/environmental-policy.html"
                           class=" text-center"><span class="navcomponents">Environmental Policy</span></a>
+                          <a href="/public/payment-policy.html"
+                          class=" "><span class="navcomponents">Payment Policy</span></a>
+                          <a href="/public/refund-policy.html"
+                          class=" text-center"><span class="navcomponents">Refund Policy</span></a>
 
                   </div>
               </div>
@@ -1314,7 +1328,7 @@ function toggleAccordion1(id) {
                       style="font-size: 20px; line-height: 22px; font-weight: 700;">Contact us</p>
                   <div
                       class="flex flex-col gap-1 grid grid-cols-2 items-baseline justify-start md:gap-3 text-white w-full">
-                      <p class="flex flex-wrap gap-2 items-center">
+                      <p class="flex flex-row gap-2 items-center">
                           <span>
                               <svg width="16"
                                   height="12"
@@ -1331,7 +1345,7 @@ function toggleAccordion1(id) {
                               hello@safarwallah.com
                           </span>
                       </p>
-                      <p class="flex flex-wrap gap-2 items-center justify-center">
+                      <p class="flex flex-row gap-2 items-center justify-center">
                           <span>
                               <svg width="16"
                                   height="16"
@@ -1349,7 +1363,7 @@ function toggleAccordion1(id) {
                               +91 7347004282
                           </span>
                       </p>
-                      <p class="flex flex-wrap gap-2 items-center">
+                      <p class="flex flex-row gap-2 items-center w-full justify-center col-span-2">
                           <span>
                               <svg width="12"
                                   height="16"
@@ -1497,7 +1511,8 @@ document.querySelectorAll('.fade-scroll').forEach(el => {
   { name: "Chandrashilla", price: 6999, duration: "3D/2N", months: ["January", "February", "March", "April", "May", "June", "October", "November", "December"], state: "Uttarakhand", img: "/src/images/special-offer/Tungnath Trek.webp",location:"/public/tungnath.html",distance:"28 km" },
   { name: "Har ki Dun", price: 9999, duration: "7D/6N", months: ["April", "May", "June", "October", "September"], state: "Uttarakhand", img: "/src/images/special-offer/Har ki Dun.webp",location:"/public/har-ki-dun.html",distance:"44 km" },
   { name: "Hampta Pass", price: 6999, duration: "5D/4N", months: ["May", "June", "July", "August", "September", "October"], state: "Himachal", img: "/src/images/special-offer/Hampta Pass.webp",location:"/public/hampta-pass.html",distance:"18 km" },
-  { name: "Chadar", price: 26999, duration: "9D/8N", months: ["May", "June", "July", "August", "September", "October"], state: "Jammu and kashmir", img: "/src/images/special-offer/Chadar trek.webp",location:"/public/chadar-trek.html",distance:"62 km" }
+  { name: "Chadar", price: 26999, duration: "9D/8N", months: ["May", "June", "July", "August", "September", "October"], state: "Jammu and kashmir", img: "/src/images/special-offer/Chadar trek.webp",location:"/public/chadar.html",distance:"62 km" },
+  { name: "Nag Tibba", price: 3499, duration: "2D/1N", months: ["January","Feburary","March","May", "June", "July", "August", "September", "October","November","Decumber"], state: "Uttarakhand", img: "/src/images/special-offer/nag-tibba.webp",location:"/public/naag-tiba.html",distance:"16 km" }
 ];
 
 let selectedFilters = { price: '', duration: '', month: '', state: '', sort: '' };
