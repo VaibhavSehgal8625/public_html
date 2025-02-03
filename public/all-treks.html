@@ -1504,15 +1504,15 @@ document.querySelectorAll('.fade-scroll').forEach(el => {
 </style>  
 <script>
   const trekData = [
-  { name: "Kedarkantha", price: 5999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/special-offer/Kedarkantha trek.webp",location:"/public/kedarkantha.html",distance:"15 km" },
+  { name: "Kedarkantha", price: 5999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/card-images/kedarkantha.webp",location:"/public/kedarkantha.html",distance:"15 km" },
  
-  { name: "Dayara Bugyal", price: 5499, duration: "4D/3N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/special-offer/Dayara bugyal.webp",location:"/public/dyara-bugyal.html",distance:"15 km" },
-  { name: "Brahmatal", price: 5999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/special-offer/Brahmatal.webp",location:"/public/brahmatal.html",distance:"29 km" },
-  { name: "Chandrashilla", price: 6999, duration: "3D/2N", months: ["January", "February", "March", "April", "May", "June", "October", "November", "December"], state: "Uttarakhand", img: "/src/images/special-offer/Tungnath Trek.webp",location:"/public/tungnath.html",distance:"28 km" },
-  { name: "Har ki Dun", price: 9999, duration: "7D/6N", months: ["April", "May", "June", "October", "September"], state: "Uttarakhand", img: "/src/images/special-offer/Har ki Dun.webp",location:"/public/har-ki-dun.html",distance:"44 km" },
-  { name: "Hampta Pass", price: 6999, duration: "5D/4N", months: ["May", "June", "July", "August", "September", "October"], state: "Himachal", img: "/src/images/special-offer/Hampta Pass.webp",location:"/public/hampta-pass.html",distance:"18 km" },
-  { name: "Chadar", price: 26999, duration: "9D/8N", months: ["May", "June", "July", "August", "September", "October"], state: "Jammu and kashmir", img: "/src/images/special-offer/Chadar trek.webp",location:"/public/chadar.html",distance:"62 km" },
-  { name: "Nag Tibba", price: 3499, duration: "2D/1N", months: ["January","Feburary","March","May", "June", "July", "August", "September", "October","November","Decumber"], state: "Uttarakhand", img: "/src/images/special-offer/nag-tibba.webp",location:"/public/naag-tiba.html",distance:"16 km" }
+  { name: "Dayara Bugyal", price: 5499, duration: "4D/3N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/card-images/Dayara bugyal.webp",location:"/public/dyara-bugyal.html",distance:"15 km" },
+  { name: "Brahmatal", price: 5999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/card-images/brahmatal.webp",location:"/public/brahmatal.html",distance:"29 km" },
+  { name: "Chandrashilla", price: 6999, duration: "3D/2N", months: ["January", "February", "March", "April", "May", "June", "October", "November", "December"], state: "Uttarakhand", img: "/src/images/card-images/chandrashila.webp",location:"/public/tungnath.html",distance:"28 km" },
+  { name: "Har ki Dun", price: 9999, duration: "7D/6N", months: ["April", "May", "June", "October", "September"], state: "Uttarakhand", img: "/src/images/card-images/har ki dun.webp",location:"/public/har-ki-dun.html",distance:"44 km" },
+  { name: "Hampta Pass", price: 6999, duration: "5D/4N", months: ["May", "June", "July", "August", "September", "October"], state: "Himachal", img: "/src/images/card-images/hampta pass.webp",location:"/public/hampta-pass.html",distance:"18 km" },
+  { name: "Chadar", price: 26999, duration: "9D/8N", months: ["May", "June", "July", "August", "September", "October"], state: "Jammu and kashmir", img: "/src/images/card-images/chadar trek.webp",location:"/public/chadar.html",distance:"62 km" },
+  { name: "Nag Tibba", price: 3499, duration: "2D/1N", months: ["January","Feburary","March","May", "June", "July", "August", "September", "October","November","Decumber"], state: "Uttarakhand", img: "/src/images/card-images/naag-tibba.webp",location:"/public/naag-tiba.html",distance:"16 km" }
 ];
 
 let selectedFilters = { price: '', duration: '', month: '', state: '', sort: '' };
@@ -1567,15 +1567,14 @@ function filterAndDisplayTreks() {
       <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" >
               <a href="${trek.location}" class="">
                 <div class="carousel-item relative h-full " >
-                  <img src="${trek.img}" alt="${trek.name}" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
-    
-                  <!-- Gradient from bottom -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
-                    <div class="absolute top-2 right-2">
+                  <img src="${trek.img}" alt="${trek.name}" class="h-full w-full object-cover rounded-2xl " style="max-height: 400px;min-height: 400px;">
+                  <div class="absolute top-2 right-2">
                       <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
                         ₹ ${trek.price}/-  onwards
                       </p>
                     </div>
+                  <!-- Gradient from bottom -->
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent rounded-2xl" style="height: 130px;">                    
                       <div class="absolute bottom-0 p-4 w-full">
                           <p class="text-white font-bold text-lg mb-3">${trek.name}
                           </p>

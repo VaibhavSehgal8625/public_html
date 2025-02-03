@@ -1171,7 +1171,7 @@
                         <p class="flex flex-col justify-center text-xl items-center namesinpicture"
                             style="">
                             <span>
-                                ₹ 31,999/-
+                                ₹ 27,499/-
                             </span>
                             <span>
                                 Onwards
@@ -3078,7 +3078,7 @@
                                     <div id="date-available-popup" class="date-available-popup hidden" style="z-index: 1000 !important;">
                                         <ul class="overflow-auto" style="max-height: 300px;">
                                             
-                                                    <li class="date-option date-available-item">Available soon( <span
+                                                    <li class="date-option date-available-item">20 April( <span
                                                         class="text-green-500">Available</span> ) </li>
                                                         
                                                         
@@ -3092,8 +3092,8 @@
                                     <div>
                                         <p class="text-sm mt-6">Please Select A Tour Package</p>
                                         <div class="tour-packages gap-2 px-2 flex-wrap flex mt-3">
-                                            <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="4X4 Vehicle (Isuzu, Hilux, Jimny) - ₹31,999" data-price="31499">4X4 Vehicle (Isuzu, Hilux, Jimny) - ₹31,999</div>
-                                            <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="4X4 Vehicle (Fortuner) - ₹34,999" data-price="34999">4X4 Vehicle (Fortuner) - ₹34,999</div>
+                                            <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Royal Enfield Himalayan 411 - ₹27,500" data-price="31499">Royal Enfield Himalayan 411 - ₹27,500</div>
+                                            <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="4X4 Vehicle (Fortuner) - ₹34,999" data-price="34999">4X4 Vehicle (Fortuner) - ₹34,999</div> -->
                                             <!-- <div class="tour-package rounded-lg text-md border" style="width: fit-content;" data-package="Dehradun to Dehradun" data-price="7999">Dehradun to Dehradun - ₹8,499</div> -->
                                         </div>
                                     </div>
@@ -3101,8 +3101,8 @@
                                     <div id="sharing-section" class="">
                                         <p class="text-sm mt-6">Please Select A Sharing Option</p>
                                         <div class="sharing-options gap-2 px-2 flex-wrap flex mt-3">
-                                            <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="triple">Triple/Quad Sharing</div>
-                                            <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="double">Double Sharing</div>
+                                            <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="triple">Double Sharing</div>
+                                            <div class="sharing-option rounded-lg text-md border cursor-pointer" style="width: fit-content;padding: 10px;" data-sharing="double">Solo </div>
                                         </div>
                                     </div>
                                     
@@ -3133,7 +3133,7 @@
                                             <p class="text-xl ">Price Total </p>
                                             <div id="total-price"
                                                 style="color: #FF7A1F;"
-                                                class="font-bold">₹31,999/-</div>
+                                                class="font-bold">₹27,500/-</div>
                                         </div>
     
                                         <div class="flex items-center justify-center">
@@ -3314,14 +3314,13 @@
         let selectedSharing = null;
         let adultCount = 1;
         let childCount = 0;
-        let basePrice = 31999;
+        let basePrice = 27499;
         let selectedDate = null;
         let isPartialPayment = false;
         let isslotpayment = false;
     
         const packages = {
-            "4X4 Vehicle (Isuzu, Hilux, Jimny) - ₹31,999": { triple: 31999, double: 34999 },
-            "4X4 Vehicle (Fortuner) - ₹34,999": { triple: 33499, double: 36499 }
+            "Royal Enfield Himalayan 411 - ₹27,500": { triple: 27499, double: 32499 }
             
         };
     
@@ -3465,7 +3464,7 @@
             amount: Math.round(finalAmount * 100), // Convert to paise
             currency: "INR",
             name: "Safarwallah",
-            description: `4x4 Spiti - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
+            description: `Ladakh-bike-umling-la - ${selectedPackage} (${selectedSharing}), Batch: ${selectedDate}, Adults: ${adultCount}, Children: ${childCount}`,
             image: "https://drive.google.com/file/d/1srOLjBOzjRORsPI02rcrRnBgkGJwVVE0/view?usp=sharing",
             handler: function (response) {
                 alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
@@ -3601,15 +3600,10 @@
     
                                     // Define inclusions for each tour package
                                     const inclusionsData = {
-                                        "4X4 Vehicle (Isuzu, Hilux, Jimny) - ₹31,999": {
-                                            route: "4X4 Vehicle (Isuzu, Hilux, Jimny)",
-                                            triple: "₹31,999",
-                                            double: "₹34,999"
-                                        },
-                                        "4X4 Vehicle (Fortuner) - ₹34,999": {
-                                            route: "4X4 Vehicle (Fortuner)",
-                                            triple: "₹33,499",
-                                            double: "₹36,499"
+                                        "Royal Enfield Himalayan 411 - ₹27,500": {
+                                            route: "Royal Enfield Himalayan 411 - ₹27,500",
+                                            triple: "₹27,499",
+                                            double: "₹32,499"
                                         }
                                         
                                         // "Dehradun to Dehradun - ₹8,499": {
@@ -3621,7 +3615,7 @@
     
                                     // Function to set inclusions as a table based on package name
                                     const setInclusions = (packageName) => {
-                                        const inclusions = inclusionsData[packageName] || inclusionsData["4X4 Vehicle (Isuzu, Hilux, Jimny) - ₹31,999"];
+                                        const inclusions = inclusionsData[packageName] || inclusionsData["Royal Enfield Himalayan 411 - ₹27,500"];
     
                                         // Create a table with headers
                                         const tableHTML = `
@@ -3648,7 +3642,7 @@
                                     };
     
                                     // Set default inclusions on page load
-                                    setInclusions("4X4 Vehicle (Isuzu, Hilux, Jimny) - ₹31,999");
+                                    setInclusions("Royal Enfield Himalayan 411 - ₹27,500");
     
                                     tourPackageElements.forEach(packageElement => {
                                         packageElement.addEventListener('click', () => {
@@ -3787,52 +3781,77 @@
                                    
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                        <p><strong>Accommodation:</strong>Accommodation on Double/ Triple sharing basis in Guest house/ hotels/ Homestays
-                                            (1N in Sangla/Chitkul, 1N in Tabo, 3N in Kaza & 1N in Kalpa)
+                                        <p> Meals on MAP Plan (Dinner and Breakfast) starting with Dinner on Day 1.
+
                                             </p>
                                     </li>
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                        <p><strong>Accommodation:</strong> Accommodation on MAPAI basis (Total 12 Meals - 1 Meal on Day 2 (D) + 2 Meals on
-                                            Day 3 (B+D) + 2 Meals on Day 4 (B+D) + 2 Meals on Day 5 (B+D) + 2 Meals on Day
-                                            6 (B+D) + 2 Meals on Day 7 (B+D) + 1 Meal on Day 8 (B)
+                                        <p>Rooms are provided on a double occupancy basis for couples, with no 
+                                            additional charges. Triple occupancy is the default arrangement, and 
+                                            extra charges will apply for special requests on single and double 
+                                            sharing.
                                             </p>
                                     </li>
                                     <div class="hidden read-more-content">
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            <p> All sightseeing as mentioned in program </p>
+                                            <p> Royal Enfield Himalayan 411 ( by default ) / Optional Himalayan 450 
+                                                (on an additional cost) </p>
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            <p>Volvo transfers from Delhi to Shimla & Shimla to Delhi
+                                            <p> Biking Gears (Jackets, Knee, and Elbow Guard)
+
                                             </p>
 
                                         </li>
                                         
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            4X4 from Shimla to Shimla
+                                            01 Mechanic, 01 Trip captain, 01 Marshall and 01 Backup Vehicle specifically 
+for luggage.
                                         </li>
                                         
                                         
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            Driver’s allowance, toll tax, parking fee, fuel 
+                                            Fuel for the entire journey (As per the itinerary).
+
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            First aid with oxygen cylinder 
+                                            Standard-size Helmets (suggest you bring your own).
+ 
  
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            All inner line permits
+                                            Inner-Line Permit for all restricted areas.
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
-                                            Trip captain throughout the trip
+                                            Wildlife Fee and Environmental Fee.
+
                                         </li>
+                                        <li class="relative pl-6">
+                                            <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
+                                            Sightseeing as per itinerary.
+
+
+                                        </li>
+                                        <li class="relative pl-6">
+                                            <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
+                                            Oxygen cylinder and basic first-aid during the tour.
+
+
+                                        </li>
+                                        <li class="relative pl-6">
+                                            <span class="absolute left-0 top-1 text-green-500 text-xl">•</span>
+                                            Airport Pickup and Drop (At a common time for the group).
+
+                                        </li>
+
                                     </div>
                                 </ul>
                             </div>
@@ -3843,13 +3862,13 @@
                                 <ul class="list-none space-y-2">
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                        <strong>Any air /train charges to reach Delhi.
-                                        </strong>
+                                        Any meals/services not mentioned in the inclusions
+
                                     </li>
                                     <li class="relative pl-6">
                                         <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                        <strong>5% GST
-                                        </strong>
+                                        Transport apart from the itinerary
+
                                     </li>
 
                                     
@@ -3857,18 +3876,21 @@
                                     <div class="hidden read-more-content">
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Lunch for entire journey 
+                                            <p> Any charges for entry tickets and video cameras, still cameras, etc.
+
                                             </p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Any extra stay/meals apart from the ones mentioned in the inclusions. </p>
+                                            <p> Alcohol, soft drinks, mineral water, beverages, etc.
+                                            </p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Heaters in the room 
+                                            <p> Personal expenses like tips, telephone calls, laundry, etc.
+
 
                                                 </p>
 
@@ -3876,55 +3898,49 @@
 
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p><strong>Any entry fees, extra expenses for optional activities or tickets, unless quoted in
-                                                inclusions, like monument fees.</strong> </p>
+                                            <p><strong>Any costs arising out of unforeseen circumstances like landslides, road 
+                                                blocks, bad weather, etc.</strong> </p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Beverages</p>
+                                            <p> Travel Insurance
+                                            </p>
 
                                             
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Personal expenses</p>
+                                            <p> Any bonfire expenses
+                                            </p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Travel insurance / Medical insurance 
+                                            <p> Room Service/Restaurant Expenses
+
                                                  </p>
 
                                         </li>
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p><strong>Any tips for guide / driver / hotel & restaurant staff</strong></p>
+                                            <p><strong> Security Deposit for Bike - INR 8000/bike (refundable)
+                                            </strong></p>
 
                                         </li>
                                         
                                         <li class="relative pl-6">
                                             <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Cost incurred or expenses arising due to natural calamities, strikes, breakdowns and
-                                                any other </p>
-
-                                        </li>
-                                        <li class="relative pl-6">
-                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Any itinerary extension will be subject to additional cost </p>
-
-                                        </li>
-                                        <li class="relative pl-6">
-                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Unforeseen calamities beyond the control of Safarwallah </p>
-
-                                        </li>
-                                        <li class="relative pl-6">
-                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
-                                            <p>Any items not mentioned in inclusions section
+                                            <p> Anything not mentioned under 'inclusions'
                                             </p>
 
                                         </li>
+                                        <li class="relative pl-6">
+                                            <span class="absolute left-0 top-1 text-red-500 text-xl">•</span>
+                                            <p>5% GST </p>
+
+                                        </li>
+                                        
                                     </div>
                                 </ul>
                             </div>

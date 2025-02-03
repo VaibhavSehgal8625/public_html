@@ -1506,10 +1506,10 @@ document.querySelectorAll('.fade-scroll').forEach(el => {
 </style>  
 <script>
   const trekData = [
-  { name: "Kashmir", price: 17999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Jammu & Kashmir", img: "/src/images/special-offer/Kashmir Trip.webp",location:"/public/kashmir.html" },
-  { name: "Kerala", price: 11999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Kerala", img: "/src/images/special-offer/kerala thumbnail.webp",location:"/public/kerala.html" },
-  { name: "Manali", price: 9499, duration: "4D/3N", months: ["November", "December", "January", "February", "March"], state: "Himachal Pradesh", img: "/src/images/special-offer/Manali.webp",location:"/public/Manali.html" },
-  { name: "Mcleodganj", price: 9999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Himachal Pradesh", img: "/src/images/special-offer/Mcleodganj.webp",location:"/public/mcleodganj.html" }
+  { name: "Kashmir", price: 17999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Jammu & Kashmir", img: "/src/images/card-images/kashmir.webp",location:"/public/kashmir.html" },
+  { name: "Kerala", price: 11999, duration: "6D/5N", months: ["November", "December", "January", "February", "March"], state: "Kerala", img: "/src/images/card-images/kerala.webp",location:"/public/kerala.html" },
+  { name: "Manali", price: 9499, duration: "4D/3N", months: ["November", "December", "January", "February", "March"], state: "Himachal Pradesh", img: "/src/images/card-images/manali.webp",location:"/public/Manali.html" },
+  { name: "Mcleodganj", price: 9999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Himachal Pradesh", img: "/src/images/card-images/mcleodganj.webp",location:"/public/mcleodganj.html" }
   
 ];
 
@@ -1565,15 +1565,15 @@ function filterAndDisplayTreks() {
       <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" >
               <a href="${trek.location}" class="">
                 <div class="carousel-item relative h-full " >
-                  <img src="${trek.img}" alt="${trek.name}" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
-    
-                  <!-- Gradient from bottom -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
-                    <div class="absolute top-2 right-2">
+                  <img src="${trek.img}" alt="${trek.name}" class="h-full w-full object-cover rounded-2xl " style="max-height: 400px;min-height: 400px;">
+                  <div class="absolute top-2 right-2">
                       <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
                         ₹ ${trek.price}/-  onwards
                       </p>
                     </div>
+                  <!-- Gradient from bottom -->
+<!-- Gradient from bottom -->
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent rounded-2xl" style="height: 130px;">                        
                       <div class="absolute bottom-0 p-4 w-full">
                           <p class="text-white font-bold text-lg mb-3">${trek.name}
                           </p>

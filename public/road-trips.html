@@ -1498,9 +1498,11 @@ document.querySelectorAll('.fade-scroll').forEach(el => {
 </style>  
 <script>
   const trekData = [
-  { name: "Winter Spiti", price: 20999, duration: "8D/7N", months: ["November", "December", "January", "February", "March"], state: "Himchal Pradesh", img: "/src/images/special-offer/Spiti.webp",location:"/public/winter-spiti.html" },
-  { name: "Niti Valley", price: 20999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/niti-valley/thumbnail_11zon.webp",location:"/public/niti-valley.html" },
-  { name: "Spiti 4x4 Roadtrips", price: 31999, duration: "9D/8N", months: ["November", "December", "January", "February", "March"], state: "Himchal Pradesh", img: "/src/images/special-offer/spiti-4x4.webp",location:"/public/spiti_4x4.html" },
+  { name: "Winter Spiti", price: 20999, duration: "8D/7N", months: ["November", "December", "January", "February", "March"], state: "Himchal Pradesh", img: "/src/images/card-images/spiti road trip.webp",location:"/public/winter-spiti.html" },
+  { name: "Niti Valley", price: 20999, duration: "5D/4N", months: ["November", "December", "January", "February", "March"], state: "Uttarakhand", img: "/src/images/card-images/niti valley.webp",location:"/public/niti-valley.html" },
+  { name: "Spiti 4x4 Roadtrips", price: 31999, duration: "9D/8N", months: ["November", "December", "January", "February", "March"], state: "Himchal Pradesh", img: "/src/images/card-images/spiti 4x4.webp",location:"/public/spiti_4x4.html" },
+  { name: "Ladakh Bike Trip (Turtuk Village)", price: 22499, duration: "7D/6N", months: ["November", "December", "January", "February", "March"], state: "Leh", img: "/src/images/card-images/ladakh turtuk village.webp",location:"/public/ladakh-bike-tour-via-turtuk.html" },
+  { name: "Ladakh Bike Trip (Umlingla Pass)", price: 27499, duration: "8D/7N", months: ["November", "December", "January", "February", "March"], state: "Leh", img: "/src/images/card-images/ladakh umling la.webp",location:"/public/ladakh-bike-tour-World-Highest-motorable-road-Umlingla-Pass.html" },
   
   
 ];
@@ -1557,15 +1559,15 @@ function filterAndDisplayTreks() {
       <div class="carousel-item crouselresponsivewidth rounded-2xl w-full" >
               <a href="${trek.location}" class="">
                 <div class="carousel-item relative h-full " >
-                  <img src="${trek.img}" alt="${trek.name}" class="h-full w-full object-cover rounded-2xl " style="max-height: 500px;min-height: 400px;">
-    
-                  <!-- Gradient from bottom -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl">
-                    <div class="absolute top-2 right-2">
+                  <img src="${trek.img}" alt="${trek.name}" class="h-full w-full object-cover rounded-2xl " style="max-height: 400px;min-height: 400px;">
+                  <div class="absolute top-2 right-2">
                       <p class="bg-orange text-white rounded-full px-2 py-1 text-xs">
                         ₹ ${trek.price}/-  onwards
                       </p>
                     </div>
+                  <!-- Gradient from bottom -->
+<!-- Gradient from bottom -->
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent rounded-2xl" style="height: 130px;">                         
                       <div class="absolute bottom-0 p-4 w-full">
                           <p class="text-white font-bold text-lg mb-3">${trek.name}
                           </p>
