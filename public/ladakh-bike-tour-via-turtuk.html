@@ -1144,7 +1144,7 @@
                         class="border-r border-white duration-300 flex flex-col  h-16 hover:scale-110 items-center justify-center lg:h-32 px-2 sm:h-24 transform transition-all w-full">
                         <p class=" font-normal  namesinpicture text-2xl"
                             style="color: #FF931F;">
-                            Aptitude
+                            Altitude
 
                         </p>
                         <p class="font-normal  namesinpicture text-xl"
@@ -1441,15 +1441,15 @@
                             <!-- Popup for Image -->
 
                             
-                            <!-- <div class="mt-6" style="width: fit-content;">
-                                <a href="/src/pdf/spiti/SPITI 4X4 EXPEDITION_compressed.pdf"
+                            <div class="mt-6" style="width: fit-content;">
+                                <a href="/src/pdf/bike-trips/Leh-Leh with Turtuk_compressed.pdf"
                                     class="btn btn-1 hover-filled-slide-up" style="margin: 0px !important;">
                                     <span class="flex px-4 py-4 text-md">Download Itinerary</span>
                                 </a>
                                 
         
         
-                            </div> -->
+                            </div>
 
                         </div>
                     </div>
@@ -4593,12 +4593,12 @@ for luggage.
                     <div id="imagePopup"
                         class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 hidden"
                         style="z-index: 10000;">
-                        <div class="flex h-full items-center justify-center relative">
+                        <div class="flex h-full items-center justify-center relative w-full" style="height: 600px;max-width: 800px;">
                             <img id="popupImage"
                                 src=""
                                 alt="Popup Image"
-                                class="flex items-center justify-center rounded-lg"
-                                style="width: 70%;">
+                                class="flex items-center justify-center rounded-lg "
+                                style="width: 70%; ">
 
                             <!-- Close Popup Button -->
                             <a id="closePopup"
@@ -4627,119 +4627,163 @@ for luggage.
                 const totalItems = carouselItems.length;
                 let currentIndex = 0;
                 const autoSlideInterval = 3000; // Change image every 3 seconds
-
+            
                 // Variables for Popup
                 let currentPopupIndex = 0;
-
                 const popupImage = document.getElementById('popupImage');
                 const imagePopup = document.getElementById('imagePopup');
                 const nextPopupBtn = document.getElementById('nextPopup');
                 const prevPopupBtn = document.getElementById('prevPopup');
                 const closePopupBtn = document.getElementById('closePopup');
-
+            
                 // Clone the first image and append it to the end to create a seamless loop
                 const firstImageClone = carouselItems[0].cloneNode(true);
                 carouselInner.appendChild(firstImageClone);
-
+            
                 // Function to open the popup
                 function openPopup(index) {
                     currentPopupIndex = index;
-                    popupImage.src = carouselItems[currentPopupIndex].src; // Set the clicked image in popup
+                    popupImage.src = carouselItems[currentPopupIndex].src;
                     imagePopup.classList.remove('hidden');
                 }
-
+            
                 // Function to close the popup
                 function closePopup() {
                     imagePopup.classList.add('hidden');
                 }
-
+            
                 // Function to show the next image in the popup
                 function showNextPopupImage() {
-                    currentPopupIndex++;
-                    if (currentPopupIndex >= totalItems) {
-                        currentPopupIndex = 0;
-                    }
+                    currentPopupIndex = (currentPopupIndex + 1) % totalItems;
                     popupImage.src = carouselItems[currentPopupIndex].src;
                 }
-
+            
                 // Function to show the previous image in the popup
                 function showPrevPopupImage() {
-                    currentPopupIndex--;
-                    if (currentPopupIndex < 0) {
-                        currentPopupIndex = totalItems - 1;
-                    }
+                    currentPopupIndex = (currentPopupIndex - 1 + totalItems) % totalItems;
                     popupImage.src = carouselItems[currentPopupIndex].src;
                 }
-
+            
                 // Add event listeners for next/prev buttons in the popup
                 nextPopupBtn.addEventListener('click', showNextPopupImage);
                 prevPopupBtn.addEventListener('click', showPrevPopupImage);
                 closePopupBtn.addEventListener('click', closePopup);
-
+            
                 // Function to update carousel position
                 function updateCarouselGallery() {
                     const itemWidth = carouselItems[0].clientWidth;
-                    const translateX = -currentIndex * itemWidth; // Move by the exact width
-                    carouselInner.style.transition = 'transform 0.5s ease'; // Smooth transition
+                    const translateX = -currentIndex * itemWidth;
+                    carouselInner.style.transition = 'transform 0.5s ease';
                     carouselInner.style.transform = `translateX(${translateX}px)`;
-
-                    // When it reaches the last (cloned) image, reset back to the first image
+            
+                    // Reset position when looping back to the start
                     if (currentIndex === totalItems) {
                         setTimeout(() => {
-                            carouselInner.style.transition = 'none'; // Disable transition for instant reset
-                            currentIndex = 0; // Reset index to first image
-                            const resetTranslateX = -currentIndex * itemWidth;
-                            carouselInner.style.transform = `translateX(${resetTranslateX}px)`; // Move to first image
-                        }, 500); // Delay allows smooth transition before resetting
+                            carouselInner.style.transition = 'none';
+                            currentIndex = 0;
+                            carouselInner.style.transform = `translateX(0px)`;
+                        }, 500);
                     }
                 }
-
+            
                 // Auto-slide functionality
                 let slideInterval = setInterval(() => {
-                    currentIndex++;
-                    if (currentIndex > totalItems) {
-                        currentIndex = 0;
-                    }
+                    currentIndex = (currentIndex + 1) % (totalItems + 1);
                     updateCarouselGallery();
                 }, autoSlideInterval);
-
+            
                 // Button event listeners for main carousel
                 document.getElementById('nextBtn').addEventListener('click', () => {
-                    currentIndex++;
-                    if (currentIndex > totalItems) {
-                        currentIndex = 0;
-                    }
+                    currentIndex = (currentIndex + 1) % (totalItems + 1);
                     updateCarouselGallery();
                     resetAutoSlideGallery();
                 });
-
+            
                 document.getElementById('prevBtn').addEventListener('click', () => {
-                    currentIndex--;
-                    if (currentIndex < 0) {
-                        currentIndex = totalItems - 1;
-                    }
+                    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
                     updateCarouselGallery();
                     resetAutoSlideGallery();
                 });
-
+            
                 // Reset auto-slide functionality
                 function resetAutoSlideGallery() {
                     clearInterval(slideInterval);
                     slideInterval = setInterval(() => {
-                        currentIndex++;
-                        if (currentIndex > totalItems) {
-                            currentIndex = 0;
-                        }
+                        currentIndex = (currentIndex + 1) % (totalItems + 1);
                         updateCarouselGallery();
                     }, autoSlideInterval);
                 }
-
+            
                 // Add event listeners for each image to open the popup when clicked
                 carouselItems.forEach((item, index) => {
                     item.addEventListener('click', () => {
                         openPopup(index);
                     });
                 });
+            
+                // Keyboard navigation for both carousel and popup
+                document.addEventListener('keydown', (event) => {
+                    if (!imagePopup.classList.contains('hidden')) {
+                        if (event.key === 'ArrowRight') {
+                            showNextPopupImage();
+                        } else if (event.key === 'ArrowLeft') {
+                            showPrevPopupImage();
+                        }
+                    } else {
+                        if (event.key === 'ArrowRight') {
+                            currentIndex = (currentIndex + 1) % (totalItems + 1);
+                            updateCarouselGallery();
+                            resetAutoSlideGallery();
+                        } else if (event.key === 'ArrowLeft') {
+                            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                            updateCarouselGallery();
+                            resetAutoSlideGallery();
+                        }
+                    }
+                });
+            
+                // Swipe functionality for mobile
+                let touchStartX = 0;
+                let touchEndX = 0;
+            
+                function handleTouchStart(event) {
+                    touchStartX = event.touches[0].clientX;
+                }
+            
+                function handleTouchMove(event) {
+                    touchEndX = event.touches[0].clientX;
+                }
+            
+                function handleTouchEnd() {
+                    if (touchStartX - touchEndX > 50) {
+                        // Swipe left (next)
+                        if (!imagePopup.classList.contains('hidden')) {
+                            showNextPopupImage();
+                        } else {
+                            currentIndex = (currentIndex + 1) % (totalItems + 1);
+                            updateCarouselGallery();
+                            resetAutoSlideGallery();
+                        }
+                    } else if (touchEndX - touchStartX > 50) {
+                        // Swipe right (previous)
+                        if (!imagePopup.classList.contains('hidden')) {
+                            showPrevPopupImage();
+                        } else {
+                            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                            updateCarouselGallery();
+                            resetAutoSlideGallery();
+                        }
+                    }
+                }
+            
+                // Add touch event listeners
+                carouselInner.addEventListener('touchstart', handleTouchStart);
+                carouselInner.addEventListener('touchmove', handleTouchMove);
+                carouselInner.addEventListener('touchend', handleTouchEnd);
+            
+                imagePopup.addEventListener('touchstart', handleTouchStart);
+                imagePopup.addEventListener('touchmove', handleTouchMove);
+                imagePopup.addEventListener('touchend', handleTouchEnd);
             </script>
 
 
