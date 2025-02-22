@@ -957,48 +957,7 @@
     </header>
 
 
-    <!-- Page Loader -->
-    <div class="page-loader w-screen h-screen bg-white fixed inset-0 flex items-center justify-center z-50"
-        style="z-index: 999999999999 !important;">
-        <svg id="svg-sprite" style="display: none;">
-            <symbol id="paw" viewBox="0 0 249 209.32">
-                <ellipse cx="27.917" cy="106.333" stroke-width="0" rx="27.917" ry="35.833" />
-                <ellipse cx="84.75" cy="47.749" stroke-width="0" rx="34.75" ry="47.751" />
-                <ellipse cx="162" cy="47.749" stroke-width="0" rx="34.75" ry="47.751" />
-                <ellipse cx="221.083" cy="106.333" stroke-width="0" rx="27.917" ry="35.833" />
-                <path stroke-width="0"
-                    d="M43.98 165.39s9.76-63.072 76.838-64.574c0 0 71.082-6.758 83.096 70.33 0 0 2.586 19.855-12.54 31.855 0 0-15.75 17.75-43.75-6.25 0 0-7.124-8.374-24.624-7.874 0 0-12.75-.125-21.5 6.625 0 0-16.375 18.376-37.75 12.75 0 0-28.29-7.72-19.77-42.86z" />
-            </symbol>
-        </svg>
-
-        <div class="ajax-loader">
-            <div class="paw"><svg class="icon">
-                    <use xlink:href="#paw" />
-                </svg></div>
-            <div class="paw"><svg class="icon">
-                    <use xlink:href="#paw" />
-                </svg></div>
-            <div class="paw"><svg class="icon">
-                    <use xlink:href="#paw" />
-                </svg></div>
-            <div class="paw"><svg class="icon">
-                    <use xlink:href="#paw" />
-                </svg></div>
-            <div class="paw"><svg class="icon">
-                    <use xlink:href="#paw" />
-                </svg></div>
-            <div class="paw"><svg class="icon">
-                    <use xlink:href="#paw" />
-                </svg></div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(() => {
-                document.querySelector(".page-loader").style.display = "none"; // Hide the loader after 2 seconds
-            }, 1500);
-        });
-    </script>
+    
 
     <div id="booking-popup" class="booking-popup rounded-2xl">
         <div class="booking-popup-content py-4 px-4">
@@ -1112,9 +1071,99 @@
             });
         });
     </script>
-
+    <style>
+        .blinking-cursor::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.8s infinite;
+        }
+    
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    
+        /* Page Loader */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+    
+        /* Fade-in effect for travel icons */
+        .travel-icon {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+    
+        .travel-icon:nth-child(1) { animation-delay: 0.5s; }
+        .travel-icon:nth-child(2) { animation-delay: 1s; }
+        .travel-icon:nth-child(3) { animation-delay: 1.5s; }
+    
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    
+        /* Hide main content initially */
+        #main-content {
+            display: none;
+        }
+    </style>
+    
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <!-- Typing Effect -->
+        <div class="text-4xl md:text-7xl font-bold">
+            <span id="typing-text" class="blinking-cursor"></span>
+        </div>
+    
+        <!-- Travel Icons -->
+        <div class="flex space-x-6 mt-4 text-4xl">
+            <span class="travel-icon">✈️</span> <!-- Airplane -->
+            <span class="travel-icon">📍</span> <!-- Location Pin -->
+            <span class="travel-icon">🎒</span> <!-- Backpack -->
+        </div>
+    </div>
+    
+    
+    
+    <script>
+        const text = "सफ़र with Safarwallah";
+        let index = 0;
+        const speed = 50;
+        const typingTextElement = document.getElementById("typing-text");
+    
+        function typeEffect() {
+            if (index < text.length) {
+                let currentText = text.slice(0, index + 1);
+                if (currentText.includes("Safarwallah")) {
+                    currentText = currentText.replace("Safarwallah", `<span style="color: #FF931F;">Safarwallah</span>`);
+                }
+                typingTextElement.innerHTML = currentText;
+                index++;
+                setTimeout(typeEffect, speed);
+            }
+        }
+    
+        window.onload = () => {
+            typeEffect();
+            setTimeout(() => {
+                document.querySelector(".page-loader").style.display = "none"; // Hide the loader
+                document.getElementById("main-content").style.display = "block"; // Show the main content
+            }, 3000); // Adjust the delay as needed
+        };
+    </script>
     <!-- page content  -->
-    <div class="overflow-x-hidden">
+    <div class="overflow-x-hidden" id="main-content">
         <div class=" flex content flex-col justify-center items-center overflow-hidden">
             <img src="/src/images/meghalaya/banner-image.webp" class="w-full h-screen object-cover"
                 style="min-width: 1024px;" alt="Description of the image">

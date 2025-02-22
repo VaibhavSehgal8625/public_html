@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Typing Loader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .blinking-cursor::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        
+
+        
+
+        /* Travel Icons Animation */
+        .travel-icon {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .travel-icon:nth-child(1) { animation-delay: 0.5s; }
+        .travel-icon:nth-child(2) { animation-delay: 1s; }
+        .travel-icon:nth-child(3) { animation-delay: 1.5s; }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-white text-black relative overflow-hidden">
+
+    <!-- Typing Effect -->
+    <div class="text-3xl md:text-5xl font-bold">
+        <span id="typing-text" class="blinking-cursor"></span>
+    </div>
+
+    <!-- Travel Icons -->
+    <div class="flex space-x-6 mt-4 text-4xl">
+        <span class="travel-icon">✈️</span> <!-- Airplane -->
+        <span class="travel-icon">📍</span> <!-- Location Pin -->
+        <span class="travel-icon">🎒</span> <!-- Backpack -->
+    </div>
+
+    <!-- Road -->
+
+    <!-- Moving Car -->
+
+    <script>
+        const text = "Safar with Safarwallah";
+        let index = 0;
+        const speed = 100;
+        const typingTextElement = document.getElementById("typing-text");
+
+        function typeEffect() {
+            if (index < text.length) {
+                let currentText = text.slice(0, index + 1);
+                if (currentText.includes("Safarwallah")) {
+                    currentText = currentText.replace("Safarwallah", `<span class="text-orange-500">Safarwallah</span>`);
+                }
+                typingTextElement.innerHTML = currentText;
+                index++;
+                setTimeout(typeEffect, speed);
+            }
+        }
+
+        window.onload = () => {
+            typeEffect();
+        };
+    </script>
+
+</body>
+</html>
