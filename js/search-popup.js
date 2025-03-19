@@ -8,7 +8,7 @@
                         difficulty: "moderate",
                         location: "Uttarakhand",
                         budget: "6k to 9k",
-                        href: "/public/kedarkantha.html"
+                        href: "/public/kedarkantha "
                     },
                     {
                         name: "Brahmatal",
@@ -19,7 +19,7 @@
                         difficulty: "moderate",
                         location: "Uttarakhand",
                         budget: "6k to 9k",
-                        href: "/public/brahmatal.html"
+                        href: "/public/brahmatal "
                     },
                     {
                         name: "Dayara Buggal",
@@ -30,7 +30,7 @@
                         difficulty: "easy",
                         location: "Uttarakhand",
                         budget: "5500 to 9000",
-                        href: "/public/dyara-bugyal.html"
+                        href: "/public/dyara-bugyal "
                     },
                     {
                         name: "Chandrashila",
@@ -41,7 +41,7 @@
                         difficulty: "easy",
                         location: "Uttarakhand",
                         budget: "5500 to 9000",
-                        href: "/public/tungnath.html"
+                        href: "/public/tungnath "
                     }
                 ];
 
@@ -51,28 +51,28 @@
                         date: "2024-11-13",
                         contentSnippet: "A memorable advanture with safarwallah",
                         location: "Uttarakhand",
-                        href: "/public/blogs/a-memorable-advanture-with-safarwallah.html"
+                        href: "/public/blogs/a-memorable-advanture-with-safarwallah "
                     },
                     {
                         author: "Sameekshya",
                         date: "2024-11-06",
                         contentSnippet: "Escaping the city with safarwallah",
                         location: "Uttarakhand",
-                        href: "/public/blogs/Escaping-the-City-with-Safarwallah.html"
+                        href: "/public/blogs/Escaping-the-City-with-Safarwallah "
                     },
                     {
                         author: "Gaurav",
                         date: "2024-09-21",
                         contentSnippet: "The Ultimate Guide to Treeking in winter",
                         location: "Uttarakhand",
-                        href: "/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter.html"
+                        href: "/public/blogs/The-Ultimate-Guide-to-Trekking-in-Winter "
                     },
                     {
                         author: "Abhishek",
                         date: "2024-10-30",
                         contentSnippet: "Essential Trekking gear for a safe himalyan advanture",
                         location: "Uttarakhand",
-                        href: "public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure.html"
+                        href: "public/blogs/Essential-Trekking-Gear-for-a-Safe-Himalayan-Adventure "
                     }
                 ];
 
